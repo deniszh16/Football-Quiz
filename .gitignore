@@ -69,3 +69,4 @@ StreamingAssets/
 
 # Ignoring files
 *.gitattributes
+*.keystore
