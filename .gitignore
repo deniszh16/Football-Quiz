@@ -60,11 +60,11 @@ crashlytics-build.properties
 
 # Ignoring folders
 Appodeal/
+Editor/
 GooglePlay/
 GooglePlayGames/
 PlayServicesResolver/
 Plugins/
-Sprites/
 StreamingAssets/
 
 # Ignoring files

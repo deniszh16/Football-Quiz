@@ -1,5 +1,5 @@
-lastUpgrade=00964
-proj.pluginVersion=0.9.64
+lastUpgrade=01005
+proj.pluginVersion=0.10.05
 proj.AppId=520654099365
 and.BundleId=ru.cubra.football
 proj.classDir=Assets%2fGooglePlay
