@@ -5,9 +5,13 @@ public class PositionChange : MonoBehaviour
     [Header("Позиция на узких экранах")]
     [SerializeField] private Vector2 position;
 
+    // Ссылка на позицию объекта
     private RectTransform rectTransform;
 
-    private void Awake() { rectTransform = GetComponent<RectTransform>(); }
+    private void Awake()
+    {
+        rectTransform = GetComponent<RectTransform>();
+    }
 
     private void Start()
     {

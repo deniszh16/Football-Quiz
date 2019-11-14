@@ -1,24 +1,33 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class TasksCountries : JsonFileProcessing
+public class TasksCountries : FileProcessing
 {
-    // Объект для работы с вопросами в json файле
-    public QuestionsJson Tasks { get; private set; } = new QuestionsJson();
+    // Объект для работы с вопросами
+    private QueJson tasks = new QueJson();
 
-    // Объект для работы с json по наборам уровней
-    public SetsJson Sets { get; private set; } = new SetsJson();
+    // Свойство для объекта с вопросами
+    public QueJson Tasks { get { return tasks; } }
 
-    [Header("Режимы игры")]
-    [SerializeField] private GameObject[] gameModes;
+    // Объект для работы с json по наборам уровнейё
+    public SetJson Sets { get; private set; } = new SetJson();
+
+    [Header("Панель букв")]
+    [SerializeField] private GameObject letters;
+
+    [Header("Панель вариантов")]
+    [SerializeField] private GameObject variants;
 
     [Header("Кнопка подсказок")]
     [SerializeField] private GameObject buttonTips;
 
-    [Header("Кнопка стирания ответа")]
+    [Header("Кнопка удаления букв")]
     [SerializeField] private GameObject buttonDelete;
 
     [Header("Компонент ответа")]
     [SerializeField] private AnswerCountries answer;
+
+    // Свойство для получения ответа
     public AnswerCountries Answer { get { return answer; } }
 
     // Первая буква ответа (для подсказки)
@@ -27,54 +36,64 @@ public class TasksCountries : JsonFileProcessing
     // Прогресс в категории
     public int Progress { get; set; }
 
-    protected override void Awake()
+    private void Awake()
     {
-        // Обрабатываем json файл и записываем в переменную
-        string jsonString = ReadJsonFile("category-" + Categories.category.ToString());
+        // Обрабатываем json файл и записываем в текстовую переменную
+        var jsonString = ReadJsonFile("category-" + Categories.category.ToString());
         // Преобразовываем строку в объект
-        ConvertToObject(jsonString);
+        ConvertToObject(ref tasks, jsonString);
 
         // Преобразуем json строку по категориям в объект 
-        Sets = JsonUtility.FromJson<SetsJson>(PlayerPrefs.GetString("sets"));
+        Sets = JsonUtility.FromJson<SetJson>(PlayerPrefs.GetString("sets"));
 
         // Получаем компонент ответов
         answer = answer.GetComponent<AnswerCountries>();
 
         // Записываем текущий прогресс категории
-        Progress = Sets.arraySets[Categories.category];
+        Progress = Sets.ArraySets[Categories.category];
     }
 
-    // Преобразование json строки в объект
-    private void ConvertToObject(string json) { Tasks = JsonUtility.FromJson<QuestionsJson>(json); }
+    private void Start()
+    {
+        SceneSetting();
+    }
 
-    protected override void Start() { SceneSetting(); }
-
-    // Настройка сцены под текущий вопрос
+    /// <summary>Настройка сцены под текущий тип вопроса</summary>
     public void SceneSetting()
     {
         // Если задание с буквами
-        if (Tasks.questions[Progress - 1].type == "letters")
+        if (Tasks.TaskItems[Progress - 1].Type == "letters")
         {
             // Активируем панель с буквами
-            gameModes[0].SetActive(true);
+            letters.SetActive(true);
             // Активируем кнопку подсказок
             buttonTips.SetActive(true);
             // Активируем кнопку стирания букв
             buttonDelete.SetActive(true);
 
             // Получаем первую букву ответа (для подсказки)
-            FirstLetter = Tasks.questions[Progress - 1].answer[0];
-
-            // Настраиваем массив под ответ
-            answer.TypeAnswer("letters");
+            FirstLetter = Tasks.TaskItems[Progress - 1].Answer[0];
         }
         else
         {
             // Активируем панель с вариантами
-            gameModes[1].SetActive(true);
-
-            // Настраиваем ответ под задание
-            answer.TypeAnswer("quiz");
+            variants.SetActive(true);
         }
+
+        // Подготавливаем ответ под задание
+        answer.TypeAnswer(Tasks.TaskItems[Progress - 1].Type);
+    }
+
+    /// <summary>Поиск первой буквы ответа в массиве букв</summary>
+    public int LetterSearch()
+    {
+        // Возвращаем номер первого вхождения в массив
+        return Array.IndexOf(Tasks.TaskItems[Progress - 1].Letters, FirstLetter);
+    }
+
+    /// <summary>Поиск указанной буквы в массиве ответа</summary>
+    public int LetterSearch(int number)
+    {
+        return Array.IndexOf(Tasks.TaskItems[Progress - 1].Answer, Tasks.TaskItems[Progress - 1].Letters[number]);
     }
 }

@@ -6,18 +6,19 @@ public class Category : MonoBehaviour
     [Header("Номер категории")]
     [SerializeField] private int number;
 
-    [Header("Открытая категория")]
-    [SerializeField] private Sprite sprite;
-
     [Header("Стоимость открытия")]
     [SerializeField] private int price;
+
+    [Header("Спрайт открытой категории")]
+    [SerializeField] private Sprite sprite;
 
     [Header("Идентификатор достижения")]
     [SerializeField] private string identifier;
 
     // Номер текущего вопроса
-    private int numberQuestion = 0;
+    private int currentQuestion = 0;
 
+    // Ссылки на компоненты
     private Text text;
     private Image image;
     private Categories categories;
@@ -31,73 +32,87 @@ public class Category : MonoBehaviour
 
     private void Start()
     {
-        // Получаем номер текущего вопроса из массива
-        numberQuestion = categories.Sets.arraySets[number];
+        // Получаем номер текущего вопроса по данной категории
+        currentQuestion = categories.Sets.ArraySets[number];
 
-        // Если категория открыта, обновляем ее информацию
-        if (numberQuestion != 0) UpdateCategory();
+        // Если категория открыта
+        if (currentQuestion != 0)
+            // Обновляем информацию
+            UpdateCategory();
 
         // Если категория пройдена
-        if (numberQuestion > categories.Tasks[number])
-            // И если доступен интернет, разблокируем достижение
-            if (Application.internetReachability != NetworkReachability.NotReachable) PlayServices.UnlockingAchievement(identifier);
+        if (currentQuestion > categories.Tasks[number])
+            // Если доступен интернет
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+                // Разблокируем достижение с указанным идентификатором
+                PlayServices.UnlockingAchievement(identifier);
     }
 
-    // Обновление категории (для открытых категорий)
+    /// <summary>Обновление информации по открытой категории</summary>
     private void UpdateCategory()
     {
         // Устанавливаем открытый спрайт
         image.sprite = sprite;
-        // Убираем прозрачность со статистики
+
+        // Убираем прозрачность с текста статистики
         text.color = Color.white;
-        // В статистике выводим количество пройденных и общее количество вопросов
-        text.text = numberQuestion - 1 + " /" + categories.Tasks[number];
+        // Выводим количество пройденных и общее количество вопросов
+        text.text = currentQuestion - 1 + " /" + categories.Tasks[number];
     }
 
-    // Открытие/приобретение категории
+    /// <summary>Открытие/приобретение категории</summary>
     public void OpenCategory()
     {
-        // Если категория открыта и не пройдена, переходим в викторину
-        if (numberQuestion != 0 && numberQuestion <= categories.Tasks[number]) CustomizeTransition(3);
-        // Если категория викторины пройдена, переходим в список вопросов
-        else if (numberQuestion > categories.Tasks[number]) CustomizeTransition(4);
+        // Если категория открыта и не пройдена полностью
+        if (currentQuestion != 0 && currentQuestion <= categories.Tasks[number])
+        {
+            // Записываем номер категории
+            Categories.category = number;
+            // Затем переходим на сцену заданий
+            categories.Transitions.GoToScene(3);
+        }
+        // Если категория полностью пройдена
+        else if (currentQuestion > categories.Tasks[number])
+        {
+            // Записываем номер категории
+            Categories.category = number;
+            // Затем переходим на сцену ответов
+            categories.Transitions.GoToScene(4);
+        }
         else
         {
-            // Если достаточно монет, открываем категорию и сохраняем
-            if (PlayerPrefs.GetInt("coins") >= price) PaymentCategory();
+            // Если достаточно монет
+            if (PlayerPrefs.GetInt("coins") >= price)
+            {
+                // Открываем новую категорию
+                PaymentCategory();
+            }
             else
             {
-                // Иначе активируем анимацию текста ошибки
-                categories.Animator.enabled = true;
-                // Перезапускаем анимацию
-                categories.Animator.Rebind();
+                // Иначе активируем анимацию нехватки монет
+                categories.TextAnimator.enabled = true;
+                // Перезапускаем проигрывание
+                categories.TextAnimator.Rebind();
             }
         }
     }
 
-    private void CustomizeTransition(int scene)
-    {
-        // Записываем номер выбранной категории
-        Categories.category = number;
-        // Затем переходим на указанную сцену
-        categories.Transitions.GoToScene(scene);
-    }
-
-    // Оплата и открытие категории
+    /// <summary>Открытие новой категории</summary>
     private void PaymentCategory()
     {
-        // Вычитаем стоимость категории и обновляем статистику монет
+        // Вычитаем стоимость категории
         PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - price);
+        // Обновляем статистику по монетам
         categories.Statistics.UpdateCoins();
 
         // Открываем категорию
-        categories.Sets.arraySets[number] = 1;
-        // Увеличиваем номер текущего вопроса
-        numberQuestion++;
-        // Сохраняем обновленное значение в json строку по наборам
+        categories.Sets.ArraySets[number] = 1;
+        // Увеличиваем текущий вопрос
+        currentQuestion++;
+        // Сохраняем обновленное значение
         PlayerPrefs.SetString("sets", JsonUtility.ToJson(categories.Sets));
 
-        // Обновляем категорию
+        // Обновляем информацию по категории
         UpdateCategory();
 
         // Перемещаем эффект открытия к категории

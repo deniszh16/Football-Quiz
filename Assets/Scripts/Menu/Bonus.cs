@@ -11,28 +11,28 @@ public class Bonus : MonoBehaviour
 
     private void Start()
     {
-        // Если доступен интернет, проверяем доступность бонуса
-        if (Application.internetReachability != NetworkReachability.NotReachable) CheckBonus();
+        CheckBonus(); 
     }
 
-    // Проверка бонуса
+    /// <summary>Проверка доступности бонуса</summary>
     public void CheckBonus()
     {
         // Если доступны просмотры бонусной рекламы
         if (PlayerPrefs.GetInt("bonus") > 0)
         {
-            // Активируем кнопку и эффект сияния
+            // Активируем бонусную кнопку
             bonus.gameObject.SetActive(true);
+            // Активируем эффект сияния
             effect.SetActive(true);
         }
     }
 
-    // Уменьшение просмотров
+    /// <summary>Уменьшение количества доступных просмотров видеорекламы</summary>
     public void DecreaseViews()
     {
         // Уменьшаем количество просмотров видеорекламы с вознаграждением
         PlayerPrefs.SetInt("bonus", PlayerPrefs.GetInt("bonus") - 1);
-        // Проверяем доступные просмотры
+
         CheckBonus();
     }
 }

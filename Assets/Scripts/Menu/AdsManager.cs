@@ -8,9 +8,10 @@ public class AdsManager : MonoBehaviour
 
     private void Start()
     {
-        // Отключаем звук рекламы, если отключены звонки
+        // Отключаем рекламный звук, если отключены телефонные звонки
         Appodeal.muteVideosIfCallsMuted(true);
-        // Инициализируем рекламный баннер и видео с вознаграждением
+
+        // Инициализируем рекламный баннер и видеорекламу с вознаграждением
         Appodeal.initialize(key, Appodeal.BANNER | Appodeal.REWARDED_VIDEO, true);
     }
 }

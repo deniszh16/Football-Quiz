@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Countries/Questions.unity
     guid: 7941bdb8cb8e63644834ea10bcafeb6b
   - enabled: 1
-    path: Assets/Scenes/Players/Modes.unity
+    path: Assets/Scenes/Players/Photos.unity
     guid: f9afec5b0bb9d7f448a2eab46be23338
   - enabled: 1
     path: Assets/Scenes/Players/Players.unity
@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Legends/Legends.unity
     guid: a3985134b4842b14f9bd2a114ca1426c
   - enabled: 1
-    path: Assets/Scenes/Legends/Description.unity
+    path: Assets/Scenes/Legends/Biography.unity
     guid: 9b08ae804d372464c97bf2ef06358254
   - enabled: 1
     path: Assets/Scenes/Menu/Cups.unity

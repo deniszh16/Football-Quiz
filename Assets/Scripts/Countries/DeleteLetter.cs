@@ -1,12 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class DeleteLetter : MonoBehaviour
 {
     [Header("Компонент ответа")]
     [SerializeField] private AnswerCountries answer;
-
-    private Outline outlineText;
 
     [Header("Панель букв")]
     [SerializeField] private GameObject letters;
@@ -14,29 +11,28 @@ public class DeleteLetter : MonoBehaviour
     private void Awake()
     {
         answer = answer.GetComponent<AnswerCountries>();
-        outlineText = answer.GetComponent<Outline>();
     }
 
-    // Нажатие на кнопку удаления буквы
-    public void PressDeleteButton()
+    /// <summary>Нажатие на кнопку удаления буквы</summary>
+    public void PressDelete()
     {
         // Если есть открытые буквы
-        if (answer.OpenLetters - 1 >= 0)
+        if (answer.QuantityLetters - 1 >= 0)
         {
             // Стираем последнюю букву
-            answer.PlayerResponse[answer.OpenLetters - 1] = null;
+            answer.PlayerResponse[answer.QuantityLetters - 1] = null;
 
             // Обновляем поле ответа
             answer.UpdateAnswer();
 
             // Отображаем скрытую кнопку буквы
-            letters.transform.GetChild(answer.NumberOpen[answer.OpenLetters - 1]).gameObject.SetActive(true);
+            letters.transform.GetChild(answer.NumbersLetters[answer.QuantityLetters - 1]).gameObject.SetActive(true);
 
             // Уменьшаем количество открытых букв
-            answer.OpenLetters--;
+            answer.QuantityLetters--;
 
-            // Если отображалась красная обводка, убираем её
-            if (outlineText.enabled) outlineText.enabled = false;
+            // Если отображалась обводка ответа, убираем её
+            if (answer.Outline.enabled) answer.Outline.enabled = false;
         }
     }
 }

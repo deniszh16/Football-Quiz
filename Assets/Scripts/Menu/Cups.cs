@@ -3,42 +3,37 @@ using UnityEngine.UI;
 
 public class Cups : MonoBehaviour
 {
-    [Header("Массив кубков")]
+    [Header("Кубки за прогресс")]
     [SerializeField] private GameObject[] cups;
 
     [Header("Прогресс для открытия")]
     [SerializeField] private int[] progress;
 
-    [Header("Статистика кубков")]
+    [Header("Текст с прогрессом")]
     [SerializeField] private Text percent;
-
-    // Общий счет ответов
-    private int totalScore;
-
-    private void Awake()
-    {
-        // Подсчет общего количества правильных ответов
-        totalScore = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers");
-    }
 
     private void Start()
     {
         // Процент прохождения
-        int percent = 0;
+        var percentagPeassing = 0;
+
+        // Общий прогресс по викторинам
+        var overallProgress = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers");
 
         for (int i = 0; i < cups.Length; i++)
         {
-            // Если итоговый счет превышает необходимый прогресс
-            if (progress[i] <= totalScore)
+            // Если общий прогресс превышает значение для открытия
+            if (progress[i] <= overallProgress)
             {
-                // Получаем графический компонент и убираем прозрачность
+                // Убираем прозрачность у кубка
                 cups[i].GetComponent<Image>().color = Color.white;
+
                 // Увеличиваем процент прохождения
-                percent +=15;
-            } 
+                percentagPeassing += 15;
+            }
         }
 
-        // Выводим проценты прохождения викторины (если процент больше ста, округляем до сотни)
-        this.percent.text = "Выигранные кубки (" + (percent > 100 ? "100" : percent.ToString()) + "%)";
+        // Выводим проценты прохождения викторины
+        percent.text = "Выигранные кубки (" + (percentagPeassing > 100 ? "100" : percentagPeassing.ToString()) + "%)";
     }
 }

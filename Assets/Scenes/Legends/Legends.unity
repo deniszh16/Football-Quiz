@@ -178,8 +178,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 9446fbbe43e700249a83b3b0735eefc2, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -253,8 +251,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: a33ca1214e0e922478d12893b8cb3430, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -360,8 +356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 29
-  cups: 0
   sprite: {fileID: 21300000, guid: 28a44071bfe6ef04097be26da6a1c992, type: 3}
   identifier: CgkIpaecy5MPEAIQLw
 --- !u!114 &81529648
@@ -407,19 +401,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 81529647}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 28
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &81529649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,8 +430,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -509,8 +499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 26
-  cups: 0
   sprite: {fileID: 21300000, guid: f1d5eb226a263b243a3a66544c3a7c8c, type: 3}
   identifier: CgkIpaecy5MPEAIQLA
 --- !u!114 &95136084
@@ -556,19 +544,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 95136083}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 25
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &95136085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -587,8 +573,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -658,8 +642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 6
-  cups: 1
   sprite: {fileID: 21300000, guid: b6856d53d10ccce4e960bd1ad85bed96, type: 3}
   identifier: CgkIpaecy5MPEAIQGA
 --- !u!114 &113889244
@@ -705,19 +687,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 113889243}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &113889245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -736,8 +716,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -879,8 +857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 15
-  cups: 0
   sprite: {fileID: 21300000, guid: 5f77508f08b88d840876a7b09047bcf4, type: 3}
   identifier: CgkIpaecy5MPEAIQIQ
 --- !u!114 &177245829
@@ -926,19 +902,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 177245828}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 14
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &177245830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,8 +931,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1238,8 +1210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 31
-  cups: 0
   sprite: {fileID: 21300000, guid: 9bd0100b043de114cab16aced29c5cb0, type: 3}
   identifier: CgkIpaecy5MPEAIQMQ
 --- !u!114 &322445661
@@ -1285,19 +1255,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 322445660}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 30
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &322445662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1316,8 +1284,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1387,8 +1353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 42
-  cups: 0
   sprite: {fileID: 21300000, guid: 1821384d647780c49a919f0633d4b8f9, type: 3}
   identifier: CgkIpaecy5MPEAIQPA
 --- !u!114 &332301937
@@ -1434,19 +1398,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332301936}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 39
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &332301938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1465,8 +1427,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1536,8 +1496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 21
-  cups: 0
   sprite: {fileID: 21300000, guid: eccb403b2befbdc4bb9d29277324b5e9, type: 3}
   identifier: CgkIpaecy5MPEAIQJw
 --- !u!114 &336125623
@@ -1583,19 +1541,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 336125622}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 20
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &336125624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1614,8 +1570,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1685,8 +1639,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 8
-  cups: 1
   sprite: {fileID: 21300000, guid: 1431e534963127f428d8dae6c4910dff, type: 3}
   identifier: CgkIpaecy5MPEAIQGg
 --- !u!114 &355340966
@@ -1732,19 +1684,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 355340965}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &355340967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1763,8 +1713,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -1782,6 +1730,99 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355340963}
+  m_CullTransparentMesh: 0
+--- !u!1 &363986813
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 363986814}
+  - component: {fileID: 363986817}
+  - component: {fileID: 363986816}
+  - component: {fileID: 363986815}
+  m_Layer: 5
+  m_Name: Effect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &363986814
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363986813}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2096196252}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -860}
+  m_SizeDelta: {x: 360, y: 360}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &363986815
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363986813}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 251704be4f405cf499486e9d625e7db4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &363986816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363986813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 257141198600766726, guid: ea6c6391c19b61b47a217aafd0883ee3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &363986817
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363986813}
   m_CullTransparentMesh: 0
 --- !u!1 &369093100
 GameObject:
@@ -1834,8 +1875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 30
-  cups: 0
   sprite: {fileID: 21300000, guid: b6dcbfd57e504fa43bbb9194507de2a8, type: 3}
   identifier: CgkIpaecy5MPEAIQMA
 --- !u!114 &369093103
@@ -1881,19 +1920,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 369093102}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 29
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &369093104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1912,8 +1949,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2055,8 +2090,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 11
-  cups: 1
   sprite: {fileID: 21300000, guid: dc9b17e8b0af3c745b9dbc4b63d588b2, type: 3}
   identifier: CgkIpaecy5MPEAIQHQ
 --- !u!114 &398581662
@@ -2102,19 +2135,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 398581661}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &398581663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2133,8 +2164,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2204,8 +2233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 1
-  cups: 1
   sprite: {fileID: 21300000, guid: d3ce7738e1c028a41a66496097242cd7, type: 3}
   identifier: CgkIpaecy5MPEAIQEw
 --- !u!114 &405087097
@@ -2251,9 +2278,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 405087096}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2262,8 +2289,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &405087098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2282,8 +2307,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2353,8 +2376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 5
-  cups: 1
   sprite: {fileID: 21300000, guid: 3c27ad24ae9cfae47ae593bcebaeeb8e, type: 3}
   identifier: CgkIpaecy5MPEAIQFw
 --- !u!114 &406300946
@@ -2400,19 +2421,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 406300945}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &406300947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2431,8 +2450,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2497,7 +2514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468683529}
   m_Layer: 5
-  m_Name: Legends (43)
+  m_Name: Legends (41)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2580,8 +2597,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -2664,8 +2679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 17
-  cups: 0
   sprite: {fileID: 21300000, guid: b9ac86c5c87a2584aaf9e6f0f99c94ac, type: 3}
   identifier: CgkIpaecy5MPEAIQIw
 --- !u!114 &514073878
@@ -2711,19 +2724,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 514073877}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 16
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &514073879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,8 +2753,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2772,7 +2781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 565307825}
   m_Layer: 5
-  m_Name: Legends (44)
+  m_Name: Legends (42)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2849,8 +2858,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 9
-  cups: 1
   sprite: {fileID: 21300000, guid: f2c82d1f9db75e648823cf16950886f9, type: 3}
   identifier: CgkIpaecy5MPEAIQGw
 --- !u!114 &592665488
@@ -2896,19 +2903,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 592665487}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &592665489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2927,8 +2932,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2998,8 +3001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 19
-  cups: 0
   sprite: {fileID: 21300000, guid: 3850d7b47c32b5e4da6c637945172697, type: 3}
   identifier: CgkIpaecy5MPEAIQJQ
 --- !u!114 &593262381
@@ -3045,19 +3046,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 593262380}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 18
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &593262382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3076,8 +3075,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3297,8 +3294,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 80
@@ -3484,8 +3479,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &730030899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3504,8 +3497,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7c52df4275aca48459da8e69e37f91fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3594,8 +3585,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 24
-  cups: 0
   sprite: {fileID: 21300000, guid: 5476d980dd98702449d47f0c3f668742, type: 3}
   identifier: CgkIpaecy5MPEAIQKg
 --- !u!114 &741950664
@@ -3641,19 +3630,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 741950663}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 23
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &741950665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3672,8 +3659,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3815,8 +3800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 33
-  cups: 0
   sprite: {fileID: 21300000, guid: 1ed4d023c7645604f97efe66cb22028a, type: 3}
   identifier: CgkIpaecy5MPEAIQMw
 --- !u!114 &783721358
@@ -3862,19 +3845,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 783721357}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 32
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &783721359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3893,8 +3874,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -3968,8 +3947,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 5caecf3d854ffeb4786e1f23367d9ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4039,8 +4016,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 18
-  cups: 0
   sprite: {fileID: 21300000, guid: c9feabc4ee5abbf4382f54a9ab550260, type: 3}
   identifier: CgkIpaecy5MPEAIQJA
 --- !u!114 &810210582
@@ -4086,19 +4061,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 810210581}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 17
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &810210583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4117,8 +4090,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4137,152 +4108,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 810210579}
   m_CullTransparentMesh: 0
---- !u!1001 &831495793
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2096196252}
-    m_Modifications:
-    - target: {fileID: 2707020155384464536, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_Name
-      value: Effect
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464536, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464536, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -860
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2707020155384464541, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c267a3c142f8c6d419b7e97f3db8b49f, type: 3}
---- !u!224 &831495794 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2707020155384464539, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-    type: 3}
-  m_PrefabInstance: {fileID: 831495793}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &831495795 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2707020155384464538, guid: c267a3c142f8c6d419b7e97f3db8b49f,
-    type: 3}
-  m_PrefabInstance: {fileID: 831495793}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &889847748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4329,7 +4154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 901248894}
   m_Layer: 5
-  m_Name: Legends (47)
+  m_Name: Legends (44)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4365,7 +4190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906715517}
   m_Layer: 5
-  m_Name: Legends (39)
+  m_Name: Legends (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4442,8 +4267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 36
-  cups: 0
   sprite: {fileID: 21300000, guid: f961ca4b0f4642d43b3a2e416014a423, type: 3}
   identifier: CgkIpaecy5MPEAIQNg
 --- !u!114 &911494928
@@ -4489,19 +4312,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 911494927}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 35
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &911494929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4520,8 +4341,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4591,8 +4410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 41
-  cups: 0
   sprite: {fileID: 21300000, guid: b553cd2ba22a2314f9b13e5fb1585ecd, type: 3}
   identifier: CgkIpaecy5MPEAIQOw
 --- !u!114 &926121377
@@ -4638,19 +4455,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 926121376}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 38
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &926121378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4669,8 +4484,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4776,8 +4589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 20
-  cups: 0
   sprite: {fileID: 21300000, guid: 6245c761777825f4d93184cfa341104b, type: 3}
   identifier: CgkIpaecy5MPEAIQJg
 --- !u!114 &962117278
@@ -4823,19 +4634,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 962117277}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 19
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &962117279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4854,8 +4663,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -4961,8 +4768,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 3
-  cups: 1
   sprite: {fileID: 21300000, guid: 6a239295535ff214ba3ebeb91392f3d8, type: 3}
   identifier: CgkIpaecy5MPEAIQFQ
 --- !u!114 &979843537
@@ -5008,19 +4813,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 979843536}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &979843538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5039,8 +4842,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5070,8 +4871,9 @@ GameObject:
   - component: {fileID: 980628423}
   - component: {fileID: 980628422}
   - component: {fileID: 980628421}
-  - component: {fileID: 980628426}
   - component: {fileID: 980628425}
+  - component: {fileID: 980628427}
+  - component: {fileID: 980628426}
   - component: {fileID: 980628424}
   m_Layer: 0
   m_Name: Main Camera
@@ -5173,7 +4975,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cards: {fileID: 1902463662}
   scroll: {fileID: 1602308412}
-  effect: {fileID: 831495795}
+  effect: {fileID: 363986815}
 --- !u!114 &980628426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5189,6 +4991,18 @@ MonoBehaviour:
   texts:
   - {fileID: 1361523103}
   - {fileID: 1517914982}
+--- !u!114 &980628427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980628420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef68697d6a1b75b4da8b96bed53211d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1025256482
 GameObject:
   m_ObjectHideFlags: 0
@@ -5245,8 +5059,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 693150d17fec1d54f8f4eab5227b1c8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5313,7 +5125,6 @@ GameObject:
   - component: {fileID: 1033540247}
   - component: {fileID: 1033540246}
   - component: {fileID: 1033540245}
-  - component: {fileID: 1033540249}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5406,18 +5217,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1033540249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033540244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef68697d6a1b75b4da8b96bed53211d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1048644913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5469,8 +5268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 27
-  cups: 0
   sprite: {fileID: 21300000, guid: 049be6b6e0504a646b4ca3e9dc6ddfb5, type: 3}
   identifier: CgkIpaecy5MPEAIQLQ
 --- !u!114 &1048644916
@@ -5516,19 +5313,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1048644915}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 26
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1048644917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5547,8 +5342,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5618,8 +5411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 45
-  cups: 0
   sprite: {fileID: 21300000, guid: 595cb2ca1ef77b54fb115dacce0a0013, type: 3}
   identifier: CgkIpaecy5MPEAIQPw
 --- !u!114 &1049349242
@@ -5665,19 +5456,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1049349241}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 42
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1049349243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5696,8 +5485,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5807,8 +5594,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 5caecf3d854ffeb4786e1f23367d9ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5878,8 +5663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 38
-  cups: 0
   sprite: {fileID: 21300000, guid: d90550ab4413e594193c99ccc3b118c8, type: 3}
   identifier: CgkIpaecy5MPEAIQOA
 --- !u!114 &1154432241
@@ -5925,19 +5708,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1154432240}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 36
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1154432242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5956,8 +5737,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6032,8 +5811,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 0ea0914cad74a9e4680dff7f3980f181, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6175,8 +5952,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 14
-  cups: 0
   sprite: {fileID: 21300000, guid: 03f3e6b958309974fb291c0211283ed9, type: 3}
   identifier: CgkIpaecy5MPEAIQIA
 --- !u!114 &1236217078
@@ -6222,19 +5997,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1236217077}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 13
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1236217079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6253,8 +6026,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6329,8 +6100,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5283817772ca4e54c98ac814555bee80, type: 3}
     m_FontSize: 38
@@ -6424,8 +6193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 12
-  cups: 1
   sprite: {fileID: 21300000, guid: bb82eab4fd30ae445ba7992212ca1287, type: 3}
   identifier: CgkIpaecy5MPEAIQHg
 --- !u!114 &1254620881
@@ -6471,19 +6238,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1254620880}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1254620882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6502,8 +6267,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6609,8 +6372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 4
-  cups: 1
   sprite: {fileID: 21300000, guid: dcfe1a0aabdb5ad4fa90cb176ac79dcc, type: 3}
   identifier: CgkIpaecy5MPEAIQFg
 --- !u!114 &1324571603
@@ -6656,19 +6417,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1324571602}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1324571604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6687,8 +6446,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6758,8 +6515,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 35
-  cups: 0
   sprite: {fileID: 21300000, guid: d518d21af55c5d044be9ce559df74ea9, type: 3}
   identifier: CgkIpaecy5MPEAIQNQ
 --- !u!114 &1339439453
@@ -6805,19 +6560,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1339439452}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 34
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1339439454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6836,8 +6589,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6907,8 +6658,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 44
-  cups: 0
   sprite: {fileID: 21300000, guid: 9cbcbad6575e5b44285a7aaa7e9d8c55, type: 3}
   identifier: CgkIpaecy5MPEAIQPg
 --- !u!114 &1349397651
@@ -6954,19 +6703,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1349397650}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 41
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1349397652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6985,8 +6732,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7060,8 +6805,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 32
@@ -7135,8 +6878,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 43
-  cups: 0
   sprite: {fileID: 21300000, guid: 43951d6945d05664c93a06763a1d6561, type: 3}
   identifier: CgkIpaecy5MPEAIQPQ
 --- !u!114 &1363041246
@@ -7182,19 +6923,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1363041245}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 40
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1363041247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7213,8 +6952,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7392,8 +7129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 34
-  cups: 0
   sprite: {fileID: 21300000, guid: 2b47ee822112f50428027500bf530796, type: 3}
   identifier: CgkIpaecy5MPEAIQNA
 --- !u!114 &1501247338
@@ -7439,19 +7174,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1501247337}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 33
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1501247339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7470,8 +7203,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7545,8 +7276,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 32
@@ -7723,7 +7452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1600688934}
   m_Layer: 5
-  m_Name: Legends (42)
+  m_Name: Legends (40)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7817,8 +7546,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.ScrollRect+ScrollRectEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1610043992
 GameObject:
   m_ObjectHideFlags: 0
@@ -7870,8 +7597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 47
-  cups: 0
   sprite: {fileID: 21300000, guid: a02aab0b790ef2d4d9aee019bef220b7, type: 3}
   identifier: CgkIpaecy5MPEAIQQQ
 --- !u!114 &1610043995
@@ -7917,19 +7642,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1610043994}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 43
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1610043996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7948,8 +7671,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8055,8 +7776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 16
-  cups: 0
   sprite: {fileID: 21300000, guid: 457a8832d008a75438504de0f3834bcc, type: 3}
   identifier: CgkIpaecy5MPEAIQIg
 --- !u!114 &1679150667
@@ -8102,19 +7821,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1679150666}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1679150668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8133,8 +7850,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8240,8 +7955,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 10
-  cups: 1
   sprite: {fileID: 21300000, guid: 80a892df5395bc64ca07f72e65d518a2, type: 3}
   identifier: CgkIpaecy5MPEAIQHA
 --- !u!114 &1691507749
@@ -8287,19 +8000,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1691507748}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1691507750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8318,8 +8029,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8393,8 +8102,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -8496,7 +8203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1751216071}
   m_Layer: 5
-  m_Name: Legends (41)
+  m_Name: Legends (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8573,8 +8280,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 23
-  cups: 0
   sprite: {fileID: 21300000, guid: c9ab5c04f832a484a91436c797e49825, type: 3}
   identifier: CgkIpaecy5MPEAIQKQ
 --- !u!114 &1771529630
@@ -8620,19 +8325,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1771529629}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 22
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1771529631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8651,8 +8354,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8722,8 +8423,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 28
-  cups: 0
   sprite: {fileID: 21300000, guid: 454403f1a2d6ce441a712572d0220638, type: 3}
   identifier: CgkIpaecy5MPEAIQLg
 --- !u!114 &1795037674
@@ -8769,19 +8468,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1795037673}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 27
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1795037675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8800,8 +8497,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8871,8 +8566,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 25
-  cups: 0
   sprite: {fileID: 21300000, guid: 2627805a656eec549bae8baf22ca52b0, type: 3}
   identifier: CgkIpaecy5MPEAIQKw
 --- !u!114 &1850332684
@@ -8918,19 +8611,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1850332683}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 24
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1850332685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8949,8 +8640,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9020,8 +8709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 13
-  cups: 0
   sprite: {fileID: 21300000, guid: 2f2afa8aa862df14ebf892e43ce82fc5, type: 3}
   identifier: CgkIpaecy5MPEAIQHw
 --- !u!114 &1862419721
@@ -9067,19 +8754,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1862419720}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 12
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1862419722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9098,8 +8783,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9247,7 +8930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1930678435}
   m_Layer: 5
-  m_Name: Legends (45)
+  m_Name: Legends (43)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9324,8 +9007,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 2
-  cups: 1
   sprite: {fileID: 21300000, guid: 4002d5e6cf5275a49a39759c9a83b7f5, type: 3}
   identifier: CgkIpaecy5MPEAIQFA
 --- !u!114 &1934602328
@@ -9371,19 +9052,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1934602327}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1934602329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9402,8 +9081,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9473,8 +9150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 39
-  cups: 0
   sprite: {fileID: 21300000, guid: a0c900f9671b1ea47954a26c7659a71e, type: 3}
   identifier: CgkIpaecy5MPEAIQOQ
 --- !u!114 &1938978851
@@ -9520,19 +9195,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1938978850}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 37
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1938978852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9551,8 +9224,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9767,8 +9438,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.Scrollbar+ScrollEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2004254283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9787,8 +9456,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
@@ -9858,8 +9525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 32
-  cups: 0
   sprite: {fileID: 21300000, guid: 60dcf02fec1fcc8468ea8162118aefc9, type: 3}
   identifier: CgkIpaecy5MPEAIQMg
 --- !u!114 &2051970959
@@ -9905,19 +9570,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2051970958}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 31
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2051970960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9936,8 +9599,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9983,7 +9644,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 831495794}
+  - {fileID: 363986814}
   m_Father: {fileID: 1033540248}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10049,8 +9710,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10081,8 +9740,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 7
-  cups: 1
   sprite: {fileID: 21300000, guid: 0dc7e8be9cc61db4681e8dcb7ab93631, type: 3}
   identifier: CgkIpaecy5MPEAIQGQ
 --- !u!114 &2096236057
@@ -10128,19 +9785,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2096236056}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2142603298
 GameObject:
   m_ObjectHideFlags: 0
@@ -10151,7 +9806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142603299}
   m_Layer: 5
-  m_Name: Legends (38)
+  m_Name: Legends (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10228,8 +9883,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  number: 22
-  cups: 0
   sprite: {fileID: 21300000, guid: d0830467bb9c5b14a8e42f6cab067e14, type: 3}
   identifier: CgkIpaecy5MPEAIQKA
 --- !u!114 &2144299812
@@ -10275,19 +9928,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2144299811}
-        m_MethodName: OpenCard
-        m_Mode: 1
+      - m_Target: {fileID: 980628425}
+        m_MethodName: OpenLegendaryCard
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 21
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2144299813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10306,8 +9957,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 39d77870d12b9ba41afdad1d94cc4999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0

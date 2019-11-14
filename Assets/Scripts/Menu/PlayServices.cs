@@ -5,46 +5,54 @@ public class PlayServices : MonoBehaviour
 {
     private void Start()
     {
-        // Если доступен интернет, подключаемся к Google Play
-        if (Application.internetReachability != NetworkReachability.NotReachable) SignGooglePlay();
+        SignGooglePlay();
     }
 
-    // Подключение к сервисам Google Play
+    /// <summary>Подключение к сервисам Google Play</summary>
     public static void SignGooglePlay()
     {
-        // Подключаемся к игровым сервисам
-        Social.localUser.Authenticate((bool success) => { });
+        // Если доступен интернет, подключаемся к Google Play
+        if (Application.internetReachability != NetworkReachability.NotReachable)
+            Social.localUser.Authenticate((bool success) => {});
     }
 
-    // Просмотр игровых достижений
+    /// <summary>Просмотр игровых достижений</summary>
     public static void ShowAchievements()
     {
-        // Если пользователь вошел в аккаунт, отображаем список достижений
-        if (Social.localUser.authenticated) Social.ShowAchievementsUI();
-        // Иначе подключаемся к Google Play
-        else SignGooglePlay();
+        // Если пользователь вошел в аккаунт
+        if (Social.localUser.authenticated)
+            // Отображанем список достижений
+            Social.ShowAchievementsUI();
+        else
+            SignGooglePlay();
     }
 
-    // Разблокирование достижения
+    /// <summary>Разблокирование достижения (идентификатор достижения)</summary>
     public static void UnlockingAchievement(string identifier)
     {
-        // Если пользователь вошел в аккаунт, открываем достижение с указанным идентификатором
-        if (Social.localUser.authenticated) Social.ReportProgress(identifier, 100.0f, (bool success) => { });
+        // Если пользователь вошел в аккаунт
+        if (Social.localUser.authenticated)
+            // Открываем достижение с указанным идентификатором
+            Social.ReportProgress(identifier, 100.0f, (bool success) => {});
     }
 
-    // Просмотр таблицы лидеров
+    /// <summary>Просмотр таблицы лидеров</summary>
     public static void ShowLeaderboard()
     {
-        // Если пользователь вошел в аккаунт, отображаем таблицу лидеров с указанным идентификатором
-        if (Social.localUser.authenticated) PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard);
-        // Иначе подключаемся к Google Play
-        else SignGooglePlay();
+        // Если пользователь вошел в аккаунт
+        if (Social.localUser.authenticated)
+            // Отображаем таблицу лидеров
+            PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard);
+        else
+            SignGooglePlay();
     }
 
-    // Отправка результата в таблицу лидеров
+    /// <summary>Отправка результата в таблицу лидеров (общий счет)</summary>
     public static void PostingScoreLeaderboard(int score)
     {
-        // Если пользователь вошел в аккаунт, отправляем указанный результат в общую таблицу
-        if (Social.localUser.authenticated) Social.ReportScore(score, GPGSIds.leaderboard, (bool success) => { });
+        // Если пользователь вошел в аккаунт
+        if (Social.localUser.authenticated)
+            // Отправляем указанный результат в таблицу
+            Social.ReportScore(score, GPGSIds.leaderboard, (bool success) => {});
     }
 }

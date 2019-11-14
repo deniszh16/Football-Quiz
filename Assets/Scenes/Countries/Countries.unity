@@ -179,8 +179,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 9446fbbe43e700249a83b3b0735eefc2, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -254,8 +252,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 28
@@ -5144,8 +5140,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: a33ca1214e0e922478d12893b8cb3430, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5176,7 +5170,6 @@ GameObject:
   - component: {fileID: 75782054}
   - component: {fileID: 75782053}
   - component: {fileID: 75782052}
-  - component: {fileID: 75782055}
   m_Layer: 5
   m_Name: Letter (11)
   m_TagString: Untagged
@@ -5247,13 +5240,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 75782055}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 10
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5269,8 +5262,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &75782053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5289,8 +5280,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5309,19 +5298,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 75782050}
   m_CullTransparentMesh: 0
---- !u!114 &75782055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 75782050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 10
 --- !u!1 &161201490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5390,8 +5366,9 @@ GameObject:
   m_Component:
   - component: {fileID: 168497089}
   - component: {fileID: 168497090}
+  - component: {fileID: 168497091}
   m_Layer: 5
-  m_Name: Quiz
+  m_Name: Variants
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5428,13 +5405,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 168497088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f47f9bb4e2b2cf45ac751e11ffc5ee1, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d5293ab506062e4eb7c7c221471191a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   options:
   - {fileID: 498943286}
   - {fileID: 484835879}
   - {fileID: 465140162}
+--- !u!114 &168497091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168497088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f892c5ab0fc96554aa1ab1f3a7580d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &176476750
 GameObject:
   m_ObjectHideFlags: 0
@@ -5528,8 +5517,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &176476753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5548,8 +5535,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7d58421b72666914085b79c6055abb5c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5580,7 +5565,6 @@ GameObject:
   - component: {fileID: 198472097}
   - component: {fileID: 198472096}
   - component: {fileID: 198472095}
-  - component: {fileID: 198472098}
   m_Layer: 5
   m_Name: Letter (2)
   m_TagString: Untagged
@@ -5651,13 +5635,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 198472098}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -5673,8 +5657,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &198472096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5693,8 +5675,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -5713,19 +5693,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 198472093}
   m_CullTransparentMesh: 0
---- !u!114 &198472098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 198472093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 1
 --- !u!1 &199450101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5782,8 +5749,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 32
@@ -5909,8 +5874,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -5945,7 +5908,6 @@ GameObject:
   - component: {fileID: 264641926}
   - component: {fileID: 264641925}
   - component: {fileID: 264641924}
-  - component: {fileID: 264641927}
   m_Layer: 5
   m_Name: Letter (7)
   m_TagString: Untagged
@@ -6016,13 +5978,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 264641927}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6038,8 +6000,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &264641925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6058,8 +6018,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6078,19 +6036,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264641922}
   m_CullTransparentMesh: 0
---- !u!114 &264641927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 264641922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 6
 --- !u!1 &293409999
 GameObject:
   m_ObjectHideFlags: 0
@@ -6207,7 +6152,6 @@ GameObject:
   - component: {fileID: 465140166}
   - component: {fileID: 465140165}
   - component: {fileID: 465140164}
-  - component: {fileID: 465140167}
   m_Layer: 5
   m_Name: Option (3)
   m_TagString: Untagged
@@ -6278,19 +6222,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 465140167}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 168497091}
+        m_MethodName: ChooseOption
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &465140165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6309,8 +6251,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7ffd2c49c12b51a4abe0ac11bf67bb61, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6329,19 +6269,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465140162}
   m_CullTransparentMesh: 0
---- !u!114 &465140167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 465140162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db73ca252d2d0e4d819882d46eab358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 3
 --- !u!1 &467941314
 GameObject:
   m_ObjectHideFlags: 0
@@ -6397,8 +6324,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -6476,8 +6401,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -6555,8 +6478,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -6591,7 +6512,6 @@ GameObject:
   - component: {fileID: 484835883}
   - component: {fileID: 484835882}
   - component: {fileID: 484835881}
-  - component: {fileID: 484835884}
   m_Layer: 5
   m_Name: Option (2)
   m_TagString: Untagged
@@ -6662,19 +6582,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 484835884}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 168497091}
+        m_MethodName: ChooseOption
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &484835882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6693,8 +6611,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7ffd2c49c12b51a4abe0ac11bf67bb61, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6713,19 +6629,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484835879}
   m_CullTransparentMesh: 0
---- !u!114 &484835884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484835879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db73ca252d2d0e4d819882d46eab358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 2
 --- !u!1 &498943286
 GameObject:
   m_ObjectHideFlags: 0
@@ -6738,7 +6641,6 @@ GameObject:
   - component: {fileID: 498943290}
   - component: {fileID: 498943289}
   - component: {fileID: 498943288}
-  - component: {fileID: 498943291}
   m_Layer: 5
   m_Name: Option (1)
   m_TagString: Untagged
@@ -6809,19 +6711,17 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 498943291}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 168497091}
+        m_MethodName: ChooseOption
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &498943289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6840,8 +6740,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 7ffd2c49c12b51a4abe0ac11bf67bb61, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -6860,19 +6758,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498943286}
   m_CullTransparentMesh: 0
---- !u!114 &498943291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 498943286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9db73ca252d2d0e4d819882d46eab358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 1
 --- !u!1 &505493006
 GameObject:
   m_ObjectHideFlags: 0
@@ -6928,8 +6813,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 38
@@ -7007,8 +6890,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -7086,8 +6967,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -7116,6 +6995,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709748144}
   - component: {fileID: 709748145}
+  - component: {fileID: 709748146}
   m_Layer: 5
   m_Name: Letters
   m_TagString: Untagged
@@ -7163,10 +7043,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 709748143}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33595a2d69994c9499e04bc6e66d7126, type: 3}
+  m_Script: {fileID: 11500000, guid: 6d5293ab506062e4eb7c7c221471191a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letters:
+  options:
   - {fileID: 721636357}
   - {fileID: 198472093}
   - {fileID: 1625911964}
@@ -7179,6 +7059,18 @@ MonoBehaviour:
   - {fileID: 750385431}
   - {fileID: 75782050}
   - {fileID: 2036838863}
+--- !u!114 &709748146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709748143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f892c5ab0fc96554aa1ab1f3a7580d9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &721636357
 GameObject:
   m_ObjectHideFlags: 0
@@ -7191,7 +7083,6 @@ GameObject:
   - component: {fileID: 721636361}
   - component: {fileID: 721636360}
   - component: {fileID: 721636359}
-  - component: {fileID: 721636362}
   m_Layer: 5
   m_Name: Letter (1)
   m_TagString: Untagged
@@ -7262,9 +7153,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 721636362}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7284,8 +7175,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &721636360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7304,8 +7193,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7324,19 +7211,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721636357}
   m_CullTransparentMesh: 0
---- !u!114 &721636362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 721636357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 0
 --- !u!1 &730030896
 GameObject:
   m_ObjectHideFlags: 0
@@ -7430,8 +7304,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &730030899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7450,8 +7322,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 65a24eda4f5058b4d878ceda9b59a716, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7544,8 +7414,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -7580,7 +7448,6 @@ GameObject:
   - component: {fileID: 750385435}
   - component: {fileID: 750385434}
   - component: {fileID: 750385433}
-  - component: {fileID: 750385436}
   m_Layer: 5
   m_Name: Letter (10)
   m_TagString: Untagged
@@ -7651,13 +7518,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 750385436}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 9
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -7673,8 +7540,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &750385434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7693,8 +7558,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7713,19 +7576,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 750385431}
   m_CullTransparentMesh: 0
---- !u!114 &750385436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750385431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 9
 --- !u!1 &797890995
 GameObject:
   m_ObjectHideFlags: 0
@@ -7781,8 +7631,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -7860,8 +7708,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 5caecf3d854ffeb4786e1f23367d9ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -7935,8 +7781,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 38
@@ -8052,8 +7896,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &907122642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8072,8 +7914,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 4fa949111e68d4f44ac285e599b95306, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8103,8 +7943,9 @@ GameObject:
   - component: {fileID: 980628423}
   - component: {fileID: 980628422}
   - component: {fileID: 980628421}
-  - component: {fileID: 980628426}
   - component: {fileID: 980628425}
+  - component: {fileID: 980628427}
+  - component: {fileID: 980628426}
   - component: {fileID: 980628424}
   m_Layer: 0
   m_Name: Main Camera
@@ -8204,9 +8045,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfa91ea4a29563429ce5a4d1876dcc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameModes:
-  - {fileID: 709748143}
-  - {fileID: 168497088}
+  letters: {fileID: 709748143}
+  variants: {fileID: 168497088}
   buttonTips: {fileID: 1510438976}
   buttonDelete: {fileID: 1104438641}
   answer: {fileID: 1234256034}
@@ -8225,6 +8065,18 @@ MonoBehaviour:
   texts:
   - {fileID: 1361523103}
   - {fileID: 1517914982}
+--- !u!114 &980628427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 980628420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef68697d6a1b75b4da8b96bed53211d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1017288429
 GameObject:
   m_ObjectHideFlags: 0
@@ -8280,8 +8132,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 38
@@ -8360,8 +8210,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 693150d17fec1d54f8f4eab5227b1c8e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8392,7 +8240,6 @@ GameObject:
   - component: {fileID: 1033540247}
   - component: {fileID: 1033540246}
   - component: {fileID: 1033540245}
-  - component: {fileID: 1033540249}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8487,18 +8334,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1033540249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1033540244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef68697d6a1b75b4da8b96bed53211d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1051212882
 GameObject:
   m_ObjectHideFlags: 0
@@ -8511,7 +8346,7 @@ GameObject:
   - component: {fileID: 1051212885}
   - component: {fileID: 1051212884}
   m_Layer: 5
-  m_Name: Line
+  m_Name: Underline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8554,8 +8389,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b6ddfc2b80324f141abb641f3c046630, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8629,8 +8462,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -8661,7 +8492,6 @@ GameObject:
   - component: {fileID: 1093594207}
   - component: {fileID: 1093594206}
   - component: {fileID: 1093594205}
-  - component: {fileID: 1093594208}
   m_Layer: 5
   m_Name: Letter (4)
   m_TagString: Untagged
@@ -8732,13 +8562,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1093594208}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8754,8 +8584,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1093594206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8774,8 +8602,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -8794,19 +8620,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093594203}
   m_CullTransparentMesh: 0
---- !u!114 &1093594208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1093594203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 3
 --- !u!1 &1104438641
 GameObject:
   m_ObjectHideFlags: 0
@@ -8890,7 +8703,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1104438646}
-        m_MethodName: PressDeleteButton
+        m_MethodName: PressDelete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8900,8 +8713,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1104438644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8920,8 +8731,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 98d2c3ff28a56da4eb2fb8d1b6b3b805, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9009,8 +8818,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 5caecf3d854ffeb4786e1f23367d9ab9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9085,8 +8892,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 0ea0914cad74a9e4680dff7f3980f181, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9162,8 +8967,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 38
@@ -9198,14 +9001,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849d56ab7f0f46f48a53b4773654c693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  responseDescription: {fileID: 199450103}
+  detailedAnswer: {fileID: 199450103}
   hiddenObjects:
   - {fileID: 1510438976}
   - {fileID: 1104438641}
   - {fileID: 709748143}
   - {fileID: 168497088}
   particle: {fileID: 41021334}
-  nextQuestion: {fileID: 1716144676}
+  updateQuestion: {fileID: 1716144676}
 --- !u!114 &1234256035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9276,8 +9079,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -9389,8 +9190,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 32
@@ -9425,7 +9224,6 @@ GameObject:
   - component: {fileID: 1378533251}
   - component: {fileID: 1378533250}
   - component: {fileID: 1378533249}
-  - component: {fileID: 1378533252}
   m_Layer: 5
   m_Name: Letter (8)
   m_TagString: Untagged
@@ -9496,13 +9294,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1378533252}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -9518,8 +9316,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1378533250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9538,8 +9334,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9558,19 +9352,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1378533247}
   m_CullTransparentMesh: 0
---- !u!114 &1378533252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1378533247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 7
 --- !u!1 &1383705266
 GameObject:
   m_ObjectHideFlags: 0
@@ -9626,8 +9407,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -9705,8 +9484,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 28
@@ -9784,8 +9561,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -9902,8 +9677,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!95 &1510438979
 Animator:
   serializedVersion: 3
@@ -9941,8 +9714,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 06416e48fc7730648af1343237c375bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -9978,8 +9749,8 @@ MonoBehaviour:
   - {fileID: 176476752}
   - {fileID: 907122641}
   letters: {fileID: 709748143}
-  spriteLetter: {fileID: 21300000, guid: ef4259bdfab7cef40bdb9bbd543f467a, type: 3}
-  animatorFrame: {fileID: 161201492}
+  highlighted: {fileID: 21300000, guid: ef4259bdfab7cef40bdb9bbd543f467a, type: 3}
+  panelIncrease: {fileID: 161201492}
 --- !u!1 &1517914980
 GameObject:
   m_ObjectHideFlags: 0
@@ -10035,8 +9806,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 32
@@ -10111,7 +9880,6 @@ GameObject:
   - component: {fileID: 1625911968}
   - component: {fileID: 1625911967}
   - component: {fileID: 1625911966}
-  - component: {fileID: 1625911969}
   m_Layer: 5
   m_Name: Letter (3)
   m_TagString: Untagged
@@ -10182,13 +9950,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1625911969}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10204,8 +9972,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1625911967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10224,8 +9990,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10244,19 +10008,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625911964}
   m_CullTransparentMesh: 0
---- !u!114 &1625911969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625911964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 2
 --- !u!1 &1716144672
 GameObject:
   m_ObjectHideFlags: 0
@@ -10313,8 +10064,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: b6ddfc2b80324f141abb641f3c046630, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -10387,8 +10136,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1897599442
 GameObject:
   m_ObjectHideFlags: 0
@@ -10444,8 +10191,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -10561,8 +10306,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1908277720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10581,8 +10324,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: e7db4cd62ae887f47a79fa227d52a852, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10693,8 +10434,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -10729,7 +10468,6 @@ GameObject:
   - component: {fileID: 1993443786}
   - component: {fileID: 1993443785}
   - component: {fileID: 1993443784}
-  - component: {fileID: 1993443787}
   m_Layer: 5
   m_Name: Letter (9)
   m_TagString: Untagged
@@ -10800,13 +10538,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1993443787}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10822,8 +10560,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1993443785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10842,8 +10578,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -10862,19 +10596,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993443782}
   m_CullTransparentMesh: 0
---- !u!114 &1993443787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1993443782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 8
 --- !u!1 &2004265960
 GameObject:
   m_ObjectHideFlags: 0
@@ -10930,8 +10651,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5d6465c81ffe1254ab093a42b868ce01, type: 3}
     m_FontSize: 28
@@ -11009,8 +10728,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: ebea232168f0f824491d2b196647979f, type: 3}
     m_FontSize: 55
@@ -11045,7 +10762,6 @@ GameObject:
   - component: {fileID: 2036838867}
   - component: {fileID: 2036838866}
   - component: {fileID: 2036838865}
-  - component: {fileID: 2036838868}
   m_Layer: 5
   m_Name: Letter (12)
   m_TagString: Untagged
@@ -11116,13 +10832,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2036838868}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 11
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11138,8 +10854,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2036838866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11158,8 +10872,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -11178,19 +10890,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036838863}
   m_CullTransparentMesh: 0
---- !u!114 &2036838868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036838863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 11
 --- !u!1 &2037077542
 GameObject:
   m_ObjectHideFlags: 0
@@ -11246,8 +10945,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
   m_Type: 2
   m_PreserveAspect: 0
@@ -11278,7 +10975,6 @@ GameObject:
   - component: {fileID: 2098568305}
   - component: {fileID: 2098568304}
   - component: {fileID: 2098568303}
-  - component: {fileID: 2098568306}
   m_Layer: 5
   m_Name: Letter (6)
   m_TagString: Untagged
@@ -11349,13 +11045,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2098568306}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11371,8 +11067,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2098568304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11391,8 +11085,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -11411,19 +11103,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098568301}
   m_CullTransparentMesh: 0
---- !u!114 &2098568306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2098568301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 5
 --- !u!1 &2143448761
 GameObject:
   m_ObjectHideFlags: 0
@@ -11436,7 +11115,6 @@ GameObject:
   - component: {fileID: 2143448765}
   - component: {fileID: 2143448764}
   - component: {fileID: 2143448763}
-  - component: {fileID: 2143448766}
   m_Layer: 5
   m_Name: Letter (5)
   m_TagString: Untagged
@@ -11507,13 +11185,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2143448766}
-        m_MethodName: PushButton
-        m_Mode: 1
+      - m_Target: {fileID: 709748146}
+        m_MethodName: ChooseLetter
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -11529,8 +11207,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &2143448764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11549,8 +11225,6 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -11569,16 +11243,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143448761}
   m_CullTransparentMesh: 0
---- !u!114 &2143448766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2143448761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30aa443c8b9b6ef4db7450298bcf186f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 4

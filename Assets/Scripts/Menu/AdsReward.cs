@@ -2,11 +2,12 @@
 using AppodealAds.Unity.Api;
 using AppodealAds.Unity.Common;
 
-public class AdsReward : Ads, IRewardedVideoAdListener
+public class AdsReward : AdsBanner, IRewardedVideoAdListener
 {
     [Header("Компонент бонуса")]
     [SerializeField] private Bonus bonus;
 
+    // Ссылка на статистику
     private Statistics statistics;
 
     private void Awake()
@@ -17,14 +18,14 @@ public class AdsReward : Ads, IRewardedVideoAdListener
 
     protected override void Start()
     {
-        // Отображение баннера
+        // Показываем баннер
         base.Start();
 
-        // Активация обратных вызовов для видеорекламы
+        // Активируем обратные вызовы для видеорекламы
         Appodeal.setRewardedVideoCallbacks(this);
     }
 
-    // Просмотр видеорекламы с вознаграждением
+    /// <summary>Просмотр видеорекламы с вознаграждением</summary>
     public void ShowRewardedVideo()
     {
         // Если реклама загружена
@@ -33,19 +34,25 @@ public class AdsReward : Ads, IRewardedVideoAdListener
             Appodeal.show(Appodeal.REWARDED_VIDEO);
     }
 
+    #region Appodeal (on rewarded video)
     public void onRewardedVideoClicked() {}
     public void onRewardedVideoClosed(bool finished) {}
     public void onRewardedVideoExpired() {}
     public void onRewardedVideoFailedToLoad() {}
-    // Успешный просмотр видеорекламы с вознаграждением
+
+    /// <summary>Успешный просмотр видеорекламы с вознаграждением</summary>
     public void onRewardedVideoFinished(double amount, string name)
     {
-        // Уменьшаем количество бонусных просмотров
+        // Уменьшаем количество просмотров
         bonus.DecreaseViews();
-        // Добавляем бонусные монеты и обновляем статистику
+
+        // Добавляем бонусные монеты
         PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 250);
+        // Обновляем статистику
         statistics.UpdateCoins();
     }
+
     public void onRewardedVideoLoaded(bool precache) {}
     public void onRewardedVideoShown() {}
+    #endregion
 }

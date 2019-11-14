@@ -4,27 +4,16 @@ using UnityEngine.UI;
 
 public class AnswerPlayers : MonoBehaviour
 {
-    private Text textAnswer;
-    private Outline outline;
-
-    private TasksPlayers photos;
-    private ImageList imageList;
-    private Button buttonLevel;
-    private Statistics statistics;
-
     [Header("Набор плиток")]
     [SerializeField] private ButtonsBall buttons;
 
-    [Header("Поле для ввода")]
+    [Header("Поле для ввода ответа")]
     [SerializeField] InputField input;
 
-    [Header("Кнопка подсказки")]
-    [SerializeField] private GameObject tips;
+    [Header("Кнопки подсказок")]
+    [SerializeField] private GameObject[] tipsButtons;
 
-    [Header("Кнопка пропуска")]
-    [SerializeField] private GameObject buttonPass;
-
-    [Header("Название команды")]
+    [Header("Текст для команды")]
     [SerializeField] private Text team;
 
     [Header("Описание задания")]
@@ -33,174 +22,226 @@ public class AnswerPlayers : MonoBehaviour
     [Header("Эффект победы")]
     [SerializeField] private ParticleSystem particle;
 
+    // Ссылки на компоненты ответа
+    private Text textAnswer;
+    private Outline outline;
+
+    // Ссылки на сторонние компоненты
+    private TasksPlayers photos;
+    private InfoPlayers information;
+    private Button nextLevel;
+    private Statistics statistics;
+
     private void Awake()
     {
         textAnswer = GetComponent<Text>();
         outline = GetComponent<Outline>();
-        photos = Camera.main.GetComponent<TasksPlayers>();
-        statistics = Camera.main.GetComponent<Statistics>();
     }
 
     private void Start()
     {
-        imageList = GameObject.FindGameObjectWithTag("Tasks").GetComponent<ImageList>();
-        buttonLevel = imageList.gameObject.GetComponent<Button>();
+        photos = Camera.main.GetComponent<TasksPlayers>();
+        information = GameObject.FindGameObjectWithTag("Tasks").GetComponent<InfoPlayers>();
+        nextLevel = information.gameObject.GetComponent<Button>();
+        statistics = Camera.main.GetComponent<Statistics>();
     }
 
-    // Проверка ответа игрока
-    public void ComparisonAnswers(bool taskSkipping = false)
+    /// <summary>Проверка ответа игрока (свой ответ или пропуск)</summary>
+    public void ComparisonAnswers(bool answer = false)
     {
         // Получаем ответы для текущего уровня (с текущим прогрессом)
-        string name = imageList.names[PlayerPrefs.GetInt(Modes.category)];
-        string lastname = imageList.lastnames[PlayerPrefs.GetInt(Modes.category)];
+        var name = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Name;
+        var lastname = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Lastname;
 
         // Ответ игрока
-        string answer;
+        string playerResponse;
 
         // Если не использован пропуск
-        if (!taskSkipping)
+        if (!answer)
         {
-            // Получаем текст с клавиатуры
-            answer = textAnswer.text.ToLower();
+            // Записываем в ответ текст с клавиатуры
+            playerResponse = textAnswer.text.ToLower();
             // Удаляем из ответа все пробелы
-            answer = answer.Replace(" ", "");
+            playerResponse = playerResponse.Replace(" ", "");
         }
-        // Иначе устанавливаем правильный ответ
-        else answer = lastname;
+        else
+        {
+            // Устанавливаем правильный ответ
+            playerResponse = lastname;
+        }
 
-        // Если ответ игрока совпадает с правильным ответом
-        if (answer == lastname || answer == (name + lastname))
+        // Если пользовательский ответ совпадает с правильным ответом
+        if (playerResponse == lastname || playerResponse == (name + lastname))
         {
             // Отключаем поле для ввода
             input.interactable = false;
 
-            // Скрываем подсказку
-            tips.SetActive(false);
-            // Останавливаем все корутины
+            // Скрываем все подсказки
+            for (int i = 0; i < tipsButtons.Length; i++) tipsButtons[i].SetActive(false);
+            // Останавливаем все отсчеты
             StopAllCoroutines();
-            // Скрываем кнопку пропуска
-            buttonPass.SetActive(false);
+
             // Выводим название команды
-            team.text = imageList.teams[PlayerPrefs.GetInt(Modes.category)];
+            team.text = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Team;
             // Выводим имя футболиста (если не пустое, добавляем пробел перед фамилией)
             textAnswer.text = name + ((name != "") ? " " : "") + lastname;
 
             // Если не использован пропуск
-            if (!taskSkipping)
+            if (!answer)
             {
                 // Выводим сообщение с поздравлением
                 description.text = "Великолепно!" + Indents.LineBreak(1) + "Это правильный ответ.";
+
                 // Воспроизводим эффект победы
                 particle.Play();
             }
-            // Иначе выводим сообщение о пропуске
-            else description.text = "Без бонуса!" + Indents.LineBreak(1) + "Использован пропуск задания.";
+            else
+            {
+                // Иначе выводим сообщение о пропуске
+                description.text = "Без бонуса!" + Indents.LineBreak(1) + "Использован пропуск задания.";
+            }
 
             // Скрываем все плитки с изображения
-            photos.UpdateButtons(true);
+            buttons.UpdateButtons(true);
 
-            // Увеличиваем прогресс и обновляем статистику
-            IncreaseProgress(taskSkipping);
-            statistics.UpdateScore();
-            statistics.UpdateCoins();
+            // Увеличиваем прогресс категории
+            IncreaseProgress(answer);
 
             // Активируем переход к следующему заданию
-            buttonLevel.interactable = true;
+            nextLevel.interactable = true;
         }
-        // Если ответ неправильный (но не пустой)
-        else if (answer != "")
+        // Если ответ неправильный
+        else if (playerResponse != "")
         {
             // Сообщаем о неправильном ответе
             textAnswer.text = "Н е в е р н о";
+            // Отображаем обводку
             outline.enabled = true;
 
-            // Увеличиваем количество ошибок
-            PlayerPrefs.SetInt(Modes.category + "-errors", PlayerPrefs.GetInt(Modes.category + "-errors") + 1);
+            // Увеличиваем общее количество ошибок
+            PlayerPrefs.SetInt(Photos.category + "-errors", PlayerPrefs.GetInt(Photos.category + "-errors") + 1);
 
-            // Через несколько секунд возвращаем стандартную запись
+            // Через несколько секунд сбрасываем ответ
             Invoke("ResetAnswer", 1.3f);
         }
-        // Если ответ пустой, сбрасываем его
-        else ResetAnswer();
+        else
+        {
+            // Если ответ пустой, сбрасываем текстовое поле
+            ResetAnswer();
+        }
     }
 
-    // Сброс ответа
+    /// <summary>Сброс текстового поля ответа</summary>
     private void ResetAnswer()
     {
-        // Отображаем начальный текст
+        // Отображаем стандартный текст
         textAnswer.text = "В в е с т и   о т в е т";
-        // Сбрасываем обводку текста
+        // Сбрасываем красную обводку текста
         outline.enabled = false;
     }
 
-    // Увеличение прогресса викторины
-    private void IncreaseProgress(bool taskSkipping)
+    /// <summary>Увеличение прогресса викторины (свой ответ или пропуск)</summary>
+    private void IncreaseProgress(bool answer)
     {
-        // Увеличиваем прогресс викторины
-        PlayerPrefs.SetInt(Modes.category, PlayerPrefs.GetInt(Modes.category) + 1);
+        // Увеличиваем прогресс активной категории
+        PlayerPrefs.SetInt(Photos.category, PlayerPrefs.GetInt(Photos.category) + 1);
 
         // Если не использован пропуск
-        if (!taskSkipping)
+        if (!answer)
         {
             // Увеличиваем общий счет и количество монет
             PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 3);
             PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 75);
+
+            // Обновляем статистику
+            statistics.UpdateScore();
         }
+        else
+        {
+            // Вычитаем штрафные монеты
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 80);
+        }
+
+        // Обновляем количество монет
+        statistics.UpdateCoins();
     }
 
-    // Обновление задания
+    /// <summary>Обновление задания</summary>
     public void TaskUpdate()
     {
         // Если текущий прогресс не превышает количество заданий
-        if (PlayerPrefs.GetInt(Modes.category) < imageList.lastnames.Length)
+        if (PlayerPrefs.GetInt(Photos.category) < information.QuantityPhotos)
         {
-            // Восстанавливаем все плитки
-            photos.UpdateButtons(false);
-            // Активируем поле для ввода
+            // Восстанавливаем плитки на изображении
+            buttons.UpdateButtons(false);
+
+            // Активируем поле для ввода ответа
             input.interactable = true;
+
             // Отключаем переход к следующему заданию
-            buttonLevel.interactable = false;
+            nextLevel.interactable = false;
 
             // Устанавливаем новое изображение
-            imageList.ShowImage();
+            information.ShowTaskImage();
             // Удаляем две случайные плитки
-            buttons.RemoveButton();
+            buttons.RemoveRandomButtons(2);
 
-            // Проверяем доступность подсказки
+            // Проверяем подсказку
             photos.CheckHint();
-            // Сбрасываем стандартную подсказку и название команды
-            description.text = "Открывай дополнительные фрагменты за 35 монет";
+
+            // Сбрасываем тексты с описанием задания и названием команды
+            description.text = "Открывай дополнительные фрагменты за 35 монет";
             team.text = "* * * * *";
 
-            // Сбрасываем текст в ответе
+            // Сбрасываем текстовое поле ответа
             ResetAnswer();
         }
-        // Иначе переходим к итогам викторины
-        else Camera.main.GetComponent<TransitionsInMenu>().GoToScene(7);
+        else
+        {
+            // Если все задания пройдены, переходим к результатам
+            Camera.main.GetComponent<TransitionsInMenu>().GoToScene(7);
+        }
     }
 
-    // Отображение кнопки пропуска
+    /// <summary>Отображение кнопки пропуска задания</summary>
     public void ShowSkipButton()
     {
-        // Если достаточно монет, отображаем кнопку пропуска через несколько секунд
-        if (PlayerPrefs.GetInt("coins") > 80) StartCoroutine(ButtonPass());
+        // Если достаточно монет
+        if (PlayerPrefs.GetInt("coins") > 80)
+            // Отображаем кнопку через несколько секунд
+            StartCoroutine(ButtonPass(2.5f));
     }
 
-    private IEnumerator ButtonPass()
+    /// <summary>Отсчет до появления кнопки (количество секунд)</summary>
+    private IEnumerator ButtonPass(float seconds)
     {
-        // Отсчет двух секунд и отображение кнопки
-        yield return new WaitForSeconds(2.5f);
-        buttonPass.SetActive(true);
+        yield return new WaitForSeconds(seconds);
+        // Отображаем кнопку пропуска
+        tipsButtons[1].SetActive(true);
     }
 
-    // Пропуск вопроса
-    public void SkipQuestion()
+    /// <summary>Отображение названия команды</summary>
+    public void ShowTeam()
     {
-        // Вычитаем монеты и обновляем статистику
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 80);
-        statistics.UpdateCoins();
+        // Выводим название команды
+        team.text = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Team;
 
-        // Вызываем проверку вопроса
+        // Вычитаем стоимость подсказки
+        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 50);
+        // Обновляем статистику с анимацией мигания
+        statistics.UpdateCoins(true);
+
+        // Увеличиваем количество использованных подсказок
+        PlayerPrefs.SetInt(Photos.category + "-tips", PlayerPrefs.GetInt(Photos.category + "-tips") + 1);
+    }
+
+    /// <summary>Пропуск задания</summary>
+    public void SkipTask()
+    {
+        // Выполняем проверку ответа с указанием пропуска
         ComparisonAnswers(true);
+
+        // Увеличиваем количество использованных пропусков заданий
+        PlayerPrefs.SetInt(Photos.category + "-pass", PlayerPrefs.GetInt(Photos.category + "-pass") + 1);
     }
 }

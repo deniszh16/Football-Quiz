@@ -6,28 +6,40 @@ public class Categories : MonoBehaviour
     public static int category;
 
     [Header("Количество вопросов")]
-    [SerializeField] private NumberTasks tasks;
-    public NumberTasks Tasks { get { return tasks; } }
+    [SerializeField] private Tasks tasks;
 
-    [Header("Анимация эффекта")]
+    // Свойство для получения количества заданий
+    public Tasks Tasks { get { return tasks; } }
+
+    [Header("Анимация эффекта открытия")]
     [SerializeField] private Animator effect;
+
+    // Свойство для получения аниматора эффекта
     public Animator Effect { get { return effect; } }
 
-    [Header("Анимация текста")]
-    [SerializeField] private Animator animator;
-    public Animator Animator { get { return animator; } }
+    [Header("Анимация текста описания")]
+    [SerializeField] private Animator text;
 
+    // Свойство для получения аниматора текста
+    public Animator TextAnimator { get { return text; } }
+
+    // Ссылка на компонент статистики
     public Statistics Statistics { get; private set; }
-    public SetsJson Sets { get; private set; } = new SetsJson();
+
+    // Объект для работы с json по прогрессу категорий
+    public SetJson Sets { get; private set; } = new SetJson();
+
+    // Ссылка на компонент переходов
     public TransitionsInMenu Transitions { get; private set; }
 
     private void Awake()
     {
-        // Преобразование сохраненной json строки по наборам в объект
-        Sets = JsonUtility.FromJson<SetsJson>(PlayerPrefs.GetString("sets"));
+        // Преобразуем сохраненную json строку по категориям в объект
+        Sets = JsonUtility.FromJson<SetJson>(PlayerPrefs.GetString("sets"));
 
+        // Получаем компоненты
         effect = effect.gameObject.GetComponent<Animator>();
-        animator = animator.gameObject.GetComponent<Animator>();
+        text = text.gameObject.GetComponent<Animator>();
         Statistics = Camera.main.GetComponent<Statistics>();
         Transitions = Camera.main.GetComponent<TransitionsInMenu>();
     }

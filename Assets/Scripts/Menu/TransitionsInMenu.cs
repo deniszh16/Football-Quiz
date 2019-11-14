@@ -4,32 +4,55 @@ using UnityEngine.SceneManagement;
 public class TransitionsInMenu : MonoBehaviour
 {
     [Header("Активность возврата")]
-    [SerializeField] protected bool backButton = true;
+    [SerializeField] private bool backButton = true;
 
     [Header("Сцена для возврата")]
-    [SerializeField] protected int previousScene;
+    [SerializeField] private int previousScene;
 
-    protected void Update()
+    // Ссылка на страницу игры в Google Play
+    private const string url = "https://play.google.com/store/apps/details?id=ru.cubra.football";
+
+    private void Update()
     {
-        // При нажатии на кнопку возврата, выполняется переход на указанную сцену
-        if (backButton && Input.GetKey(KeyCode.Escape)) SceneManager.LoadScene(previousScene);
+        // Если активен возврат и нажата кнопка возврата
+        if (backButton && Input.GetKey(KeyCode.Escape))
+            // Переходим на предыдущую сцену
+            GoToScene(previousScene);
     }
 
-    // Переход на указанную сцену
-    public void GoToScene(int scene) { SceneManager.LoadScene(scene); }
+    /// <summary>Переход на указанную сцену (номер сцены)</summary>
+    public void GoToScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
 
-    // Перезапуск сцены
-    public void RestartScene() { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
+    /// <summary>Перезапуск текущей сцены</summary>
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
-    // Переход на страницу приложения
-    public void LeaveFeedback() { Application.OpenURL("https://play.google.com/store/apps/details?id=ru.cubra.football"); }
+    /// <summary>Переход на страницу приложения</summary>
+    public void LeaveFeedback()
+    {
+        Application.OpenURL(url);
+    }
 
-    // Просмотр достижений Google Play
-    public void ViewAchievements() { PlayServices.ShowAchievements(); }
+    /// <summary>Просмотр достижений Google Play</summary>
+    public void ViewAchievements()
+    {
+        PlayServices.ShowAchievements();
+    }
 
-    // Просмотр таблицы лидеров Google Play
-    public void ViewLeaderboard() { PlayServices.ShowLeaderboard(); }
+    /// <summary>Просмотр таблицы лидеров Google Play</summary>
+    public void ViewLeaderboard()
+    {
+        PlayServices.ShowLeaderboard();
+    }
 
-    // Выход из игры
-    public void ExitGame() { Application.Quit(); }
+    /// <summary>Выход из игры</summary>
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
