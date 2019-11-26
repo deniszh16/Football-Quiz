@@ -4,6 +4,6 @@ using System.Collections.Generic;
 [Serializable]
 public class StaJson
 {
-    // Статусы кнопок легенд
+    // Статусы викторины
     public List<string> Status;
 }

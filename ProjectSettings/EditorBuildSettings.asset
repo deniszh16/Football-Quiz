@@ -41,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu/Leaderboard.unity
     guid: a389a0c9f053a48449b4760ba0201703
+  - enabled: 1
+    path: Assets/Scenes/Facts/Collections.unity
+    guid: fc119d0d862bbc64995d8f8abed9358a
+  - enabled: 1
+    path: Assets/Scenes/Facts/Facts.unity
+    guid: dd70e2d48d948ec499784c149327d731
+  - enabled: 1
+    path: Assets/Scenes/Facts/Listing.unity
+    guid: bbb51d53ed2a3bb4cbedab9690fcc147
   m_configObjects: {}

@@ -30,7 +30,7 @@ public class Results : MonoBehaviour
         results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("countries-answer") * 5) + Indents.LineBreak(2);
 
         // Отделяющая строка
-        results.text += Indents.Underscore(16) + Indents.LineBreak(2);
+        results.text += Indents.Underscore(20) + Indents.LineBreak(2);
 
         // Статистика по викторине с фотографиями
         results.text += "Викторина по игрокам" + Indents.LineBreak(2);
@@ -43,18 +43,20 @@ public class Results : MonoBehaviour
         results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers")) *3 + Indents.LineBreak(2);
 
         // Отделяющая строка
-        results.text += Indents.Underscore(16) + Indents.LineBreak(2);
+        results.text += Indents.Underscore(20) + Indents.LineBreak(2);
 
         // Статистика по футбольным фактам
         results.text += "Викторина по фактам" + Indents.LineBreak(2);
-        results.text += "Количество игр: " + PlayerPrefs.GetInt("facts") + Indents.LineBreak(1);
-        results.text += "Максимальная серия: " + PlayerPrefs.GetInt("facts-series") + Indents.LineBreak(1);
+        results.text += "Количество подборок: " + tasks[2].quantityLength + Indents.LineBreak(1);
+        results.text += "Всего вопросов: " + GetStatistics(tasks[2]) + Indents.LineBreak(1);
+        results.text += "Завершенные подборки: " + PlayerPrefs.GetInt("facts-quantity") + Indents.LineBreak(1);
+        results.text += "Выигранные подборки: " + PlayerPrefs.GetInt("facts-victory") + Indents.LineBreak(1);
         results.text += "Правильные ответы: " + PlayerPrefs.GetInt("facts-answer") + Indents.LineBreak(1);
         results.text += "Количество ошибок: " + PlayerPrefs.GetInt("facts-errors") + Indents.LineBreak(1);
-        results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("facts-answer") * 2) + Indents.LineBreak(2);
+        results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("facts-answer") * 3) + Indents.LineBreak(2);
 
         // Отделяющая строка
-        results.text += Indents.Underscore(16) + Indents.LineBreak(2);
+        results.text += Indents.Underscore(20) + Indents.LineBreak(2);
 
         // Статистика по легендам
         results.text += "Футбольные легенды" + Indents.LineBreak(2);

@@ -35,7 +35,7 @@ public class Biography : FileProcessing
         if (biography.Progress.Team != "")
         {
             // Создаем отделяющую черту
-            legend.text += Indents.LineBreak(2) + Indents.Underscore(16) + Indents.LineBreak(2);
+            legend.text += Indents.LineBreak(2) + Indents.Underscore(20) + Indents.LineBreak(2);
             // Выводим международные достижения
             legend.text += biography.Progress.Team;
         }
@@ -44,7 +44,7 @@ public class Biography : FileProcessing
         if (biography.Progress.Personal != "")
         {
             // Создаем отделяющую черту
-            legend.text += Indents.LineBreak(2) + Indents.Underscore(16) + Indents.LineBreak(2);
+            legend.text += Indents.LineBreak(2) + Indents.Underscore(20) + Indents.LineBreak(2);
             // Выводим особые достижения
             legend.text += biography.Progress.Personal;
             // Добавляем пару отступов

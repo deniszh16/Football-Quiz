@@ -57,10 +57,11 @@ public class LaunchGame : MonoBehaviour
         // Прогресс викторины по фактам
         if (!PlayerPrefs.HasKey("facts"))
         {
-            // Количество сыгранных игр
-            PlayerPrefs.SetInt("facts", 0);
-            // Максимальная серия ответов
-            PlayerPrefs.SetInt("facts-series", 0);
+            PlayerPrefs.SetString("facts", "{\"Status\": []}");
+            // Количество завершенных подборок
+            PlayerPrefs.SetInt("facts-quantity", 0);
+            // Количество выигранных подборок
+            PlayerPrefs.SetInt("facts-victory", 0);
             // Количество правильных ответов
             PlayerPrefs.SetInt("facts-answer", 0);
             // Количество допущенных ошибок

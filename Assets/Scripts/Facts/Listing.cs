@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ListQuestions : FileProcessing
+public class Listing : FileProcessing
 {
     [Header("Текст с вопросами")]
     [SerializeField] private Text questions;
@@ -10,12 +10,12 @@ public class ListQuestions : FileProcessing
     [SerializeField] private ScrollRect scroll;
 
     // Объект для работы с вопросами в json файле
-    private QueJson tasks = new QueJson();
+    private FacJson tasks = new FacJson();
 
     private void Awake()
     {
         // Обрабатываем json файл и записываем в переменную
-        string jsonString = ReadJsonFile("category-" + Categories.category.ToString());
+        string jsonString = ReadJsonFile("facts-" + FactsCollections.collections.ToString());
         // Преобразовываем строку в объект
         ConvertToObject(ref tasks, jsonString);
 
@@ -26,15 +26,15 @@ public class ListQuestions : FileProcessing
 
     private void Start()
     {
-        for (int i = 0; i < tasks.TaskItems.Length; i++)
+        for (int i = 0; i < tasks.Facts.Length; i++)
         {
             // Выводим вопрос
-            questions.text += Indents.LineBreak(1) + tasks.TaskItems[i].Question + Indents.LineBreak(2);
+            questions.text += Indents.LineBreak(1) + tasks.Facts[i].Question + Indents.LineBreak(2);
             // Выводим ответ на вопрос
-            questions.text += "Ответ: " + tasks.TaskItems[i].FullAnswer + Indents.LineBreak(1);
+            questions.text += "Ответ: " + (tasks.Facts[i].Answer ? "Правда" : "Неправда") + Indents.LineBreak(1);
 
             // Создаем отделяющую черту
-            questions.text += Indents.Underscore(20) + Indents.LineBreak(1);
+            questions.text += Indents.Underscore(20) + Indents.LineBreak(1);   
         }
 
         // Перемещаем скролл вверх

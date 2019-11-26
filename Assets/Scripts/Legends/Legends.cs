@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Legends : MonoBehaviour
+public class Legends : IncreaseListStatuses
 {
     // Номер выбранной карточки
     public static int descriptionCard;
@@ -36,33 +36,14 @@ public class Legends : MonoBehaviour
 
     private void Start()
     {
-        // Если карточек больше (добавлены новые), чем размер сохраненного списка
-        if (statuses.Status.Count < cards.transform.childCount)
-        {
-            // Подсчитываем разницу
-            var difference = cards.transform.childCount - statuses.Status.Count;
-
-            for (int i = 0; i < difference; i++)
-            {
-                // Добавляем недостающие закрытые элементы
-                statuses.Status.Add("no");
-            }
-
-            // Сохраняем карточки
-            SaveLegendaryCards();
-        }
+        // Проверяем необходимость увеличения списка карточек
+        AddToList(statuses, cards.transform.childCount, "legends");
 
         // Устанавливаем позицию скролла
         scroll.verticalNormalizedPosition = scrollPosition;
 
         // Проверяем легендарные карточки
         CheckLegendaryCards();
-    }
-
-    /// <summary>Сохранение списка легендарных карточек</summary>
-    private void SaveLegendaryCards()
-    {
-        PlayerPrefs.SetString("legends", JsonUtility.ToJson(statuses));
     }
 
     /// <summary>Проверка легендарных карточек</summary>
@@ -96,7 +77,7 @@ public class Legends : MonoBehaviour
                 // Записываем обновленное значение
                 statuses.Status[number] = "yes";
                 // Сохраняем данные по карточкам
-                SaveLegendaryCards();
+                SaveListStatuses(statuses, "legends");
 
                 // Увеличиваем общее количество открытых карточек
                 PlayerPrefs.SetInt("legends-open", PlayerPrefs.GetInt("legends-open") + 1);
