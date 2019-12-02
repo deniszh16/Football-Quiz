@@ -11,10 +11,10 @@ public class LaunchGame : MonoBehaviour
         if (!PlayerPrefs.HasKey("score")) PlayerPrefs.SetInt("score", 0);
         // Общее количество монет
         if (!PlayerPrefs.HasKey("coins")) PlayerPrefs.SetInt("coins", 1000);
-
-        // Прогресс категорий по странам
+        
         if (!PlayerPrefs.HasKey("sets"))
         {
+            // Прогресс категорий по странам
             PlayerPrefs.SetString("sets","{\"ArraySets\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}");
             // Количество правильных ответов
             PlayerPrefs.SetInt("countries-answer", 0);
@@ -25,10 +25,10 @@ public class LaunchGame : MonoBehaviour
             // Количество пропусков вопросов
             PlayerPrefs.SetInt("countries-pass", 0);
         }
-
-        // Прогресс викторины по игрокам
+        
         if (!PlayerPrefs.HasKey("players"))
         {
+            // Прогресс викторины по игрокам
             PlayerPrefs.SetInt("players", 0);
             // Количество допущенных ошибок
             PlayerPrefs.SetInt("players-errors", 0);
@@ -46,17 +46,18 @@ public class LaunchGame : MonoBehaviour
             // Количество использованных подсказок
             PlayerPrefs.SetInt("trainers-tips", 0);
         }
-
-        // Количество пропусков по игрокам
+        
         if (!PlayerPrefs.HasKey("players-pass"))
         {
+            // Количество пропусков по игрокам
             PlayerPrefs.SetInt("players-pass", 0);
+            // Количество пропусков по тренерам
             PlayerPrefs.SetInt("trainers-pass", 0);
         }
-
-        // Прогресс викторины по фактам
+        
         if (!PlayerPrefs.HasKey("facts"))
         {
+            // Прогресс викторины по фактам
             PlayerPrefs.SetString("facts", "{\"Status\": []}");
             // Количество завершенных подборок
             PlayerPrefs.SetInt("facts-quantity", 0);
@@ -67,22 +68,22 @@ public class LaunchGame : MonoBehaviour
             // Количество допущенных ошибок
             PlayerPrefs.SetInt("facts-errors", 0);
         }
-
-        // Прогресс легендарных карточек
+        
         if (!PlayerPrefs.HasKey("legends"))
         {
+            // Прогресс легендарных карточек
             PlayerPrefs.SetString("legends", "{\"Status\": []}");
             // Общее количество открытых карточек
             PlayerPrefs.SetInt("legends-open", 0);
         }
-
-        // Сохранение таблицы лидеров
+        
         if (!PlayerPrefs.HasKey("leaderboard"))
+            // Сохранение таблицы лидеров
             PlayerPrefs.SetString("leaderboard", "{\"Rating\": 0, \"Names\": [], \"Results\": []}");
-
-        // Сохранение последней даты
+        
         if (!PlayerPrefs.HasKey("date"))
         {
+            // Сохранение последней даты
             PlayerPrefs.SetInt("date", 0);
             // Ежедневный рекламный бонус
             PlayerPrefs.SetInt("bonus", 0);

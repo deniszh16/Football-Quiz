@@ -9,13 +9,12 @@ public class Results : MonoBehaviour
     [Header("Панель скролла")]
     [SerializeField] private ScrollRect scroll;
 
-    // Ссылка на текст скролла
+    // Ссылка текст результатов
     private Text results;
 
     private void Awake()
     {
         results = GetComponent<Text>();
-        scroll = scroll.GetComponent<ScrollRect>();
     }
 
     private void Start()
@@ -30,7 +29,7 @@ public class Results : MonoBehaviour
         results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("countries-answer") * 5) + Indents.LineBreak(2);
 
         // Отделяющая строка
-        results.text += Indents.Underscore(20) + Indents.LineBreak(2);
+        results.text += Indents.Underscore(26) + Indents.LineBreak(2);
 
         // Статистика по викторине с фотографиями
         results.text += "Викторина по игрокам" + Indents.LineBreak(2);
@@ -43,7 +42,7 @@ public class Results : MonoBehaviour
         results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers")) *3 + Indents.LineBreak(2);
 
         // Отделяющая строка
-        results.text += Indents.Underscore(20) + Indents.LineBreak(2);
+        results.text += Indents.Underscore(26) + Indents.LineBreak(2);
 
         // Статистика по футбольным фактам
         results.text += "Викторина по фактам" + Indents.LineBreak(2);
@@ -56,7 +55,7 @@ public class Results : MonoBehaviour
         results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("facts-answer") * 3) + Indents.LineBreak(2);
 
         // Отделяющая строка
-        results.text += Indents.Underscore(20) + Indents.LineBreak(2);
+        results.text += Indents.Underscore(26) + Indents.LineBreak(2);
 
         // Статистика по легендам
         results.text += "Футбольные легенды" + Indents.LineBreak(2);
@@ -68,7 +67,7 @@ public class Results : MonoBehaviour
         scroll.verticalNormalizedPosition = 1;
     }
 
-    /// <summary>Получение общего количества заданий в викторинах (объект с заданиями)</summary>
+    /// <summary>Получение общего количества заданий в викторинах (объект заданий)</summary>
     private string GetStatistics(IQuantity tasks)
     {
         // Количество заданий
@@ -76,9 +75,7 @@ public class Results : MonoBehaviour
 
         // Подсчитываем общее количество заданий
         for (int i = 0; i < tasks.quantityLength; i++)
-        {
             quantity += tasks[i];
-        }
 
         return quantity.ToString();
     }

@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class TasksCountries : FileProcessing
 {
-    // Объект для работы с вопросами
+    // Объект для работы с json по вопросам
     private QueJson tasks = new QueJson();
-
-    // Свойство для объекта с вопросами
     public QueJson Tasks { get { return tasks; } }
 
-    // Объект для работы с json по наборам уровнейё
+    // Объект для работы с json по наборам уровней
     public SetJson Sets { get; private set; } = new SetJson();
 
     [Header("Панель букв")]
@@ -26,14 +24,12 @@ public class TasksCountries : FileProcessing
 
     [Header("Компонент ответа")]
     [SerializeField] private AnswerCountries answer;
-
-    // Свойство для получения ответа
     public AnswerCountries Answer { get { return answer; } }
 
     // Первая буква ответа (для подсказки)
     public string FirstLetter { get; private set; }
 
-    // Прогресс в категории
+    // Прогресс в текущей категории
     public int Progress { get; set; }
 
     private void Awake()
@@ -45,9 +41,6 @@ public class TasksCountries : FileProcessing
 
         // Преобразуем json строку по категориям в объект 
         Sets = JsonUtility.FromJson<SetJson>(PlayerPrefs.GetString("sets"));
-
-        // Получаем компонент ответов
-        answer = answer.GetComponent<AnswerCountries>();
 
         // Записываем текущий прогресс категории
         Progress = Sets.ArraySets[Categories.category];
@@ -61,7 +54,6 @@ public class TasksCountries : FileProcessing
     /// <summary>Настройка сцены под текущий тип вопроса</summary>
     public void SceneSetting()
     {
-        // Если задание с буквами
         if (Tasks.TaskItems[Progress - 1].Type == "letters")
         {
             // Активируем панель с буквами
@@ -80,7 +72,7 @@ public class TasksCountries : FileProcessing
             variants.SetActive(true);
         }
 
-        // Подготавливаем ответ под задание
+        // Настраиваем ответ для задания
         answer.TypeAnswer(Tasks.TaskItems[Progress - 1].Type);
     }
 

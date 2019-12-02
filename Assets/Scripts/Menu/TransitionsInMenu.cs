@@ -10,13 +10,12 @@ public class TransitionsInMenu : MonoBehaviour
     [SerializeField] private int previousScene;
 
     // Ссылка на страницу игры в Google Play
-    private const string url = "https://play.google.com/store/apps/details?id=ru.cubra.football";
+    private const string link = "https://play.google.com/store/apps/details?id=ru.cubra.football";
 
     private void Update()
     {
         // Если активен возврат и нажата кнопка возврата
         if (backButton && Input.GetKey(KeyCode.Escape))
-            // Переходим на предыдущую сцену
             GoToScene(previousScene);
     }
 
@@ -35,7 +34,7 @@ public class TransitionsInMenu : MonoBehaviour
     /// <summary>Переход на страницу приложения</summary>
     public void LeaveFeedback()
     {
-        Application.OpenURL(url);
+        Application.OpenURL(link);
     }
 
     /// <summary>Просмотр достижений Google Play</summary>

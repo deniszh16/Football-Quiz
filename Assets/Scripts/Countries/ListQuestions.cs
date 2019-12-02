@@ -18,10 +18,6 @@ public class ListQuestions : FileProcessing
         string jsonString = ReadJsonFile("category-" + Categories.category.ToString());
         // Преобразовываем строку в объект
         ConvertToObject(ref tasks, jsonString);
-
-        // Получаем компоненты
-        questions = questions.GetComponent<Text>();
-        scroll = scroll.GetComponent<ScrollRect>();
     }
 
     private void Start()
@@ -34,7 +30,7 @@ public class ListQuestions : FileProcessing
             questions.text += "Ответ: " + tasks.TaskItems[i].FullAnswer + Indents.LineBreak(1);
 
             // Создаем отделяющую черту
-            questions.text += Indents.Underscore(20) + Indents.LineBreak(1);
+            questions.text += Indents.Underscore(26) + Indents.LineBreak(1);
         }
 
         // Перемещаем скролл вверх

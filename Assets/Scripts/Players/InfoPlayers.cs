@@ -11,8 +11,6 @@ public class InfoPlayers : FileProcessing
 
     // Объект для работы с json файлом по игрокам
     private PhoJson phoJson = new PhoJson();
-
-    // Свойство для получения информации по игрокам
     public PhoJson PhoJson { get { return phoJson; } }
 
     // Ссылка на компонент
@@ -20,13 +18,12 @@ public class InfoPlayers : FileProcessing
 
     private void Awake()
     {
-        // Получаем графический компонент
-        image = GetComponent<Image>();
-
         // Обрабатываем json файл и записываем в переменную
         string jsonString = ReadJsonFile(Photos.category);
         // Преобразовываем строку в объект
         ConvertToObject(ref phoJson, jsonString);
+
+        image = GetComponent<Image>();
     }
 
     private void Start()

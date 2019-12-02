@@ -19,18 +19,14 @@ public class PlayServices : MonoBehaviour
     /// <summary>Просмотр игровых достижений</summary>
     public static void ShowAchievements()
     {
-        // Если пользователь вошел в аккаунт
-        if (Social.localUser.authenticated)
-            // Отображанем список достижений
-            Social.ShowAchievementsUI();
-        else
-            SignGooglePlay();
+        // Если пользователь авторизирован, отображаем список достижений
+        if (Social.localUser.authenticated) Social.ShowAchievementsUI();
+        else SignGooglePlay();
     }
 
     /// <summary>Разблокирование достижения (идентификатор достижения)</summary>
     public static void UnlockingAchievement(string identifier)
     {
-        // Если пользователь вошел в аккаунт
         if (Social.localUser.authenticated)
             // Открываем достижение с указанным идентификатором
             Social.ReportProgress(identifier, 100.0f, (bool success) => {});
@@ -39,18 +35,15 @@ public class PlayServices : MonoBehaviour
     /// <summary>Просмотр таблицы лидеров</summary>
     public static void ShowLeaderboard()
     {
-        // Если пользователь вошел в аккаунт
         if (Social.localUser.authenticated)
             // Отображаем таблицу лидеров
             PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard);
-        else
-            SignGooglePlay();
+        else SignGooglePlay();
     }
 
     /// <summary>Отправка результата в таблицу лидеров (общий счет)</summary>
     public static void PostingScoreLeaderboard(int score)
     {
-        // Если пользователь вошел в аккаунт
         if (Social.localUser.authenticated)
             // Отправляем указанный результат в таблицу
             Social.ReportScore(score, GPGSIds.leaderboard, (bool success) => {});

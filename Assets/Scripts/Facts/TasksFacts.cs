@@ -40,20 +40,22 @@ public class TasksFacts : FileProcessing
         // Преобразовываем сохраненную json строку в объект
         statuses = JsonUtility.FromJson<StaJson>(PlayerPrefs.GetString("facts"));
 
-        // Получаем компоненты
-        timer = timer.GetComponent<Timer>();
+        // Получаем компонент статистики
         statistics = Camera.main.GetComponent<Statistics>();
     }
 
     private void Start()
     {
-        SetTask();
+        // Подписываемся на событие по завершению времени
+        timer.losing.AddListener(TimeIsOver);
+
+        SetCurrentTask();
     }
 
     /// <summary>Отображение текущего задания</summary>
-    private void SetTask()
+    private void SetCurrentTask()
     {
-        // Выводим задание
+        // Выводим задание в текстовое поле
         question.text = tasks.Facts[stage].Question;
 
         // Активируем кнопки вариантов
@@ -72,12 +74,9 @@ public class TasksFacts : FileProcessing
         // Если ответ правильный
         if (tasks.Facts[stage].Answer == state)
         {
-            // Увеличиваем счет и монеты
-            PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 3);
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 5);
-            // Обновляем статистику по счету и монетам
-            statistics.UpdateScore();
-            statistics.UpdateCoins();
+            // Увеличиваем монеты и счет
+            statistics.ChangeTotalCoins(10);
+            statistics.ChangeTotalScore(3);
 
             // Запускаем победный эффект
             particle.Play();
@@ -117,7 +116,7 @@ public class TasksFacts : FileProcessing
             timer.ResetTimer();
 
             // Выводим новое задание
-            SetTask();
+            SetCurrentTask();
         }
         else
         {
@@ -130,16 +129,29 @@ public class TasksFacts : FileProcessing
             // Закрываем категорию
             CloseCategory("victory");
 
-            // Начисляем бонус
-            PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 150);
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 350);
-            // Обновляем статистику
-            statistics.UpdateScore();
-            statistics.UpdateCoins();
+            // Увеличиваем монеты и счет
+            statistics.ChangeTotalCoins(325);
+            statistics.ChangeTotalScore(150);
         }
     }
 
-    /// <summary>Закрытие категории (результат подборки)</summary>
+    /// <summary>Завершение времени таймера</summary>
+    private void TimeIsOver()
+    {
+        // Выводим проигрышный текст
+        question.text = "Время закончилось!\nВ следующий раз старайся отвечать быстрее.";
+
+        // Отключаем кнопки вариантов
+        variants.SetActive(false);
+
+        // Увеличиваем общее количество неправильных ответов
+        PlayerPrefs.SetInt("facts-errors", PlayerPrefs.GetInt("facts-errors") + 1);
+
+        // Закрываем категорию
+        CloseCategory("loss");
+    }
+
+    /// <summary>Закрытие доступа к категории (результат подборки)</summary>
     private void CloseCategory(string result)
     {
         // Записываем результат

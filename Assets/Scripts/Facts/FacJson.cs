@@ -12,8 +12,10 @@ public class FactItems
 {
     // Вопрос задания
     public string Question;
+
     // Проверка ответа
     public bool Answer;
+
     // Описание ответа
     public string Description;
 }

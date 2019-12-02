@@ -18,12 +18,8 @@ public class Photos : MonoBehaviour
         {
             // Количество заданий
             var quantity = 0;
-
             // Подсчитываем общее количество заданий
-            for (int i = 0; i < tasks.quantityLength; i++)
-            {
-                quantity += tasks[i];
-            }
+            for (int i = 0; i < tasks.quantityLength; i++) quantity += tasks[i];
 
             // Если сохраненный прогресс больше общего количества заданий
             if (PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers") >= quantity)

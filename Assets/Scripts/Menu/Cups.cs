@@ -4,12 +4,12 @@ using UnityEngine.UI;
 public class Cups : MonoBehaviour
 {
     [Header("Кубки за прогресс")]
-    [SerializeField] private GameObject[] cups;
+    [SerializeField] private Image[] cups;
 
     [Header("Прогресс для открытия")]
     [SerializeField] private int[] progress;
 
-    [Header("Текст с прогрессом")]
+    [Header("Текст прогресса")]
     [SerializeField] private Text percent;
 
     private void Start()
@@ -17,16 +17,17 @@ public class Cups : MonoBehaviour
         // Процент прохождения
         var percentagPeassing = 0;
 
-        // Общий прогресс по викторинам
-        var overallProgress = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers");
+        // Общий прогресс по викторинам (по странам, по игрокам и тренерам, по фактам)
+        var overallProgress = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("players") 
+            + PlayerPrefs.GetInt("trainers") + PlayerPrefs.GetInt("facts-answer");
 
         for (int i = 0; i < cups.Length; i++)
         {
-            // Если общий прогресс превышает значение для открытия
+            // Если общий прогресс превышает кубковый
             if (progress[i] <= overallProgress)
             {
                 // Убираем прозрачность у кубка
-                cups[i].GetComponent<Image>().color = Color.white;
+                cups[i].color = Color.white;
 
                 // Увеличиваем процент прохождения
                 percentagPeassing += 15;

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Tasks", menuName = "Tasks", order = 51)]
+[CreateAssetMenu(fileName = "New Tasks", menuName = "Tasks")]
 public class Tasks : ScriptableObject, IQuantity
 {
     [Header("Количество вопросов")]

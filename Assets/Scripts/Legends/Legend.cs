@@ -20,10 +20,9 @@ public class Legend : MonoBehaviour
     /// <summary>Отображение открытой карточки</summary>
     public void ShowImageCard()
     {
-        // Устанавливаем открытый спрайт
+        // Меняем спрайт карточки
         image.sprite = sprite;
 
-        // Если доступен интернет
         if (Application.internetReachability != NetworkReachability.NotReachable)
             // Разблокируем достижение с указанным идентификатором
             PlayServices.UnlockingAchievement(identifier);

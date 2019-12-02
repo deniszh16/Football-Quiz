@@ -8,10 +8,9 @@ public class DateCheck : MonoBehaviour
         // Если сохраненная дата не равна текущей
         if (PlayerPrefs.GetInt("date") != DateTime.Now.Day)
         {
-            // Открываем три просмотра видеорекламы
+            // Открываем бонусную рекламу
             PlayerPrefs.SetInt("bonus", 3);
 
-            // Сохраняем текущую дату
             PlayerPrefs.SetInt("date", DateTime.Now.Day);
         }
     }

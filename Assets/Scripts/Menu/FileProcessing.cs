@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class FileProcessing : MonoBehaviour
 {
-    /// <summary>Чтение json файла (название файла)</summary>
+    /// <summary>Чтение json файла (имя файла)</summary>
     protected string ReadJsonFile(string fileName)
     {
         // Получаем путь до json файла

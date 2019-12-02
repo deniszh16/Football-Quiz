@@ -8,11 +8,6 @@ public class DeleteLetter : MonoBehaviour
     [Header("Панель букв")]
     [SerializeField] private GameObject letters;
 
-    private void Awake()
-    {
-        answer = answer.GetComponent<AnswerCountries>();
-    }
-
     /// <summary>Нажатие на кнопку удаления буквы</summary>
     public void PressDelete()
     {
@@ -21,18 +16,16 @@ public class DeleteLetter : MonoBehaviour
         {
             // Стираем последнюю букву
             answer.PlayerResponse[answer.QuantityLetters - 1] = null;
-
-            // Обновляем поле ответа
-            answer.UpdateAnswer();
+            // Обновляем текстовое поле ответа
+            answer.UpdateResponseField();
 
             // Отображаем скрытую кнопку буквы
             letters.transform.GetChild(answer.NumbersLetters[answer.QuantityLetters - 1]).gameObject.SetActive(true);
-
             // Уменьшаем количество открытых букв
             answer.QuantityLetters--;
 
-            // Если отображалась обводка ответа, убираем её
-            if (answer.Outline.enabled) answer.Outline.enabled = false;
+            // Убираем красную обводку ответа
+            answer.ChangeOutlineText(false);
         }
     }
 }

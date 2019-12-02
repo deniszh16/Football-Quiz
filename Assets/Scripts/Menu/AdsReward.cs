@@ -12,13 +12,11 @@ public class AdsReward : AdsBanner, IRewardedVideoAdListener
 
     private void Awake()
     {
-        bonus = bonus.GetComponent<Bonus>();
         statistics = Camera.main.GetComponent<Statistics>();
     }
 
     protected override void Start()
     {
-        // Показываем баннер
         base.Start();
 
         // Активируем обратные вызовы для видеорекламы
@@ -43,13 +41,11 @@ public class AdsReward : AdsBanner, IRewardedVideoAdListener
     /// <summary>Успешный просмотр видеорекламы с вознаграждением</summary>
     public void onRewardedVideoFinished(double amount, string name)
     {
-        // Уменьшаем количество просмотров
+        // Уменьшаем количество доступных на этот день просмотров
         bonus.DecreaseViews();
 
         // Добавляем бонусные монеты
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 250);
-        // Обновляем статистику
-        statistics.UpdateCoins();
+        statistics.ChangeTotalCoins(250);
     }
 
     public void onRewardedVideoLoaded(bool precache) {}

@@ -23,7 +23,7 @@ public class Tips : MonoBehaviour
     [Header("Спрайт первой буквы")]
     [SerializeField] private Sprite highlighted;
 
-    [Header("Анимация увеличения панели")]
+    [Header("Анимация панели")]
     [SerializeField] private Animator panelIncrease;
 
     // Ссылки на компоненты
@@ -36,7 +36,6 @@ public class Tips : MonoBehaviour
         image = GetComponent<Image>();
         questions = Camera.main.GetComponent<TasksCountries>();
         statistics = Camera.main.GetComponent<Statistics>();
-        panelIncrease = panelIncrease.GetComponent<Animator>();
     }
 
     /// <summary>Проверка подсказок на доступность</summary>
@@ -58,13 +57,11 @@ public class Tips : MonoBehaviour
     /// <summary>Открытие или закрытие панели подсказок</summary>
     public void ChoiceHints()
     {
-        // Переключение переменной отображения
+        // Переключение переменной отображения панели подсказок
         displayTips = !displayTips;
 
-        // Если панель открыта
         if (displayTips)
         {
-            // Проверяем подсказки
             CheckTips();
             // Делаем кнопку открытия подсказок полупрозрачной
             image.color = new Color(255, 255, 255, 0.45f);
@@ -77,24 +74,21 @@ public class Tips : MonoBehaviour
 
         // Активируем анимацию панели
         panelIncrease.enabled = true;
-        // Запускаем указанную анимацию панели
         panelIncrease.SetBool("Open", displayTips);
     }
 
-    /// <summary>Скрытие панели подсказок при нажатии на букву в задании</summary>
+    /// <summary>Скрытие панели подсказок при нажатии на букву</summary>
     public void CloseTips()
     {
         if (displayTips) ChoiceHints();
     }
 
-    /// <summary>Восстановление всех выбранных (скрытых) букв</summary>
+    /// <summary>Восстановление всех выбранных букв</summary>
     private void ShowAllLetters()
     {
         for (int i = 0; i < 12; i++)
-        {
-            // Находим и активируем кнопку
+            // Находим и активируем кнопку буквы
             letters.transform.GetChild(i).gameObject.SetActive(true);
-        }
     }
 
     /// <summary>Подсказка для выделения первой буквы ответа</summary>
@@ -103,11 +97,10 @@ public class Tips : MonoBehaviour
         // Используем подсказку
         UseTip((int)ListTips.First);
 
-        // Поиск первой буквы в массиве
+        // Ищем первую букву ответа в массиве
         var letter = questions.LetterSearch();
-
         // Если буква найдена, заменяем стандартный спрайт на выделенный
-        if (letter > 0) letters.transform.GetChild(letter).GetComponent<Image>().sprite = highlighted;
+        if (letter >= 0) letters.transform.GetChild(letter).GetComponent<Image>().sprite = highlighted;  
     }
 
     /// <summary>Подсказка для удаление всех лишних букв</summary>
@@ -125,9 +118,8 @@ public class Tips : MonoBehaviour
     {
         for (int i = 0; i < letters.transform.childCount; i++)
         {
-            // Поиск указанной буквы в массиве ответа
+            // Ищем указанную букву в массиве ответа
             var letter = questions.LetterSearch(i);
-
             // Если буква не найдена, скрываем кнопку с этой буквой
             if (letter < 0) letters.transform.GetChild(i).gameObject.SetActive(false);
         }
@@ -143,16 +135,13 @@ public class Tips : MonoBehaviour
         questions.Answer.GetRightAnswer();
     }
 
-    /// <summary>Действия при использовании подсказки (номер подсказки в массиве)</summary>
+    /// <summary>Действия при использовании подсказки (номер подсказки)</summary>
     private void UseTip(int number)
     {
         // Получаем стоимость подсказки
         var cost = tips.ElementAt(number).Key;
-
-        // Вычитаем из общего количества монет стоимость подсказки
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - cost);
-        // Обновляем статистику с анимацией мигания
-        statistics.UpdateCoins(true);
+        // Вычитаем стоимость подсказки
+        statistics.ChangeTotalCoins(-cost);
 
         // Сворачиваем панель подсказок
         ChoiceHints();
@@ -163,7 +152,7 @@ public class Tips : MonoBehaviour
         // Если выбрана подсказка
         if (number < 2)
         {
-            // Восстанавливаем буквы
+            // Восстанавливаем выбранные буквы
             ShowAllLetters();
 
             // Если ранее уже были скрыты лишние буквы
@@ -181,6 +170,6 @@ public class Tips : MonoBehaviour
         }
 
         // Сбрасываем массив с ответом пользователя
-        questions.Answer.ResetLetters(true);
+        questions.Answer.ResetLetters();
     }
 }

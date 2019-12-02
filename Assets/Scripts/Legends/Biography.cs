@@ -25,7 +25,7 @@ public class Biography : FileProcessing
 
     private void Start()
     {
-        // Устанавливаем в заголовок имя игрока
+        // Выводим в заголовок имя игрока
         heading.text = biography.Name;
 
         // Выводим клубные достижения
@@ -34,20 +34,17 @@ public class Biography : FileProcessing
         // Если есть международные достижения
         if (biography.Progress.Team != "")
         {
-            // Создаем отделяющую черту
-            legend.text += Indents.LineBreak(2) + Indents.Underscore(20) + Indents.LineBreak(2);
+            legend.text += Indents.LineBreak(2) + Indents.Underscore(26) + Indents.LineBreak(2);
             // Выводим международные достижения
             legend.text += biography.Progress.Team;
         }
 
-        // Если есть особые достижения, выводим их в текстовое поле
+        // Если есть особые достижения
         if (biography.Progress.Personal != "")
         {
-            // Создаем отделяющую черту
-            legend.text += Indents.LineBreak(2) + Indents.Underscore(20) + Indents.LineBreak(2);
+            legend.text += Indents.LineBreak(2) + Indents.Underscore(26) + Indents.LineBreak(2);
             // Выводим особые достижения
             legend.text += biography.Progress.Personal;
-            // Добавляем пару отступов
             legend.text += Indents.LineBreak(2);
         }
 

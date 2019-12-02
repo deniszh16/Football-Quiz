@@ -8,7 +8,7 @@ PlayerSettings:
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
-  defaultScreenOrientation: 4
+  defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
@@ -120,7 +120,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.1.6
+  bundleVersion: 1.2.0
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -151,6 +151,8 @@ PlayerSettings:
       sharedDepthBuffer: 1
       dashSupport: 1
       lowOverheadMode: 0
+      protectedContext: 0
+      v2Signing: 0
     enable360StereoCapture: 0
   isWsaHolographicRemotingEnabled: 0
   protectGraphicsMemory: 0
@@ -165,7 +167,7 @@ PlayerSettings:
     Android: ru.cubra.football
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 16
+  AndroidBundleVersionCode: 20
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -259,7 +261,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: '{inproject}: football.keystore'
-  AndroidKeyaliasName: 
+  AndroidKeyaliasName: football
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
@@ -280,8 +282,8 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: b56ee60837bbfd447bc91838f841062b, type: 3}
-      - {fileID: 2800000, guid: bb7716e2f211dd64a958dd7eaef5ac69, type: 3}
+      - {fileID: 2800000, guid: a4a4557781a935a46bc6f9891c63a7d7, type: 3}
+      - {fileID: 2800000, guid: bed18f41f1fcd2f478af37a6a30186c1, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
@@ -312,19 +314,19 @@ PlayerSettings:
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 7cc4f2806b50dcc4aba994ed7fa3278b, type: 3}
+      - {fileID: 2800000, guid: 829239c88909d0740a7f1352cbe6a8fe, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: e53b767d0a57e2d499d92de933593feb, type: 3}
+      - {fileID: 2800000, guid: 8155d72534ab0fd4686c3f2d978a66ef, type: 3}
       m_Width: 144
       m_Height: 144
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 6d57d05630a194d4c8497ced96edc8e3, type: 3}
+      - {fileID: 2800000, guid: 89a32d518f7653140bf8f4cfc3274f95, type: 3}
       m_Width: 96
       m_Height: 96
       m_Kind: 1
@@ -348,19 +350,19 @@ PlayerSettings:
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 7cc4f2806b50dcc4aba994ed7fa3278b, type: 3}
+      - {fileID: 2800000, guid: 829239c88909d0740a7f1352cbe6a8fe, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: e53b767d0a57e2d499d92de933593feb, type: 3}
+      - {fileID: 2800000, guid: 8155d72534ab0fd4686c3f2d978a66ef, type: 3}
       m_Width: 144
       m_Height: 144
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: 6d57d05630a194d4c8497ced96edc8e3, type: 3}
+      - {fileID: 2800000, guid: 89a32d518f7653140bf8f4cfc3274f95, type: 3}
       m_Width: 96
       m_Height: 96
       m_Kind: 0

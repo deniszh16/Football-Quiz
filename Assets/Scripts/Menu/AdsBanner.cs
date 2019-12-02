@@ -5,10 +5,7 @@ public class AdsBanner : MonoBehaviour
 {
     protected virtual void Start()
     {
-        // Если доступен интернет
-        if (Application.internetReachability != NetworkReachability.NotReachable)
-            // Отображаем баннер
-            ShowBanner();
+        if (Application.internetReachability != NetworkReachability.NotReachable) ShowBanner();
     }
 
     /// <summary>Отображение рекламного баннера</summary>

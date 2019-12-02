@@ -22,12 +22,10 @@ public class Timer : MonoBehaviour
         while (seconds > 0)
         {
             yield return new WaitForSeconds(2);
-            // Уменьшаем секунды
             seconds -= 2;
 
             // Убираем черточку таймера
             dashes[number - 1].SetActive(false);
-            // Уменьшаем номер активной черточки
             number--;
         }
 
@@ -35,7 +33,7 @@ public class Timer : MonoBehaviour
         losing?.Invoke();
     }
 
-    /// <summary>Восстановление таймера</summary>
+    /// <summary>Восстановление настроек таймера</summary>
     public void ResetTimer()
     {
         // Останавливаем отсчеты
@@ -45,7 +43,7 @@ public class Timer : MonoBehaviour
         for (int i = 0; i < dashes.Length; i++)
             dashes[i].SetActive(true);
 
-        // Восстанавливаем значения
+        // Сбрасываем значения
         seconds = 14;
         number = 7;
     }

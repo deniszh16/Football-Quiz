@@ -1,10 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class AnswerCountries : MonoBehaviour
 {
-    [Header("Текст для подробного ответа")]
+    [Header("Подробный ответ")]
     [SerializeField] private Text detailedAnswer;
 
     [Header("Скрыть при победе")]
@@ -25,24 +26,23 @@ public class AnswerCountries : MonoBehaviour
     // Количество открытых букв
     public int QuantityLetters { get; set; }
 
-    // Ссылки на компоненты
+    // Ссылки на используемые компоненты
     private Text textAnswer;
-    public Outline Outline { get; private set; }
+    private Outline outlineAnswer;
     private TasksCountries questions;
     private Statistics statistics;
 
     private void Awake()
     {
         textAnswer = GetComponent<Text>();
-        Outline = GetComponent<Outline>();
+        outlineAnswer = GetComponent<Outline>();
         questions = Camera.main.GetComponent<TasksCountries>();
         statistics = Camera.main.GetComponent<Statistics>();
     }
 
-    /// <summary>Подготовка ответа для задания (тип задания)</summary>
+    /// <summary>Настройка ответа для задания (тип задания)</summary>
     public void TypeAnswer(string type)
     {
-        // Если задание с буквами
         if (type == "letters")
         {
             // Создаем новый массив равный количеству букв в ответе
@@ -51,48 +51,51 @@ public class AnswerCountries : MonoBehaviour
             NumbersLetters = new int[PlayerResponse.Length];
 
             // Обновляем поле ответа
-            UpdateAnswer();
+            UpdateResponseField();
         }
         else
         {
-            // Иначе в поле ответа выводим три звезды
+            // Выводим три звездочки
             textAnswer.text = "*   *   *";
         }
     }
 
-    /// <summary>Обновление текстового поля ответа</summary>
-    public void UpdateAnswer()
+    /// <summary>Заполнение ответа выбранными буквами либо звездочками</summary>
+    public void UpdateResponseField()
     {
         // Сбрасываем текст ответа
         textAnswer.text = "";
 
         for (int i = 0; i < PlayerResponse.Length; i++)
         {
-            // Если ячейка в массиве заполнена, выводим значение (иначе звездочку)
-            textAnswer.text += (PlayerResponse[i] != null) ? PlayerResponse[i] : "*";
+            // Если ячейка заполнена, выводим значение (иначе звездочку)
+            textAnswer.text += PlayerResponse[i] ?? "*";
 
             // Если символ не последний, добавляем отступ между буквами
             if (i < PlayerResponse.Length - 1) textAnswer.text += "   ";
         }
     }
 
-    /// <summary>Сброс выбранных букв (обновление текстового поля)</summary>
-    public void ResetLetters(bool updateField)
+    /// <summary>Сброс выбранных букв</summary>
+    public void ResetLetters()
     {
-        // Заполняем массивы ответа пустыми значениями
-        for (int i = 0; i < PlayerResponse.Length; i++)
-        {
-            PlayerResponse[i] = null;
-            NumbersLetters[i] = 0;
-        }
+        // Очищаем массивы с выбранными буквами
+        Array.Clear(PlayerResponse, 0, PlayerResponse.Length);
+        Array.Clear(NumbersLetters, 0, NumbersLetters.Length);
 
-        // Сбрасываем количество открытых букв
+        // Обнуляем количество открытых букв
         QuantityLetters = 0;
 
-        // Обновляем текстовое поле ответа
-        if (updateField) UpdateAnswer();
-        // Если отображается обводка текста, скрываем ее
-        if (Outline) Outline.enabled = false;
+        // Обновляем поле ответа
+        UpdateResponseField();
+        // Скрываем обводку ответа
+        ChangeOutlineText(false);
+    }
+
+    /// <summary>Настройка обводки ответа</summary>
+    public void ChangeOutlineText(bool state)
+    {
+        outlineAnswer.enabled = state;
     }
 
     /// <summary>Проверка буквенного ответа (свой ответ или пропуск)</summary>
@@ -101,18 +104,14 @@ public class AnswerCountries : MonoBehaviour
         // Если массив ответа полностью совпадает с массивом выбранных букв
         if (questions.Tasks.TaskItems[questions.Progress - 1].Answer.SequenceEqual(PlayerResponse))
         {
-            // Обрабатываем правильный ответ
-            CorrectAnswer(answer);
-
-            // Выводим полное описание ответа
-            Invoke("ShowDescription", 0.2f);
+            // Скрываем лишнее, увеличиваем прогресс
+            ReceivedCorrectAnswer(answer);
         }
         // Если ответ неправильный и все буквы заполнены
         else if (PlayerResponse.Last() != null)
         {
-            // Отображаем красную обводку
-            Outline.enabled = true;
-
+            // Отображаем обводку
+            ChangeOutlineText(true);
             // Увеличиваем количество ошибок в викторине
             PlayerPrefs.SetInt("countries-error", PlayerPrefs.GetInt("countries-error") + 1);
         }
@@ -124,47 +123,34 @@ public class AnswerCountries : MonoBehaviour
         // Если выбранный вариант ответа совпадает с правильным
         if (questions.Tasks.TaskItems[questions.Progress - 1].Correct == number)
         {
-            // Обрабатываем правильный ответ
-            CorrectAnswer();
-
-            // Выводим полное описание ответа
-            Invoke("ShowDescription", 0.2f);
+            // Скрываем лишнее, увеличиваем прогресс
+            ReceivedCorrectAnswer(true);
         }
         else
         {
-            // Иначе вычитаем пятьдесят штрафных монет
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 50);
-            // Обновляем статистику
-            statistics.UpdateCoins(true);
-
+            // Вычитаем штрафные монеты
+            statistics.ChangeTotalCoins(-50);
             // Увеличиваем количество ошибок в викторине
             PlayerPrefs.SetInt("countries-error", PlayerPrefs.GetInt("countries-error") + 1);
         }
     }
 
-    /// <summary>Обработка правильного ответа (свой ответ или пропуск)</summary>
-    private void CorrectAnswer(bool answer = true)
+    /// <summary>Действия при получении правильного ответа (свой ответ или пропуск)</summary>
+    private void ReceivedCorrectAnswer(bool answer)
     {
-        // Скрываем все лишние объекты на сцене
+        // Скрываем лишние объекты на сцене
         for (int i = 0; i < hiddenObjects.Length; i++)
-        {
             hiddenObjects[i].SetActive(false);
-        }
-
-        // Выводим полный ответ в текстовое поле
-        textAnswer.text = questions.Tasks.TaskItems[questions.Progress - 1].FullAnswer;
 
         // Проигрываем победный эффект
         if (answer) particle.Play();
 
+        // Выводим ответ и полное описание ответа
+        textAnswer.text = questions.Tasks.TaskItems[questions.Progress - 1].FullAnswer;
+        detailedAnswer.text = questions.Tasks.TaskItems[questions.Progress - 1].Description;
+
         // Увеличиваем прогресс викторины
         IncreaseProgress(answer);
-    }
-
-    /// <summary>Вывод полного описания правильного ответа</summary>
-    private void ShowDescription()
-    {
-        detailedAnswer.text = questions.Tasks.TaskItems[questions.Progress - 1].Description;
     }
 
     /// <summary>Увеличение прогресса викторины (свой ответ или пропуск)</summary>
@@ -172,19 +158,17 @@ public class AnswerCountries : MonoBehaviour
     {
         if (answer)
         {
-            // Увеличиваем общий счет, количество монет и правильных ответов
-            PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 5);
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 80);
-            PlayerPrefs.SetInt("countries-answer", PlayerPrefs.GetInt("countries-answer") + 1);
+            // Увеличиваем счет и монеты
+            statistics.ChangeTotalScore(5);
+            statistics.ChangeTotalCoins(80);
 
-            // Обновляем статистику
-            statistics.UpdateCoins();
-            statistics.UpdateScore();
+            // Увеличиваем количество правильных ответов
+            PlayerPrefs.SetInt("countries-answer", PlayerPrefs.GetInt("countries-answer") + 1);
         }
 
         // Увеличиваем прогресс категории
         questions.Sets.ArraySets[Categories.category]++;
-        // Сохраняем обновленное значение
+        // Сохраняем обновленное значение прогресса
         PlayerPrefs.SetString("sets", JsonUtility.ToJson(questions.Sets));
 
         // Активируем кнопку для перехода к следующему вопросу
@@ -194,10 +178,8 @@ public class AnswerCountries : MonoBehaviour
     /// <summary>Пропуск задания</summary>
     public void GetRightAnswer()
     {
-        // Устанавливаем в пользовательский ответ массив с правильным ответом
+        // Получаем правильный ответ на задание
         PlayerResponse = questions.Tasks.TaskItems[questions.Progress - 1].Answer;
-
-        // Вызываем проверку ответа (с указанием пропуска)
         ComparisonAnswers(false);
     }
 
@@ -212,8 +194,8 @@ public class AnswerCountries : MonoBehaviour
         }
         else
         {
-            // Иначе начисляем бонус за пройденную категорию
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 500);
+            // Начисляем бонус за пройденную категорию
+            statistics.ChangeTotalCoins(500);
 
             // Переходим в список пройденных вопросов
             Camera.main.GetComponent<TransitionsInMenu>().GoToScene(4);

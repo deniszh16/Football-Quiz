@@ -11,28 +11,25 @@ public class Bonus : MonoBehaviour
 
     private void Start()
     {
-        CheckBonus(); 
+        CheckDailyBonus(); 
     }
 
     /// <summary>Проверка доступности бонуса</summary>
-    public void CheckBonus()
+    private void CheckDailyBonus()
     {
-        // Если доступны просмотры бонусной рекламы
+        // Если дрступна бонусная реклама
         if (PlayerPrefs.GetInt("bonus") > 0)
         {
-            // Активируем бонусную кнопку
+            // Активируем кнопку и эффект
             bonus.gameObject.SetActive(true);
-            // Активируем эффект сияния
             effect.SetActive(true);
         }
     }
 
-    /// <summary>Уменьшение количества доступных просмотров видеорекламы</summary>
+    /// <summary>Уменьшение количества доступных просмотров бонусной видеорекламы</summary>
     public void DecreaseViews()
     {
-        // Уменьшаем количество просмотров видеорекламы с вознаграждением
         PlayerPrefs.SetInt("bonus", PlayerPrefs.GetInt("bonus") - 1);
-
-        CheckBonus();
+        CheckDailyBonus();
     }
 }

@@ -19,19 +19,18 @@ public class TaskButton : MonoBehaviour
             // Если в массиве выбранных букв есть пустая ячейка
             if (questions.Answer.PlayerResponse[i] == null)
             {
-                // Записываем текущую букву в массив
+                // Записываем выбранную букву в массив ответа
                 questions.Answer.PlayerResponse[i] = GetButtonText(number);
                 // Увеличиваем количество открытых букв
                 questions.Answer.QuantityLetters++;
                 // Запоминаем номер выбранной буквы
                 questions.Answer.NumbersLetters[questions.Answer.QuantityLetters - 1] = number;
 
-                // Скрываем объект буквы
+                // Скрываем выбранную букву
                 transform.GetChild(number).gameObject.SetActive(false);
 
                 // Обновляем текстовое поле ответа
-                questions.Answer.UpdateAnswer();
-
+                questions.Answer.UpdateResponseField();
                 // Выполняем проверку правильного ответа
                 questions.Answer.ComparisonAnswers(true);
                 break;
@@ -48,7 +47,7 @@ public class TaskButton : MonoBehaviour
     /// <summary>Выбор варианта ответа (номер кнопки)</summary>
     public void ChooseOption(int number)
     {
-        // Скрываем объект кнопки
+        // Скрываем вариант ответа
         transform.GetChild(number - 1).gameObject.SetActive(false);
 
         // Выполняем проверку ответа

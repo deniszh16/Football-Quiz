@@ -22,11 +22,9 @@ public class AnswerPlayers : MonoBehaviour
     [Header("Эффект победы")]
     [SerializeField] private ParticleSystem particle;
 
-    // Ссылки на компоненты ответа
+    // Ссылки на компоненты
     private Text textAnswer;
     private Outline outline;
-
-    // Ссылки на сторонние компоненты
     private TasksPlayers photos;
     private InfoPlayers information;
     private Button nextLevel;
@@ -47,59 +45,37 @@ public class AnswerPlayers : MonoBehaviour
     }
 
     /// <summary>Проверка ответа игрока (свой ответ или пропуск)</summary>
-    public void ComparisonAnswers(bool answer = false)
+    public void ComparisonAnswers(bool answer)
     {
-        // Получаем ответы для текущего уровня (с текущим прогрессом)
+        // Получаем ответы для текущего уровня
         var name = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Name;
         var lastname = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Lastname;
 
         // Ответ игрока
         string playerResponse;
 
-        // Если не использован пропуск
-        if (!answer)
-        {
-            // Записываем в ответ текст с клавиатуры
-            playerResponse = textAnswer.text.ToLower();
-            // Удаляем из ответа все пробелы
-            playerResponse = playerResponse.Replace(" ", "");
-        }
-        else
-        {
-            // Устанавливаем правильный ответ
-            playerResponse = lastname;
-        }
+        // Если дан ответ, получаем его с поля ввода
+        if (answer) GetTextInput(out playerResponse);
+        // Иначе устанавливаем правильный ответ
+        else playerResponse = lastname;
 
-        // Если пользовательский ответ совпадает с правильным ответом
+        // Если полученный ответ совпадает с правильным ответом
         if (playerResponse == lastname || playerResponse == (name + lastname))
         {
             // Отключаем поле для ввода
             input.interactable = false;
 
-            // Скрываем все подсказки
+            // Скрываем все подсказки на уровне
             for (int i = 0; i < tipsButtons.Length; i++) tipsButtons[i].SetActive(false);
-            // Останавливаем все отсчеты
+            // Останавливаем все отсчеты для подсказок
             StopAllCoroutines();
 
-            // Выводим название команды
+            // Выводим название команды и полное имя футболиста
             team.text = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Team;
-            // Выводим имя футболиста (если не пустое, добавляем пробел перед фамилией)
             textAnswer.text = name + ((name != "") ? " " : "") + lastname;
 
-            // Если не использован пропуск
-            if (!answer)
-            {
-                // Выводим сообщение с поздравлением
-                description.text = "Великолепно!" + Indents.LineBreak(1) + "Это правильный ответ.";
-
-                // Воспроизводим эффект победы
-                particle.Play();
-            }
-            else
-            {
-                // Иначе выводим сообщение о пропуске
-                description.text = "Без бонуса!" + Indents.LineBreak(1) + "Использован пропуск задания.";
-            }
+            // Выводим результат в описание
+            PrintResultTask(answer);
 
             // Скрываем все плитки с изображения
             buttons.UpdateButtons(true);
@@ -115,24 +91,49 @@ public class AnswerPlayers : MonoBehaviour
         {
             // Сообщаем о неправильном ответе
             textAnswer.text = "Н е в е р н о";
-            // Отображаем обводку
+            // Отображаем обводку ответа
             outline.enabled = true;
 
             // Увеличиваем общее количество ошибок
             PlayerPrefs.SetInt(Photos.category + "-errors", PlayerPrefs.GetInt(Photos.category + "-errors") + 1);
 
             // Через несколько секунд сбрасываем ответ
-            Invoke("ResetAnswer", 1.3f);
+            Invoke("ResetAnswerText", 1.3f);
         }
         else
         {
-            // Если ответ пустой, сбрасываем текстовое поле
-            ResetAnswer();
+            // Если ответ пустой, сбрасываем его
+            ResetAnswerText();
+        }
+    }
+
+    /// <summary>Получание ответа из поля ввода</summary>
+    private void GetTextInput(out string answer)
+    {
+        answer = textAnswer.text.ToLower();
+        // Удаляем пробелы из ответа
+        answer = answer.Replace(" ", "");
+    }
+
+    /// <summary>Вывод результата после получения правильного ответа (свой ответ или пропуск)</summary>
+    private void PrintResultTask(bool answer)
+    {
+        if (answer)
+        {
+            // Выводим сообщение с поздравлением
+            description.text = "Великолепно!" + Indents.LineBreak(1) + "Это правильный ответ.";
+            // Воспроизводим победный эффект
+            particle.Play();
+        }
+        else
+        {
+            // Иначе выводим сообщение о пропуске
+            description.text = "Без бонуса!" + Indents.LineBreak(1) + "Использован пропуск задания.";
         }
     }
 
     /// <summary>Сброс текстового поля ответа</summary>
-    private void ResetAnswer()
+    private void ResetAnswerText()
     {
         // Отображаем стандартный текст
         textAnswer.text = "В в е с т и   о т в е т";
@@ -146,24 +147,17 @@ public class AnswerPlayers : MonoBehaviour
         // Увеличиваем прогресс активной категории
         PlayerPrefs.SetInt(Photos.category, PlayerPrefs.GetInt(Photos.category) + 1);
 
-        // Если не использован пропуск
-        if (!answer)
+        if (answer)
         {
-            // Увеличиваем общий счет и количество монет
-            PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 3);
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 75);
-
-            // Обновляем статистику
-            statistics.UpdateScore();
+            // Увеличиваем счет и монеты
+            statistics.ChangeTotalScore(3);
+            statistics.ChangeTotalCoins(75);
         }
         else
         {
             // Вычитаем штрафные монеты
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 80);
+            statistics.ChangeTotalCoins(-80);
         }
-
-        // Обновляем количество монет
-        statistics.UpdateCoins();
     }
 
     /// <summary>Обновление задания</summary>
@@ -183,18 +177,19 @@ public class AnswerPlayers : MonoBehaviour
 
             // Устанавливаем новое изображение
             information.ShowTaskImage();
+
             // Удаляем две случайные плитки
             buttons.RemoveRandomButtons(2);
 
-            // Проверяем подсказку
+            // Проверяем доступность подсказки
             photos.CheckHint();
 
             // Сбрасываем тексты с описанием задания и названием команды
             description.text = "Открывай дополнительные фрагменты за 35 монет";
             team.text = "* * * * *";
 
-            // Сбрасываем текстовое поле ответа
-            ResetAnswer();
+            // Сбрасываем поле ответа
+            ResetAnswerText();
         }
         else
         {
@@ -206,17 +201,15 @@ public class AnswerPlayers : MonoBehaviour
     /// <summary>Отображение кнопки пропуска задания</summary>
     public void ShowSkipButton()
     {
-        // Если достаточно монет
         if (PlayerPrefs.GetInt("coins") > 80)
             // Отображаем кнопку через несколько секунд
             StartCoroutine(ButtonPass(2.5f));
     }
 
-    /// <summary>Отсчет до появления кнопки (количество секунд)</summary>
+    /// <summary>Отсчет до появления кнопки пропуска (количество секунд)</summary>
     private IEnumerator ButtonPass(float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        // Отображаем кнопку пропуска
         tipsButtons[1].SetActive(true);
     }
 
@@ -227,10 +220,7 @@ public class AnswerPlayers : MonoBehaviour
         team.text = information.PhoJson.Players[PlayerPrefs.GetInt(Photos.category)].Team;
 
         // Вычитаем стоимость подсказки
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 50);
-        // Обновляем статистику с анимацией мигания
-        statistics.UpdateCoins(true);
-
+        statistics.ChangeTotalCoins(-50);
         // Увеличиваем количество использованных подсказок
         PlayerPrefs.SetInt(Photos.category + "-tips", PlayerPrefs.GetInt(Photos.category + "-tips") + 1);
     }
@@ -238,8 +228,8 @@ public class AnswerPlayers : MonoBehaviour
     /// <summary>Пропуск задания</summary>
     public void SkipTask()
     {
-        // Выполняем проверку ответа с указанием пропуска
-        ComparisonAnswers(true);
+        // Проверяем ответ с указанием пропуска
+        ComparisonAnswers(false);
 
         // Увеличиваем количество использованных пропусков заданий
         PlayerPrefs.SetInt(Photos.category + "-pass", PlayerPrefs.GetInt(Photos.category + "-pass") + 1);

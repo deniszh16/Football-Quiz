@@ -15,7 +15,7 @@ public class Legends : IncreaseListStatuses
     [Header("Компонент скролла")]
     [SerializeField] private ScrollRect scroll;
 
-    [Header("Анимация эффекта открытия")]
+    [Header("Анимация открытия")]
     [SerializeField] private Animator effect;
 
     // Объект для json по статусам карточек
@@ -29,8 +29,6 @@ public class Legends : IncreaseListStatuses
         // Преобразовываем сохраненную json строку в объект
         statuses = JsonUtility.FromJson<StaJson>(PlayerPrefs.GetString("legends"));
 
-        // Получаем компоненты
-        effect = effect.GetComponent<Animator>();
         statistics = Camera.main.GetComponent<Statistics>();
     }
 
@@ -67,12 +65,9 @@ public class Legends : IncreaseListStatuses
             // Если достаточно монет для открытия
             if (PlayerPrefs.GetInt("coins") >= 950)
             {
-                // Вычитаем монеты и увеличиваем общий счет
-                PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 950);
-                PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + 450);
-                // Обновляем статистику
-                statistics.UpdateCoins();
-                statistics.UpdateScore();
+                // Вычитаем монеты, увеличиваем счет
+                statistics.ChangeTotalCoins(-950);
+                statistics.ChangeTotalScore(450);
 
                 // Записываем обновленное значение
                 statuses.Status[number] = "yes";
@@ -84,35 +79,36 @@ public class Legends : IncreaseListStatuses
 
                 // Отображаем открытую карточку
                 cards.transform.GetChild(number).GetComponentInChildren<Legend>().ShowImageCard();
-                // Отображаем эффект открытия над карточкой
+                // Отображаем эффект открытия под карточкой
                 ShowOpeningEffect(cards.transform.GetChild(number).gameObject);
             }
             else
             {
-                // Если монет недостаточно, вызываем мигание монет
-                statistics.UpdateCoins(true);
+                // Вызываем мигание монет
+                statistics.UpdateTotalCoins(true);
             }
         }
         else
         {
             // Записываем последнюю позицию скролла
             scrollPosition = scroll.verticalNormalizedPosition;
+
             // Записываем номер карточки
             descriptionCard = number;
+
             // Переходим на сцену описания легенды
             Camera.main.GetComponent<TransitionsInMenu>().GoToScene(9);
         }
     }
 
-    /// <summary>Отображение эффекта открытия (карточка)</summary>
+    /// <summary>Отображение эффекта открытия (открытая карточка)</summary>
     private void ShowOpeningEffect(GameObject card)
     {
         // Переставляем эффект к карточке
         effect.transform.position = card.transform.position;
-        // Перемещаем эффект в родительский объект карточки
         effect.transform.SetParent(card.transform);
-        // Делаем эффект нулевым в иерархии
         effect.transform.SetSiblingIndex(0);
+
         // Перезапускаем анимацию
         effect.Rebind();
     }

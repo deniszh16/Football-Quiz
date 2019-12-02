@@ -16,7 +16,7 @@ public class Category : MonoBehaviour
     [SerializeField] private string identifier;
 
     // Номер текущего вопроса
-    private int currentQuestion = 0;
+    private int currentQuestion;
 
     // Ссылки на компоненты
     private Text text;
@@ -32,17 +32,14 @@ public class Category : MonoBehaviour
 
     private void Start()
     {
-        // Получаем номер текущего вопроса по данной категории
+        // Получаем номер текущего вопроса по категории
         currentQuestion = categories.Sets.ArraySets[number];
 
-        // Если категория открыта
-        if (currentQuestion != 0)
-            // Обновляем информацию
-            UpdateCategory();
+        // Если категория открыта, обновляем информацию
+        if (currentQuestion != 0) UpdateCategory();
 
-        // Если категория пройдена
+        // Если категория полностью пройдена
         if (currentQuestion > categories.Tasks[number])
-            // Если доступен интернет
             if (Application.internetReachability != NetworkReachability.NotReachable)
                 // Разблокируем достижение с указанным идентификатором
                 PlayServices.UnlockingAchievement(identifier);
@@ -51,10 +48,10 @@ public class Category : MonoBehaviour
     /// <summary>Обновление информации по открытой категории</summary>
     private void UpdateCategory()
     {
-        // Устанавливаем открытый спрайт
+        // Меняем спрайт
         image.sprite = sprite;
 
-        // Убираем прозрачность с текста статистики
+        // Убираем прозрачность текста
         text.color = Color.white;
         // Выводим количество пройденных и общее количество вопросов
         text.text = currentQuestion - 1 + " /" + categories.Tasks[number];
@@ -68,56 +65,48 @@ public class Category : MonoBehaviour
         {
             // Записываем номер категории
             Categories.category = number;
-            // Затем переходим на сцену заданий
             categories.Transitions.GoToScene(3);
         }
         // Если категория полностью пройдена
         else if (currentQuestion > categories.Tasks[number])
         {
-            // Записываем номер категории
             Categories.category = number;
-            // Затем переходим на сцену ответов
             categories.Transitions.GoToScene(4);
         }
         else
         {
-            // Если достаточно монет
             if (PlayerPrefs.GetInt("coins") >= price)
             {
-                // Открываем новую категорию
+                // Покупаем категорию
                 PaymentCategory();
             }
             else
             {
-                // Иначе активируем анимацию нехватки монет
+                // Активируем анимацию нехватки монет
                 categories.TextAnimator.enabled = true;
-                // Перезапускаем проигрывание
                 categories.TextAnimator.Rebind();
             }
         }
     }
 
-    /// <summary>Открытие новой категории</summary>
+    /// <summary>Покупка новой категории</summary>
     private void PaymentCategory()
     {
         // Вычитаем стоимость категории
-        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - price);
-        // Обновляем статистику по монетам
-        categories.Statistics.UpdateCoins();
+        categories.Statistics.ChangeTotalCoins(-price);
 
         // Открываем категорию
         categories.Sets.ArraySets[number] = 1;
-        // Увеличиваем текущий вопрос
+        // Увеличиваем номер текущего вопроса
         currentQuestion++;
         // Сохраняем обновленное значение
         PlayerPrefs.SetString("sets", JsonUtility.ToJson(categories.Sets));
 
-        // Обновляем информацию по категории
+        // Обновляем категорию
         UpdateCategory();
 
-        // Перемещаем эффект открытия к категории
+        // Перемещаем эффект открытия к категории и воспроизводим
         categories.Effect.transform.position = transform.position;
-        // Перезапускаем анимацию эффекта
         categories.Effect.Rebind();
     }
 }

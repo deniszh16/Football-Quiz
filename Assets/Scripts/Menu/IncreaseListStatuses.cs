@@ -5,17 +5,15 @@ public class IncreaseListStatuses : MonoBehaviour
     /// <summary>Добавление недостающих элементов (объект для записи, количество элементов, ключ сохранения)</summary>
     protected void AddToList(StaJson statuses, int quantity, string key)
     {
-        // Если элементов больше (добавлены новые), чем размер сохраненного списка
+        // Если добавлены новые элементы
         if (statuses.Status.Count < quantity)
         {
             // Подсчитываем разницу
             var difference = quantity - statuses.Status.Count;
 
             for (int i = 0; i < difference; i++)
-            {
                 // Добавляем недостающие элементы
                 statuses.Status.Add("no");
-            }
 
             // Сохраняем обновленный список
             SaveListStatuses(statuses, key);

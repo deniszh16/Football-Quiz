@@ -19,10 +19,8 @@ public class ButtonsBall : MonoBehaviour
     public void RemoveRandomButtons(int quantity)
     {
         for (int i = 0; i < quantity; i++)
-        {
             // Скрываем случайную плитку
             transform.GetChild(Random.Range(0, 16)).GetComponent<Animator>().enabled = true;
-        }
     }
 
     /// <summary>Отображение или скрытие плиток (состояние кнопок)</summary>
@@ -35,7 +33,6 @@ public class ButtonsBall : MonoBehaviour
 
             // Устанавливаем состояние плитки
             animator.enabled = state;
-
             // Если плитка установлена в закрытое состояние, сбрасываем анимацию
             if (!state) animator.Rebind();
         }
@@ -51,9 +48,7 @@ public class ButtonsBall : MonoBehaviour
             button.GetComponent<Animator>().enabled = true;
 
             // Вычитаем стоимость открытия плитки
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") - 35);
-            // Обновляем статистику с анимацией мигания
-            statistics.UpdateCoins(true);
+            statistics.ChangeTotalCoins(-35);
 
             // Обновляем общее количество открытых фрагментов
             PlayerPrefs.SetInt(Photos.category + "-buttons", PlayerPrefs.GetInt(Photos.category + "-buttons") + 1);
@@ -61,7 +56,7 @@ public class ButtonsBall : MonoBehaviour
         else
         {
             // Иначе уведомляем о нехватке монет
-            statistics.UpdateCoins(true);
+            statistics.UpdateTotalCoins(true);
         }    
     }
 }
