@@ -5,5 +5,5 @@ using System.Collections.Generic;
 public class StaJson
 {
     // Статусы викторины
-    public List<string> Status;
+    public List<string> status;
 }

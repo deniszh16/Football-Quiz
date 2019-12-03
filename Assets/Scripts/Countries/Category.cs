@@ -33,7 +33,7 @@ public class Category : MonoBehaviour
     private void Start()
     {
         // Получаем номер текущего вопроса по категории
-        currentQuestion = categories.Sets.ArraySets[number];
+        currentQuestion = categories.Sets.arraySets[number];
 
         // Если категория открыта, обновляем информацию
         if (currentQuestion != 0) UpdateCategory();
@@ -96,7 +96,7 @@ public class Category : MonoBehaviour
         categories.Statistics.ChangeTotalCoins(-price);
 
         // Открываем категорию
-        categories.Sets.ArraySets[number] = 1;
+        categories.Sets.arraySets[number] = 1;
         // Увеличиваем номер текущего вопроса
         currentQuestion++;
         // Сохраняем обновленное значение

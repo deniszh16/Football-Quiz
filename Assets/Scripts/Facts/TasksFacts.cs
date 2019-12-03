@@ -155,7 +155,7 @@ public class TasksFacts : FileProcessing
     private void CloseCategory(string result)
     {
         // Записываем результат
-        statuses.Status[FactsCollections.collections] = result;
+        statuses.status[FactsCollections.collections] = result;
         // Сохраняем обновленное значение
         PlayerPrefs.SetString("facts", JsonUtility.ToJson(statuses));
 

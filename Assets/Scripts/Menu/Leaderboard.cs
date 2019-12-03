@@ -30,7 +30,7 @@ public class Leaderboard : MonoBehaviour
         animator = leaderboard.gameObject.GetComponent<Animator>();
 
         // Преобразуем json строку в объект
-        leaderboardJson = JsonUtility.FromJson<LeaJson>(PlayerPrefs.GetString("leaderboard"));
+        leaderboardJson = JsonUtility.FromJson<LeaJson>(PlayerPrefs.GetString("leaders"));
     }
 
     private void Start()
@@ -122,7 +122,7 @@ public class Leaderboard : MonoBehaviour
         scroll.verticalNormalizedPosition = 1;
 
         // Сохраняем обновленные данные по игрокам
-        PlayerPrefs.SetString("leaderboard", JsonUtility.ToJson(leaderboardJson));
+        PlayerPrefs.SetString("leaders", JsonUtility.ToJson(leaderboardJson));
     }
 
     /// <summary>Поиск игрока в массиве по id (массив игроков, id игрока)</summary>

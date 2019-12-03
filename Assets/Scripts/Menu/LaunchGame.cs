@@ -15,7 +15,7 @@ public class LaunchGame : MonoBehaviour
         if (!PlayerPrefs.HasKey("sets"))
         {
             // Прогресс категорий по странам
-            PlayerPrefs.SetString("sets","{\"ArraySets\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}");
+            PlayerPrefs.SetString("sets", "{\"arraySets\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}");
             // Количество правильных ответов
             PlayerPrefs.SetInt("countries-answer", 0);
             // Количество допущенных ошибок
@@ -58,7 +58,7 @@ public class LaunchGame : MonoBehaviour
         if (!PlayerPrefs.HasKey("facts"))
         {
             // Прогресс викторины по фактам
-            PlayerPrefs.SetString("facts", "{\"Status\": []}");
+            PlayerPrefs.SetString("facts", "{\"status\": []}");
             // Количество завершенных подборок
             PlayerPrefs.SetInt("facts-quantity", 0);
             // Количество выигранных подборок
@@ -72,14 +72,14 @@ public class LaunchGame : MonoBehaviour
         if (!PlayerPrefs.HasKey("legends"))
         {
             // Прогресс легендарных карточек
-            PlayerPrefs.SetString("legends", "{\"Status\": []}");
+            PlayerPrefs.SetString("legends", "{\"status\": []}");
             // Общее количество открытых карточек
             PlayerPrefs.SetInt("legends-open", 0);
         }
         
-        if (!PlayerPrefs.HasKey("leaderboard"))
+        if (!PlayerPrefs.HasKey("leaders"))
             // Сохранение таблицы лидеров
-            PlayerPrefs.SetString("leaderboard", "{\"Rating\": 0, \"Names\": [], \"Results\": []}");
+            PlayerPrefs.SetString("leaders", "{\"Rating\": 0, \"Names\": [], \"Results\": []}");
         
         if (!PlayerPrefs.HasKey("date"))
         {

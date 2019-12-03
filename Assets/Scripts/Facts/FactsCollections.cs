@@ -39,7 +39,7 @@ public class FactsCollections : IncreaseListStatuses
         for (int i = 0; i < sets.transform.childCount; i++)
         {
             // Если подборка пройдена
-            if (statuses.Status[i] != "no")
+            if (statuses.status[i] != "no")
             {
                 // Отключаем текст с количеством вопросов
                 sets.transform.GetChild(i).transform.GetChild(0).gameObject.SetActive(false);
@@ -49,7 +49,7 @@ public class FactsCollections : IncreaseListStatuses
                 // Убираем прозрачность
                 image.color = Color.white;
                 // Устанавливаем изображение в зависимости от результата
-                image.sprite = sprites[(statuses.Status[i] == "victory") ? 0 : 1];
+                image.sprite = sprites[(statuses.status[i] == "victory") ? 0 : 1];
             }
             else
             {
@@ -66,7 +66,7 @@ public class FactsCollections : IncreaseListStatuses
         collections = number;
 
         // Если подборка не пройдена
-        if (statuses.Status[number] == "no")
+        if (statuses.status[number] == "no")
             // Переходим к викторине
             Camera.main.GetComponent<TransitionsInMenu>().GoToScene(13);
         else

@@ -167,7 +167,7 @@ public class AnswerCountries : MonoBehaviour
         }
 
         // Увеличиваем прогресс категории
-        questions.Sets.ArraySets[Categories.category]++;
+        questions.Sets.arraySets[Categories.category]++;
         // Сохраняем обновленное значение прогресса
         PlayerPrefs.SetString("sets", JsonUtility.ToJson(questions.Sets));
 

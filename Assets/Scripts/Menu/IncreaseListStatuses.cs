@@ -6,14 +6,14 @@ public class IncreaseListStatuses : MonoBehaviour
     protected void AddToList(StaJson statuses, int quantity, string key)
     {
         // Если добавлены новые элементы
-        if (statuses.Status.Count < quantity)
+        if (statuses.status.Count < quantity)
         {
             // Подсчитываем разницу
-            var difference = quantity - statuses.Status.Count;
+            var difference = quantity - statuses.status.Count;
 
             for (int i = 0; i < difference; i++)
                 // Добавляем недостающие элементы
-                statuses.Status.Add("no");
+                statuses.status.Add("no");
 
             // Сохраняем обновленный список
             SaveListStatuses(statuses, key);

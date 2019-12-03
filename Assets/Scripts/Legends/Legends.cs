@@ -50,7 +50,7 @@ public class Legends : IncreaseListStatuses
         for (int i = 0; i < cards.transform.childCount; i++)
         {
             // Если карточка открыта
-            if (statuses.Status[i] == "yes")
+            if (statuses.status[i] == "yes")
                 // Отображаем открытый вариант
                 cards.transform.GetChild(i).GetComponentInChildren<Legend>().ShowImageCard();
         }
@@ -60,7 +60,7 @@ public class Legends : IncreaseListStatuses
     public void OpenLegendaryCard(int number)
     {
         // Если карточка закрытая
-        if (statuses.Status[number] == "no")
+        if (statuses.status[number] == "no")
         {
             // Если достаточно монет для открытия
             if (PlayerPrefs.GetInt("coins") >= 950)
@@ -70,7 +70,7 @@ public class Legends : IncreaseListStatuses
                 statistics.ChangeTotalScore(450);
 
                 // Записываем обновленное значение
-                statuses.Status[number] = "yes";
+                statuses.status[number] = "yes";
                 // Сохраняем данные по карточкам
                 SaveListStatuses(statuses, "legends");
 

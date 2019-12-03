@@ -43,7 +43,7 @@ public class TasksCountries : FileProcessing
         Sets = JsonUtility.FromJson<SetJson>(PlayerPrefs.GetString("sets"));
 
         // Записываем текущий прогресс категории
-        Progress = Sets.ArraySets[Categories.category];
+        Progress = Sets.arraySets[Categories.category];
     }
 
     private void Start()
