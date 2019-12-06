@@ -79,7 +79,7 @@ public class LaunchGame : MonoBehaviour
         
         if (!PlayerPrefs.HasKey("leaders"))
             // Сохранение таблицы лидеров
-            PlayerPrefs.SetString("leaders", "{\"Rating\": 0, \"Names\": [], \"Results\": []}");
+            PlayerPrefs.SetString("leaders", "{\"Rating\": 0, \"Names\": [\"User\", \"User\", \"User\", \"User\", \"User\", \"User\", \"User\", \"User\", \"User\", \"User\"], \"Results\": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}");
         
         if (!PlayerPrefs.HasKey("date"))
         {

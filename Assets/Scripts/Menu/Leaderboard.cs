@@ -7,7 +7,7 @@ using UnityEngine.SocialPlatforms;
 
 public class Leaderboard : MonoBehaviour
 {
-    [Header("Рейтинг текущего игрока")]
+    [Header("Рейтинг игрока")]
     [SerializeField] private Text myRating;
 
     [Header("Таблица лидеров")]
@@ -37,14 +37,14 @@ public class Leaderboard : MonoBehaviour
     {
         if (Application.internetReachability != NetworkReachability.NotReachable)
         {
-            // Если пользователь вошел в аккаунт
+            // Если пользователь авторизирован
             if (Social.localUser.authenticated)
             {
                 // Отображаем информацию о загрузке
                 leaderboard.text = "Загрузка...";
                 animator.Play("Loading");
 
-                // Отправляем результат в таблицу лидеров
+                // Отправляем свой результат в таблицу лидеров
                 PlayServices.PostingScoreLeaderboard(PlayerPrefs.GetInt("score"));
 
                 // Загружаем результаты
@@ -73,10 +73,10 @@ public class Leaderboard : MonoBehaviour
             LeaderboardTimeSpan.AllTime,
             (data) =>
             {
-                // Выводим позицию текущего игрока в рейтинге
-                myRating.text = "Моя позиция - " + data.PlayerScore.rank + " место";
                 // Записываем позицию текущего игрока
                 leaderboardJson.Rating = data.PlayerScore.rank;
+                // Выводим позицию в рейтинге
+                myRating.text = "Моя позиция - " + data.PlayerScore.rank + " место";
 
                 // Загружаем информацию по другим игрокам
                 LoadUsersLeaderboard(data.Scores);
@@ -87,12 +87,10 @@ public class Leaderboard : MonoBehaviour
     /// <summary>Загрузка и отображение информации по игрокам (массив результатов)</summary>
     private void LoadUsersLeaderboard(IScore[] scores)
     {
-        // Создаем список из id пользователей
+        // Список id пользователей
         var userIds = new List<string>();
-
-        foreach (IScore score in scores)
-            // Добавляем id в список
-            userIds.Add(score.userID);
+        // Перебираем результаты и добавляем id в список
+        foreach (IScore score in scores) userIds.Add(score.userID);
 
         // Загружаем информацию по пользователям
         Social.LoadUsers(userIds.ToArray(), (users) =>
@@ -101,28 +99,25 @@ public class Leaderboard : MonoBehaviour
             animator.Play("Results");
             leaderboard.text = "";
 
-            // Номер позиции игрока
-            var rankingPosition = 0;
-
-            foreach (IScore score in scores)
+            for (int i = 0; i < scores.Length; i++)
             {
-                // Создаем пользователя и ищем его id в списке
-                IUserProfile user = FindUser(users, score.userID);
+                // Создаем пользователя и вызываем поиск его id массиве
+                IUserProfile user = FindUser(users, scores[i].userID);
 
-                // Выводим позицию, имя игрока и его набранный счет
-                leaderboard.text += (rankingPosition + 1) + " - " + ((user != null) ? user.userName : "Unknown") + " (" + score.value + ")" + ((rankingPosition < 9) ? Indents.LineBreak(2) : "");
-                // Записываем данные по игроку
-                SaveLeaderboardData(rankingPosition, (user != null) ? user.userName : "Unknown", score.value);
-
-                rankingPosition++;
+                // Выводим результаты в текстовое поле
+                leaderboard.text += (i + 1) + " - " + ((user != null) ? user.userName : "Unknown") + " (" + scores[i].value + ")" + ((i < 9) ? Indents.LineBreak(2) : "");
+                
+                // Записываем в json имена и результаты игроков
+                leaderboardJson.Names[i] = (user != null) ? user.userName : "Unknown";
+                leaderboardJson.Results[i] = scores[i].value;
             }
+
+            // Сохраняем обновленные данные по игрокам
+            PlayerPrefs.SetString("leaders", JsonUtility.ToJson(leaderboardJson));
         });
 
         // Перемещаем скролл вверх списка
         scroll.verticalNormalizedPosition = 1;
-
-        // Сохраняем обновленные данные по игрокам
-        PlayerPrefs.SetString("leaders", JsonUtility.ToJson(leaderboardJson));
     }
 
     /// <summary>Поиск игрока в массиве по id (массив игроков, id игрока)</summary>
@@ -137,14 +132,6 @@ public class Leaderboard : MonoBehaviour
         return null;
     }
 
-    /// <summary>Сохранение загруженных результатов (позиция игрока, имя игрока, счет игрока)</summary>
-    private void SaveLeaderboardData(int position, string user, long score)
-    {
-        // Записываем игрока и набранный счет
-        leaderboardJson.Names[position] = user;
-        leaderboardJson.Results[position] = score;
-    }
-
     /// <summary>Отображение сохраненных данных по игрокам</summary>
     private void ShowResultsFile()
     {
@@ -153,13 +140,14 @@ public class Leaderboard : MonoBehaviour
             // Выводим позицию текущего игрока в рейтинге
             myRating.text = "Моя позиция - " + leaderboardJson.Rating.ToString() + " место";
 
-        for (int i = 0; i < leaderboardJson.Names.Length; i++)
+        for (int i = 0; i < leaderboardJson.Results.Length; i++)
         {
-            // Сбрасываем стандартный текст
-            if (i == 0) leaderboard.text = "";
+            // Если первый результат не нулевой, очищаем текст результатов
+            if (i == 0 && leaderboardJson.Results[i] > 0) leaderboard.text = "";
 
-            // Выводим результаты по остальным игрокам
-            leaderboard.text += (i + 1) + " - " + leaderboardJson.Names[i] + " (" + leaderboardJson.Results[i] + ")" + ((i < 9) ? Indents.LineBreak(2) : "");
+            if (leaderboardJson.Results[i] > 0)
+                // Выводим результаты игроков
+                leaderboard.text += (i + 1) + " - " + leaderboardJson.Names[i] + " (" + leaderboardJson.Results[i] + ")" + ((i < 9) ? Indents.LineBreak(2) : "");
         }
 
         // Перемещаем скролл вверх
