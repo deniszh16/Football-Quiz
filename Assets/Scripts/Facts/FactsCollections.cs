@@ -33,7 +33,9 @@ public class FactsCollections : IncreaseListStatuses
         CheckCollectionsFacts();
     }
 
-    /// <summary>Проверка доступности подборок фактов</summary>
+    /// <summary>
+    /// Проверка доступности подборок фактов
+    /// </summary>
     private void CheckCollectionsFacts()
     {
         for (int i = 0; i < sets.transform.childCount; i++)
@@ -59,7 +61,10 @@ public class FactsCollections : IncreaseListStatuses
         }
     }
 
-    /// <summary>Открытие подборки фактов (номер карточки)</summary>
+    /// <summary>
+    /// Открытие подборки фактов
+    /// </summary>
+    /// <param name="number">Номер подборки</param>
     public void OpenCollectionFacts(int number)
     {
         // Записываем номер подборки

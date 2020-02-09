@@ -3,6 +3,6 @@
 [Serializable]
 public class SetJson
 {
-    // Массив с прогрессом в категориях
+    // Прогресс в категориях
     public int[] arraySets;
 }

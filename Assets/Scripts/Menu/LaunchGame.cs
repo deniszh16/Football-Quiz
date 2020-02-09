@@ -11,7 +11,7 @@ public class LaunchGame : MonoBehaviour
         if (!PlayerPrefs.HasKey("score")) PlayerPrefs.SetInt("score", 0);
         // Общее количество монет
         if (!PlayerPrefs.HasKey("coins")) PlayerPrefs.SetInt("coins", 1000);
-        
+
         if (!PlayerPrefs.HasKey("sets"))
         {
             // Прогресс категорий по странам
@@ -97,7 +97,9 @@ public class LaunchGame : MonoBehaviour
         Invoke("GoToMenu", 2.0f);
     }
 
-    /// <summary>Переход в главное меню</summary>
+    /// <summary>
+    /// Переход в главное меню
+    /// </summary>
     private void GoToMenu()
     {
         SceneManager.LoadScene(1);

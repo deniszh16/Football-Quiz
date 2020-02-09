@@ -16,7 +16,9 @@ public class Timer : MonoBehaviour
     // Последняя активная черточка
     private int number = 7;
 
-    /// <summary>Отсчет секунд до проигрыша</summary>
+    /// <summary>
+    /// Отсчет секунд до проигрыша
+    /// </summary>
     private IEnumerator LevelTimer()
     {
         while (seconds > 0)
@@ -33,7 +35,9 @@ public class Timer : MonoBehaviour
         losing?.Invoke();
     }
 
-    /// <summary>Восстановление настроек таймера</summary>
+    /// <summary>
+    /// Восстановление настроек таймера
+    /// </summary>
     public void ResetTimer()
     {
         // Останавливаем отсчеты

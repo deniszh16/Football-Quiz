@@ -52,7 +52,9 @@ public class TasksFacts : FileProcessing
         SetCurrentTask();
     }
 
-    /// <summary>Отображение текущего задания</summary>
+    /// <summary>
+    /// Отображение текущего задания
+    /// </summary>
     private void SetCurrentTask()
     {
         // Выводим задание в текстовое поле
@@ -65,7 +67,10 @@ public class TasksFacts : FileProcessing
         timer.StartCoroutine("LevelTimer");
     }
 
-    /// <summary>Проверка ответа (состояние кнопки)</summary>
+    /// <summary>
+    /// Проверка ответа
+    /// </summary>
+    /// <param name="state">Состояние кнопки</param>
     public void ComparisonAnswers(bool state)
     {
         // Останавливаем таймер
@@ -106,7 +111,9 @@ public class TasksFacts : FileProcessing
         }
     }
 
-    /// <summary>Обновление задания</summary>
+    /// <summary>
+    /// Обновление задания
+    /// </summary>
     public void TaskUpdate()
     {
         // Если текущий этап не превышает количество заданий
@@ -135,7 +142,9 @@ public class TasksFacts : FileProcessing
         }
     }
 
-    /// <summary>Завершение времени таймера</summary>
+    /// <summary>
+    /// Завершение времени таймера
+    /// </summary>
     private void TimeIsOver()
     {
         // Выводим проигрышный текст
@@ -151,7 +160,10 @@ public class TasksFacts : FileProcessing
         CloseCategory("loss");
     }
 
-    /// <summary>Закрытие доступа к категории (результат подборки)</summary>
+    /// <summary>
+    /// Закрытие доступа к категории
+    /// </summary>
+    /// <param name="result">Результат подборки</param>
     private void CloseCategory(string result)
     {
         // Записываем результат

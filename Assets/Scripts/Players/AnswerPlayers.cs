@@ -44,7 +44,10 @@ public class AnswerPlayers : MonoBehaviour
         statistics = Camera.main.GetComponent<Statistics>();
     }
 
-    /// <summary>Проверка ответа игрока (свой ответ или пропуск)</summary>
+    /// <summary>
+    /// Проверка ответа игрока
+    /// </summary>
+    /// <param name="answer">Свой ответ или пропуск</param>
     public void ComparisonAnswers(bool answer)
     {
         // Получаем ответы для текущего уровня
@@ -107,7 +110,10 @@ public class AnswerPlayers : MonoBehaviour
         }
     }
 
-    /// <summary>Получание ответа из поля ввода</summary>
+    /// <summary>
+    /// Получание ответа из поля ввода
+    /// </summary>
+    /// <param name="answer"></param>
     private void GetTextInput(out string answer)
     {
         answer = textAnswer.text.ToLower();
@@ -115,7 +121,10 @@ public class AnswerPlayers : MonoBehaviour
         answer = answer.Replace(" ", "");
     }
 
-    /// <summary>Вывод результата после получения правильного ответа (свой ответ или пропуск)</summary>
+    /// <summary>
+    /// Вывод результата после получения правильного ответа
+    /// </summary>
+    /// <param name="answer">Свой ответ или пропуск</param>
     private void PrintResultTask(bool answer)
     {
         if (answer)
@@ -132,7 +141,9 @@ public class AnswerPlayers : MonoBehaviour
         }
     }
 
-    /// <summary>Сброс текстового поля ответа</summary>
+    /// <summary>
+    /// Сброс текстового поля ответа
+    /// </summary>
     private void ResetAnswerText()
     {
         // Отображаем стандартный текст
@@ -141,7 +152,10 @@ public class AnswerPlayers : MonoBehaviour
         outline.enabled = false;
     }
 
-    /// <summary>Увеличение прогресса викторины (свой ответ или пропуск)</summary>
+    /// <summary>
+    /// Увеличение прогресса викторины
+    /// </summary>
+    /// <param name="answer">Свой ответ или пропуск</param>
     private void IncreaseProgress(bool answer)
     {
         // Увеличиваем прогресс активной категории
@@ -160,7 +174,9 @@ public class AnswerPlayers : MonoBehaviour
         }
     }
 
-    /// <summary>Обновление задания</summary>
+    /// <summary>
+    /// Обновление задания
+    /// </summary>
     public void TaskUpdate()
     {
         // Если текущий прогресс не превышает количество заданий
@@ -198,7 +214,9 @@ public class AnswerPlayers : MonoBehaviour
         }
     }
 
-    /// <summary>Отображение кнопки пропуска задания</summary>
+    /// <summary>
+    /// Отображение кнопки пропуска задания
+    /// </summary>
     public void ShowSkipButton()
     {
         if (PlayerPrefs.GetInt("coins") > 80)
@@ -206,14 +224,19 @@ public class AnswerPlayers : MonoBehaviour
             StartCoroutine(ButtonPass(2.5f));
     }
 
-    /// <summary>Отсчет до появления кнопки пропуска (количество секунд)</summary>
+    /// <summary>
+    /// Отсчет до появления кнопки пропуска
+    /// </summary>
+    /// <param name="seconds">Количество секунд</param>
     private IEnumerator ButtonPass(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         tipsButtons[1].SetActive(true);
     }
 
-    /// <summary>Отображение названия команды</summary>
+    /// <summary>
+    /// Отображение названия команды
+    /// </summary>
     public void ShowTeam()
     {
         // Выводим название команды
@@ -225,7 +248,9 @@ public class AnswerPlayers : MonoBehaviour
         PlayerPrefs.SetInt(Photos.category + "-tips", PlayerPrefs.GetInt(Photos.category + "-tips") + 1);
     }
 
-    /// <summary>Пропуск задания</summary>
+    /// <summary>
+    /// Пропуск задания
+    /// </summary>
     public void SkipTask()
     {
         // Проверяем ответ с указанием пропуска

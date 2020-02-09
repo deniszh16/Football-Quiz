@@ -11,7 +11,10 @@ public class TaskButton : MonoBehaviour
         questions = Camera.main.GetComponent<TasksCountries>();
     }
 
-    /// <summary>Выбор буквы (номер буквы)</summary>
+    /// <summary>
+    /// Выбор буквы
+    /// </summary>
+    /// <param name="number">Номер буквы</param>
     public void ChooseLetter(int number)
     {
         for (int i = 0; i < questions.Answer.PlayerResponse.Length; i++)
@@ -38,13 +41,19 @@ public class TaskButton : MonoBehaviour
         }
     }
 
-    /// <summary>Получение текста с нажатой кнопки (номер кнопки)</summary>
+    /// <summary>
+    /// Получение текста с нажатой кнопки
+    /// </summary>
+    /// <param name="number">Номер кнопки</param>
     private string GetButtonText(int number)
     {
         return transform.GetChild(number).GetComponentInChildren<Text>().text.ToLower();
     }
 
-    /// <summary>Выбор варианта ответа (номер кнопки)</summary>
+    /// <summary>
+    /// Выбор варианта ответа
+    /// </summary>
+    /// <param name="number">Номер кнопки</param>
     public void ChooseOption(int number)
     {
         // Скрываем вариант ответа

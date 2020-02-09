@@ -22,7 +22,9 @@ public class TaskOptions : MonoBehaviour
         else VariantsArrange();     
     }
 
-    /// <summary>Расстановка букв из задания</summary>
+    /// <summary>
+    /// Расстановка букв из задания
+    /// </summary>
     private void LettersArrange()
     {
         for (int i = 0; i < options.Length; i++)
@@ -30,7 +32,9 @@ public class TaskOptions : MonoBehaviour
             options[i].GetComponentInChildren<Text>().text = questions.Tasks.TaskItems[questions.Progress - 1].Letters[i];
     }
 
-    /// <summary>Растановка вариантов ответа</summary>
+    /// <summary>
+    /// Растановка вариантов ответа
+    /// </summary>
     private void VariantsArrange()
     {
         for (int i = 0; i < options.Length; i++)

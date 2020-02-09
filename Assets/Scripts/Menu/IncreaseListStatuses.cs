@@ -2,7 +2,12 @@
 
 public class IncreaseListStatuses : MonoBehaviour
 {
-    /// <summary>Добавление недостающих элементов (объект для записи, количество элементов, ключ сохранения)</summary>
+    /// <summary>
+    /// Добавление недостающих элементов (увеличение списка категорий)
+    /// </summary>
+    /// <param name="statuses">Объект для записи</param>
+    /// <param name="quantity">Количество элементов</param>
+    /// <param name="key">Ключ сохранения</param>
     protected void AddToList(StaJson statuses, int quantity, string key)
     {
         // Если добавлены новые элементы
@@ -11,8 +16,8 @@ public class IncreaseListStatuses : MonoBehaviour
             // Подсчитываем разницу
             var difference = quantity - statuses.status.Count;
 
+            // Добавляем недостающие элементы
             for (int i = 0; i < difference; i++)
-                // Добавляем недостающие элементы
                 statuses.status.Add("no");
 
             // Сохраняем обновленный список
@@ -20,7 +25,11 @@ public class IncreaseListStatuses : MonoBehaviour
         }
     }
 
-    /// <summary>Сохранение списка статусов (объект для записи, ключ сохранения)</summary>
+    /// <summary>
+    /// Сохранение списка статусов
+    /// </summary>
+    /// <param name="statuses">Объект для записи</param>
+    /// <param name="key">Ключ сохранения</param>
     protected void SaveListStatuses(StaJson statuses, string key)
     {
         PlayerPrefs.SetString(key, JsonUtility.ToJson(statuses));

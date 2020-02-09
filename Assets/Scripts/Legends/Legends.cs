@@ -44,7 +44,9 @@ public class Legends : IncreaseListStatuses
         CheckLegendaryCards();
     }
 
-    /// <summary>Проверка легендарных карточек</summary>
+    /// <summary>
+    /// Проверка легендарных карточек
+    /// </summary>
     private void CheckLegendaryCards()
     {
         for (int i = 0; i < cards.transform.childCount; i++)
@@ -56,7 +58,10 @@ public class Legends : IncreaseListStatuses
         }
     }
 
-    /// <summary>Открытие легендарной карточки (номер карточки)</summary>
+    /// <summary>
+    /// Открытие легендарной карточки
+    /// </summary>
+    /// <param name="number">Номер карточки</param>
     public void OpenLegendaryCard(int number)
     {
         // Если карточка закрытая
@@ -90,18 +95,24 @@ public class Legends : IncreaseListStatuses
         }
         else
         {
-            // Записываем последнюю позицию скролла
-            scrollPosition = scroll.verticalNormalizedPosition;
+            if (cards.transform.GetChild(number).GetComponentInChildren<Legend>().Biography)
+            {
+                // Записываем последнюю позицию скролла
+                scrollPosition = scroll.verticalNormalizedPosition;
 
-            // Записываем номер карточки
-            descriptionCard = number;
+                // Записываем номер карточки
+                descriptionCard = number;
 
-            // Переходим на сцену описания легенды
-            Camera.main.GetComponent<TransitionsInMenu>().GoToScene(9);
+                // Переходим на сцену описания легенды
+                Camera.main.GetComponent<TransitionsInMenu>().GoToScene(9);
+            }
         }
     }
 
-    /// <summary>Отображение эффекта открытия (открытая карточка)</summary>
+    /// <summary>
+    /// Отображение эффекта открытия
+    /// </summary>
+    /// <param name="card">Открытая карточка</param>
     private void ShowOpeningEffect(GameObject card)
     {
         // Переставляем эффект к карточке

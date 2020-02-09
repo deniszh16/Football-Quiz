@@ -4,7 +4,11 @@ using UnityEngine.Networking;
 
 public class FileProcessing : MonoBehaviour
 {
-    /// <summary>Чтение json файла (имя файла)</summary>
+    /// <summary>
+    /// Чтение json файла
+    /// </summary>
+    /// <param name="fileName">Имя файла</param>
+    /// <returns>Строка, полученная из файла</returns>
     protected string ReadJsonFile(string fileName)
     {
         // Получаем путь до json файла
@@ -21,7 +25,11 @@ public class FileProcessing : MonoBehaviour
         return reader.downloadHandler.text;
     }
 
-    /// <summary>Преобразование json строки в объект (объект для записи, json строка)</summary>
+    /// <summary>
+    /// Преобразование json строки в объект (объект для записи, )
+    /// </summary>
+    /// <param name="obj">Объект для записи</param>
+    /// <param name="json">Текстовая json строка</param>
     protected void ConvertToObject<T>(ref T obj, string json)
     {
         obj = JsonUtility.FromJson<T>(json);

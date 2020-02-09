@@ -16,7 +16,7 @@ public class PositionChange : MonoBehaviour
     private void Start()
     {
         // Если соотношение сторон экрана меньше указанного значения (узкий экран)
-        if (AspectRatio.mainCamera.aspect <= 0.5f)
+        if (AspectRatio._camera.aspect <= 0.5f)
             // Изменяем позицию объекта
             rectTransform.anchoredPosition = position;
     }

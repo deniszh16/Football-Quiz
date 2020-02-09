@@ -6,7 +6,7 @@ public class Statistics : MonoBehaviour
     [Header("Тексты статистики")]
     [SerializeField] private Text[] texts;
 
-    // Ссылка на аниматор текста
+    // Ссылка на анимацию текста
     private Animator animator;
 
     private void Awake()
@@ -20,20 +20,28 @@ public class Statistics : MonoBehaviour
         UpdateTotalCoins(false);
     }
 
-    /// <summary>Изменение общего счета (значение)</summary>
+    /// <summary>
+    /// Изменение общего счета
+    /// </summary>
+    /// <param name="value">Количество очков</param>
     public void ChangeTotalScore(int value)
     {
         PlayerPrefs.SetInt("score", PlayerPrefs.GetInt("score") + value);
         UpdateTotalScore();
     }
 
-    /// <summary>Обновление статистики общего счета</summary>
+    /// <summary>
+    /// Обновление статистики по общему счету
+    /// </summary>
     public void UpdateTotalScore()
     {
         texts[0].text = PlayerPrefs.GetInt("score").ToString();
     }
 
-    /// <summary>Изменение количества монет (значение)</summary>
+    /// <summary>
+    /// Изменение количества монет
+    /// </summary>
+    /// <param name="value">Количество монет</param>
     public void ChangeTotalCoins(int value)
     {
         PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + value);
@@ -41,11 +49,14 @@ public class Statistics : MonoBehaviour
         // Если монеты ушли в минус, обнуляем общее количество
         if (PlayerPrefs.GetInt("coins") < 0) PlayerPrefs.SetInt("coins", 0);
 
-        // Если значение больше нуля, вызываем обновление статистики с анимацией
+        // Если значение меньше нуля, активируем анимацию вычитания
         UpdateTotalCoins(value > 0 ? false : true);
     }
 
-    /// <summary>Обновление статистики монет (анимация вычитания)</summary>
+    /// <summary>
+    /// Обновление статистики монет
+    /// </summary>
+    /// <param name="blinking">Анимация вычитания</param>
     public void UpdateTotalCoins(bool blinking)
     {
         texts[1].text = PlayerPrefs.GetInt("coins").ToString();

@@ -2,11 +2,11 @@
 
 public class AspectRatio : MonoBehaviour
 {
-    // Ссылка на главную камеру
-    public static Camera mainCamera;
+    // Ссылка на основную камеру
+    public static Camera _camera;
 
     private void Awake()
     {
-        mainCamera = GetComponent<Camera>();
+        _camera = GetComponent<Camera>();
     }
 }

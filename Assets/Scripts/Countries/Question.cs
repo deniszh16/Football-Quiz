@@ -21,7 +21,9 @@ public class Question : MonoBehaviour
             GetQuestion();
     }
 
-    /// <summary>Вывод вопроса из массива</summary>
+    /// <summary>
+    /// Вывод вопроса из массива
+    /// </summary>
     public void GetQuestion()
     {
         textComponent.text = questions.Tasks.TaskItems[questions.Progress - 1].Question;

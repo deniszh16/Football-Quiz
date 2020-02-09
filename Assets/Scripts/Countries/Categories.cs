@@ -18,7 +18,7 @@ public class Categories : MonoBehaviour
     public Animator TextAnimator { get { return text; } }
 
     // Объект для работы с json по прогрессу категорий
-    public SetJson Sets { get; private set; } = new SetJson();
+    public SetJson Sets { get; set; } = new SetJson();
 
     // Ссылка на используемые компоненты
     public Statistics Statistics { get; private set; }

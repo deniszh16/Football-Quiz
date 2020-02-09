@@ -40,7 +40,10 @@ public class AnswerCountries : MonoBehaviour
         statistics = Camera.main.GetComponent<Statistics>();
     }
 
-    /// <summary>Настройка ответа для задания (тип задания)</summary>
+    /// <summary>
+    /// Настройка ответа для задания
+    /// </summary>
+    /// <param name="type">Тип задания</param>
     public void TypeAnswer(string type)
     {
         if (type == "letters")
@@ -60,7 +63,9 @@ public class AnswerCountries : MonoBehaviour
         }
     }
 
-    /// <summary>Заполнение ответа выбранными буквами либо звездочками</summary>
+    /// <summary>
+    /// Заполнение ответа выбранными буквами либо звездочками
+    /// </summary>
     public void UpdateResponseField()
     {
         // Сбрасываем текст ответа
@@ -76,7 +81,9 @@ public class AnswerCountries : MonoBehaviour
         }
     }
 
-    /// <summary>Сброс выбранных букв</summary>
+    /// <summary>
+    /// Сброс выбранных букв
+    /// </summary>
     public void ResetLetters()
     {
         // Очищаем массивы с выбранными буквами
@@ -92,13 +99,19 @@ public class AnswerCountries : MonoBehaviour
         ChangeOutlineText(false);
     }
 
-    /// <summary>Настройка обводки ответа</summary>
+    /// <summary>
+    /// Настройка обводки ответа
+    /// </summary>
+    /// <param name="state">Состояние обводки</param>
     public void ChangeOutlineText(bool state)
     {
         outlineAnswer.enabled = state;
     }
 
-    /// <summary>Проверка буквенного ответа (свой ответ или пропуск)</summary>
+    /// <summary>
+    /// Проверка буквенного ответа
+    /// </summary>
+    /// <param name="answer">Свой ответ или пропуск</param>
     public void ComparisonAnswers(bool answer)
     {
         // Если массив ответа полностью совпадает с массивом выбранных букв
@@ -117,7 +130,10 @@ public class AnswerCountries : MonoBehaviour
         }
     }
 
-    /// <summary>Проверка ответа с вариантами (номер ответа)</summary>
+    /// <summary>
+    /// Проверка ответа с вариантами
+    /// </summary>
+    /// <param name="number">Номер ответа</param>
     public void ComparisonAnswers(int number)
     {
         // Если выбранный вариант ответа совпадает с правильным
@@ -135,7 +151,10 @@ public class AnswerCountries : MonoBehaviour
         }
     }
 
-    /// <summary>Действия при получении правильного ответа (свой ответ или пропуск)</summary>
+    /// <summary>
+    /// Действия при получении правильного ответа
+    /// </summary>
+    /// <param name="answer">Свой ответ или пропуск</param>
     private void ReceivedCorrectAnswer(bool answer)
     {
         // Скрываем лишние объекты на сцене
@@ -153,7 +172,10 @@ public class AnswerCountries : MonoBehaviour
         IncreaseProgress(answer);
     }
 
-    /// <summary>Увеличение прогресса викторины (свой ответ или пропуск)</summary>
+    /// <summary>
+    /// Увеличение прогресса викторины
+    /// </summary>
+    /// <param name="answer">Свой ответ или пропуск</param>
     private void IncreaseProgress(bool answer)
     {
         if (answer)
@@ -175,7 +197,9 @@ public class AnswerCountries : MonoBehaviour
         updateQuestion.interactable = true;
     }
 
-    /// <summary>Пропуск задания</summary>
+    /// <summary>
+    /// Пропуск задания
+    /// </summary>
     public void GetRightAnswer()
     {
         // Получаем правильный ответ на задание
@@ -183,7 +207,9 @@ public class AnswerCountries : MonoBehaviour
         ComparisonAnswers(false);
     }
 
-    /// <summary>Переход к следующему заданию</summary>
+    /// <summary>
+    /// Переход к следующему заданию
+    /// </summary>
     public void TaskUpdate()
     {
         // Если сохраненный прогресс не превышает количество вопросов

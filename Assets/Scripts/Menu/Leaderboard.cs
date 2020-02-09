@@ -61,10 +61,12 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    /// <summary>Загрузка результатов из удаленной таблицы лидеров</summary>
+    /// <summary>
+    /// Загрузка результатов из удаленной таблицы лидеров
+    /// </summary>
     public void LoadScoresLeaderboard()
     {
-        // Загружаем десять лучших результатов из публичной таблицы
+        //Загружаем десять лучших результатов из публичной таблицы
         PlayGamesPlatform.Instance.LoadScores(
             GPGSIds.leaderboard,
             LeaderboardStart.TopScores,
@@ -84,7 +86,10 @@ public class Leaderboard : MonoBehaviour
         );
     }
 
-    /// <summary>Загрузка и отображение информации по игрокам (массив результатов)</summary>
+    /// <summary>
+    /// Загрузка и отображение информации по игрокам
+    /// </summary>
+    /// <param name="scores">Список результатов</param>
     private void LoadUsersLeaderboard(IScore[] scores)
     {
         // Список id пользователей
@@ -114,13 +119,18 @@ public class Leaderboard : MonoBehaviour
 
             // Сохраняем обновленные данные по игрокам
             PlayerPrefs.SetString("leaders", JsonUtility.ToJson(leaderboardJson));
-        });
+            });
 
         // Перемещаем скролл вверх списка
         scroll.verticalNormalizedPosition = 1;
     }
 
-    /// <summary>Поиск игрока в массиве по id (массив игроков, id игрока)</summary>
+    /// <summary>
+    /// Поиск игрока в массиве по id
+    /// </summary>
+    /// <param name="users">Список игроков</param>
+    /// <param name="userid">Id игрока для поиска</param>
+    /// <returns>Найденный пользователь</returns>
     private IUserProfile FindUser(IUserProfile[] users, string userid)
     {
         foreach (IUserProfile user in users)
@@ -132,7 +142,9 @@ public class Leaderboard : MonoBehaviour
         return null;
     }
 
-    /// <summary>Отображение сохраненных данных по игрокам</summary>
+    /// <summary>
+    /// Отображение сохраненных данных по игрокам
+    /// </summary>
     private void ShowResultsFile()
     {
         // Если рейтинг больше нуля

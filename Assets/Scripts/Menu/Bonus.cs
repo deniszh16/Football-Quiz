@@ -3,21 +3,27 @@ using UnityEngine.UI;
 
 public class Bonus : MonoBehaviour
 {
-    [Header("Бонусная кнопка")]
-    [SerializeField] private Button bonus;
+    // Ссылки на компоненты
+    private GameObject effect;
+    private Button bonus;
 
-    [Header("Эффект сияния")]
-    [SerializeField] private GameObject effect;
+    private void Awake()
+    {
+        effect = transform.GetChild(0).gameObject;
+        bonus = transform.GetChild(1).GetComponent<Button>();
+    }
 
     private void Start()
     {
-        CheckDailyBonus(); 
+        CheckDailyBonus();
     }
 
-    /// <summary>Проверка доступности бонуса</summary>
+    /// <summary>
+    /// Проверка количества доступных бонусов
+    /// </summary>
     private void CheckDailyBonus()
     {
-        // Если дрступна бонусная реклама
+        // Если доступна бонусная реклама
         if (PlayerPrefs.GetInt("bonus") > 0)
         {
             // Активируем кнопку и эффект
@@ -26,7 +32,9 @@ public class Bonus : MonoBehaviour
         }
     }
 
-    /// <summary>Уменьшение количества доступных просмотров бонусной видеорекламы</summary>
+    /// <summary>
+    /// Уменьшение количества бонусов
+    /// </summary>
     public void DecreaseViews()
     {
         PlayerPrefs.SetInt("bonus", PlayerPrefs.GetInt("bonus") - 1);

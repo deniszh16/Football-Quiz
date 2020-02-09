@@ -8,7 +8,9 @@ public class DeleteLetter : MonoBehaviour
     [Header("Панель букв")]
     [SerializeField] private GameObject letters;
 
-    /// <summary>Нажатие на кнопку удаления буквы</summary>
+    /// <summary>
+    /// Нажатие на кнопку удаления буквы
+    /// </summary>
     public void PressDelete()
     {
         // Если есть открытые буквы

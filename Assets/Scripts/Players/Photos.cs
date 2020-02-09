@@ -28,7 +28,10 @@ public class Photos : MonoBehaviour
         }
     }
 
-    /// <summary>Переход в категорию или к результатам (номер кнопки)</summary>
+    /// <summary>
+    /// Переход в категорию или к результатам
+    /// </summary>
+    /// <param name="number">Номер кнопки</param>
     public void OpenСategory(int number)
     {
         // Записываем название категории

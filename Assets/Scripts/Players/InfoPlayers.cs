@@ -31,7 +31,9 @@ public class InfoPlayers : FileProcessing
         ShowTaskImage();
     }
 
-    /// <summary>Установка изображения в соответствии с текущим прогрессом викторины</summary>
+    /// <summary>
+    /// Установка изображения в соответствии с текущим прогрессом викторины
+    /// </summary>
     public void ShowTaskImage()
     {
         image.sprite = photos[PlayerPrefs.GetInt(Photos.category)];

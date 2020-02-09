@@ -23,13 +23,14 @@ public class AdsReward : AdsBanner, IRewardedVideoAdListener
         Appodeal.setRewardedVideoCallbacks(this);
     }
 
-    /// <summary>Просмотр видеорекламы с вознаграждением</summary>
+    /// <summary>
+    /// Просмотр видеорекламы с вознаграждением
+    /// </summary>
     public void ShowRewardedVideo()
     {
         // Если реклама загружена
         if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
-            // Отображаем рекламный ролик
-            Appodeal.show(Appodeal.REWARDED_VIDEO);
+        Appodeal.show(Appodeal.REWARDED_VIDEO);
     }
 
     #region Appodeal (on rewarded video)
@@ -38,17 +39,20 @@ public class AdsReward : AdsBanner, IRewardedVideoAdListener
     public void onRewardedVideoExpired() {}
     public void onRewardedVideoFailedToLoad() {}
 
-    /// <summary>Успешный просмотр видеорекламы с вознаграждением</summary>
+    /// <summary>
+    /// Успешный просмотр видеорекламы с вознаграждением
+    /// </summary>
     public void onRewardedVideoFinished(double amount, string name)
     {
-        // Уменьшаем количество доступных на этот день просмотров
+        // Уменьшаем количество доступных бонусов
         bonus.DecreaseViews();
 
-        // Добавляем бонусные монеты
-        statistics.ChangeTotalCoins(250);
+        // Начисляем бонусные монеты
+        statistics.ChangeTotalCoins(325);
     }
 
     public void onRewardedVideoLoaded(bool precache) {}
     public void onRewardedVideoShown() {}
+    public void onRewardedVideoShowFailed() {}
     #endregion
 }

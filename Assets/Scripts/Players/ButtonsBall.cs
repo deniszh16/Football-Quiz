@@ -15,7 +15,10 @@ public class ButtonsBall : MonoBehaviour
         RemoveRandomButtons(2);
     }
 
-    /// <summary>Открытие случайных плиток (количество плиток)</summary>
+    /// <summary>
+    /// Открытие случайных плиток
+    /// </summary>
+    /// <param name="quantity">Количество плиток</param>
     public void RemoveRandomButtons(int quantity)
     {
         for (int i = 0; i < quantity; i++)
@@ -23,7 +26,10 @@ public class ButtonsBall : MonoBehaviour
             transform.GetChild(Random.Range(0, 16)).GetComponent<Animator>().enabled = true;
     }
 
-    /// <summary>Отображение или скрытие плиток (состояние кнопок)</summary>
+    /// <summary>
+    /// Отображение или скрытие плиток
+    /// </summary>
+    /// <param name="state">Состояние кнопок</param>
     public void UpdateButtons(bool state)
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -38,7 +44,10 @@ public class ButtonsBall : MonoBehaviour
         }
     }
 
-    /// <summary>Открытие дополнительного фрагмента (объект кнопки)</summary>
+    /// <summary>
+    /// Открытие дополнительного фрагмента
+    /// </summary>
+    /// <param name="button">Кнопка</param>
     public void OpenFragment(GameObject button)
     {
         // Если достаточно монет для открытия

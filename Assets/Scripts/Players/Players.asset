@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10958f55a9bce2843b7203562dac6ef0, type: 3}
   m_Name: Players
   m_EditorClassIdentifier: 
-  quantity: 2d00000019000000
+  quantity: 3200000019000000

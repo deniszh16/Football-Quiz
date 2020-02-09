@@ -27,11 +27,12 @@ public class Category : MonoBehaviour
     {
         image = GetComponent<Image>();
         text = GetComponentInChildren<Text>();
-        categories = Camera.main.GetComponent<Categories>();
     }
 
     private void Start()
     {
+        categories = Camera.main.GetComponent<Categories>();
+
         // Получаем номер текущего вопроса по категории
         currentQuestion = categories.Sets.arraySets[number];
 
@@ -45,7 +46,9 @@ public class Category : MonoBehaviour
                 PlayServices.UnlockingAchievement(identifier);
     }
 
-    /// <summary>Обновление информации по открытой категории</summary>
+    /// <summary>
+    /// Обновление информации по открытой категории
+    /// </summary>
     private void UpdateCategory()
     {
         // Меняем спрайт
@@ -57,7 +60,9 @@ public class Category : MonoBehaviour
         text.text = currentQuestion - 1 + " /" + categories.Tasks[number];
     }
 
-    /// <summary>Открытие/приобретение категории</summary>
+    /// <summary>
+    /// Открытие или приобретение категории
+    /// </summary>
     public void OpenCategory()
     {
         // Если категория открыта и не пройдена полностью
@@ -89,7 +94,9 @@ public class Category : MonoBehaviour
         }
     }
 
-    /// <summary>Покупка новой категории</summary>
+    /// <summary>
+    /// Покупка новой категории
+    /// </summary>
     private void PaymentCategory()
     {
         // Вычитаем стоимость категории

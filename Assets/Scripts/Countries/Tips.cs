@@ -38,7 +38,9 @@ public class Tips : MonoBehaviour
         statistics = Camera.main.GetComponent<Statistics>();
     }
 
-    /// <summary>Проверка подсказок на доступность</summary>
+    /// <summary>
+    /// Проверка подсказок на доступность
+    /// </summary>
     private void CheckTips()
     {
         for (int i = 0; i < buttonsTips.Length; i++)
@@ -54,7 +56,9 @@ public class Tips : MonoBehaviour
         }
     }
 
-    /// <summary>Открытие или закрытие панели подсказок</summary>
+    /// <summary>
+    /// Открытие или закрытие панели подсказок
+    /// </summary>
     public void ChoiceHints()
     {
         // Переключение переменной отображения панели подсказок
@@ -77,13 +81,17 @@ public class Tips : MonoBehaviour
         panelIncrease.SetBool("Open", displayTips);
     }
 
-    /// <summary>Скрытие панели подсказок при нажатии на букву</summary>
+    /// <summary>
+    /// Скрытие панели подсказок при нажатии на букву
+    /// </summary>
     public void CloseTips()
     {
         if (displayTips) ChoiceHints();
     }
 
-    /// <summary>Восстановление всех выбранных букв</summary>
+    /// <summary>
+    /// Восстановление всех выбранных букв
+    /// </summary>
     private void ShowAllLetters()
     {
         for (int i = 0; i < 12; i++)
@@ -91,7 +99,9 @@ public class Tips : MonoBehaviour
             letters.transform.GetChild(i).gameObject.SetActive(true);
     }
 
-    /// <summary>Подсказка для выделения первой буквы ответа</summary>
+    /// <summary>
+    /// Подсказка для выделения первой буквы ответа
+    /// </summary>
     public void FirstLetter()
     {
         // Используем подсказку
@@ -103,7 +113,9 @@ public class Tips : MonoBehaviour
         if (letter >= 0) letters.transform.GetChild(letter).GetComponent<Image>().sprite = highlighted;  
     }
 
-    /// <summary>Подсказка для удаление всех лишних букв</summary>
+    /// <summary>
+    /// Подсказка для удаление всех лишних букв
+    /// </summary>
     public void AllLetters()
     {
         // Используем подсказку
@@ -113,7 +125,9 @@ public class Tips : MonoBehaviour
         HideExtraLetters();
     }
 
-    /// <summary>Скрытие букв, не входящих в ответ</summary>
+    /// <summary>
+    /// Скрытие букв, не входящих в ответ
+    /// </summary>
     private void HideExtraLetters()
     {
         for (int i = 0; i < letters.transform.childCount; i++)
@@ -125,7 +139,9 @@ public class Tips : MonoBehaviour
         }
     }
 
-    /// <summary>Подсказка для пропуска задания</summary>
+    /// <summary>
+    /// Подсказка для пропуска задания
+    /// </summary>
     public void SkipQuestion()
     {
         // Используем подсказку
@@ -135,7 +151,10 @@ public class Tips : MonoBehaviour
         questions.Answer.GetRightAnswer();
     }
 
-    /// <summary>Действия при использовании подсказки (номер подсказки)</summary>
+    /// <summary>
+    /// Действия при использовании подсказки
+    /// </summary>
+    /// <param name="number">Номер подсказки</param>
     private void UseTip(int number)
     {
         // Получаем стоимость подсказки

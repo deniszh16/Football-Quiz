@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -357,6 +358,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 28a44071bfe6ef04097be26da6a1c992, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQLw
 --- !u!114 &81529648
 MonoBehaviour:
@@ -401,7 +403,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -500,6 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f1d5eb226a263b243a3a66544c3a7c8c, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQLA
 --- !u!114 &95136084
 MonoBehaviour:
@@ -544,7 +547,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -643,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: b6856d53d10ccce4e960bd1ad85bed96, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQGA
 --- !u!114 &113889244
 MonoBehaviour:
@@ -687,7 +691,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -858,6 +862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 5f77508f08b88d840876a7b09047bcf4, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQIQ
 --- !u!114 &177245829
 MonoBehaviour:
@@ -902,7 +907,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -1211,6 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 9bd0100b043de114cab16aced29c5cb0, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQMQ
 --- !u!114 &322445661
 MonoBehaviour:
@@ -1255,7 +1261,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -1354,6 +1360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 1821384d647780c49a919f0633d4b8f9, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQPA
 --- !u!114 &332301937
 MonoBehaviour:
@@ -1398,7 +1405,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -1497,6 +1504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: eccb403b2befbdc4bb9d29277324b5e9, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQJw
 --- !u!114 &336125623
 MonoBehaviour:
@@ -1541,7 +1549,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -1640,6 +1648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 1431e534963127f428d8dae6c4910dff, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQGg
 --- !u!114 &355340966
 MonoBehaviour:
@@ -1684,7 +1693,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -1876,6 +1885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: b6dcbfd57e504fa43bbb9194507de2a8, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQMA
 --- !u!114 &369093103
 MonoBehaviour:
@@ -1920,7 +1930,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -2091,6 +2101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: dc9b17e8b0af3c745b9dbc4b63d588b2, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQHQ
 --- !u!114 &398581662
 MonoBehaviour:
@@ -2135,7 +2146,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -2234,6 +2245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: d3ce7738e1c028a41a66496097242cd7, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQEw
 --- !u!114 &405087097
 MonoBehaviour:
@@ -2278,7 +2290,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -2377,6 +2389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 3c27ad24ae9cfae47ae593bcebaeeb8e, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQFw
 --- !u!114 &406300946
 MonoBehaviour:
@@ -2421,7 +2434,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -2680,6 +2693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: b9ac86c5c87a2584aaf9e6f0f99c94ac, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQIw
 --- !u!114 &514073878
 MonoBehaviour:
@@ -2724,7 +2738,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -2859,6 +2873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f2c82d1f9db75e648823cf16950886f9, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQGw
 --- !u!114 &592665488
 MonoBehaviour:
@@ -2903,7 +2918,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -3002,6 +3017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 3850d7b47c32b5e4da6c637945172697, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQJQ
 --- !u!114 &593262381
 MonoBehaviour:
@@ -3046,7 +3062,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -3468,7 +3484,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628424}
+      - m_Target: {fileID: 2111274991}
         m_MethodName: GoToScene
         m_Mode: 3
         m_Arguments:
@@ -3586,6 +3602,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 5476d980dd98702449d47f0c3f668742, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQKg
 --- !u!114 &741950664
 MonoBehaviour:
@@ -3630,7 +3647,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -3801,6 +3818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 1ed4d023c7645604f97efe66cb22028a, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQMw
 --- !u!114 &783721358
 MonoBehaviour:
@@ -3845,7 +3863,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -4017,6 +4035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c9feabc4ee5abbf4382f54a9ab550260, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQJA
 --- !u!114 &810210582
 MonoBehaviour:
@@ -4061,7 +4080,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -4268,6 +4287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: f961ca4b0f4642d43b3a2e416014a423, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQNg
 --- !u!114 &911494928
 MonoBehaviour:
@@ -4312,7 +4332,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -4411,6 +4431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: b553cd2ba22a2314f9b13e5fb1585ecd, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQOw
 --- !u!114 &926121377
 MonoBehaviour:
@@ -4455,7 +4476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -4590,6 +4611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 6245c761777825f4d93184cfa341104b, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQJg
 --- !u!114 &962117278
 MonoBehaviour:
@@ -4634,7 +4656,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -4769,6 +4791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 6a239295535ff214ba3ebeb91392f3d8, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQFQ
 --- !u!114 &979843537
 MonoBehaviour:
@@ -4813,7 +4836,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -4860,149 +4883,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979843534}
   m_CullTransparentMesh: 0
---- !u!1 &980628420
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 980628423}
-  - component: {fileID: 980628422}
-  - component: {fileID: 980628421}
-  - component: {fileID: 980628425}
-  - component: {fileID: 980628427}
-  - component: {fileID: 980628426}
-  - component: {fileID: 980628424}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!81 &980628421
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980628420}
-  m_Enabled: 1
---- !u!20 &980628422
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980628420}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &980628423
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980628420}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &980628424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980628420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74835bd95155f2b4d88daba729b17a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backButton: 1
-  previousScene: 1
---- !u!114 &980628425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980628420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c7c79b0a1ed304f84221b2981025d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cards: {fileID: 1902463662}
-  scroll: {fileID: 1602308412}
-  effect: {fileID: 363986815}
---- !u!114 &980628426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980628420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 248c680d91f529545863f05a37de2bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  texts:
-  - {fileID: 1361523103}
-  - {fileID: 1517914982}
---- !u!114 &980628427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980628420}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef68697d6a1b75b4da8b96bed53211d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1025256482
 GameObject:
   m_ObjectHideFlags: 0
@@ -5181,7 +5061,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 980628422}
+  m_Camera: {fileID: 2111274989}
   m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -5269,6 +5149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 049be6b6e0504a646b4ca3e9dc6ddfb5, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQLQ
 --- !u!114 &1048644916
 MonoBehaviour:
@@ -5313,7 +5194,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -5412,6 +5293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 595cb2ca1ef77b54fb115dacce0a0013, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQPw
 --- !u!114 &1049349242
 MonoBehaviour:
@@ -5456,7 +5338,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -5664,6 +5546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: d90550ab4413e594193c99ccc3b118c8, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQOA
 --- !u!114 &1154432241
 MonoBehaviour:
@@ -5708,7 +5591,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -5973,6 +5856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 03f3e6b958309974fb291c0211283ed9, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQIA
 --- !u!114 &1236217078
 MonoBehaviour:
@@ -6017,7 +5901,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -6214,6 +6098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: bb82eab4fd30ae445ba7992212ca1287, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQHg
 --- !u!114 &1254620881
 MonoBehaviour:
@@ -6258,7 +6143,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -6393,6 +6278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: dcfe1a0aabdb5ad4fa90cb176ac79dcc, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQFg
 --- !u!114 &1324571603
 MonoBehaviour:
@@ -6437,7 +6323,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -6536,6 +6422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: d518d21af55c5d044be9ce559df74ea9, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQNQ
 --- !u!114 &1339439453
 MonoBehaviour:
@@ -6580,7 +6467,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -6679,6 +6566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 9cbcbad6575e5b44285a7aaa7e9d8c55, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQPg
 --- !u!114 &1349397651
 MonoBehaviour:
@@ -6723,7 +6611,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -6899,6 +6787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 43951d6945d05664c93a06763a1d6561, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQPQ
 --- !u!114 &1363041246
 MonoBehaviour:
@@ -6943,7 +6832,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -7150,6 +7039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 2b47ee822112f50428027500bf530796, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQNA
 --- !u!114 &1501247338
 MonoBehaviour:
@@ -7194,7 +7084,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -7618,6 +7508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a02aab0b790ef2d4d9aee019bef220b7, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQQQ
 --- !u!114 &1610043995
 MonoBehaviour:
@@ -7662,7 +7553,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -7797,6 +7688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 457a8832d008a75438504de0f3834bcc, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQIg
 --- !u!114 &1679150667
 MonoBehaviour:
@@ -7841,7 +7733,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -7976,6 +7868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 80a892df5395bc64ca07f72e65d518a2, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQHA
 --- !u!114 &1691507749
 MonoBehaviour:
@@ -8020,7 +7913,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -8301,6 +8194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c9ab5c04f832a484a91436c797e49825, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQKQ
 --- !u!114 &1771529630
 MonoBehaviour:
@@ -8345,7 +8239,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -8444,6 +8338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 454403f1a2d6ce441a712572d0220638, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQLg
 --- !u!114 &1795037674
 MonoBehaviour:
@@ -8488,7 +8383,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -8587,6 +8482,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 2627805a656eec549bae8baf22ca52b0, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQKw
 --- !u!114 &1850332684
 MonoBehaviour:
@@ -8631,7 +8527,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -8730,6 +8626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 2f2afa8aa862df14ebf892e43ce82fc5, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQHw
 --- !u!114 &1862419721
 MonoBehaviour:
@@ -8774,7 +8671,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -9028,6 +8925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 4002d5e6cf5275a49a39759c9a83b7f5, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQFA
 --- !u!114 &1934602328
 MonoBehaviour:
@@ -9072,7 +8970,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -9171,6 +9069,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: a0c900f9671b1ea47954a26c7659a71e, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQOQ
 --- !u!114 &1938978851
 MonoBehaviour:
@@ -9215,7 +9114,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -9546,6 +9445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 60dcf02fec1fcc8468ea8162118aefc9, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQMg
 --- !u!114 &2051970959
 MonoBehaviour:
@@ -9590,7 +9490,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -9761,6 +9661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 0dc7e8be9cc61db4681e8dcb7ab93631, type: 3}
+  biography: 1
   identifier: CgkIpaecy5MPEAIQGQ
 --- !u!114 &2096236057
 MonoBehaviour:
@@ -9805,7 +9706,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:
@@ -9816,6 +9717,149 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &2111274987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111274990}
+  - component: {fileID: 2111274989}
+  - component: {fileID: 2111274988}
+  - component: {fileID: 2111274994}
+  - component: {fileID: 2111274993}
+  - component: {fileID: 2111274992}
+  - component: {fileID: 2111274991}
+  m_Layer: 0
+  m_Name: MainCamera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!81 &2111274988
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_Enabled: 1
+--- !u!20 &2111274989
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 50
+  field of view: 60
+  orthographic: 1
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 0
+  m_HDR: 1
+  m_AllowMSAA: 0
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 0
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!4 &2111274990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2111274991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74835bd95155f2b4d88daba729b17a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backButton: 1
+  previousScene: 1
+--- !u!114 &2111274992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 248c680d91f529545863f05a37de2bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - {fileID: 1361523103}
+  - {fileID: 1517914982}
+--- !u!114 &2111274993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef68697d6a1b75b4da8b96bed53211d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2111274994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c7c79b0a1ed304f84221b2981025d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cards: {fileID: 1902463662}
+  scroll: {fileID: 1602308412}
+  effect: {fileID: 363986815}
 --- !u!1 &2142603298
 GameObject:
   m_ObjectHideFlags: 0
@@ -9904,6 +9948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: d0830467bb9c5b14a8e42f6cab067e14, type: 3}
+  biography: 0
   identifier: CgkIpaecy5MPEAIQKA
 --- !u!114 &2144299812
 MonoBehaviour:
@@ -9948,7 +9993,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980628425}
+      - m_Target: {fileID: 2111274994}
         m_MethodName: OpenLegendaryCard
         m_Mode: 3
         m_Arguments:

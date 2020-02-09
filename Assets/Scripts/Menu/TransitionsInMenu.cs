@@ -19,37 +19,50 @@ public class TransitionsInMenu : MonoBehaviour
             GoToScene(previousScene);
     }
 
-    /// <summary>Переход на указанную сцену (номер сцены)</summary>
+    /// <summary>
+    /// Переход на указанную сцену
+    /// </summary>
+    /// <param name="scene">Id сцены в Build Settings</param>
     public void GoToScene(int scene)
     {
         SceneManager.LoadScene(scene);
     }
 
-    /// <summary>Перезапуск текущей сцены</summary>
+    /// <summary>
+    /// Перезапуск текущей сцены
+    /// </summary>
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    /// <summary>Переход на страницу приложения</summary>
+    /// <summary>
+    /// Переход на страницу приложения
+    /// </summary>
     public void LeaveFeedback()
     {
         Application.OpenURL(link);
     }
 
-    /// <summary>Просмотр достижений Google Play</summary>
+    /// <summary>
+    /// Просмотр достижений Google Play
+    /// </summary>
     public void ViewAchievements()
     {
         PlayServices.ShowAchievements();
     }
 
-    /// <summary>Просмотр таблицы лидеров Google Play</summary>
+    /// <summary>
+    /// Просмотр таблицы лидеров Google Play<
+    /// </summary>
     public void ViewLeaderboard()
     {
         PlayServices.ShowLeaderboard();
     }
 
-    /// <summary>Выход из игры</summary>
+    /// <summary>
+    /// Выход из игры
+    /// </summary>
     public void ExitGame()
     {
         Application.Quit();

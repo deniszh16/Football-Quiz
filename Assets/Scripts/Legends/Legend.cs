@@ -6,6 +6,10 @@ public class Legend : MonoBehaviour
     [Header("Открытая карточка")]
     [SerializeField] private Sprite sprite;
 
+    [Header("Биография игрока")]
+    [SerializeField] private bool biography = false;
+    public bool Biography { get { return biography; } }
+
     [Header("Идентификатор достижения")]
     [SerializeField] private string identifier;
 
@@ -17,7 +21,9 @@ public class Legend : MonoBehaviour
         image = GetComponent<Image>();
     }
 
-    /// <summary>Отображение открытой карточки</summary>
+    /// <summary>
+    /// Отображение открытой карточки
+    /// </summary>
     public void ShowImageCard()
     {
         // Меняем спрайт карточки

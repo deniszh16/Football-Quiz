@@ -11,6 +11,7 @@ public class DateCheck : MonoBehaviour
             // Открываем бонусную рекламу
             PlayerPrefs.SetInt("bonus", 3);
 
+            // Сохраняем обновленную дату
             PlayerPrefs.SetInt("date", DateTime.Now.Day);
         }
     }

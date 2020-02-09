@@ -67,7 +67,11 @@ public class Results : MonoBehaviour
         scroll.verticalNormalizedPosition = 1;
     }
 
-    /// <summary>Получение общего количества заданий в викторинах (объект заданий)</summary>
+    /// <summary>
+    /// Получение общего количества заданий в викторинах
+    /// </summary>
+    /// <param name="tasks">Объект заданий</param>
+    /// <returns>Текст с количеством заданий</returns>
     private string GetStatistics(IQuantity tasks)
     {
         // Количество заданий

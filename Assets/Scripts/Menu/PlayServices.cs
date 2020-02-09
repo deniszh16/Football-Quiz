@@ -8,7 +8,9 @@ public class PlayServices : MonoBehaviour
         SignGooglePlay();
     }
 
-    /// <summary>Подключение к сервисам Google Play</summary>
+    /// <summary>
+    /// Подключение к сервисам Google Play
+    /// </summary>
     public static void SignGooglePlay()
     {
         // Если доступен интернет, подключаемся к Google Play
@@ -16,7 +18,9 @@ public class PlayServices : MonoBehaviour
             Social.localUser.Authenticate((bool success) => {});
     }
 
-    /// <summary>Просмотр игровых достижений</summary>
+    /// <summary>
+    /// Просмотр игровых достижений
+    /// </summary>
     public static void ShowAchievements()
     {
         // Если пользователь авторизирован, отображаем список достижений
@@ -24,7 +28,10 @@ public class PlayServices : MonoBehaviour
         else SignGooglePlay();
     }
 
-    /// <summary>Разблокирование достижения (идентификатор достижения)</summary>
+    /// <summary>
+    /// Разблокирование достижения
+    /// </summary>
+    /// <param name="identifier">Идентификатор достижения</param>
     public static void UnlockingAchievement(string identifier)
     {
         if (Social.localUser.authenticated)
@@ -32,7 +39,9 @@ public class PlayServices : MonoBehaviour
             Social.ReportProgress(identifier, 100.0f, (bool success) => {});
     }
 
-    /// <summary>Просмотр таблицы лидеров</summary>
+    /// <summary>
+    /// Просмотр таблицы лидеров
+    /// </summary>
     public static void ShowLeaderboard()
     {
         if (Social.localUser.authenticated)
@@ -41,7 +50,10 @@ public class PlayServices : MonoBehaviour
         else SignGooglePlay();
     }
 
-    /// <summary>Отправка результата в таблицу лидеров (общий счет)</summary>
+    /// <summary>
+    /// Отправка результата в таблицу лидеров
+    /// </summary>
+    /// <param name="score">Общий счет игрока</param>
     public static void PostingScoreLeaderboard(int score)
     {
         if (Social.localUser.authenticated)

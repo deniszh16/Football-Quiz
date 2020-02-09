@@ -9,7 +9,7 @@ public class Cups : MonoBehaviour
     [Header("Прогресс для открытия")]
     [SerializeField] private int[] progress;
 
-    [Header("Текст прогресса")]
+    [Header("Текст статистики")]
     [SerializeField] private Text percent;
 
     private void Start()
@@ -34,7 +34,7 @@ public class Cups : MonoBehaviour
             }
         }
 
-        // Выводим проценты прохождения викторины
+        // Выводим процент прохождения викторины
         percent.text = "Выигранные кубки (" + (percentagPeassing > 100 ? "100" : percentagPeassing.ToString()) + "%)";
     }
 }

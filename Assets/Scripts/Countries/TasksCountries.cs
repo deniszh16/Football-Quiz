@@ -51,7 +51,9 @@ public class TasksCountries : FileProcessing
         SceneSetting();
     }
 
-    /// <summary>Настройка сцены под текущий тип вопроса</summary>
+    /// <summary>
+    /// Настройка сцены под текущий тип вопроса
+    /// </summary>
     public void SceneSetting()
     {
         if (Tasks.TaskItems[Progress - 1].Type == "letters")
@@ -76,14 +78,19 @@ public class TasksCountries : FileProcessing
         answer.TypeAnswer(Tasks.TaskItems[Progress - 1].Type);
     }
 
-    /// <summary>Поиск первой буквы ответа в массиве букв</summary>
+    /// <summary>
+    /// Поиск первой буквы ответа в массиве букв
+    /// </summary>
     public int LetterSearch()
     {
         // Возвращаем номер первого вхождения в массив
         return Array.IndexOf(Tasks.TaskItems[Progress - 1].Letters, FirstLetter);
     }
 
-    /// <summary>Поиск указанной буквы в массиве ответа</summary>
+    /// <summary>
+    /// Поиск указанной буквы в массиве ответа
+    /// </summary>
+    /// <param name="number">Номер буквы</param>
     public int LetterSearch(int number)
     {
         return Array.IndexOf(Tasks.TaskItems[Progress - 1].Answer, Tasks.TaskItems[Progress - 1].Letters[number]);

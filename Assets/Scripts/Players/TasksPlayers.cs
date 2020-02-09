@@ -24,7 +24,9 @@ public class TasksPlayers : MonoBehaviour
         CheckHint();
     }
 
-    /// <summary>Проверка доступности подсказки</summary>
+    /// <summary>
+    /// Проверка доступности подсказки
+    /// </summary>
     public void CheckHint()
     {
         // Если достаточно монет, отображаем кнопку подсказки
