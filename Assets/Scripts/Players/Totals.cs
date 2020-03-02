@@ -23,6 +23,6 @@ public class Totals : MonoBehaviour
         totals.text += "Открытые фрагменты: " + PlayerPrefs.GetInt(Photos.category + "-buttons") + Indents.LineBreak(2);
 
         // Выводим количество полученных подсказок и пропусков
-        totals.text += "Подсказки / пропуски: " + PlayerPrefs.GetInt(Photos.category + "-tips") + " / " + PlayerPrefs.GetInt(Photos.category + "-pass");
+        totals.text += "Подсказки: " + PlayerPrefs.GetInt(Photos.category + "-tips") + " / " + PlayerPrefs.GetInt(Photos.category + "-pass");
     }
 }

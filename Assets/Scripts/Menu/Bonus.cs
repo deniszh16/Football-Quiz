@@ -21,7 +21,7 @@ public class Bonus : MonoBehaviour
     /// <summary>
     /// Проверка количества доступных бонусов
     /// </summary>
-    private void CheckDailyBonus()
+    public void CheckDailyBonus()
     {
         // Если доступна бонусная реклама
         if (PlayerPrefs.GetInt("bonus") > 0)

@@ -30,7 +30,7 @@ public class AdsReward : AdsBanner, IRewardedVideoAdListener
     {
         // Если реклама загружена
         if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
-        Appodeal.show(Appodeal.REWARDED_VIDEO);
+            Appodeal.show(Appodeal.REWARDED_VIDEO);
     }
 
     #region Appodeal (on rewarded video)
