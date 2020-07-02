@@ -1,36 +1,38 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Legend : MonoBehaviour
+namespace Cubra.Legends
 {
-    [Header("Открытая карточка")]
-    [SerializeField] private Sprite sprite;
-
-    [Header("Биография игрока")]
-    [SerializeField] private bool biography = false;
-    public bool Biography { get { return biography; } }
-
-    [Header("Идентификатор достижения")]
-    [SerializeField] private string identifier;
-
-    // Ссылка на компонент
-    private Image image;
-
-    private void Awake()
+    public class Legend : MonoBehaviour
     {
-        image = GetComponent<Image>();
-    }
+        [Header("Открытая карточка")]
+        [SerializeField] private Sprite _openCard;
 
-    /// <summary>
-    /// Отображение открытой карточки
-    /// </summary>
-    public void ShowImageCard()
-    {
-        // Меняем спрайт карточки
-        image.sprite = sprite;
+        [Header("Биография игрока")]
+        [SerializeField] private bool _biography;
 
-        if (Application.internetReachability != NetworkReachability.NotReachable)
-            // Разблокируем достижение с указанным идентификатором
-            PlayServices.UnlockingAchievement(identifier);
+        public bool Biography => _biography;
+
+        [Header("Идентификатор достижения")]
+        [SerializeField] private string _achievement;
+
+        private Image _image;
+
+        private void Awake()
+        {
+            _image = GetComponent<Image>();
+        }
+
+        /// <summary>
+        /// Отображение открытой карточки
+        /// </summary>
+        public void ShowImageCard()
+        {
+            _image.sprite = _openCard;
+
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+                // Разблокируем достижение с указанным идентификатором
+                GooglePlayServices.UnlockingAchievement(_achievement);
+        }
     }
 }

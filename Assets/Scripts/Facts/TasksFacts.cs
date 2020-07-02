@@ -1,177 +1,163 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Cubra.Helpers;
 
-public class TasksFacts : FileProcessing
+namespace Cubra.Facts
 {
-    [Header("Текст для задания")]
-    [SerializeField] private Text question;
-
-    [Header("Кнопки вариантов")]
-    [SerializeField] private GameObject variants;
-
-    [Header("Компонент таймера")]
-    [SerializeField] private Timer timer;
-
-    [Header("Победный эффект")]
-    [SerializeField] private ParticleSystem particle;
-
-    [Header("Кнопка обновления")]
-    [SerializeField] private Button updateButton;
-
-    // Номер этапа викторины
-    private int stage = 0;
-
-    // Объект для работы с json по заданиям
-    private FacJson tasks = new FacJson();
-
-    // Объект для json по наборам
-    private StaJson statuses = new StaJson();
-
-    // Ссылка на статистику
-    private Statistics statistics;
-
-    private void Awake()
+    public class TasksFacts : FileProcessing
     {
-        // Обрабатываем json файл и записываем в текстовую переменную
-        var jsonString = ReadJsonFile("facts-" + FactsCollections.collections.ToString());
-        // Преобразовываем строку в объект
-        ConvertToObject(ref tasks, jsonString);
+        // Объект для json по заданиям
+        private FactsHelper _factsHelper;
 
-        // Преобразовываем сохраненную json строку в объект
-        statuses = JsonUtility.FromJson<StaJson>(PlayerPrefs.GetString("facts"));
+        // Объект для json по наборам
+        private StatusHelper _statusHelper;
 
-        // Получаем компонент статистики
-        statistics = Camera.main.GetComponent<Statistics>();
-    }
+        [Header("Текст задания")]
+        [SerializeField] private Text _question;
 
-    private void Start()
-    {
-        // Подписываемся на событие по завершению времени
-        timer.losing.AddListener(TimeIsOver);
+        [Header("Кнопки вариантов")]
+        [SerializeField] private GameObject _variants;
 
-        SetCurrentTask();
-    }
+        [Header("Компонент таймера")]
+        [SerializeField] private Timer _timer;
 
-    /// <summary>
-    /// Отображение текущего задания
-    /// </summary>
-    private void SetCurrentTask()
-    {
-        // Выводим задание в текстовое поле
-        question.text = tasks.Facts[stage].Question;
+        private Coroutine _coroutine;
 
-        // Активируем кнопки вариантов
-        variants.SetActive(true);
+        [Header("Победный эффект")]
+        [SerializeField] private ParticleSystem _victory;
 
-        // Запускаем таймер уровня
-        timer.StartCoroutine("LevelTimer");
-    }
+        [Header("Обновление задания")]
+        [SerializeField] private Button _updateButton;
 
-    /// <summary>
-    /// Проверка ответа
-    /// </summary>
-    /// <param name="state">Состояние кнопки</param>
-    public void ComparisonAnswers(bool state)
-    {
-        // Останавливаем таймер
-        timer.StopAllCoroutines();
+        // Этап викторины
+        private int _stage;
 
-        // Если ответ правильный
-        if (tasks.Facts[stage].Answer == state)
+        private PointsEarned _pointsEarned;
+
+        private void Awake()
         {
-            // Увеличиваем монеты и счет
-            statistics.ChangeTotalCoins(10);
-            statistics.ChangeTotalScore(3);
+            // Текст с вопросами из json файла
+            var jsonString = ReadJsonFile("facts-" + Sets.Category);
+            // Преобразовываем строку в объект
+            ConvertToObject(ref _factsHelper, jsonString);
 
-            // Запускаем победный эффект
-            particle.Play();
-
-            // Выводим полное описание ответа
-            question.text =  tasks.Facts[stage].Description;
-
-            // Увеличиваем общее количество правильных ответов
-            PlayerPrefs.SetInt("facts-answer", PlayerPrefs.GetInt("facts-answer") + 1);
-
-            // Увеличиваем этап
-            stage++;
-
-            // Активируем кнопку обновления вопроса
-            updateButton.interactable = true;
+            _statusHelper = JsonUtility.FromJson<StatusHelper>(PlayerPrefs.GetString("facts"));
+            _pointsEarned = Camera.main.GetComponent<PointsEarned>();
         }
-        else
+
+        private void Start()
         {
-            // Выводим проигрышный текст
-            question.text = "Неправильно!\nПодборка фактов провалена, так как в данном режиме игры ошибаться нельзя.";
+            // Подписываем проигрыш в событие завершения времени
+            _timer.TimeIsOver.AddListener(LevelFailed);
 
-            // Увеличиваем общее количество неправильных ответов
-            PlayerPrefs.SetInt("facts-errors", PlayerPrefs.GetInt("facts-errors") + 1);
-
-            // Закрываем категорию
-            CloseCategory("loss");
+            CustomizeTask();
         }
-    }
 
-    /// <summary>
-    /// Обновление задания
-    /// </summary>
-    public void TaskUpdate()
-    {
-        // Если текущий этап не превышает количество заданий
-        if (stage < tasks.Facts.Length)
+        /// <summary>
+        /// Настройка текущего задания
+        /// </summary>
+        private void CustomizeTask()
         {
-            // Сбрасываем таймер
-            timer.ResetTimer();
+            _question.text = _factsHelper.Facts[_stage].Question;
+            _variants.SetActive(true);
 
-            // Выводим новое задание
-            SetCurrentTask();
+            // Запускаем отсчет уровня
+            _coroutine = StartCoroutine(_timer.Countdown());
         }
-        else
+
+        /// <summary>
+        /// Проверка ответа
+        /// </summary>
+        /// <param name="state">состояние кнопки</param>
+        public void CheckAnswer(bool state)
         {
-            // Выводим победный текст
-            question.text = "Великолепно!\nДанная подборка фактов успешно пройдена.";
+            // Останавливаем отсчет
+            StopCoroutine(_coroutine);
 
-            // Увеличиваем общее количество победных подборок
-            PlayerPrefs.SetInt("facts-victory", PlayerPrefs.GetInt("facts-victory") + 1);
+            // Если ответ правильный
+            if (_factsHelper.Facts[_stage].Answer == state)
+            {
+                _pointsEarned.ChangeQuantityCoins(10);
+                _pointsEarned.ChangeTotalScore(3);
 
-            // Закрываем категорию
-            CloseCategory("victory");
+                _victory.Play();
 
-            // Увеличиваем монеты и счет
-            statistics.ChangeTotalCoins(325);
-            statistics.ChangeTotalScore(150);
+                // Выводим полное описание ответа
+                _question.text = _factsHelper.Facts[_stage].Description;
+
+                // Увеличиваем общее количество правильных ответов
+                PlayerPrefs.SetInt("facts-answer", PlayerPrefs.GetInt("facts-answer") + 1);
+
+                _stage++;
+
+                // Активируем кнопку обновления вопроса
+                _updateButton.interactable = true;
+            }
+            else
+            {
+                if (_timer.Seconds > 0)
+                {
+                    _question.text = "Неправильно!" + IndentsHelpers.LineBreak(1) + "Подборка провалена, в данном режиме игры ошибаться нельзя.";
+                }
+                else
+                {
+                    _question.text = "Время закончилось!" + IndentsHelpers.LineBreak(1) + "Подборка провалена, в следующий раз старайся отвечать быстрее.";
+                }
+
+                // Увеличиваем общее количество неправильных ответов
+                PlayerPrefs.SetInt("facts-errors", PlayerPrefs.GetInt("facts-errors") + 1);
+
+                CloseCategory("loss");
+            }
         }
-    }
 
-    /// <summary>
-    /// Завершение времени таймера
-    /// </summary>
-    private void TimeIsOver()
-    {
-        // Выводим проигрышный текст
-        question.text = "Время закончилось!\nВ следующий раз старайся отвечать быстрее.";
+        /// <summary>
+        /// Завершение уровня с проигрышем
+        /// </summary>
+        private void LevelFailed()
+        {
+            // Скрываем варианты
+            _variants.SetActive(false);
+            CheckAnswer(!_factsHelper.Facts[_stage].Answer);
+        }
 
-        // Отключаем кнопки вариантов
-        variants.SetActive(false);
+        /// <summary>
+        /// Закрытие доступа к текущей категории
+        /// </summary>
+        /// <param name="result">результат подборки</param>
+        private void CloseCategory(string result)
+        {
+            // Записываем результат
+            _statusHelper.status[Sets.Category] = result;
+            // Сохраняем обновленное значение
+            PlayerPrefs.SetString("facts", JsonUtility.ToJson(_statusHelper));
+            // Увеличиваем общее количество завершенных подборок
+            PlayerPrefs.SetInt("facts-quantity", PlayerPrefs.GetInt("facts-quantity") + 1);
+        }
 
-        // Увеличиваем общее количество неправильных ответов
-        PlayerPrefs.SetInt("facts-errors", PlayerPrefs.GetInt("facts-errors") + 1);
+        /// <summary>
+        /// Переход к следующему заданию
+        /// </summary>
+        public void ShowNextTask()
+        {
+            if (_stage < _factsHelper.Facts.Length)
+            {
+                // Сбрасываем таймер
+                _timer.ResetTimer();
 
-        // Закрываем категорию
-        CloseCategory("loss");
-    }
+                CustomizeTask();
+            }
+            else
+            {
+                _question.text = "Великолепно!" + IndentsHelpers.LineBreak(1) + "Данная подборка фактов успешно пройдена.";
+                // Увеличиваем общее количество победных подборок
+                PlayerPrefs.SetInt("facts-victory", PlayerPrefs.GetInt("facts-victory") + 1);
 
-    /// <summary>
-    /// Закрытие доступа к категории
-    /// </summary>
-    /// <param name="result">Результат подборки</param>
-    private void CloseCategory(string result)
-    {
-        // Записываем результат
-        statuses.status[FactsCollections.collections] = result;
-        // Сохраняем обновленное значение
-        PlayerPrefs.SetString("facts", JsonUtility.ToJson(statuses));
+                _pointsEarned.ChangeQuantityCoins(325);
+                _pointsEarned.ChangeTotalScore(150);
 
-        // Увеличиваем общее количество завершенных подборок
-        PlayerPrefs.SetInt("facts-quantity", PlayerPrefs.GetInt("facts-quantity") + 1);
+                CloseCategory("victory");
+            }
+        }
     }
 }

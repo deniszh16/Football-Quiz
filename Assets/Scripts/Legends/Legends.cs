@@ -1,126 +1,126 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Cubra.Helpers;
 
-public class Legends : IncreaseListStatuses
+namespace Cubra.Legends
 {
-    // Номер выбранной карточки
-    public static int descriptionCard;
-
-    // Позиция скролла в списке карточек
-    public static float scrollPosition = 1;
-
-    [Header("Набор карточек")]
-    [SerializeField] private GameObject cards;
-
-    [Header("Компонент скролла")]
-    [SerializeField] private ScrollRect scroll;
-
-    [Header("Анимация открытия")]
-    [SerializeField] private Animator effect;
-
-    // Объект для json по статусам карточек
-    private StaJson statuses = new StaJson();
-
-    // Ссылка на компонент статистики
-    private Statistics statistics;
-
-    private void Awake()
+    public class Legends : IncreaseQuantityItems
     {
-        // Преобразовываем сохраненную json строку в объект
-        statuses = JsonUtility.FromJson<StaJson>(PlayerPrefs.GetString("legends"));
+        // Выбранная карточка
+        public static int Card;
 
-        statistics = Camera.main.GetComponent<Statistics>();
-    }
+        // Позиция скролла в списке карточек
+        public static float ScrollPosition = 1;
 
-    private void Start()
-    {
-        // Проверяем необходимость увеличения списка карточек
-        AddToList(statuses, cards.transform.childCount, "legends");
+        [Header("Набор карточек")]
+        [SerializeField] private Legend[] _cards;
 
-        // Устанавливаем позицию скролла
-        scroll.verticalNormalizedPosition = scrollPosition;
+        [Header("Компонент скролла")]
+        [SerializeField] private ScrollRect _scrollRect;
 
-        // Проверяем легендарные карточки
-        CheckLegendaryCards();
-    }
+        [Header("Анимация открытия")]
+        [SerializeField] private Animator _victory;
 
-    /// <summary>
-    /// Проверка легендарных карточек
-    /// </summary>
-    private void CheckLegendaryCards()
-    {
-        for (int i = 0; i < cards.transform.childCount; i++)
+        private StatusHelper _statusHelper;
+        private PointsEarned _pointsEarned;
+
+        private void Awake()
         {
-            // Если карточка открыта
-            if (statuses.status[i] == "yes")
-                // Отображаем открытый вариант
-                cards.transform.GetChild(i).GetComponentInChildren<Legend>().ShowImageCard();
+            _statusHelper = new StatusHelper();
+            _statusHelper = JsonUtility.FromJson<StatusHelper>(PlayerPrefs.GetString("legends"));
+
+            _pointsEarned = Camera.main.GetComponent<PointsEarned>();
         }
-    }
 
-    /// <summary>
-    /// Открытие легендарной карточки
-    /// </summary>
-    /// <param name="number">Номер карточки</param>
-    public void OpenLegendaryCard(int number)
-    {
-        // Если карточка закрытая
-        if (statuses.status[number] == "no")
+        private void Start()
         {
-            // Если достаточно монет для открытия
+            // Проверяем необходимость увеличения списка карточек
+            AddToList(_statusHelper, _cards.Length, "legends");
+
+            // Устанавливаем позицию скролла
+            _scrollRect.verticalNormalizedPosition = ScrollPosition;
+
+            CheckLegendaryCards();
+        }
+
+        /// <summary>
+        /// Проверка легендарных карточек
+        /// </summary>
+        private void CheckLegendaryCards()
+        {
+            for (int i = 0; i < _cards.Length; i++)
+            {
+                // Если карточка открыта, показываем соответствующий вариант
+                if (_statusHelper.status[i] == "yes") _cards[i].ShowImageCard();
+            }
+        }
+
+        /// <summary>
+        /// Открытие легендарной карточки
+        /// </summary>
+        /// <param name="number">номер карточки</param>
+        public void OpenLegendaryCard(int number)
+        {
+            // Если карточка закрытая
+            if (_statusHelper.status[number] == "no")
+            {
+                BuyCard(number);
+            }
+            else
+            {
+                if (_cards[number].Biography)
+                {
+                    // Записываем последнюю позицию скролла
+                    ScrollPosition = _scrollRect.verticalNormalizedPosition;
+
+                    Card = number;
+                    // Переходим на сцену описания легенды
+                    Camera.main.GetComponent<TransitionsManager>().GoToScene(9);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Покупка закрытой карточки
+        /// </summary>
+        /// <param name="number">номер карточки</param>
+        private void BuyCard(int number)
+        {
             if (PlayerPrefs.GetInt("coins") >= 950)
             {
-                // Вычитаем монеты, увеличиваем счет
-                statistics.ChangeTotalCoins(-950);
-                statistics.ChangeTotalScore(450);
+                _pointsEarned.ChangeQuantityCoins(-950);
+                _pointsEarned.ChangeTotalScore(450);
 
-                // Записываем обновленное значение
-                statuses.status[number] = "yes";
-                // Сохраняем данные по карточкам
-                SaveListStatuses(statuses, "legends");
+                _statusHelper.status[number] = "yes";
+                SaveListStatuses(_statusHelper, "legends");
 
                 // Увеличиваем общее количество открытых карточек
                 PlayerPrefs.SetInt("legends-open", PlayerPrefs.GetInt("legends-open") + 1);
 
                 // Отображаем открытую карточку
-                cards.transform.GetChild(number).GetComponentInChildren<Legend>().ShowImageCard();
+                _cards[number].ShowImageCard();
                 // Отображаем эффект открытия под карточкой
-                ShowOpeningEffect(cards.transform.GetChild(number).gameObject);
+                ShowOpeningEffect(_cards[number].transform);
             }
             else
             {
                 // Вызываем мигание монет
-                statistics.UpdateTotalCoins(true);
+                _pointsEarned.ShowCurrentQuantityCoins(-950);
             }
         }
-        else
+
+        /// <summary>
+        /// Отображение эффекта открытия
+        /// </summary>
+        /// <param name="card">карточка</param>
+        private void ShowOpeningEffect(Transform card)
         {
-            if (cards.transform.GetChild(number).GetComponentInChildren<Legend>().Biography)
-            {
-                // Записываем последнюю позицию скролла
-                scrollPosition = scroll.verticalNormalizedPosition;
+            // Переставляем эффект к карточке
+            _victory.transform.position = card.transform.position;
+            _victory.transform.SetParent(card.transform.parent);
+            _victory.transform.SetSiblingIndex(0);
 
-                // Записываем номер карточки
-                descriptionCard = number;
-
-                // Переходим на сцену описания легенды
-                Camera.main.GetComponent<TransitionsInMenu>().GoToScene(9);
-            }
+            _victory.Rebind();
         }
-    }
-
-    /// <summary>
-    /// Отображение эффекта открытия
-    /// </summary>
-    /// <param name="card">Открытая карточка</param>
-    private void ShowOpeningEffect(GameObject card)
-    {
-        // Переставляем эффект к карточке
-        effect.transform.position = card.transform.position;
-        effect.transform.SetParent(card.transform);
-        effect.transform.SetSiblingIndex(0);
-
-        // Перезапускаем анимацию
-        effect.Rebind();
     }
 }

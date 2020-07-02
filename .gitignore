@@ -59,12 +59,14 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Ignoring folders
-Appodeal/
-Editor/
 GooglePlay/
-StreamingAssets/
+ExternalDependencyManager/
+GeneratedLocalRepo/
 Sprites/
+StreamingAssets/
 
 # Ignoring files
 *.gitattributes
 *.keystore
+*.log
+*.meta

@@ -1,86 +1,70 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Cubra.Helpers;
 
-public class Results : MonoBehaviour
+namespace Cubra
 {
-    [Header("Количество заданий")]
-    [SerializeField] private Tasks[] tasks;
-
-    [Header("Панель скролла")]
-    [SerializeField] private ScrollRect scroll;
-
-    // Ссылка текст результатов
-    private Text results;
-
-    private void Awake()
+    public class Results : MonoBehaviour
     {
-        results = GetComponent<Text>();
-    }
+        [Header("Списки заданий")]
+        [SerializeField] private Tasks[] _tasks;
 
-    private void Start()
-    {
-        // Статистика по викторине стран и турниров
-        results.text += "Викторина по странам" + Indents.LineBreak(2);
-        results.text += "Всего вопросов: " + GetStatistics(tasks[0]) + Indents.LineBreak(1);
-        results.text += "Правильные ответы: " + PlayerPrefs.GetInt("countries-answer") + Indents.LineBreak(1);
-        results.text += "Количество ошибок: " + PlayerPrefs.GetInt("countries-error") + Indents.LineBreak(1);
-        results.text += "Количество подсказок: " + PlayerPrefs.GetInt("countries-tips") + Indents.LineBreak(1);
-        results.text += "Пропуски вопросов: " + PlayerPrefs.GetInt("countries-pass") + Indents.LineBreak(1);
-        results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("countries-answer") * 5) + Indents.LineBreak(2);
+        [Header("Компонент скролла")]
+        [SerializeField] private ScrollRect _scrollRect;
 
-        // Отделяющая строка
-        results.text += Indents.Underscore(26) + Indents.LineBreak(2);
+        [Header("Текст результатов")]
+        [SerializeField] private Text _results;
 
-        // Статистика по викторине с фотографиями
-        results.text += "Викторина по игрокам" + Indents.LineBreak(2);
-        results.text += "Всего заданий: " + GetStatistics(tasks[1]) + Indents.LineBreak(1);
-        results.text += "Правильные ответы: " + (PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers")) + Indents.LineBreak(1);
-        results.text += "Количество ошибок: " + (PlayerPrefs.GetInt("players-errors") + PlayerPrefs.GetInt("trainers-errors")) + Indents.LineBreak(1);
-        results.text += "Открытые фрагменты: " + (PlayerPrefs.GetInt("players-buttons") + PlayerPrefs.GetInt("trainers-buttons")) + Indents.LineBreak(1);
-        results.text += "Количество подсказок: " + (PlayerPrefs.GetInt("players-tips") + PlayerPrefs.GetInt("trainers-tips")) + Indents.LineBreak(1);
-        results.text += "Пропуски заданий: " + (PlayerPrefs.GetInt("players-pass") + PlayerPrefs.GetInt("trainers-pass")) + Indents.LineBreak(1);
-        results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("players") + PlayerPrefs.GetInt("trainers")) *3 + Indents.LineBreak(2);
+        private void Start()
+        {
+            // Статистика по викторине стран и турниров
+            _results.text += "Викторина по странам" + IndentsHelpers.LineBreak(2);
+            _results.text += "Всего вопросов: " + GetStatistics(_tasks[0]) + IndentsHelpers.LineBreak(1);
+            _results.text += "Правильные ответы: " + PlayerPrefs.GetInt("countries-answer") + IndentsHelpers.LineBreak(1);
+            _results.text += "Количество ошибок: " + PlayerPrefs.GetInt("countries-error") + IndentsHelpers.LineBreak(1);
+            _results.text += "Количество подсказок: " + PlayerPrefs.GetInt("countries-tips") + IndentsHelpers.LineBreak(1);
+            _results.text += "Пропуски вопросов: " + PlayerPrefs.GetInt("countries-pass") + IndentsHelpers.LineBreak(1);
+            _results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("countries-answer") * 5) + IndentsHelpers.LineBreak(2);
 
-        // Отделяющая строка
-        results.text += Indents.Underscore(26) + Indents.LineBreak(2);
+            // Отделяющая строка
+            _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
 
-        // Статистика по футбольным фактам
-        results.text += "Викторина по фактам" + Indents.LineBreak(2);
-        results.text += "Количество подборок: " + tasks[2].quantityLength + Indents.LineBreak(1);
-        results.text += "Всего вопросов: " + GetStatistics(tasks[2]) + Indents.LineBreak(1);
-        results.text += "Завершенные подборки: " + PlayerPrefs.GetInt("facts-quantity") + Indents.LineBreak(1);
-        results.text += "Выигранные подборки: " + PlayerPrefs.GetInt("facts-victory") + Indents.LineBreak(1);
-        results.text += "Правильные ответы: " + PlayerPrefs.GetInt("facts-answer") + Indents.LineBreak(1);
-        results.text += "Количество ошибок: " + PlayerPrefs.GetInt("facts-errors") + Indents.LineBreak(1);
-        results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("facts-answer") * 3) + Indents.LineBreak(2);
+            // Статистика по футбольным фактам
+            _results.text += "Викторина по фактам" + IndentsHelpers.LineBreak(2);
+            _results.text += "Количество подборок: " + _tasks[1].QuantityCategories + IndentsHelpers.LineBreak(1);
+            _results.text += "Всего вопросов: " + GetStatistics(_tasks[1]) + IndentsHelpers.LineBreak(1);
+            _results.text += "Завершенные подборки: " + PlayerPrefs.GetInt("facts-quantity") + IndentsHelpers.LineBreak(1);
+            _results.text += "Выигранные подборки: " + PlayerPrefs.GetInt("facts-victory") + IndentsHelpers.LineBreak(1);
+            _results.text += "Правильные ответы: " + PlayerPrefs.GetInt("facts-answer") + IndentsHelpers.LineBreak(1);
+            _results.text += "Количество ошибок: " + PlayerPrefs.GetInt("facts-errors") + IndentsHelpers.LineBreak(1);
+            _results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("facts-answer") * 3) + IndentsHelpers.LineBreak(2);
 
-        // Отделяющая строка
-        results.text += Indents.Underscore(26) + Indents.LineBreak(2);
+            // Отделяющая строка
+            _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
 
-        // Статистика по легендам
-        results.text += "Футбольные легенды" + Indents.LineBreak(2);
-        results.text += "Всего карточек: 44" + Indents.LineBreak(1);
-        results.text += "Открытые карточки: " + PlayerPrefs.GetInt("legends-open") + Indents.LineBreak(1);
-        results.text += "Потрачено монет: " + (PlayerPrefs.GetInt("legends-open") * 950) + Indents.LineBreak(1);
+            // Статистика по легендам
+            _results.text += "Футбольные легенды" + IndentsHelpers.LineBreak(2);
+            _results.text += "Всего карточек: 44" + IndentsHelpers.LineBreak(1);
+            _results.text += "Открытые карточки: " + PlayerPrefs.GetInt("legends-open") + IndentsHelpers.LineBreak(1);
+            _results.text += "Потрачено монет: " + (PlayerPrefs.GetInt("legends-open") * 950) + IndentsHelpers.LineBreak(1);
 
-        // Поднимаем скролл в самый верх
-        scroll.verticalNormalizedPosition = 1;
-    }
+            _scrollRect.verticalNormalizedPosition = 1;
+        }
 
-    /// <summary>
-    /// Получение общего количества заданий в викторинах
-    /// </summary>
-    /// <param name="tasks">Объект заданий</param>
-    /// <returns>Текст с количеством заданий</returns>
-    private string GetStatistics(IQuantity tasks)
-    {
-        // Количество заданий
-        var quantity = 0;
+        /// <summary>
+        /// Получение общего количества заданий в викторинах
+        /// </summary>
+        /// <param name="tasks">объект категорий</param>
+        /// <returns>количество заданий</returns>
+        private string GetStatistics(IQuantity tasks)
+        {
+            var quantity = 0;
 
-        // Подсчитываем общее количество заданий
-        for (int i = 0; i < tasks.quantityLength; i++)
-            quantity += tasks[i];
+            // Подсчитываем общее количество заданий
+            for (int i = 0; i < tasks.QuantityCategories; i++)
+                quantity += tasks[i];
 
-        return quantity.ToString();
+            return quantity.ToString();
+        }
     }
 }

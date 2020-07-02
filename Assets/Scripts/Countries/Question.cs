@@ -1,31 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Question : MonoBehaviour
+namespace Cubra.Countries
 {
-    // Ссылки на компоненты
-    private Text textComponent;
-    private TasksCountries questions;
-
-    private void Awake()
+    public class Question : MonoBehaviour
     {
-        textComponent = GetComponent<Text>();
-        questions = Camera.main.GetComponent<TasksCountries>();
-    }
+        private Text _question;
 
-    private void Start()
-    {
-        // Если прогресс не превышает количество вопросов в массиве
-        if ((questions.Progress - 1) < questions.Tasks.TaskItems.Length)
-            // Устанавливаем вопрос
-            GetQuestion();
-    }
+        private void Awake()
+        {
+            _question = GetComponent<Text>();
+        }
 
-    /// <summary>
-    /// Вывод вопроса из массива
-    /// </summary>
-    public void GetQuestion()
-    {
-        textComponent.text = questions.Tasks.TaskItems[questions.Progress - 1].Question;
+        /// <summary>
+        /// Отображение вопроса
+        /// </summary>
+        /// <param name="question">текст вопроса</param>
+        public void ShowQuestion(string question)
+        {
+            _question.text = question;
+        }
     }
 }

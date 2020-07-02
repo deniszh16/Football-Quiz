@@ -1,54 +1,58 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Cubra.Helpers;
 
-public class Biography : FileProcessing
+namespace Cubra.Legends
 {
-    [Header("Заголовок")]
-    [SerializeField] private Text heading;
-
-    [Header("Биография легенды")]
-    [SerializeField] private Text legend;
-
-    [Header("Компонент скролла")]
-    [SerializeField] private ScrollRect scroll;
-
-    // Объект для работы с json по описанию игрока
-    private LegJson biography = new LegJson();
-
-    private void Awake()
+    public class Biography : FileProcessing
     {
-        // Обрабатываем json файл и записываем в переменную
-        string jsonString = ReadJsonFile("legend-" + Legends.descriptionCard);
-        // Преобразовываем строку в объект
-        ConvertToObject(ref biography, jsonString);
-    }
+        [Header("Заголовок")]
+        [SerializeField] private Text _heading;
 
-    private void Start()
-    {
-        // Выводим в заголовок имя игрока
-        heading.text = biography.Name;
+        [Header("Биография легенды")]
+        [SerializeField] private Text _biography;
 
-        // Выводим клубные достижения
-        legend.text += biography.Progress.Club;
+        [Header("Компонент скролла")]
+        [SerializeField] private ScrollRect _scrollRect;
 
-        // Если есть международные достижения
-        if (biography.Progress.Team != "")
+        // Объект для json по описанию игрока
+        private LegendsHelpers _legendsHelpers;
+
+        private void Awake()
         {
-            legend.text += Indents.LineBreak(2) + Indents.Underscore(26) + Indents.LineBreak(2);
-            // Выводим международные достижения
-            legend.text += biography.Progress.Team;
+            _legendsHelpers = new LegendsHelpers();
+            
+            // Обрабатываем json файл и записываем в переменную
+            string jsonString = ReadJsonFile("legend-" + Legends.Card);
+            // Преобразовываем строку в объект
+            ConvertToObject(ref _legendsHelpers, jsonString);
         }
 
-        // Если есть особые достижения
-        if (biography.Progress.Personal != "")
+        private void Start()
         {
-            legend.text += Indents.LineBreak(2) + Indents.Underscore(26) + Indents.LineBreak(2);
-            // Выводим особые достижения
-            legend.text += biography.Progress.Personal;
-            legend.text += Indents.LineBreak(2);
-        }
+            // Выводим в заголовок имя игрока
+            _heading.text = _legendsHelpers.Name;
+            // Выводим клубные достижения
+            _biography.text += _legendsHelpers.Progress.Club;
 
-        // Перемещаем скролл вверх текста
-        scroll.verticalNormalizedPosition = 1;
+            // Если есть международные достижения
+            if (_legendsHelpers.Progress.Team != "")
+            {
+                _biography.text += IndentsHelpers.LineBreak(2) + IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
+                // Выводим международные достижения
+                _biography.text += _legendsHelpers.Progress.Team;
+            }
+
+            // Если есть особые достижения
+            if (_legendsHelpers.Progress.Personal != "")
+            {
+                _biography.text += IndentsHelpers.LineBreak(2) + IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
+                // Выводим особые достижения
+                _biography.text += _legendsHelpers.Progress.Personal;
+                _biography.text += IndentsHelpers.LineBreak(2);
+            }
+
+            _scrollRect.verticalNormalizedPosition = 1;
+        }
     }
 }

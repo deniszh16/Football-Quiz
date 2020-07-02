@@ -1,12 +1,22 @@
 ﻿using UnityEngine;
 
-public class AspectRatio : MonoBehaviour
+namespace Cubra
 {
-    // Ссылка на основную камеру
-    public static Camera _camera;
-
-    private void Awake()
+    public class AspectRatio : MonoBehaviour
     {
-        _camera = GetComponent<Camera>();
+        // Соотношение сторон экрана
+        public static float Ratio { get; private set; }
+
+        private Camera _mainCamera;
+
+        private void Awake()
+        {
+            _mainCamera = GetComponent<Camera>();
+        }
+
+        private void Start()
+        {
+            Ratio = _mainCamera.aspect;
+        }
     }
 }

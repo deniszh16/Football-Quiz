@@ -1,98 +1,152 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
+using Cubra.Helpers;
 
-public class TasksCountries : FileProcessing
+namespace Cubra.Countries
 {
-    // Объект для работы с json по вопросам
-    private QueJson tasks = new QueJson();
-    public QueJson Tasks { get { return tasks; } }
-
-    // Объект для работы с json по наборам уровней
-    public SetJson Sets { get; private set; } = new SetJson();
-
-    [Header("Панель букв")]
-    [SerializeField] private GameObject letters;
-
-    [Header("Панель вариантов")]
-    [SerializeField] private GameObject variants;
-
-    [Header("Кнопка подсказок")]
-    [SerializeField] private GameObject buttonTips;
-
-    [Header("Кнопка удаления букв")]
-    [SerializeField] private GameObject buttonDelete;
-
-    [Header("Компонент ответа")]
-    [SerializeField] private AnswerCountries answer;
-    public AnswerCountries Answer { get { return answer; } }
-
-    // Первая буква ответа (для подсказки)
-    public string FirstLetter { get; private set; }
-
-    // Прогресс в текущей категории
-    public int Progress { get; set; }
-
-    private void Awake()
+    public class TasksCountries : FileProcessing
     {
-        // Обрабатываем json файл и записываем в текстовую переменную
-        var jsonString = ReadJsonFile("category-" + Categories.category.ToString());
-        // Преобразовываем строку в объект
-        ConvertToObject(ref tasks, jsonString);
+        // Объект для json по вопросам
+        private QuestionsHelpers _questionsHelpers;
 
-        // Преобразуем json строку по категориям в объект 
-        Sets = JsonUtility.FromJson<SetJson>(PlayerPrefs.GetString("sets"));
+        public QuestionsHelpers QuestionsHelpers => _questionsHelpers;
 
-        // Записываем текущий прогресс категории
-        Progress = Sets.arraySets[Categories.category];
-    }
+        // Объект для json по наборам уровней
+        public SetsHelper SetsHelper { get; private set; }
 
-    private void Start()
-    {
-        SceneSetting();
-    }
+        [Header("Панель букв")]
+        [SerializeField] private GameObject _letters;
 
-    /// <summary>
-    /// Настройка сцены под текущий тип вопроса
-    /// </summary>
-    public void SceneSetting()
-    {
-        if (Tasks.TaskItems[Progress - 1].Type == "letters")
+        [Header("Панель вариантов")]
+        [SerializeField] private GameObject _variants;
+
+        [Header("Кнопка подсказок")]
+        [SerializeField] private GameObject _buttonTips;
+
+        [Header("Кнопка удаления букв")]
+        [SerializeField] private GameObject _buttonDelete;
+
+        [Header("Компонент вопроса")]
+        [SerializeField] private Question _question;
+
+        [Header("Компонент ответа")]
+        [SerializeField] private Answer _answer;
+
+        public Answer Answer => _answer;
+
+        // Прогресс категории
+        public int Progress { get; private set; }
+
+        // Первая буква ответа
+        private string _firstLetter;
+
+        private void Awake()
         {
-            // Активируем панель с буквами
-            letters.SetActive(true);
-            // Активируем кнопку подсказок
-            buttonTips.SetActive(true);
-            // Активируем кнопку стирания букв
-            buttonDelete.SetActive(true);
+            _questionsHelpers = new QuestionsHelpers();
 
-            // Получаем первую букву ответа (для подсказки)
-            FirstLetter = Tasks.TaskItems[Progress - 1].Answer[0];
-        }
-        else
-        {
-            // Активируем панель с вариантами
-            variants.SetActive(true);
+            // Текст с вопросами из json файла
+            var jsonString = ReadJsonFile("category-" + Sets.Category);
+            // Преобразовываем строку в объект
+            ConvertToObject(ref _questionsHelpers, jsonString);
+
+            SetsHelper = JsonUtility.FromJson<SetsHelper>(PlayerPrefs.GetString("sets"));
+            Progress = SetsHelper.arraySets[Sets.Category];
         }
 
-        // Настраиваем ответ для задания
-        answer.TypeAnswer(Tasks.TaskItems[Progress - 1].Type);
-    }
+        private void Start()
+        {
+            CustomizeScene();
 
-    /// <summary>
-    /// Поиск первой буквы ответа в массиве букв
-    /// </summary>
-    public int LetterSearch()
-    {
-        // Возвращаем номер первого вхождения в массив
-        return Array.IndexOf(Tasks.TaskItems[Progress - 1].Letters, FirstLetter);
-    }
+            // Если прогресс не превышает количество вопросов
+            if (Progress - 1 < _questionsHelpers.TaskItems.Length)
+            {
+                // Отображаем следующий вопрос
+                _question.ShowQuestion(_questionsHelpers.TaskItems[Progress - 1].Question);
+            }
+        }
 
-    /// <summary>
-    /// Поиск указанной буквы в массиве ответа
-    /// </summary>
-    /// <param name="number">Номер буквы</param>
-    public int LetterSearch(int number)
-    {
-        return Array.IndexOf(Tasks.TaskItems[Progress - 1].Answer, Tasks.TaskItems[Progress - 1].Letters[number]);
+        /// <summary>
+        /// Настройка сцены для текущего вопроса
+        /// </summary>
+        public void CustomizeScene()
+        {
+            if (_questionsHelpers.TaskItems[Progress - 1].Type == "letters")
+            {
+                _letters.SetActive(true);
+                _buttonTips.SetActive(true);
+                _buttonDelete.SetActive(true);
+
+                // Получаем первую букву ответа (для подсказки)
+                _firstLetter = _questionsHelpers.TaskItems[Progress - 1].Answer[0];
+
+                // Настраиваем ответ под задание
+                _answer.CustomizeAnswer(_questionsHelpers.TaskItems[Progress - 1].Type, _questionsHelpers.TaskItems[Progress - 1].Answer.Length);
+
+                // Расставляем буквы
+                ArrangeLettersOfTask();
+            }
+            else
+            {
+                _variants.SetActive(true);
+                _answer.CustomizeAnswer(_questionsHelpers.TaskItems[Progress - 1].Type);
+
+                // Расставляем варианты
+                ArrangeOptionsOfTask();
+            }
+        }
+
+        /// <summary>
+        /// Расставление букв для задания
+        /// </summary>
+        private void ArrangeLettersOfTask()
+        {
+            for (int i = 0; i < _letters.transform.childCount; i++)
+                _letters.transform.GetChild(i).GetComponentInChildren<Text>().text = _questionsHelpers.TaskItems[Progress - 1].Letters[i];
+        }
+
+        /// <summary>
+        /// Расставление вариантов ответа для задания
+        /// </summary>
+        private void ArrangeOptionsOfTask()
+        {
+            for (int i = 0; i < _variants.transform.childCount; i++)
+                _variants.transform.GetChild(i).GetComponentInChildren<Text>().text = _questionsHelpers.TaskItems[Progress - 1].Options[i];
+        }
+
+        /// <summary>
+        /// Поиск первой буквы ответа
+        /// </summary>
+        public int FindFirstLetter()
+        {
+            return Array.IndexOf(_questionsHelpers.TaskItems[Progress - 1].Letters, _firstLetter);
+        }
+
+        /// <summary>
+        /// Поиск указанной буквы в массиве ответа
+        /// </summary>
+        /// <param name="number">номер буквы</param>
+        public int FindSpecifiedLetter(int number)
+        {
+            return Array.IndexOf(_questionsHelpers.TaskItems[Progress - 1].Answer, _questionsHelpers.TaskItems[Progress - 1].Letters[number]);
+        }
+
+        /// <summary>
+        /// Переход к следующему заданию
+        /// </summary>
+        public void ShowNextQuestion()
+        {
+            if (Progress < _questionsHelpers.TaskItems.Length)
+            {
+                Camera.main.GetComponent<TransitionsManager>().RestartScene();
+            }
+            else
+            {
+                // Начисляем бонус за пройденную категорию
+                Camera.main.GetComponent<PointsEarned>().ChangeQuantityCoins(500);
+                // Переходим в список пройденных вопросов
+                Camera.main.GetComponent<TransitionsManager>().GoToScene(4);
+            }
+        }
     }
 }

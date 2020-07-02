@@ -2,53 +2,51 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Timer : MonoBehaviour
+namespace Cubra.Facts
 {
-    // Событие по окончаию времени таймера
-    public UnityEvent losing = new UnityEvent();
-
-    [Header("Элементы таймера")]
-    [SerializeField] private GameObject[] dashes;
-
-    // Количество секунд
-    private int seconds = 14;
-
-    // Последняя активная черточка
-    private int number = 7;
-
-    /// <summary>
-    /// Отсчет секунд до проигрыша
-    /// </summary>
-    private IEnumerator LevelTimer()
+    public class Timer : MonoBehaviour
     {
-        while (seconds > 0)
-        {
-            yield return new WaitForSeconds(2);
-            seconds -= 2;
+        // Событие по окончанию времени
+        public UnityEvent TimeIsOver;
 
-            // Убираем черточку таймера
-            dashes[number - 1].SetActive(false);
-            number--;
+        [Header("Элементы таймера")]
+        [SerializeField] private GameObject[] _dashes;
+
+        // Количество секунд
+        public int Seconds { get; private set; } = 14;
+
+        // Последняя активная черточка
+        private int _number = 7;
+
+        /// <summary>
+        /// Обратный отсчет таймера
+        /// </summary>
+        public IEnumerator Countdown()
+        {
+            while (Seconds > 0)
+            {
+                yield return new WaitForSeconds(2f);
+                Seconds -= 2;
+
+                // Убираем черточку таймера
+                _dashes[_number - 1].SetActive(false);
+                _number--;
+            }
+
+            TimeIsOver?.Invoke();
         }
 
-        // Вызываем подписанные методы
-        losing?.Invoke();
-    }
+        /// <summary>
+        /// Сброс таймера
+        /// </summary>
+        public void ResetTimer()
+        {
+            // Восстанавливаем черточки таймера
+            for (int i = 0; i < _dashes.Length; i++)
+                _dashes[i].SetActive(true);
 
-    /// <summary>
-    /// Восстановление настроек таймера
-    /// </summary>
-    public void ResetTimer()
-    {
-        // Останавливаем отсчеты
-        StopAllCoroutines();
-
-        // Восстанавливаем черточки таймера
-        for (int i = 0; i < dashes.Length; i++)
-            dashes[i].SetActive(true);
-
-        // Сбрасываем значения
-        seconds = 14;
-        number = 7;
+            Seconds = 14;
+            _number = 7;
+        }
     }
 }

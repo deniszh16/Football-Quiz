@@ -1,119 +1,115 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Category : MonoBehaviour
+namespace Cubra
 {
-    [Header("Номер категории")]
-    [SerializeField] private int number;
-
-    [Header("Стоимость открытия")]
-    [SerializeField] private int price;
-
-    [Header("Спрайт открытой категории")]
-    [SerializeField] private Sprite sprite;
-
-    [Header("Идентификатор достижения")]
-    [SerializeField] private string identifier;
-
-    // Номер текущего вопроса
-    private int currentQuestion;
-
-    // Ссылки на компоненты
-    private Text text;
-    private Image image;
-    private Categories categories;
-
-    private void Awake()
+    public class Category : MonoBehaviour
     {
-        image = GetComponent<Image>();
-        text = GetComponentInChildren<Text>();
-    }
+        [Header("Номер категории")]
+        [SerializeField] private int _number;
 
-    private void Start()
-    {
-        categories = Camera.main.GetComponent<Categories>();
+        [Header("Стоимость открытия")]
+        [SerializeField] private int _price;
 
-        // Получаем номер текущего вопроса по категории
-        currentQuestion = categories.Sets.arraySets[number];
+        [Header("Спрайт открытой категории")]
+        [SerializeField] private Sprite _sprite;
 
-        // Если категория открыта, обновляем информацию
-        if (currentQuestion != 0) UpdateCategory();
+        [Header("Идентификатор достижения")]
+        [SerializeField] private string _achievement;
 
-        // Если категория полностью пройдена
-        if (currentQuestion > categories.Tasks[number])
-            if (Application.internetReachability != NetworkReachability.NotReachable)
-                // Разблокируем достижение с указанным идентификатором
-                PlayServices.UnlockingAchievement(identifier);
-    }
+        // Номер текущего вопроса
+        private int currentQuestion;
 
-    /// <summary>
-    /// Обновление информации по открытой категории
-    /// </summary>
-    private void UpdateCategory()
-    {
-        // Меняем спрайт
-        image.sprite = sprite;
+        private Sets _sets;
+        private Text _statistics;
+        private Image _imageButton;
 
-        // Убираем прозрачность текста
-        text.color = Color.white;
-        // Выводим количество пройденных и общее количество вопросов
-        text.text = currentQuestion - 1 + " /" + categories.Tasks[number];
-    }
-
-    /// <summary>
-    /// Открытие или приобретение категории
-    /// </summary>
-    public void OpenCategory()
-    {
-        // Если категория открыта и не пройдена полностью
-        if (currentQuestion != 0 && currentQuestion <= categories.Tasks[number])
+        private void Awake()
         {
-            // Записываем номер категории
-            Categories.category = number;
-            categories.Transitions.GoToScene(3);
+            _sets = Camera.main.GetComponent<Sets>();
+            _statistics = GetComponentInChildren<Text>();
+            _imageButton = GetComponent<Image>();
         }
-        // Если категория полностью пройдена
-        else if (currentQuestion > categories.Tasks[number])
+
+        private void Start()
         {
-            Categories.category = number;
-            categories.Transitions.GoToScene(4);
-        }
-        else
-        {
-            if (PlayerPrefs.GetInt("coins") >= price)
+            // Получаем номер текущего вопроса по категории
+            currentQuestion = _sets.SetsHelper.arraySets[_number];
+
+            if (currentQuestion > 0)
             {
-                // Покупаем категорию
-                PaymentCategory();
+                UpdateCategory();
+
+                // Если категория полностью пройдена
+                if (currentQuestion > _sets.Task[_number])
+                {
+                    // Разблокируем достижение
+                    GooglePlayServices.UnlockingAchievement(_achievement);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Обновление информации по открытой категории
+        /// </summary>
+        private void UpdateCategory()
+        {
+            _imageButton.sprite = _sprite;
+
+            _statistics.color = Color.white;
+            _statistics.text = currentQuestion - 1 + " /" + _sets.Task[_number];
+        }
+
+        /// <summary>
+        /// Открытие или приобретение категории
+        /// </summary>
+        public void OpenCategory()
+        {
+            if (currentQuestion > 0 && currentQuestion <= _sets.Task[_number])
+            {
+                Sets.Category = _number;
+                // Переходим к викторине
+                Camera.main.GetComponent<TransitionsManager>().GoToScene(3);
+            }
+            else if (currentQuestion > _sets.Task[_number])
+            {
+                Sets.Category = _number;
+                // Переходим к результатам
+                Camera.main.GetComponent<TransitionsManager>().GoToScene(4);
             }
             else
             {
-                // Активируем анимацию нехватки монет
-                categories.TextAnimator.enabled = true;
-                categories.TextAnimator.Rebind();
+                // Если достаточно монет
+                if (PlayerPrefs.GetInt("coins") >= _price)
+                {
+                    PaymentCategory();
+                }
+                else
+                {
+                    _sets.TextAnimation.enabled = true;
+                    _sets.TextAnimation.Rebind();
+                }
             }
         }
-    }
 
-    /// <summary>
-    /// Покупка новой категории
-    /// </summary>
-    private void PaymentCategory()
-    {
-        // Вычитаем стоимость категории
-        categories.Statistics.ChangeTotalCoins(-price);
+        /// <summary>
+        /// Покупка новой категории
+        /// </summary>
+        private void PaymentCategory()
+        {
+            _sets.PointsEarned.ChangeQuantityCoins(-_price);
 
-        // Открываем категорию
-        categories.Sets.arraySets[number] = 1;
-        // Увеличиваем номер текущего вопроса
-        currentQuestion++;
-        // Сохраняем обновленное значение
-        PlayerPrefs.SetString("sets", JsonUtility.ToJson(categories.Sets));
+            // Открываем категорию
+            _sets.SetsHelper.arraySets[_number] = 1;
+            currentQuestion++;
 
-        // Обновляем категорию
-        UpdateCategory();
+            PlayerPrefs.SetString("sets", JsonUtility.ToJson(_sets.SetsHelper));
 
-        // Перемещаем эффект открытия к категории и воспроизводим
-        categories.Effect.transform.position = transform.position;
-        categories.Effect.Rebind();
+            UpdateCategory();
+
+            // Перемещаем эффект к кнопке категории и воспроизводим
+            _sets.Effect.transform.position = transform.position;
+            _sets.Effect.Rebind();
+        }
     }
 }

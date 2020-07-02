@@ -1,40 +1,40 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Cups : MonoBehaviour
+namespace Cubra
 {
-    [Header("Кубки за прогресс")]
-    [SerializeField] private Image[] cups;
-
-    [Header("Прогресс для открытия")]
-    [SerializeField] private int[] progress;
-
-    [Header("Текст статистики")]
-    [SerializeField] private Text percent;
-
-    private void Start()
+    public class Cups : MonoBehaviour
     {
-        // Процент прохождения
-        var percentagPeassing = 0;
+        [Header("Кубки за прогресс")]
+        [SerializeField] private Image[] _cups;
 
-        // Общий прогресс по викторинам (по странам, по игрокам и тренерам, по фактам)
-        var overallProgress = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("players") 
-            + PlayerPrefs.GetInt("trainers") + PlayerPrefs.GetInt("facts-answer");
+        [Header("Прогресс для открытия")]
+        [SerializeField] private int[] _progress;
 
-        for (int i = 0; i < cups.Length; i++)
+        [Header("Проценты прохождения")]
+        [SerializeField] private Text _percent;
+
+        private void Start()
         {
-            // Если общий прогресс превышает кубковый
-            if (progress[i] <= overallProgress)
+            // Процент прохождения
+            var percentages = 0;
+
+            // Общий прогресс по викторинам (по странам, по игрокам и тренерам, по фактам)
+            var overallProgress = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("players")
+                + PlayerPrefs.GetInt("trainers") + PlayerPrefs.GetInt("facts-answer");
+
+            for (int i = 0; i < _cups.Length; i++)
             {
-                // Убираем прозрачность у кубка
-                cups[i].color = Color.white;
-
-                // Увеличиваем процент прохождения
-                percentagPeassing += 15;
+                // Если общий прогресс превышает кубковый
+                if (_progress[i] <= overallProgress)
+                {
+                    _cups[i].color = Color.white;
+                    percentages += 15;
+                }
             }
-        }
 
-        // Выводим процент прохождения викторины
-        percent.text = "Выигранные кубки (" + (percentagPeassing > 100 ? "100" : percentagPeassing.ToString()) + "%)";
+            // Выводим процент прохождения викторины
+            _percent.text = "Выигранные кубки (" + (percentages > 100 ? "100" : percentages.ToString()) + "%)";
+        }
     }
 }

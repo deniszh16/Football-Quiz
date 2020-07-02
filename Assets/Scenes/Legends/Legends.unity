@@ -154,7 +154,7 @@ RectTransform:
   - {fileID: 1025256483}
   - {fileID: 1183298383}
   m_Father: {fileID: 1033540248}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -225,7 +226,8 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1973297576}
   m_Father: {fileID: 1033540248}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -249,6 +251,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -357,9 +360,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 28a44071bfe6ef04097be26da6a1c992, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQLw
+  _openCard: {fileID: 21300000, guid: 28a44071bfe6ef04097be26da6a1c992, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQLw
 --- !u!114 &81529648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -429,6 +432,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -501,9 +505,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: f1d5eb226a263b243a3a66544c3a7c8c, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQLA
+  _openCard: {fileID: 21300000, guid: f1d5eb226a263b243a3a66544c3a7c8c, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQLA
 --- !u!114 &95136084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +577,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -645,9 +650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: b6856d53d10ccce4e960bd1ad85bed96, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQGA
+  _openCard: {fileID: 21300000, guid: b6856d53d10ccce4e960bd1ad85bed96, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQGA
 --- !u!114 &113889244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +722,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -861,9 +867,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5f77508f08b88d840876a7b09047bcf4, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQIQ
+  _openCard: {fileID: 21300000, guid: 5f77508f08b88d840876a7b09047bcf4, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQIQ
 --- !u!114 &177245829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,6 +939,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1215,9 +1222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 9bd0100b043de114cab16aced29c5cb0, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQMQ
+  _openCard: {fileID: 21300000, guid: 9bd0100b043de114cab16aced29c5cb0, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQMQ
 --- !u!114 &322445661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,6 +1294,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1359,9 +1367,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1821384d647780c49a919f0633d4b8f9, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQPA
+  _openCard: {fileID: 21300000, guid: 1821384d647780c49a919f0633d4b8f9, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQPA
 --- !u!114 &332301937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1431,6 +1439,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1503,9 +1512,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: eccb403b2befbdc4bb9d29277324b5e9, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQJw
+  _openCard: {fileID: 21300000, guid: eccb403b2befbdc4bb9d29277324b5e9, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQJw
 --- !u!114 &336125623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,6 +1584,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1647,9 +1657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1431e534963127f428d8dae6c4910dff, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQGg
+  _openCard: {fileID: 21300000, guid: 1431e534963127f428d8dae6c4910dff, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQGg
 --- !u!114 &355340966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,6 +1729,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1812,6 +1823,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1884,9 +1896,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: b6dcbfd57e504fa43bbb9194507de2a8, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQMA
+  _openCard: {fileID: 21300000, guid: b6dcbfd57e504fa43bbb9194507de2a8, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQMA
 --- !u!114 &369093103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1956,6 +1968,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2100,9 +2113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: dc9b17e8b0af3c745b9dbc4b63d588b2, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQHQ
+  _openCard: {fileID: 21300000, guid: dc9b17e8b0af3c745b9dbc4b63d588b2, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQHQ
 --- !u!114 &398581662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2172,6 +2185,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2244,9 +2258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: d3ce7738e1c028a41a66496097242cd7, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQEw
+  _openCard: {fileID: 21300000, guid: d3ce7738e1c028a41a66496097242cd7, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQEw
 --- !u!114 &405087097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2316,6 +2330,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2388,9 +2403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 3c27ad24ae9cfae47ae593bcebaeeb8e, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQFw
+  _openCard: {fileID: 21300000, guid: 3c27ad24ae9cfae47ae593bcebaeeb8e, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQFw
 --- !u!114 &406300946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2460,6 +2475,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2607,6 +2623,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2692,9 +2709,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: b9ac86c5c87a2584aaf9e6f0f99c94ac, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQIw
+  _openCard: {fileID: 21300000, guid: b9ac86c5c87a2584aaf9e6f0f99c94ac, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQIw
 --- !u!114 &514073878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2764,6 +2781,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2872,9 +2890,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: f2c82d1f9db75e648823cf16950886f9, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQGw
+  _openCard: {fileID: 21300000, guid: f2c82d1f9db75e648823cf16950886f9, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQGw
 --- !u!114 &592665488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2944,6 +2962,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3016,9 +3035,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 3850d7b47c32b5e4da6c637945172697, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQJQ
+  _openCard: {fileID: 21300000, guid: 3850d7b47c32b5e4da6c637945172697, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQJQ
 --- !u!114 &593262381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3088,6 +3107,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3271,7 +3291,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!224 &676210043
 RectTransform:
@@ -3285,7 +3305,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1743749524}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -3307,6 +3327,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3510,6 +3531,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3601,9 +3623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5476d980dd98702449d47f0c3f668742, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQKg
+  _openCard: {fileID: 21300000, guid: 5476d980dd98702449d47f0c3f668742, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQKg
 --- !u!114 &741950664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3673,6 +3695,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3817,9 +3840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 1ed4d023c7645604f97efe66cb22028a, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQMw
+  _openCard: {fileID: 21300000, guid: 1ed4d023c7645604f97efe66cb22028a, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQMw
 --- !u!114 &783721358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3889,6 +3912,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3944,7 +3968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 90, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802841349
@@ -3962,6 +3986,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4034,9 +4059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c9feabc4ee5abbf4382f54a9ab550260, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQJA
+  _openCard: {fileID: 21300000, guid: c9feabc4ee5abbf4382f54a9ab550260, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQJA
 --- !u!114 &810210582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4106,6 +4131,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4286,9 +4312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: f961ca4b0f4642d43b3a2e416014a423, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQNg
+  _openCard: {fileID: 21300000, guid: f961ca4b0f4642d43b3a2e416014a423, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQNg
 --- !u!114 &911494928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4358,6 +4384,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4430,9 +4457,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: b553cd2ba22a2314f9b13e5fb1585ecd, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQOw
+  _openCard: {fileID: 21300000, guid: b553cd2ba22a2314f9b13e5fb1585ecd, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQOw
 --- !u!114 &926121377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4502,6 +4529,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4610,9 +4638,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 6245c761777825f4d93184cfa341104b, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQJg
+  _openCard: {fileID: 21300000, guid: 6245c761777825f4d93184cfa341104b, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQJg
 --- !u!114 &962117278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4682,6 +4710,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4790,9 +4819,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 6a239295535ff214ba3ebeb91392f3d8, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQFQ
+  _openCard: {fileID: 21300000, guid: 6a239295535ff214ba3ebeb91392f3d8, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQFQ
 --- !u!114 &979843537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4862,6 +4891,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4936,6 +4966,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5062,7 +5093,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 2111274989}
-  m_PlaneDistance: 50
+  m_PlaneDistance: 20
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -5084,7 +5115,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 52455541}
-  - {fileID: 1973297576}
   - {fileID: 2059070}
   - {fileID: 2096196252}
   - {fileID: 1602308409}
@@ -5148,9 +5178,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 049be6b6e0504a646b4ca3e9dc6ddfb5, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQLQ
+  _openCard: {fileID: 21300000, guid: 049be6b6e0504a646b4ca3e9dc6ddfb5, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQLQ
 --- !u!114 &1048644916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,6 +5250,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5292,9 +5323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 595cb2ca1ef77b54fb115dacce0a0013, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQPw
+  _openCard: {fileID: 21300000, guid: 595cb2ca1ef77b54fb115dacce0a0013, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQPw
 --- !u!114 &1049349242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5364,6 +5395,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5455,7 +5487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 90, y: 93}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1140086870
@@ -5473,6 +5505,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5545,9 +5578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: d90550ab4413e594193c99ccc3b118c8, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQOA
+  _openCard: {fileID: 21300000, guid: d90550ab4413e594193c99ccc3b118c8, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQOA
 --- !u!114 &1154432241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5617,6 +5650,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5692,6 +5726,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5855,9 +5890,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 03f3e6b958309974fb291c0211283ed9, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQIA
+  _openCard: {fileID: 21300000, guid: 03f3e6b958309974fb291c0211283ed9, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQIA
 --- !u!114 &1236217078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5927,6 +5962,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5979,7 +6015,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1743749524}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -6001,6 +6037,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6097,9 +6134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: bb82eab4fd30ae445ba7992212ca1287, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQHg
+  _openCard: {fileID: 21300000, guid: bb82eab4fd30ae445ba7992212ca1287, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQHg
 --- !u!114 &1254620881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6169,6 +6206,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6277,9 +6315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: dcfe1a0aabdb5ad4fa90cb176ac79dcc, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQFg
+  _openCard: {fileID: 21300000, guid: dcfe1a0aabdb5ad4fa90cb176ac79dcc, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQFg
 --- !u!114 &1324571603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6349,6 +6387,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6421,9 +6460,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: d518d21af55c5d044be9ce559df74ea9, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQNQ
+  _openCard: {fileID: 21300000, guid: d518d21af55c5d044be9ce559df74ea9, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQNQ
 --- !u!114 &1339439453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6493,6 +6532,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6565,9 +6605,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 9cbcbad6575e5b44285a7aaa7e9d8c55, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQPg
+  _openCard: {fileID: 21300000, guid: 9cbcbad6575e5b44285a7aaa7e9d8c55, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQPg
 --- !u!114 &1349397651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6637,6 +6677,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6710,6 +6751,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.36078432, b: 0, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6786,9 +6828,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 43951d6945d05664c93a06763a1d6561, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQPQ
+  _openCard: {fileID: 21300000, guid: 43951d6945d05664c93a06763a1d6561, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQPQ
 --- !u!114 &1363041246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6858,6 +6900,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7038,9 +7081,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 2b47ee822112f50428027500bf530796, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQNA
+  _openCard: {fileID: 21300000, guid: 2b47ee822112f50428027500bf530796, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQNA
 --- !u!114 &1501247338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7110,6 +7153,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7183,6 +7227,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.36078432, b: 0, a: 1}
   m_RaycastTarget: 0
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7419,7 +7464,7 @@ RectTransform:
   - {fileID: 510017672}
   - {fileID: 2004254281}
   m_Father: {fileID: 1033540248}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7507,9 +7552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: a02aab0b790ef2d4d9aee019bef220b7, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQQQ
+  _openCard: {fileID: 21300000, guid: a02aab0b790ef2d4d9aee019bef220b7, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQQQ
 --- !u!114 &1610043995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7579,6 +7624,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7687,9 +7733,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 457a8832d008a75438504de0f3834bcc, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQIg
+  _openCard: {fileID: 21300000, guid: 457a8832d008a75438504de0f3834bcc, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQIg
 --- !u!114 &1679150667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7759,6 +7805,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7867,9 +7914,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 80a892df5395bc64ca07f72e65d518a2, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQHA
+  _openCard: {fileID: 21300000, guid: 80a892df5395bc64ca07f72e65d518a2, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQHA
 --- !u!114 &1691507749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7939,6 +7986,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8012,6 +8060,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8096,10 +8145,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1252076092}
   - {fileID: 676210043}
+  - {fileID: 1252076092}
   m_Father: {fileID: 1033540248}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8193,9 +8242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: c9ab5c04f832a484a91436c797e49825, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQKQ
+  _openCard: {fileID: 21300000, guid: c9ab5c04f832a484a91436c797e49825, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQKQ
 --- !u!114 &1771529630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8265,6 +8314,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8337,9 +8387,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 454403f1a2d6ce441a712572d0220638, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQLg
+  _openCard: {fileID: 21300000, guid: 454403f1a2d6ce441a712572d0220638, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQLg
 --- !u!114 &1795037674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8409,6 +8459,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8481,9 +8532,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 2627805a656eec549bae8baf22ca52b0, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQKw
+  _openCard: {fileID: 21300000, guid: 2627805a656eec549bae8baf22ca52b0, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQKw
 --- !u!114 &1850332684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8553,6 +8604,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8625,9 +8677,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 2f2afa8aa862df14ebf892e43ce82fc5, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQHw
+  _openCard: {fileID: 21300000, guid: 2f2afa8aa862df14ebf892e43ce82fc5, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQHw
 --- !u!114 &1862419721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8697,6 +8749,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8924,9 +8977,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 4002d5e6cf5275a49a39759c9a83b7f5, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQFA
+  _openCard: {fileID: 21300000, guid: 4002d5e6cf5275a49a39759c9a83b7f5, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQFA
 --- !u!114 &1934602328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8996,6 +9049,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9068,9 +9122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: a0c900f9671b1ea47954a26c7659a71e, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQOQ
+  _openCard: {fileID: 21300000, guid: a0c900f9671b1ea47954a26c7659a71e, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQOQ
 --- !u!114 &1938978851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9140,6 +9194,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9256,14 +9311,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973297575}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1140086869}
   - {fileID: 802841348}
-  m_Father: {fileID: 1033540248}
-  m_RootOrder: 1
+  m_Father: {fileID: 52455541}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9372,6 +9427,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.60784316, g: 0.60784316, b: 0.60784316, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9444,9 +9500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 60dcf02fec1fcc8468ea8162118aefc9, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQMg
+  _openCard: {fileID: 21300000, guid: 60dcf02fec1fcc8468ea8162118aefc9, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQMg
 --- !u!114 &2051970959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9516,6 +9572,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9566,7 +9623,7 @@ RectTransform:
   m_Children:
   - {fileID: 363986814}
   m_Father: {fileID: 1033540248}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9627,6 +9684,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -9660,9 +9718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 0dc7e8be9cc61db4681e8dcb7ab93631, type: 3}
-  biography: 1
-  identifier: CgkIpaecy5MPEAIQGQ
+  _openCard: {fileID: 21300000, guid: 0dc7e8be9cc61db4681e8dcb7ab93631, type: 3}
+  _biography: 1
+  _achievement: CgkIpaecy5MPEAIQGQ
 --- !u!114 &2096236057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9732,6 +9790,7 @@ GameObject:
   - component: {fileID: 2111274993}
   - component: {fileID: 2111274992}
   - component: {fileID: 2111274991}
+  - component: {fileID: 2111274995}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -9771,7 +9830,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 50
+  far clip plane: 20
   field of view: 60
   orthographic: 1
   orthographic size: 5
@@ -9783,7 +9842,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 0
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -9816,8 +9875,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74835bd95155f2b4d88daba729b17a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backButton: 1
-  previousScene: 1
 --- !u!114 &2111274992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9830,9 +9887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 248c680d91f529545863f05a37de2bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texts:
-  - {fileID: 1361523103}
-  - {fileID: 1517914982}
+  _score: {fileID: 1361523103}
+  _coins: {fileID: 1517914982}
 --- !u!114 &2111274993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9857,9 +9913,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c7c79b0a1ed304f84221b2981025d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cards: {fileID: 1902463662}
-  scroll: {fileID: 1602308412}
-  effect: {fileID: 363986815}
+  _cards:
+  - {fileID: 405087096}
+  - {fileID: 1934602327}
+  - {fileID: 979843536}
+  - {fileID: 1324571602}
+  - {fileID: 406300945}
+  - {fileID: 113889243}
+  - {fileID: 2096236056}
+  - {fileID: 355340965}
+  - {fileID: 592665487}
+  - {fileID: 1691507748}
+  - {fileID: 398581661}
+  - {fileID: 1254620880}
+  - {fileID: 1862419720}
+  - {fileID: 1236217077}
+  - {fileID: 177245828}
+  - {fileID: 1679150666}
+  - {fileID: 514073877}
+  - {fileID: 810210581}
+  - {fileID: 593262380}
+  - {fileID: 962117277}
+  - {fileID: 336125622}
+  - {fileID: 2144299811}
+  - {fileID: 1771529629}
+  - {fileID: 741950663}
+  - {fileID: 1850332683}
+  - {fileID: 95136083}
+  - {fileID: 1048644915}
+  - {fileID: 1795037673}
+  - {fileID: 81529647}
+  - {fileID: 369093102}
+  - {fileID: 322445660}
+  - {fileID: 2051970958}
+  - {fileID: 783721357}
+  - {fileID: 1501247337}
+  - {fileID: 1339439452}
+  - {fileID: 911494927}
+  - {fileID: 1154432240}
+  - {fileID: 1938978850}
+  - {fileID: 926121376}
+  - {fileID: 332301936}
+  - {fileID: 1363041245}
+  - {fileID: 1349397650}
+  - {fileID: 1049349241}
+  - {fileID: 1610043994}
+  _scrollRect: {fileID: 1602308412}
+  _victory: {fileID: 363986815}
+--- !u!114 &2111274995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111274987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299bf38a2f1a2a845ab45f4fa7d887d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _previousScene: 1
 --- !u!1 &2142603298
 GameObject:
   m_ObjectHideFlags: 0
@@ -9947,9 +10060,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbf08a4f279b8974fab0cc3dc2d5539e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: d0830467bb9c5b14a8e42f6cab067e14, type: 3}
-  biography: 0
-  identifier: CgkIpaecy5MPEAIQKA
+  _openCard: {fileID: 21300000, guid: d0830467bb9c5b14a8e42f6cab067e14, type: 3}
+  _biography: 0
+  _achievement: CgkIpaecy5MPEAIQKA
 --- !u!114 &2144299812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10019,6 +10132,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
