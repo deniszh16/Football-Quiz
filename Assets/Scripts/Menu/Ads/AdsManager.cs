@@ -1,6 +1,6 @@
 ﻿using System;
 using UnityEngine;
-//using AppodealAds.Unity.Api;
+using AppodealAds.Unity.Api;
 
 namespace Cubra
 {
@@ -23,10 +23,10 @@ namespace Cubra
         private void Start()
         {
             // Отключаем рекламные звуки
-            //Appodeal.muteVideosIfCallsMuted(true);
+            Appodeal.muteVideosIfCallsMuted(true);
 
             // Инициализируем рекламный баннер, полноэкранный баннер и видеорекламу с вознаграждением
-            // Appodeal.initialize(key, Appodeal.BANNER | Appodeal.INTERSTITIAL | Appodeal.REWARDED_VIDEO, true);
+            Appodeal.initialize(_key, Appodeal.BANNER | Appodeal.INTERSTITIAL | Appodeal.REWARDED_VIDEO, true);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-//using AppodealAds.Unity.Api;
+using AppodealAds.Unity.Api;
 
 namespace Cubra
 {
@@ -10,8 +10,8 @@ namespace Cubra
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
                 // Если реклама загружена
-                //if (Appodeal.isLoaded(Appodeal.BANNER))
-                    //Appodeal.show(Appodeal.BANNER_BOTTOM);
+                if (Appodeal.isLoaded(Appodeal.BANNER))
+                    Appodeal.show(Appodeal.BANNER_BOTTOM);
             }
         }
     }

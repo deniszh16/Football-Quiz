@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
-//using AppodealAds.Unity.Api;
-//using AppodealAds.Unity.Common;
+using AppodealAds.Unity.Api;
+using AppodealAds.Unity.Common;
 
 namespace Cubra
 {
-    public class AdsReward : Ads//, IRewardedVideoAdListener
+    public class AdsReward : Ads, IRewardedVideoAdListener
     {
         [Header("Компонент бонуса")]
         [SerializeField] private DailyBonus _dailyBonus;
@@ -17,7 +17,7 @@ namespace Cubra
             base.Start();
 
             // Активируем обратные вызовы для видеорекламы
-            // Appodeal.setRewardedVideoCallbacks(this);
+            Appodeal.setRewardedVideoCallbacks(this);
         }
 
         /// <summary>
@@ -25,8 +25,8 @@ namespace Cubra
         /// </summary>
         public void ShowRewardedVideo()
         {
-            //if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
-            //    Appodeal.show(Appodeal.REWARDED_VIDEO);
+            if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
+                Appodeal.show(Appodeal.REWARDED_VIDEO);
         }
 
         /// <summary>

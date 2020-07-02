@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-//using AppodealAds.Unity.Api;
+using AppodealAds.Unity.Api;
 
 namespace Cubra.Countries
 {
@@ -210,8 +210,8 @@ namespace Cubra.Countries
                 // Каждый десятый уровень показываем рекламу
                 if (_tasksCountries.Progress % 10 == 0)
                 {
-                    //if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
-                        //Appodeal.show(Appodeal.INTERSTITIAL);
+                    if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
+                        Appodeal.show(Appodeal.INTERSTITIAL);
                 }
             }
         }

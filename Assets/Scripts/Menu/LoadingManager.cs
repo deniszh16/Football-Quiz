@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-//using GooglePlayGames;
+using GooglePlayGames;
 using Cubra.Helpers;
 
 namespace Cubra
@@ -61,7 +61,7 @@ namespace Cubra
             }
 
             // Активируем игровые сервисы Google Play
-            //PlayGamesPlatform.Activate();
+            PlayGamesPlatform.Activate();
         }
 
         private void Start()
