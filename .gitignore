@@ -59,7 +59,6 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Ignoring folders
-GooglePlay/
 ExternalDependencyManager/
 GeneratedLocalRepo/
 Sprites/
