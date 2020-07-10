@@ -208,7 +208,7 @@ namespace Cubra.Countries
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
                 // Каждый десятый уровень показываем рекламу
-                if (_tasksCountries.Progress % 10 == 0)
+                if (PlayerPrefs.GetString("show-ads") == "yes" && _tasksCountries.Progress % 10 == 0)
                 {
                     if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
                         Appodeal.show(Appodeal.INTERSTITIAL);

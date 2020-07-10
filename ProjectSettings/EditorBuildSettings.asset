@@ -27,9 +27,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Players/Questions.unity
     guid: 2938195ca8f78a143bbcead94a8928b0
   - enabled: 1
-    path: Assets/Scenes/Players/Results.unity
-    guid: e242e0d838faee646aeb1a2865bd25b4
-  - enabled: 1
     path: Assets/Scenes/Legends/Legends.unity
     guid: a3985134b4842b14f9bd2a114ca1426c
   - enabled: 1
@@ -50,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Facts/Results.unity
     guid: bbb51d53ed2a3bb4cbedab9690fcc147
+  - enabled: 1
+    path: Assets/Scenes/Menu/Shop.unity
+    guid: c0f198b818eb08147b2c3c617b5b5439
   m_configObjects: {}

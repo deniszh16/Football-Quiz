@@ -6,7 +6,7 @@ namespace Cubra
     public class DailyBonus : MonoBehaviour
     {
         [Header("Эффект сияния")]
-        [SerializeField] private GameObject _effect;
+        [SerializeField] private Animator _effect;
 
         [Header("Бонусная кнопка")]
         [SerializeField] private Button _bonusButton;
@@ -24,7 +24,8 @@ namespace Cubra
             if (PlayerPrefs.GetInt("bonus") > 0)
             {
                 _bonusButton.gameObject.SetActive(true);
-                _effect.SetActive(true);
+                _effect.gameObject.SetActive(true);
+                _effect.Play("ShiningRepeated");
             }
         }
 

@@ -1,7 +1,7 @@
 ﻿using Cubra.Helpers;
 using UnityEngine;
 
-namespace Cubra
+namespace Cubra.Countries
 {
     public class Sets : MonoBehaviour
     {

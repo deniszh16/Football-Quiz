@@ -6,6 +6,24 @@ namespace Cubra
 {
     public class TransitionsManager : MonoBehaviour
     {
+        public enum Scenes
+        {
+            // Сцены главного меню
+            Menu = 1, Cups = 9, Leaderboard = 10, Shop = 14,
+
+            // Сцены раздела стран и турниров
+            CountriesSets = 2, CountriesQuestions = 3, CountriesResult = 4,
+
+            // Сцены раздела по фотографиям игроков
+            PlayersSets = 5, PlayersQuestions = 6,
+
+            // Сцены легендарных карточек
+            Legends = 7, Biography = 8,
+
+            // Сцены в разделе подборок фактов
+            FactsSets = 11, FactsQuestions = 12, FactsResult = 13
+        }
+
         // Ссылка на страницу игры в Google Play
         private readonly string URL = "https://play.google.com/store/apps/details?id=ru.cubra.football";
 

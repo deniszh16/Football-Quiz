@@ -9,10 +9,22 @@ namespace Cubra
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                // Если реклама загружена
-                if (Appodeal.isLoaded(Appodeal.BANNER))
-                    Appodeal.show(Appodeal.BANNER_BOTTOM);
+                // Если реклама не отключена
+                if (PlayerPrefs.GetString("show-ads") == "yes")
+                {
+                    // Если реклама загружена
+                    if (Appodeal.isLoaded(Appodeal.BANNER))
+                        Appodeal.show(Appodeal.BANNER_BOTTOM);
+                }
             }
+        }
+
+        /// <summary>
+        /// Скрытие рекламных баннеров
+        /// </summary>
+        public void HideAds()
+        {
+            Appodeal.hide(Appodeal.BANNER);
         }
     }
 }

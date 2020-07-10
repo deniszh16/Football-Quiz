@@ -53,6 +53,24 @@ namespace Cubra
             }
             #endregion
 
+            // Прогресс по фотографиям игроков и тренеров
+            if (PlayerPrefs.HasKey("photos-players") == false)
+            {
+                PlayerPrefs.SetInt("photos-players", 0);
+                // Количество успешно завершенных заданий
+                PlayerPrefs.SetInt("photos-successfully", 0);
+                // Количество правильных ответов
+                PlayerPrefs.SetInt("photos-answer", 0);
+                // Количество ошибок
+                PlayerPrefs.SetInt("photos-errors", 0);
+            }
+
+            // Отображение рекламных баннеров
+            if (PlayerPrefs.HasKey("show-ads") == false)
+            {
+                PlayerPrefs.SetString("show-ads", "yes");
+            }
+
             // Обновление категорий по странам
             if (PlayerPrefs.HasKey("update") == false)
             {
@@ -67,8 +85,7 @@ namespace Cubra
         private void Start()
         {
             var transitions = Camera.main.GetComponent<TransitionsManager>();
-            // Переходим в главное меню
-            _ = StartCoroutine(transitions.GoToSceneWithPause(1.5f, 1));
+            _ = StartCoroutine(transitions.GoToSceneWithPause(1.5f, (int)TransitionsManager.Scenes.Menu));
         }
 
         /// <summary>

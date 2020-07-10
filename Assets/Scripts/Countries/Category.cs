@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Cubra
+namespace Cubra.Countries
 {
     public class Category : MonoBehaviour
     {
@@ -69,13 +69,13 @@ namespace Cubra
             {
                 Sets.Category = _number;
                 // Переходим к викторине
-                Camera.main.GetComponent<TransitionsManager>().GoToScene(3);
+                Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.CountriesQuestions);
             }
             else if (currentQuestion > _sets.Task[_number])
             {
                 Sets.Category = _number;
                 // Переходим к результатам
-                Camera.main.GetComponent<TransitionsManager>().GoToScene(4);
+                Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.CountriesResult);
             }
             else
             {

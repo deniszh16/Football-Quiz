@@ -19,9 +19,9 @@ namespace Cubra
             // Процент прохождения
             var percentages = 0;
 
-            // Общий прогресс по викторинам (по странам, по игрокам и тренерам, по фактам)
-            var overallProgress = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("players")
-                + PlayerPrefs.GetInt("trainers") + PlayerPrefs.GetInt("facts-answer");
+            // Общий прогресс по викторинам (по странам, по игрокам, по фактам)
+            var overallProgress = PlayerPrefs.GetInt("countries-answer") + PlayerPrefs.GetInt("photos-players")
+                + PlayerPrefs.GetInt("facts-answer");
 
             for (int i = 0; i < _cups.Length; i++)
             {

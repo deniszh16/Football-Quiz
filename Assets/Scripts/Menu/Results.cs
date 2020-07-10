@@ -42,6 +42,15 @@ namespace Cubra
             // Отделяющая строка
             _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
 
+            _results.text += "Викторина по игрокам" + IndentsHelpers.LineBreak(2);
+            _results.text += "Количество заданий: " + GetStatistics(_tasks[2]) + IndentsHelpers.LineBreak(1);
+            _results.text += "Успешные задания: " + PlayerPrefs.GetInt("photos-successfully") + IndentsHelpers.LineBreak(1);
+            _results.text += "Правильные ответы: " + PlayerPrefs.GetInt("photos-answer") + IndentsHelpers.LineBreak(1);
+            _results.text += "Количество ошибок: " + PlayerPrefs.GetInt("photos-errors") + IndentsHelpers.LineBreak(2);
+
+            // Отделяющая строка
+            _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
+
             // Статистика по легендам
             _results.text += "Футбольные легенды" + IndentsHelpers.LineBreak(2);
             _results.text += "Всего карточек: 44" + IndentsHelpers.LineBreak(1);

@@ -145,7 +145,7 @@ namespace Cubra.Countries
                 // Начисляем бонус за пройденную категорию
                 Camera.main.GetComponent<PointsEarned>().ChangeQuantityCoins(500);
                 // Переходим в список пройденных вопросов
-                Camera.main.GetComponent<TransitionsManager>().GoToScene(4);
+                Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.CountriesResult);
             }
         }
     }

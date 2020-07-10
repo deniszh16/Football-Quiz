@@ -74,12 +74,12 @@ namespace Cubra.Facts
             if (_statusHelper.status[number] == "no")
             {
                 // Переходим к викторине
-                Camera.main.GetComponent<TransitionsManager>().GoToScene(13);
+                Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.FactsQuestions);
             }
             else
             {
                 // Переходим к результатам
-                Camera.main.GetComponent<TransitionsManager>().GoToScene(14);
+                Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.FactsResult);
             }
         }
     }

@@ -75,7 +75,7 @@ namespace Cubra.Legends
 
                     Card = number;
                     // Переходим на сцену описания легенды
-                    Camera.main.GetComponent<TransitionsManager>().GoToScene(9);
+                    Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.Biography);
                 }
             }
         }
