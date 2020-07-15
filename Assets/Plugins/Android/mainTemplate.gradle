@@ -17,7 +17,7 @@
             url "https://artifactory.appodeal.com/appodeal" // Assets/Appodeal/Editor/AppodealDependencies.xml:5
         }
         maven {
-            url "file:///C:/Users/Denis/Documents/Unity/Football\Assets/GeneratedLocalRepo/GooglePlayGames/Editor/m2repository" // Assets/GooglePlayGames/Editor/GooglePlayGamesPluginDependencies.xml:11
+            url "file:///C:/Users/Denis/Documents/Unity/Football/Assets/GooglePlayGames/Editor/m2repository" // Assets/GooglePlayGames/Editor/GooglePlayGamesPluginDependencies.xml:11
         }
         mavenLocal()
         jcenter()
@@ -31,13 +31,13 @@ apply plugin: 'com.android.library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 // Android Resolver Dependencies Start
-    implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.core:core:1.3.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:26
-    implementation 'androidx.annotation:annotation:1.1.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:27
-    implementation 'androidx.annotation:annotation:1.1.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:34
-    implementation 'androidx.core:core:1.3.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:29
-    implementation 'androidx.legacy:legacy-support-core-ui:1.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:28
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:15
+	implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.android.support:customtabs:26.1.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:26
+    implementation 'com.android.support:recyclerview-v7:28.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:27
+    implementation 'com.android.support:support-annotations:28.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:34
+    implementation 'com.android.support:support-compat:28.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:29
+    implementation 'com.android.support:support-core-ui:28.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:28
+    implementation 'com.android.support:support-v4:28.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:15
     implementation 'com.applovin:applovin-sdk:9.11.6' // Assets/Appodeal/Editor/AppodealDependencies.xml:17
     implementation 'com.appodeal.ads.sdk.networks:a4g:2.6.5.2@aar' // Assets/Appodeal/Editor/AppodealDependencies.xml:35
     implementation 'com.appodeal.ads.sdk.networks:adcolony:2.6.5.4' // Assets/Appodeal/Editor/AppodealDependencies.xml:47
@@ -69,13 +69,13 @@ dependencies {
     implementation 'com.explorestack.ogury:sdk:4.7.2' // Assets/Appodeal/Editor/AppodealDependencies.xml:43
     implementation 'com.explorestack:iab:0.5.6' // Assets/Appodeal/Editor/AppodealDependencies.xml:13
     implementation 'com.facebook.android:audience-network-sdk:5.7.1' // Assets/Appodeal/Editor/AppodealDependencies.xml:49
-    implementation 'com.google.android.exoplayer:exoplayer-core:2.8.4@aar' // Assets/Appodeal/Editor/AppodealDependencies.xml:33
-    implementation 'com.google.android.exoplayer:exoplayer-hls:2.8.4@aar' // Assets/Appodeal/Editor/AppodealDependencies.xml:32
-    implementation 'com.google.android.gms:play-services-ads:16.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:37
-    implementation 'com.google.android.gms:play-services-ads-identifier:16.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:18
-    implementation 'com.google.android.gms:play-services-base:16.0.1' // Assets/Appodeal/Editor/AppodealDependencies.xml:21
-    implementation 'com.google.android.gms:play-services-basement:16.0.1' // Assets/Appodeal/Editor/AppodealDependencies.xml:46
-    implementation 'com.google.android.gms:play-services-location:16.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:25
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.7@aar' // Assets/Appodeal/Editor/AppodealDependencies.xml:33
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.11.7@aar' // Assets/Appodeal/Editor/AppodealDependencies.xml:32
+    implementation 'com.google.android.gms:play-services-ads:19.2.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:37
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:18
+    implementation 'com.google.android.gms:play-services-base:17.3.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:21
+    implementation 'com.google.android.gms:play-services-basement:17.3.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:46
+    implementation 'com.google.android.gms:play-services-location:17.0.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:25
     implementation 'com.google.games:gpgs-plugin-support:0.10.09' // Assets/GooglePlayGames/Editor/GooglePlayGamesPluginDependencies.xml:11
     implementation 'com.inmobi.monetization:inmobi-ads:7.3.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:23
     implementation 'com.ironsource.sdk:mediationsdk:6.16.0' // Assets/Appodeal/Editor/AppodealDependencies.xml:41
