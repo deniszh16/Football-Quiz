@@ -1,3 +1,11 @@
+## [1.23.4] - 2020-07-13
+### Added
+- Security - Supports receipts from GooglePlay which omit `packageName`. These as are seen from v1.23.2's purchase-recovery features.
+   - The purchasing receipt's `packageName` is omitted by a GooglePlay historical purchase query APIs used by v1.23.2. When the RSASSA-PKCS1-v1_5 signature is valid and the receipt's `packageName` is not included, the `appBundleId` / `googleBundleId` input into `UnityEngine.Purchasing.Security.CrossPlatformValidator` is ignored. To avoid replay attacks we encourage developers continue heuristically scrutinizing the returned `purchaseTime` and `productId` values found in decoded receipts.
+
+### Removed
+- Analytics - For publication to Kids Category on Google Play and Apple App Store, removed `SystemInfo.deviceUniqueIdentifier` collection and sharing with `ecommerce.iap.unity3d.com` server.
+
 ## [1.23.3] - 2020-06-28
 ### Changed
 - GooglePlay - Default the failed-purchase recovery behavior to be disabled, which was introduced in `1.23.2`, to address players deleting their game's TransactionLog and receiving multiple products for a single purchase. Opt-in to the `1.23.2` behavior with `bool IGooglePlayConfiguration.aggressivelyRecoverLostPurchases = true;`, when also using a game server capable of validating each transaction and deduplicate based upon `Product.transactionID`, to reward players one time for a single purchase and support quickly recovering from interrupted-purchases.
