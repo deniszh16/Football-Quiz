@@ -85,7 +85,7 @@ namespace Cubra
         private void Start()
         {
             var transitions = Camera.main.GetComponent<TransitionsManager>();
-            _ = StartCoroutine(transitions.GoToSceneWithPause(1.5f, (int)TransitionsManager.Scenes.Menu));
+            _ = StartCoroutine(transitions.GoToSceneWithPause(1.8f, (int)TransitionsManager.Scenes.Menu));
         }
 
         /// <summary>

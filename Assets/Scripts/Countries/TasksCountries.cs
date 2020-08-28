@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using Firebase.Analytics;
 
 namespace Cubra.Countries
 {
@@ -142,6 +143,9 @@ namespace Cubra.Countries
             }
             else
             {
+                // Событие (для статистики) по завершению категории
+                FirebaseAnalytics.LogEvent("countries_category_end", new Parameter("number", Sets.Category + 1));
+
                 // Начисляем бонус за пройденную категорию
                 Camera.main.GetComponent<PointsEarned>().ChangeQuantityCoins(500);
                 // Переходим в список пройденных вопросов

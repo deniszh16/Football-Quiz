@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
-using Appodeal.Unity.Editor;
 using UnityEditor;
 
 namespace AppodealAds.Unity.Editor.Checkers
@@ -59,7 +58,7 @@ namespace AppodealAds.Unity.Editor.Checkers
                     if (instr != null) fixInstructions.Add(instr);
                 }
 
-                if (isAllDirectoryContent)
+                if (!isAllDirectoryContent) continue;
                 {
                     fixInstructions.AddRange(AppodealAssetsPostProcess.Plugins
                         .Select(folder => AppodealUnityUtils.combinePaths("Assets", "Plugins", "Android", folder))
@@ -76,7 +75,7 @@ namespace AppodealAds.Unity.Editor.Checkers
             EnablePluginForPlatform instr = null;
             var imp = AssetImporter.GetAtPath(relativePath) as PluginImporter;
             if (imp == null) return instr;
-            var isChecked = false;
+            bool isChecked;
             switch (platform)
             {
                 case platforms.any:
@@ -91,6 +90,8 @@ namespace AppodealAds.Unity.Editor.Checkers
                 case platforms.ios:
                     isChecked = imp.GetCompatibleWithPlatform(BuildTarget.iOS);
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(platform), platform, null);
             }
 
             if (isChecked) return instr;
@@ -98,7 +99,7 @@ namespace AppodealAds.Unity.Editor.Checkers
                        ".\n";
             if (relativePath.Contains(AppodealUnityUtils.combinePaths("Assets", "Plugins", "Android")))
                 desc +=
-                    "If you won't to exclude this network from your game, don't forget to add Appodeal.disableNetwork(networkname) before initialization.";
+                    "If you wan't to exclude this network from your game, don't forget to add Appodeal.disableNetwork(networkname) before initialization.";
             instr = new EnablePluginForPlatform(desc, true, relativePath, platform);
 
             return instr;
@@ -120,19 +121,20 @@ namespace AppodealAds.Unity.Editor.Checkers
         public override void fixProblem()
         {
             var imp = AssetImporter.GetAtPath(pluginPath) as PluginImporter;
+            if (imp == null) return;
             switch (platform)
             {
                 case PlatformChecker.platforms.any:
-                    if (imp != null) imp.SetCompatibleWithAnyPlatform(true);
+                    imp.SetCompatibleWithAnyPlatform(true);
                     break;
                 case PlatformChecker.platforms.editor:
-                    if (imp != null) imp.SetCompatibleWithEditor(true);
+                    imp.SetCompatibleWithEditor(true);
                     break;
                 case PlatformChecker.platforms.android:
-                    if (imp != null) imp.SetCompatibleWithPlatform(BuildTarget.Android, true);
+                    imp.SetCompatibleWithPlatform(BuildTarget.Android, true);
                     break;
                 case PlatformChecker.platforms.ios:
-                    if (imp != null) imp.SetCompatibleWithPlatform(BuildTarget.iOS, true);
+                    imp.SetCompatibleWithPlatform(BuildTarget.iOS, true);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

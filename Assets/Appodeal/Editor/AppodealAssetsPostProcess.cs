@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using Unity.Appodeal.Xcode.PBX;
 using UnityEditor;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -42,12 +43,7 @@ public class AppodealAssetsPostProcess : AssetPostprocessor
                 continue;
             }
 
-            AssetDatabase.ImportAsset(FixSlashesInPath(file));
+            AssetDatabase.ImportAsset(Utils.FixSlashesInPath(file));
         }
-    }
-    
-    public static string FixSlashesInPath(string path)
-    {
-        return path?.Replace('\\', '/');
     }
 }

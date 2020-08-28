@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using Firebase.Analytics;
 
 namespace Cubra.Legends
 {
@@ -101,6 +102,9 @@ namespace Cubra.Legends
                 _cards[number].ShowImageCard();
                 // Отображаем эффект открытия под карточкой
                 ShowOpeningEffect(_cards[number].transform);
+
+                // Событие (для статистики) по покупке легендарной карточки
+                FirebaseAnalytics.LogEvent("buying_card");
             }
             else
             {

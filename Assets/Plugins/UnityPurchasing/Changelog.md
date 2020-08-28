@@ -1,3 +1,7 @@
+## [1.23.5] - 2020-08-12
+### Fixed
+- GooglePlay - Fixed `IGooglePlayConfiguration.aggressivelyRecoverLostPurchases == false` (default) to reward players for currently in-flight purchases only, and not historical purchases, when the player cleans their device's TransactionLog, starts and cancels a purchase, and restarts the app.
+
 ## [1.23.4] - 2020-07-13
 ### Added
 - Security - Supports receipts from GooglePlay which omit `packageName`. These as are seen from v1.23.2's purchase-recovery features.

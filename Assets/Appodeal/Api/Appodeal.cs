@@ -2,53 +2,49 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using AppodealAds.Unity.Common;
+using ConsentManager.Api;
 using UnityEngine;
 
 namespace AppodealAds.Unity.Api
 {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
-    [SuppressMessage("ReSharper", "UnusedType.Global")]
     public class AppodealNetworks
     {
-        public const string ADCOLONY = "adcolony";
-        public const string ADMOB = "admob";
-        public const string AMAZON_ADS = "amazon_ads";
-        public const string APPLOVIN = "applovin";
-        public const string APPNEXUS = "appnexus";
-        public const string APPODEAL = "appodeal";
-        public const string APPODEALX = "appodealx";
-        public const string CHARTBOOST = "chartboost";
-        public const string FACEBOOK = "facebook";
-        public const string FLURRY = "flurry";
-        public const string INMOBI = "inmobi";
-        public const string INNER_ACTIVE = "inner-active";
-        public const string IRON_SOURCE = "ironsource";
-        public const string MY_TARGET = "my_target";
-        public const string MINTEGRAL = "mintegral";
-        public const string MOPUB = "mopub";
-        public const string MRAID = "mraid";
-        public const string MRAID_VA = "mraid_va";
-        public const string NAST = "nast";
-        public const string OGURY_PRESAGE = "ogury";
-        public const string OPENX = "openx";
-        public const string PUBNATIVE = "pubnative";
+        public const string VUNGLE = "vungle";
         public const string SMAATO = "smaato";
+        public const string INMOBI = "inmobi";
+        public const string FYBER = "fyber";
         public const string STARTAPP = "startapp";
         public const string TAPJOY = "tapjoy";
+        public const string APPLOVIN = "applovin";
+        public const string ADCOLONY = "adcolony";
+        public const string MY_TARGET = "my_target";
+        public const string APPODEALX = "appodealx";
+        public const string FLURRY = "flurry";
+        public const string AMAZON_ADS = "amazon_ads";
+        public const string ADMOB = "admob";
         public const string UNITY_ADS = "unity_ads";
-        public const string VAST = "vast";
-        public const string VUNGLE = "vungle";
-        public const string VPAID = "vpaid";
+        public const string FACEBOOK = "facebook";
         public const string YANDEX = "yandex";
+        public const string APPODEAL = "appodeal";
+        public const string IRONSOURCE = "ironsource";
+        public const string A4G = "a4g";
+        public const string MOPUB = "mopub";
+        public const string CHARTBOOST = "chartboost";
+        public const string MRAID = "mraid";
+        public const string MINTEGRAL = "mintegral";
+        public const string NAST = "nast";
+        public const string OGURY = "ogury";
+        public const string INNER_ACTIVE = "inner-active";
+        public const string VAST = "vast";
     }
 
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     [SuppressMessage("ReSharper", "UnusedMethodReturnValue.Global")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static class Appodeal
     {
-        #region Constants
         public const int NONE = 0;
         public const int INTERSTITIAL = 3;
         public const int BANNER = 4;
@@ -57,6 +53,8 @@ namespace AppodealAds.Unity.Api
         public const int BANNER_VIEW = 64;
         public const int MREC = 512;
         public const int REWARDED_VIDEO = 128;
+        public const int BANNER_LEFT = 1024;
+        public const int BANNER_RIGHT = 2048;
 #if UNITY_ANDROID || UNITY_EDITOR
         public const int NON_SKIPPABLE_VIDEO = 128;
 #elif UNITY_IPHONE
@@ -68,10 +66,8 @@ namespace AppodealAds.Unity.Api
         public const int BANNER_HORIZONTAL_RIGHT = -3;
         public const int BANNER_HORIZONTAL_LEFT = -4;
 
-        public const string APPODEAL_PLUGIN_VERSION = "2.9.8";
-        
-        #endregion
-        
+        public const string APPODEAL_PLUGIN_VERSION = "2.10.4-Beta";
+
         public enum LogLevel
         {
             None,
@@ -94,6 +90,11 @@ namespace AppodealAds.Unity.Api
         public static void initialize(string appKey, int adTypes, bool hasConsent)
         {
             getInstance().initialize(appKey, adTypes, hasConsent);
+        }
+
+        public static void initialize(string appKey, int adTypes, Consent consent)
+        {
+            getInstance().initialize(appKey, adTypes, consent);
         }
 
         public static bool show(int adTypes)
@@ -120,12 +121,12 @@ namespace AppodealAds.Unity.Api
         {
             return getInstance().isLoaded(adTypes);
         }
-        
+
         public static void cache(int adTypes)
         {
             getInstance().cache(adTypes);
         }
-        
+
         public static void hide(int adTypes)
         {
             getInstance().hide(adTypes);
@@ -175,6 +176,11 @@ namespace AppodealAds.Unity.Api
         {
             getInstance().setTabletBanners(value);
         }
+        
+        public static void setBannerRotation(int leftBannerRotation, int rightBannerRotation)
+        {
+            getInstance().setBannerRotation(leftBannerRotation, rightBannerRotation);
+        }
 
         public static void setTesting(bool test)
         {
@@ -194,6 +200,11 @@ namespace AppodealAds.Unity.Api
         public static void updateConsent(bool value)
         {
             getInstance().updateConsent(value);
+        }
+
+        public static void updateConsent(Consent consent)
+        {
+            getInstance().updateConsent(consent);
         }
 
         public static void disableNetwork(string network)
@@ -380,8 +391,8 @@ namespace AppodealAds.Unity.Api
         public const string APPSFLYER_ID = "appsflyer_id";
     }
 
-    [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
+    [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global")]
     public class UserSettings
     {
         private static IAppodealAdsClient client;
@@ -391,6 +402,7 @@ namespace AppodealAds.Unity.Api
             return client ?? (client = AppodealAdsClientFactory.GetAppodealAdsClient());
         }
 
+        [SuppressMessage("ReSharper", "UnusedMember.Global")]
         public enum Gender
         {
             OTHER,

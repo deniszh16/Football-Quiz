@@ -4,12 +4,13 @@ using System.Diagnostics.CodeAnalysis;
 using AOT;
 using AppodealAds.Unity.Api;
 using AppodealAds.Unity.Common;
+using ConsentManager.Api;
 using UnityEngine;
 
 namespace AppodealAds.Unity.iOS
 {
-    [SuppressMessage("ReSharper", "ShiftExpressionRealShiftCountIsZero")]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
+    [SuppressMessage("ReSharper", "ShiftExpressionRealShiftCountIsZero")]
     public class AppodealAdsClient : IAppodealAdsClient
     {
         private const int AppodealAdTypeInterstitial = 1 << 0;
@@ -23,6 +24,8 @@ namespace AppodealAds.Unity.iOS
         private const int AppodealShowStyleBannerBottom = 8;
         private const int AppodealShowStyleRewardedVideo = 16;
         private const int AppodealShowStyleNonSkippableVideo = 32;
+        private const int AppodealShowStyleBannerLeft = 1 << 6;
+        private const int AppodealShowStyleBannerRight = 1 << 7;
 
         #region Singleton
 
@@ -30,15 +33,13 @@ namespace AppodealAds.Unity.iOS
         {
         }
 
-        private static readonly AppodealAdsClient instance = new AppodealAdsClient();
-
-        public static AppodealAdsClient Instance => instance;
+        public static AppodealAdsClient Instance { get; } = new AppodealAdsClient();
 
         #endregion
 
         public void requestAndroidMPermissions(IPermissionGrantedListener listener)
         {
-            // not supported on ios
+            Debug.LogWarning("Not supported on iOS platform");
         }
 
         private static IInterstitialAdListener interstitialListener;
@@ -74,7 +75,7 @@ namespace AppodealAds.Unity.iOS
         }
 
         [MonoPInvokeCallback(typeof(AppodealInterstitialCallbacks))]
-        private static void interstitialDidDismiss()
+        public static void interstitialDidDismiss()
         {
             interstitialListener?.onInterstitialClosed();
         }
@@ -358,6 +359,8 @@ namespace AppodealAds.Unity.iOS
             if ((adTypes & Appodeal.BANNER) > 0 ||
                 (adTypes & Appodeal.BANNER_VIEW) > 0 ||
                 (adTypes & Appodeal.BANNER_TOP) > 0 ||
+                (adTypes & Appodeal.BANNER_LEFT) > 0 ||
+                (adTypes & Appodeal.BANNER_RIGHT) > 0 ||
                 (adTypes & Appodeal.BANNER_BOTTOM) > 0)
             {
                 nativeAdTypes |= AppodealAdTypeBanner;
@@ -398,12 +401,27 @@ namespace AppodealAds.Unity.iOS
                 return AppodealShowStyleBannerBottom;
             }
 
+            if ((adTypes & Appodeal.BANNER_LEFT) > 0)
+            {
+                return AppodealShowStyleBannerLeft;
+            }
+
+            if ((adTypes & Appodeal.BANNER_RIGHT) > 0)
+            {
+                return AppodealShowStyleBannerRight;
+            }
+
             if ((adTypes & Appodeal.REWARDED_VIDEO) > 0)
             {
                 return AppodealShowStyleRewardedVideo;
             }
 
-            return (adTypes & Appodeal.NON_SKIPPABLE_VIDEO) > 0 ? AppodealShowStyleNonSkippableVideo : 0;
+            if ((adTypes & Appodeal.NON_SKIPPABLE_VIDEO) > 0)
+            {
+                return AppodealShowStyleNonSkippableVideo;
+            }
+
+            return 0;
         }
 
         public void initialize(string appKey, int adTypes)
@@ -416,10 +434,16 @@ namespace AppodealAds.Unity.iOS
             AppodealObjCBridge.AppodealInitialize(appKey, nativeAdTypesForType(adTypes), hasConsent,
                 Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
         }
+        
+        public void initialize(string appKey, int adTypes, Consent consent)
+        {
+            AppodealObjCBridge.AppodealInitializeWithConsent(appKey, nativeAdTypesForType(adTypes),
+                Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
+        }
 
         public bool isInitialized(int adType)
         {
-            return AppodealObjCBridge.AppodealIsInitialized(adType);
+            return AppodealObjCBridge.AppodealIsInitialized(nativeAdTypesForType(adType));
         }
 
         public bool show(int adTypes)
@@ -477,7 +501,7 @@ namespace AppodealAds.Unity.iOS
 
         public bool isPrecache(int adTypes)
         {
-            return false;
+            return AppodealObjCBridge.AppodealIsPrecacheAd(nativeAdTypesForType(adTypes));
         }
 
         public void onResume(int adTypes)
@@ -501,7 +525,12 @@ namespace AppodealAds.Unity.iOS
 
         public void setTabletBanners(bool value)
         {
-            AppodealObjCBridge.AppodealSetTabletBanners(value); // Works only for banner view
+            AppodealObjCBridge.AppodealSetTabletBanners(value);
+        }
+        
+        public void setBannerRotation(int leftBannerRotation, int rightBannerRotation)
+        {
+            AppodealObjCBridge.AppodealSetBannerRotation(leftBannerRotation, rightBannerRotation);
         }
 
         public void setTesting(bool test)
@@ -541,6 +570,11 @@ namespace AppodealAds.Unity.iOS
         public void updateConsent(bool value)
         {
             AppodealObjCBridge.AppodealUpdateConsent(value);
+        }
+        
+        public void updateConsent(Consent consent)
+        {
+            AppodealObjCBridge.AppodealUpdateConsentReport();
         }
 
         public void disableNetwork(string network)

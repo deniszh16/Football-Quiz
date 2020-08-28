@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,8 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 7d517ada9103c754084fc06ead665b77,
+    type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -118,6 +119,8 @@ NavMeshSettings:
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -176,6 +179,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -251,6 +255,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -355,6 +360,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: ShowNextTask
         m_Mode: 1
         m_Arguments:
@@ -380,6 +386,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.11488385, g: 0.37254903, b: 0, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -418,6 +425,7 @@ GameObject:
   - component: {fileID: 230858367}
   - component: {fileID: 230858366}
   - component: {fileID: 230858368}
+  - component: {fileID: 230858370}
   - component: {fileID: 230858369}
   m_Layer: 5
   m_Name: Photo (8)
@@ -461,6 +469,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -527,6 +536,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -554,6 +564,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &230858370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230858364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: -10}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &285846063
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +821,7 @@ GameObject:
   - component: {fileID: 466280424}
   - component: {fileID: 466280423}
   - component: {fileID: 466280422}
+  - component: {fileID: 466280425}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -819,6 +844,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -860,6 +886,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 178, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &466280425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466280421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &491766947
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +952,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -990,6 +1031,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1024,6 +1066,7 @@ GameObject:
   - component: {fileID: 711236573}
   - component: {fileID: 711236572}
   - component: {fileID: 711236574}
+  - component: {fileID: 711236576}
   - component: {fileID: 711236575}
   m_Layer: 5
   m_Name: Photo (5)
@@ -1067,6 +1110,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1133,6 +1177,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -1160,6 +1205,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &711236576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711236570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 170}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &730030896
 GameObject:
   m_ObjectHideFlags: 0
@@ -1243,6 +1302,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846067}
+        m_TargetAssemblyTypeName: 
         m_MethodName: GoToScene
         m_Mode: 3
         m_Arguments:
@@ -1268,6 +1328,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1320,6 +1381,7 @@ GameObject:
   - component: {fileID: 782335692}
   - component: {fileID: 782335691}
   - component: {fileID: 782335690}
+  - component: {fileID: 782335693}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -1342,6 +1404,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1383,6 +1446,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 178, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &782335693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782335689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &802841347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,6 +1512,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1468,6 +1546,7 @@ GameObject:
   - component: {fileID: 818610118}
   - component: {fileID: 818610117}
   - component: {fileID: 818610116}
+  - component: {fileID: 818610119}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -1490,6 +1569,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1531,6 +1611,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 178, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &818610119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818610115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &897595291
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1636,7 @@ GameObject:
   - component: {fileID: 897595292}
   - component: {fileID: 897595294}
   - component: {fileID: 897595293}
+  - component: {fileID: 897595295}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -1583,6 +1678,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1605,6 +1701,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897595291}
   m_CullTransparentMesh: 0
+--- !u!114 &897595295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897595291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &898095140
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1727,7 @@ GameObject:
   - component: {fileID: 898095143}
   - component: {fileID: 898095142}
   - component: {fileID: 898095144}
+  - component: {fileID: 898095146}
   - component: {fileID: 898095145}
   m_Layer: 5
   m_Name: Photo (3)
@@ -1660,6 +1771,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1726,6 +1838,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -1753,6 +1866,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &898095146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898095140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 175, y: 350}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &1018360432
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,6 +1892,7 @@ GameObject:
   - component: {fileID: 1018360436}
   - component: {fileID: 1018360435}
   - component: {fileID: 1018360434}
+  - component: {fileID: 1018360437}
   m_Layer: 5
   m_Name: Feedback
   m_TagString: Untagged
@@ -1836,6 +1964,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846067}
+        m_TargetAssemblyTypeName: 
         m_MethodName: OpenGamePage
         m_Mode: 1
         m_Arguments:
@@ -1861,6 +1990,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1883,6 +2013,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018360432}
   m_CullTransparentMesh: 0
+--- !u!114 &1018360437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018360432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: -465}
+  _size: {x: 550, y: 110}
 --- !u!1 &1025256482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,6 +2080,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2113,6 +2258,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2147,6 +2293,7 @@ GameObject:
   - component: {fileID: 1129762384}
   - component: {fileID: 1129762383}
   - component: {fileID: 1129762385}
+  - component: {fileID: 1129762387}
   - component: {fileID: 1129762386}
   m_Layer: 5
   m_Name: Photo (6)
@@ -2190,6 +2337,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2256,6 +2404,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -2283,6 +2432,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &1129762387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1129762381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 175, y: 170}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &1140086868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,6 +2498,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2369,6 +2533,7 @@ GameObject:
   - component: {fileID: 1152858908}
   - component: {fileID: 1152858907}
   - component: {fileID: 1152858909}
+  - component: {fileID: 1152858911}
   - component: {fileID: 1152858910}
   m_Layer: 5
   m_Name: Photo (9)
@@ -2412,6 +2577,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2478,6 +2644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -2505,6 +2672,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &1152858911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152858905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 175, y: -10}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &1183298382
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,6 +2740,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2652,6 +2834,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2732,6 +2915,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2766,6 +2950,7 @@ GameObject:
   - component: {fileID: 1279010014}
   - component: {fileID: 1279010013}
   - component: {fileID: 1279010015}
+  - component: {fileID: 1279010017}
   - component: {fileID: 1279010016}
   m_Layer: 5
   m_Name: Photo (2)
@@ -2809,6 +2994,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2875,6 +3061,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -2902,6 +3089,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &1279010017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279010011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 350}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &1361523101
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +3155,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.36078432, b: 0, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2991,6 +3193,7 @@ GameObject:
   - component: {fileID: 1374407882}
   - component: {fileID: 1374407881}
   - component: {fileID: 1374407880}
+  - component: {fileID: 1374407883}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -3013,6 +3216,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3054,6 +3258,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 178, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1374407883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374407879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &1397254751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,6 +3284,7 @@ GameObject:
   - component: {fileID: 1397254754}
   - component: {fileID: 1397254753}
   - component: {fileID: 1397254755}
+  - component: {fileID: 1397254757}
   - component: {fileID: 1397254756}
   m_Layer: 5
   m_Name: Photo (7)
@@ -3109,6 +3328,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3175,6 +3395,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -3202,6 +3423,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &1397254757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397254751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: -175, y: -10}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &1517914980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3254,6 +3489,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0.36078432, b: 0, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3332,6 +3568,7 @@ GameObject:
   - component: {fileID: 1704361409}
   - component: {fileID: 1704361408}
   - component: {fileID: 1704361410}
+  - component: {fileID: 1704361412}
   - component: {fileID: 1704361411}
   m_Layer: 5
   m_Name: Photo (1)
@@ -3375,6 +3612,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3441,6 +3679,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -3468,6 +3707,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &1704361412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704361406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: -175, y: 350}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &1716144672
 GameObject:
   m_ObjectHideFlags: 0
@@ -3520,6 +3773,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3597,6 +3851,7 @@ GameObject:
   - component: {fileID: 1871114891}
   - component: {fileID: 1871114890}
   - component: {fileID: 1871114889}
+  - component: {fileID: 1871114892}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -3619,6 +3874,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3660,6 +3916,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 178, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1871114892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871114888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &1899341931
 GameObject:
   m_ObjectHideFlags: 0
@@ -3672,6 +3942,7 @@ GameObject:
   - component: {fileID: 1899341934}
   - component: {fileID: 1899341933}
   - component: {fileID: 1899341935}
+  - component: {fileID: 1899341937}
   - component: {fileID: 1899341936}
   m_Layer: 5
   m_Name: Photo (4)
@@ -3715,6 +3986,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3781,6 +4053,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 285846071}
+        m_TargetAssemblyTypeName: 
         m_MethodName: CheckAnswer
         m_Mode: 2
         m_Arguments:
@@ -3808,6 +4081,20 @@ MonoBehaviour:
   _frames:
   - {fileID: 21300000, guid: 46cbe0098e9bed0418d760ce8b2375e8, type: 3}
   - {fileID: 21300000, guid: 2518154967168ef4f924af130789af10, type: 3}
+--- !u!114 &1899341937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899341931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: -175, y: 170}
+  _size: {x: 160.5, y: 154.1}
 --- !u!1 &1950039266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,6 +4106,7 @@ GameObject:
   - component: {fileID: 1950039269}
   - component: {fileID: 1950039268}
   - component: {fileID: 1950039267}
+  - component: {fileID: 1950039270}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -3841,6 +4129,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3882,6 +4171,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 178, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1950039270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950039266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &1971126851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,6 +4196,7 @@ GameObject:
   - component: {fileID: 1971126854}
   - component: {fileID: 1971126853}
   - component: {fileID: 1971126852}
+  - component: {fileID: 1971126855}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -3915,6 +4219,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3956,6 +4261,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 178, y: 170}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1971126855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971126851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}
 --- !u!1 &1973297575
 GameObject:
   m_ObjectHideFlags: 0
@@ -4045,6 +4364,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4116,6 +4436,7 @@ GameObject:
   - component: {fileID: 2136171125}
   - component: {fileID: 2136171127}
   - component: {fileID: 2136171126}
+  - component: {fileID: 2136171128}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -4157,6 +4478,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4179,3 +4501,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136171124}
   m_CullTransparentMesh: 0
+--- !u!114 &2136171128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136171124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7a6c46e8d09d4c9e9839627fec278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _position: {x: 0, y: 0}
+  _size: {x: 164.5, y: 157.1}

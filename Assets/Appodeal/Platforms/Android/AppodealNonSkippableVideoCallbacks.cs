@@ -17,37 +17,37 @@ namespace AppodealAds.Unity.Android
             this.listener = listener;
         }
 
-        public void onNonSkippableVideoLoaded(bool isPrecache)
+        private void onNonSkippableVideoLoaded(bool isPrecache)
         {
             listener.onNonSkippableVideoLoaded(isPrecache);
         }
 
-        public void onNonSkippableVideoFailedToLoad()
+        private void onNonSkippableVideoFailedToLoad()
         {
             listener.onNonSkippableVideoFailedToLoad();
         }
 
-        public void onNonSkippableVideoShowFailed()
+        private void onNonSkippableVideoShowFailed()
         {
             listener.onNonSkippableVideoShowFailed();
         }
 
-        public void onNonSkippableVideoShown()
+        private void onNonSkippableVideoShown()
         {
             listener.onNonSkippableVideoShown();
         }
 
-        public void onNonSkippableVideoFinished()
+        private void onNonSkippableVideoFinished()
         {
             listener.onNonSkippableVideoFinished();
         }
 
-        public void onNonSkippableVideoClosed(bool finished)
+        private void onNonSkippableVideoClosed(bool finished)
         {
             listener.onNonSkippableVideoClosed(finished);
         }
 
-        public void onNonSkippableVideoExpired()
+        private void onNonSkippableVideoExpired()
         {
             listener.onNonSkippableVideoExpired();
         }

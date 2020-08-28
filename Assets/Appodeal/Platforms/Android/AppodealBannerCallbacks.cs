@@ -5,7 +5,6 @@ namespace AppodealAds.Unity.Android
 {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     [SuppressMessage("ReSharper", "UnusedParameter.Local")]
-    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public class AppodealBannerCallbacks
 #if UNITY_ANDROID
         : UnityEngine.AndroidJavaProxy
@@ -17,27 +16,27 @@ namespace AppodealAds.Unity.Android
             this.listener = listener;
         }
 
-        public void onBannerLoaded(int height, bool isPrecache)
+        private void onBannerLoaded(int height, bool isPrecache)
         {
             listener.onBannerLoaded(height,isPrecache);
         }
 
-        public void onBannerFailedToLoad()
+        private void onBannerFailedToLoad()
         {
             listener.onBannerFailedToLoad();
         }
 
-        public void onBannerShown()
+        private void onBannerShown()
         {
             listener.onBannerShown();
         }
 
-        public void onBannerClicked()
+        private void onBannerClicked()
         {
             listener.onBannerClicked();
         }
 
-        public void onBannerExpired()
+        private void onBannerExpired()
         {
             listener.onBannerExpired();
         }

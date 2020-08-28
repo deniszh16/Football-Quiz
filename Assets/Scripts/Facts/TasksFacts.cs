@@ -29,8 +29,13 @@ namespace Cubra.Facts
         [Header("Обновление задания")]
         [SerializeField] private Button _updateButton;
 
+        [Header("Предупреждения за ошибки")]
+        [SerializeField] private GameObject[] _cards;
+
         // Этап викторины
         private int _stage;
+        // Предупреждения за ошибки
+        private int _warnings;
 
         private PointsEarned _pointsEarned;
 
@@ -87,28 +92,35 @@ namespace Cubra.Facts
 
                 // Увеличиваем общее количество правильных ответов
                 PlayerPrefs.SetInt("facts-answer", PlayerPrefs.GetInt("facts-answer") + 1);
-
-                _stage++;
-
-                // Активируем кнопку обновления вопроса
-                _updateButton.interactable = true;
             }
             else
             {
-                if (_timer.Seconds > 0)
-                {
-                    _question.text = "Неправильно!" + IndentsHelpers.LineBreak(1) + "Подборка провалена, в данном режиме игры ошибаться нельзя.";
-                }
-                else
-                {
-                    _question.text = "Время закончилось!" + IndentsHelpers.LineBreak(1) + "Подборка провалена, в следующий раз старайся отвечать быстрее.";
-                }
+                _warnings++;
+                // Отображаем карточку предупреждения
+                _cards[_warnings - 1].SetActive(true);
 
                 // Увеличиваем общее количество неправильных ответов
                 PlayerPrefs.SetInt("facts-errors", PlayerPrefs.GetInt("facts-errors") + 1);
 
-                CloseCategory("loss");
+                if (_warnings >= 2)
+                {
+                    _question.text = (_timer.Seconds > 0) ?
+                        "Неправильно!" + IndentsHelpers.LineBreak(1) + "Получена красная карточка, подборка провалена." :
+                        "Время закончилось!" + IndentsHelpers.LineBreak(1) + "Получено предупреждение за затяжку времени, подборка провалена.";
+
+                    CloseCategory("loss");
+                    return;
+                }
+                else
+                {
+                    _question.text = (_timer.Seconds > 0) ?
+                        "Неправильно!" + IndentsHelpers.LineBreak(1) + "Получена первая желтая карточка." :
+                        "Время закончилось!" + IndentsHelpers.LineBreak(1) + "Получена первая желтая карточка.";
+                }
             }
+
+            _stage++;
+            _updateButton.interactable = true;
         }
 
         /// <summary>

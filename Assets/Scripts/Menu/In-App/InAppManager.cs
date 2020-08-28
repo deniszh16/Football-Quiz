@@ -26,11 +26,11 @@ namespace Cubra
         private void Start()
         {
             var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
-            
+
             builder.AddProduct(_ads, ProductType.NonConsumable);
             builder.AddProduct(_coinsX1, ProductType.Consumable);
             builder.AddProduct(_coinsX5, ProductType.Consumable);
-            
+
             UnityPurchasing.Initialize(this, builder);
         }
 

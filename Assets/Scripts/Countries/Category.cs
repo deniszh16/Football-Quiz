@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using Firebase.Analytics;
 
 namespace Cubra.Countries
 {
@@ -83,6 +84,9 @@ namespace Cubra.Countries
                 if (PlayerPrefs.GetInt("coins") >= _price)
                 {
                     PaymentCategory();
+
+                    // Событие (для статистики) по открытию новой категории
+                    FirebaseAnalytics.LogEvent("countries_open_category", new Parameter("number", _number + 1));
                 }
                 else
                 {

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using Firebase.Analytics;
 
 namespace Cubra.Players
 {
@@ -211,6 +212,9 @@ namespace Cubra.Players
 
                 _question.text = "Понравился ли вам новый режим игры? Расскажите в отзыве на Google Play.";
                 _feedback.SetActive(true);
+
+                // Событие (для статистики) по завершению категории
+                FirebaseAnalytics.LogEvent("players_category_end", new Parameter("progress", _progress));
             }
         }
     }

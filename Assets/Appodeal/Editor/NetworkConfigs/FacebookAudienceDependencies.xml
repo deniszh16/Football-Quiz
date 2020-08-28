@@ -1,0 +1,13 @@
+<dependencies>
+    <iosPods>
+        <iosPod name='APDFacebookAudienceAdapter' version='2.7.2.1-Beta' minTargetSdk='9.0'/>
+    </iosPods>
+    <androidPackages>
+        <androidPackage spec='com.appodeal.ads.sdk.networks:facebook:2.7.2.4@aar'/>
+        <androidPackage spec='com.facebook.android:audience-network-sdk:5.10.0'/>
+        <androidPackage spec='com.google.android.gms:play-services-base:17.0.0'/>
+        <repositories>
+            <repository>https://artifactory.appodeal.com/artifactory/appodeal</repository>
+        </repositories>
+    </androidPackages>
+</dependencies>

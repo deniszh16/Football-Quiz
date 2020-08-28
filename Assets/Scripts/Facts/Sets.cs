@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using Firebase.Analytics;
 
 namespace Cubra.Facts
 {
@@ -73,6 +74,9 @@ namespace Cubra.Facts
             // Если подборка не пройдена
             if (_statusHelper.status[number] == "no")
             {
+                // Событие (для статистики) по открытию новой подборки
+                FirebaseAnalytics.LogEvent("facts_open_category", new Parameter("number", Category + 1));
+
                 // Переходим к викторине
                 Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.FactsQuestions);
             }
