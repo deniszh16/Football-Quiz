@@ -15,7 +15,7 @@ using System.Linq;
 public static class AppodealUnityUtils
 {
     private const string UNITY_ANDROID_VERSION_ENUM_PREFIX = "AndroidApiLevel";
-    public static readonly BindingFlags PublicStaticFlags = BindingFlags.Public | BindingFlags.Static;
+    private const BindingFlags PublicStaticFlags = BindingFlags.Public | BindingFlags.Static;
 
     [Flags]
     public enum AndroidArchitecture
@@ -248,5 +248,10 @@ public static class AppodealUnityUtils
         }
 
         return profilerOutput;
+    }
+    
+    public static string FixSlashesInPath(string path)
+    {
+        return path?.Replace('\\', '/');
     }
 }

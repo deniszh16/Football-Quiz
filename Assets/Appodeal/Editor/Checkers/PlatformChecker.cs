@@ -52,18 +52,10 @@ namespace AppodealAds.Unity.Editor.Checkers
                     continue;
                 }
 
-                if (isFile || isDirectory)
+                if (!isFile && !isDirectory) continue;
                 {
                     var instr = checkAndGetInstruction(plugin.Key, plugin.Value);
                     if (instr != null) fixInstructions.Add(instr);
-                }
-
-                if (!isAllDirectoryContent) continue;
-                {
-                    fixInstructions.AddRange(AppodealAssetsPostProcess.Plugins
-                        .Select(folder => AppodealUnityUtils.combinePaths("Assets", "Plugins", "Android", folder))
-                        .Select(pluginPath => checkAndGetInstruction(pluginPath, plugin.Value))
-                        .Where(instr => instr != null));
                 }
             }
 
@@ -95,7 +87,7 @@ namespace AppodealAds.Unity.Editor.Checkers
             }
 
             if (isChecked) return instr;
-            var desc = "Plugin " + relativePath + " should be enabled for platform: " + platform.ToString() +
+            var desc = "Plugin " + relativePath + " should be enabled for platform: " + platform +
                        ".\n";
             if (relativePath.Contains(AppodealUnityUtils.combinePaths("Assets", "Plugins", "Android")))
                 desc +=

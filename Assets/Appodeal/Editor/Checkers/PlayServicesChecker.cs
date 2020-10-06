@@ -22,7 +22,7 @@ namespace AppodealAds.Unity.Editor.Checkers
             {"play-services-gcm", new HashSet<string>()}
         };
 
-        private const string MIN_SUPPORTED_PLAY_SERVICES_VERSION = "12.0.0";
+        private const string MIN_SUPPORTED_PLAY_SERVICES_VERSION = "15.0.0";
 
         public override string getName()
         {
@@ -185,7 +185,7 @@ namespace AppodealAds.Unity.Editor.Checkers
         public readonly Dictionary<string, HashSet<string>> playServicesVersions = new Dictionary<string, HashSet<string>>();
         public readonly HashSet<string> foundServices = new HashSet<string>();
 
-        public DependenciesParser(string[] files)
+        public DependenciesParser(IEnumerable<string> files)
         {
             parse(files);
         }

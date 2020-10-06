@@ -28,9 +28,6 @@ namespace Cubra.Players
         [Header("Текст описания")]
         [SerializeField] private Text _description;
 
-        [Header("Кнопка отзыва")]
-        [SerializeField] private GameObject _feedback;
-
         // Количество ответов
         private int _target;
         // Количество попыток
@@ -210,8 +207,7 @@ namespace Cubra.Players
 
                 _description.gameObject.SetActive(false);
 
-                _question.text = "Понравился ли вам новый режим игры? Расскажите в отзыве на Google Play.";
-                _feedback.SetActive(true);
+                _question.text = "Все задания пройдены. Вскоре мы добавим новую подборку.";
 
                 // Событие (для статистики) по завершению категории
                 FirebaseAnalytics.LogEvent("players_category_end", new Parameter("progress", _progress));

@@ -1,3 +1,29 @@
+## [2.0.0] - 2020-07-15
+### Removed
+- UnityChannel / Xiaomi - Completed deprecation, removing related APIs: `UnityEngine.Store`, `IUnityChannelExtensions`, `IUnityChannelConfiguration`.
+- CloudMoolah - Removed.
+- Tizen - Removed.
+- UDP package is no longer installed as a prerequisite
+
+### Added
+- UWP - Additional logging during initialization to diagnose developer portal misconfigurations. See https://docs.microsoft.com/en-us/windows/uwp/monetize/in-app-purchases-and-trials#how-to-use-product-ids-for-add-ons-in-your-code for a broad discussion of Windows.ApplicationModel.Store configuration.
+- UDP - if not installed or up-to-date, a menu will prompt you to install or update it upon selecting UDP support features. (See below)
+
+### Fixed
+- Reduced logging during initialization and purchasing
+- Amazon - Removed KeyNotFoundException after purchase failure
+- UDP - Removed one NullPointerException vulnerability
+- GooglePlay developerPayload spurious JSON parsing exception in log
+
+### Changed
+- IAP Updater "Updater Settings..." button now reads "More Information..." to be more accurate
+- UDP store implementation is still available, but must be installed in a separate module, available in either Asset Store or Package manager. The UDP module will need to be updated manually. (See above) 
+- Visibility of INativeStores is now public, mainly to support the new UDP package's needs
+- Resource files - The Product Catalog, Android Target Billing Mode, and Receipt Obfuscator Tangle files will be moved out of the plugins folder.
+
+### Important upgrade note
+- **Upgrading from prior Unity IAP?** - Unity may generate a _bad Android build_ once, immediately after installing the upgrade to this version of Unity IAP. Unity will be misconfigured to incorrectly include multiple Andriod app store Java implementations. So **if a dialog appears asking permission to update e.g. the "SamsungApps.aar" file's metadata, during the first build after the upgrade to this version of Unity IAP,** then click Yes, cancel the build, and rebuild. This dialog undesirably defeats Unity IAP's system for including one Android app store (Window > Unity IAP > Android > Target {app store}), resulting in the inclusion of Android Java code for two app stores. Android app stores such as Google Play and Samsung Apps may block publication of an APK which is detected to include Java code for two app store. Restarting Unity after upgrading will also avoid this dialog.
+
 ## [1.23.5] - 2020-08-12
 ### Fixed
 - GooglePlay - Fixed `IGooglePlayConfiguration.aggressivelyRecoverLostPurchases == false` (default) to reward players for currently in-flight purchases only, and not historical purchases, when the player cleans their device's TransactionLog, starts and cancels a purchase, and restarts the app.
@@ -33,8 +59,6 @@
 ```.IsOwned(storeController.products.WithID("100.gold.coins"));```.
 - GooglePlay - Adds `void IGooglePlayStoreExtensions.SetLogLevel(int level)` API to reduce logging. 
    - `level` defaults to the legacy value of `0` and configures the Google Play Java store integration to emit debug, info, warning, and error logs. Setting `1` will restrict logging to emit only warnings and errors. Example: `extensionProvider.GetExtension<IGooglePlayStoreExtensions>().SetLogLevel(1)`.
-
-### Fixed
 - GooglePlay - After the purchasing dialog, "You already own this product" from Google Play is shown, the `IStoreListener.OnPurchaseFailed` API is calls with an error of `PurchaseFailureReason.DuplicateTransaction`.
    - Unity IAP now treats "You already own this product" as a successful purchase, and _also_ calls `IStoreListener.ProcessPurchase`. Note: This amends the related behavior introduced in 1.23.1.
    - Addresses the scenario where (1) a Consumable is purchased, and during purchasing (2) the Google Play store is interrupted by e.g. a network disruption. (3) Unity IAP correctly calls `IStoreListener.OnPurchaseFailed`, reporting the interruption as a purchase failure. (4) The user restores the network, attempts to re-purchase, Google Play shows "You already own this product", and Unity IAP reports the message as an error, calling `IStoreListener.OnPurchaseFailed` again. (4.1) Repeated re-purchase attempts fail, also potentially failing even after restarting the app.
@@ -62,6 +86,12 @@
 - GooglePlay - IStoreListener.OnInitializeFailed / IStoreCallback.OnSetupFailed should return InitializationFailureReason.AppNotKnown error when user changes password off-device - user must login. Previously erroneously generated infinite error 6 codes when fetching purchase history after password change.
 - OverflowException when initializing if device locale used the comma (“,”) character as decimal separator.
 
+## [1.22.1] - 2019-08-13
+### Fixed
+- GooglePlay - SubscriptionInfo.getSubscriptionInfo() KeyNotFoundException when parsing receipts which omit expected fields.
+- GooglePlay - IStoreListener.OnInitializeFailed / IStoreCallback.OnSetupFailed should return InitializationFailureReason.AppNotKnown error when user changes password off-device - user must login. Previously erroneously generated infinite error 6 codes when fetching purchase history after password change.
+- OverflowException when initializing if device locale used the comma (“,”) character as decimal separator. 
+
 ## [1.22.0] - 2019-03-18
 ### Added
 - Added Unity Distribution Portal (UDP) module as an Android build target. Unity Distribution Portal streamlines your distribution process. UDP allows you to only build one version of your game, centralize the management of your marketing assets and metadata, and submit your content to multiple app stores, all in the same workflow. For more details, please refer to https://docs.unity3d.com/Packages/com.unity.purchasing.udp@1.0/manual/index.html.
@@ -77,6 +107,9 @@
 - Re-enabled Facebook IAP implementation for non-Gameroom Canvas apps.
 - Fixed GooglePlay store consumable products already owned error due to network issues.
 - Fixed wrong product id when cancel a subscription product purchase.
+
+## [1.21.0] - 2018-08-14
+- Limited release, for closed beta of UDP.
 
 ## [1.20.1] - 2018-10-5
 ### Added

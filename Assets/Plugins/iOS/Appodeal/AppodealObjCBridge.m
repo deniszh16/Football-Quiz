@@ -19,7 +19,7 @@
 static AppodealUnityBannerView *bannerUnity;
 static AppodealUnityMrecView *mrecUnity;
 
-static UIViewController* RootViewController() {
+ UIViewController* RootViewController() {
     return ((UnityAppController *)[UIApplication sharedApplication].delegate).rootViewController;
 }
 
@@ -220,6 +220,31 @@ void AppodealSetSegmentFilterString(const char *name, const char *value) {
     NSDictionary *tempDictionary = @{[NSString stringWithUTF8String:name]: [NSString stringWithUTF8String:value]};
     NSDictionary *dict =  [NSDictionary dictionaryWithDictionary:tempDictionary];
     [Appodeal setSegmentFilter:dict];
+}
+
+void AppodealSetCustomFilterBool(const char *name, BOOL value) {
+    NSString * key = [NSString stringWithUTF8String:name];
+    NSNumber * valueNum = [NSNumber numberWithBool:value];
+    NSDictionary * objCRule = key ? @{key : valueNum} : @{};
+    [Appodeal setCustomState:objCRule];
+}
+
+void AppodealSetCustomFilterInt(const char *name, int value) {
+    NSDictionary *tempDictionary = @{[NSString stringWithUTF8String:name]: [NSNumber numberWithInt:value]};
+    NSDictionary *dict =  [NSDictionary dictionaryWithDictionary:tempDictionary];
+    [Appodeal setCustomState:dict];
+}
+
+void AppodealSetCustomFilterDouble(const char *name, double value) {
+    NSDictionary *tempDictionary = @{[NSString stringWithUTF8String:name]: [NSNumber numberWithDouble:value]};
+    NSDictionary *dict =  [NSDictionary dictionaryWithDictionary:tempDictionary];
+    [Appodeal setCustomState:dict];
+}
+
+void AppodealSetCustomFilterString(const char *name, const char *value) {
+    NSDictionary *tempDictionary = @{[NSString stringWithUTF8String:name]: [NSString stringWithUTF8String:value]};
+    NSDictionary *dict =  [NSDictionary dictionaryWithDictionary:tempDictionary];
+    [Appodeal setCustomState:dict];
 }
 
 void AppodealSetExtraDataBool(const char *name, BOOL value) {

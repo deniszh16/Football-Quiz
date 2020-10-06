@@ -1,5 +1,4 @@
 #if UNITY_EDITOR
-using Appodeal.Editor.AppodealManager;
 #if UNITY_2018_1_OR_NEWER
 using Appodeal.Editor.AppodealManager.AppodealDependencies;
 #endif

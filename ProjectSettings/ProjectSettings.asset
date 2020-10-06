@@ -119,13 +119,14 @@ PlayerSettings:
   stadiaTargetFramerate: 0
   vulkanNumSwapchainBuffers: 3
   vulkanEnableSetSRGBWrite: 0
+  vulkanEnableLateAcquireNextImage: 0
   m_SupportedAspectRatios:
     4:3: 1
     5:4: 1
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.4.6
+  bundleVersion: 1.4.8
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -172,7 +173,7 @@ PlayerSettings:
     Android: ru.cubra.football
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 46
+  AndroidBundleVersionCode: 48
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1

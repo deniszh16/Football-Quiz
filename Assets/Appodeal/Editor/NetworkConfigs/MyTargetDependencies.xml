@@ -1,9 +1,9 @@
 <dependencies>
     <iosPods>
-        <iosPod name='APDMyTargetAdapter' version='2.7.2.1-Beta' minTargetSdk='9.0'/>
+        <iosPod name='APDMyTargetAdapter' version='2.7.4.1' minTargetSdk='9.0'/>
     </iosPods>
     <androidPackages>
-        <androidPackage spec='com.appodeal.ads.sdk.networks:my_target:2.7.2.4@aar'/>
+        <androidPackage spec='com.appodeal.ads.sdk.networks:my_target:2.7.3.4@aar'/>
         <androidPackage spec='androidx.recyclerview:recyclerview:1.0.0@aar'/>
         <androidPackage spec='androidx.annotation:annotation:1.1.0'/>
         <androidPackage spec='androidx.legacy:legacy-support-core-ui:1.0.0'/>

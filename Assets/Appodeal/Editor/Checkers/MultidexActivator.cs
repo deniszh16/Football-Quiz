@@ -13,7 +13,9 @@ namespace AppodealAds.Unity.Editor.Checkers
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     public class MultidexActivator : CheckingStep
     {
-        //Templates in Unity Editor Data folder
+        #region Constants
+
+         //Templates in Unity Editor Data folder
         private const string gradleDefaultTemplatePath = "PlaybackEngines/AndroidPlayer/Tools/GradleTemplates";
         public const string manifestDefaultTemplatePath = "PlaybackEngines/AndroidPlayer/Apk/AndroidManifest.xml";
 
@@ -23,7 +25,6 @@ namespace AppodealAds.Unity.Editor.Checkers
         public const string manifestTemplateName = "AndroidManifest.xml";
         public const string appodealTemplatesPath = "Appodeal/InternalResources";
         private const string appodealDexesPath = "Assets/Plugins/Android/appodeal/assets/dex";
-        public const string appodealDexesPaths = "Assets/Plugins/Android/appodeal/assets/dex";
 
         //Gradle search lines
         public const string GRADLE_GOOGLE_REPOSITORY = "google()";
@@ -47,6 +48,8 @@ namespace AppodealAds.Unity.Editor.Checkers
         //Manifest add lines
         public const string manifestMutlidexApp = "androidx.multidex.MultiDexApplication";
 
+        #endregion
+        
         public override string getName()
         {
             return "Android Multidex Settings";
@@ -87,7 +90,7 @@ namespace AppodealAds.Unity.Editor.Checkers
                     else
                     {
                         var instr = new FixProblemInstruction(
-                            "Tere is no build.gradle template in your Unity. " +
+                            "There is no build.gradle template in your Unity. " +
                             "Please ensure that your copy of Unity isn't crashed and contact Appodeal Support team.",
                             false);
                         instructions.Add(instr);
@@ -126,7 +129,7 @@ namespace AppodealAds.Unity.Editor.Checkers
                         if (appNode.GetAttribute("name", ns) == manifestMutlidexApp) return instructions;
                         var fix = new FixProblemInstruction(
                             "We found that you use custom Application class in this project. " +
-                            "Please ensure that your application class meets the multidex requirements (see the official android multiex documentation).",
+                            "Please ensure that your application class meets the multidex requirements (see the official android multidex documentation).",
                             false);
                         instructions.Add(fix);
                     }
@@ -405,7 +408,7 @@ namespace AppodealAds.Unity.Editor.Checkers
     {
         private readonly string path;
 
-        public EnableJavaVersion(string gradleScriptPath) : base("Java version isn't included to mainTamplete.gradle",
+        public EnableJavaVersion(string gradleScriptPath) : base("Java version isn't included to mainTemplate.gradle",
             true)
         {
             path = gradleScriptPath;

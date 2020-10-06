@@ -55,9 +55,9 @@ namespace AppodealAds.Unity.Editor.Checkers
             var w1 = position.width * 0.3f;
             var styleWhiteBG = new GUIStyle(GUI.skin.scrollView);
             GUILayout.Label(new GUIContent(
-                "This utility will cleck configuration only for the selected platform: " +
+                "This utility will check configuration only for the selected platform: " +
                 EditorUserBuildSettings.activeBuildTarget +
-                "\nIf you want to check your project for another patform, you should select it in the File > Build Settings.",
+                "\nIf you want to check your project for another platform, you should select it in the File > Build Settings.",
                 EditorGUIUtility.FindTexture("console.warnicon")));
             GUILayout.BeginHorizontal();
             scrollPositionSteps = GUILayout.BeginScrollView(scrollPositionSteps, styleWhiteBG, GUILayout.Width(w1));

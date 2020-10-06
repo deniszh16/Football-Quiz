@@ -46,7 +46,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
         public const string Dependencies = "Dependencies";
 
         #endregion
-        
+
         public static FileInfo[] GetInternalDependencyPath()
         {
             var info = new DirectoryInfo(Network_configs_path);
@@ -58,7 +58,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
         public static void ShowInternalErrorDialog(EditorWindow editorWindow, string message, string debugLog)
         {
             EditorUtility.ClearProgressBar();
-            Debug.LogError(debugLog);
+            Debug.LogError(message);
             var option = EditorUtility.DisplayDialog("Internal error",
                 $"{message}. Please contact to Appodeal support.",
                 "Ok");
@@ -163,7 +163,13 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 
             return androidDependencyVersion;
         }
-        
+
+        public static string GetMajorVersion(string value)
+        {
+            return value.Remove(0, 4).Insert(0, string.Empty)
+                .Remove(1, 2).Insert(0, string.Empty);
+        }
+
         public static string GetAndroidDependencyCoreVersion(string value)
         {
             var androidDependencyVersion =
@@ -198,7 +204,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                 if (string.IsNullOrEmpty(yPart)) yPart = "0";
                 if (!int.TryParse(xPart, out var xInt) || !int.TryParse(yPart, out var yInt))
                 {
-                    var abcCompare = String.Compare(xPart, yPart, StringComparison.Ordinal);
+                    var abcCompare = string.Compare(xPart, yPart, StringComparison.Ordinal);
                     if (abcCompare != 0)
                         return abcCompare;
                     continue;
@@ -208,122 +214,6 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
             }
 
             return 0;
-        }
-
-        public static void ShowInfoDependency(NetworkDependency networkDependency)
-        {
-            Debug.Log($"Name - {networkDependency.name}");
-            if (networkDependency.android_info != null)
-            {
-                Debug.Log($"AndroidDependency name - {networkDependency.android_info.name}");
-                Debug.Log($"AndroidDependency version - {networkDependency.android_info.version}");
-                Debug.Log($"AndroidDependency content - {networkDependency.android_info.unity_content}");
-            }
-
-            if (networkDependency.ios_info != null)
-            {
-                Debug.Log($"iOSDependency name - {networkDependency.ios_info.name}");
-                Debug.Log($"iOSDependency version - {networkDependency.ios_info.version}");
-                Debug.Log($"iOSDependency content - {networkDependency.ios_info.unity_content}");
-            }
-        }
-
-        public static void ShowPluginInfo(AppodealUnityPlugin appodealUnityPluginAppodealUnity)
-        {
-            if (appodealUnityPluginAppodealUnity != null)
-            {
-                if (!string.IsNullOrEmpty(appodealUnityPluginAppodealUnity.name))
-                {
-                    Debug.Log($"UnityPluginInfo name: - {appodealUnityPluginAppodealUnity.name}");
-                }
-                else
-                {
-                    Debug.Log("UnityPluginInfo name: - IsNullOrEmpty");
-                }
-
-                if (!string.IsNullOrEmpty(appodealUnityPluginAppodealUnity.build_type))
-                {
-                    Debug.Log($"UnityPluginInfo build_type: - {appodealUnityPluginAppodealUnity.build_type}");
-                }
-                else
-                {
-                    Debug.Log("UnityPluginInfo build_type: - IsNullOrEmpty");
-                }
-
-                Debug.Log($"UnityPluginInfo id: - {appodealUnityPluginAppodealUnity.id}");
-
-                if (!string.IsNullOrEmpty(appodealUnityPluginAppodealUnity.version))
-                {
-                    Debug.Log($"UnityPluginInfo version: - {appodealUnityPluginAppodealUnity.version}");
-                }
-                else
-                {
-                    Debug.Log("UnityPluginInfo version: - IsNullOrEmpty");
-                }
-
-                if (!string.IsNullOrEmpty(appodealUnityPluginAppodealUnity.updated_at))
-                {
-                    Debug.Log($"UnityPluginInfo updated_at: - {appodealUnityPluginAppodealUnity.updated_at}");
-                }
-                else
-                {
-                    Debug.Log("UnityPluginInfo updated_at: - IsNullOrEmpty");
-                }
-
-                if (!string.IsNullOrEmpty(appodealUnityPluginAppodealUnity.created_at))
-                {
-                    Debug.Log($"UnityPluginInfo created_at: - {appodealUnityPluginAppodealUnity.created_at}");
-                }
-                else
-                {
-                    Debug.Log("UnityPluginInfo created_at: - IsNullOrEmpty");
-                }
-
-                if (!string.IsNullOrEmpty(appodealUnityPluginAppodealUnity.source))
-                {
-                    Debug.Log($"UnityPluginInfo source: - {appodealUnityPluginAppodealUnity.source}");
-                }
-                else
-                {
-                    Debug.Log("UnityPluginInfo source: - IsNullOrEmpty");
-                }
-
-                foreach (var SupportedSdk in appodealUnityPluginAppodealUnity.sdks)
-                {
-                    Debug.Log($"UnityPluginInfo SupportedSdk Id - {SupportedSdk.id}");
-
-                    if (!string.IsNullOrEmpty(SupportedSdk.platform))
-                    {
-                        Debug.Log($"UnityPluginInfo SupportedSdk.Platform: - {SupportedSdk.platform}");
-                    }
-                    else
-                    {
-                        Debug.Log("UnityPluginInfo SupportedSdk.Platform: - IsNullOrEmpty");
-                    }
-
-                    if (!string.IsNullOrEmpty(SupportedSdk.build_type))
-                    {
-                        Debug.Log($"UnityPluginInfo SupportedSdk.BuildType: - {SupportedSdk.build_type}");
-                    }
-                    else
-                    {
-                        Debug.Log("UnityPluginInfo SupportedSdk.BuildType: - IsNullOrEmpty");
-                    }
-
-                    if (!string.IsNullOrEmpty(SupportedSdk.version))
-                    {
-                        Debug.Log($"UnityPluginInfo SupportedSdk.Version: - {SupportedSdk.version}");
-                    }
-                    else
-                    {
-                        Debug.Log("UnityPluginInfo SupportedSdk.Version: - IsNullOrEmpty");
-                    }
-                }
-            }
-            else
-            {
-                Debug.Log("UnityPluginInfo unityPluginInfo - null");
-            }
         }
 
         public static void GuiHeaders(GUIStyle headerInfoStyle, GUILayoutOption btnFieldWidth)
@@ -339,14 +229,14 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                 GUILayout.Button(string.Empty, headerInfoStyle, GUILayout.Width(5));
             }
         }
-        
+
         public static NetworkDependency GetAppodealDependency(
             Dictionary<string, NetworkDependency> networkDependencies)
         {
             NetworkDependency networkDependency = null;
             foreach (var dependency
                 in networkDependencies.Where(dependency
-                        => dependency.Key.Contains(AppodealDependencyUtils.Appodeal))
+                        => dependency.Key.Contains(Appodeal))
                     .Where(dependency => dependency.Value != null))
             {
                 networkDependency = dependency.Value;
@@ -354,8 +244,6 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 
             return networkDependency;
         }
-        
-        
     }
 
     [SuppressMessage("ReSharper", "InconsistentNaming")]
