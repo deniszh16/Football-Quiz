@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LevelButtons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 98d2c3ff28a56da4eb2fb8d1b6b3b805, type: 3}
+    - {fileID: 2800000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
+    - {fileID: 2800000, guid: 7ffd2c49c12b51a4abe0ac11bf67bb61, type: 3}
+    - {fileID: 2800000, guid: e7db4cd62ae887f47a79fa227d52a852, type: 3}
+    - {fileID: 2800000, guid: 7d58421b72666914085b79c6055abb5c, type: 3}
+    - {fileID: 2800000, guid: 4fa949111e68d4f44ac285e599b95306, type: 3}
+    - {fileID: 2800000, guid: ef4259bdfab7cef40bdb9bbd543f467a, type: 3}
+    - {fileID: 2800000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
+    totalSpriteSurfaceArea: 176795
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4fa949111e68d4f44ac285e599b95306, type: 3}
+  - {fileID: 21300000, guid: e7db4cd62ae887f47a79fa227d52a852, type: 3}
+  - {fileID: 21300000, guid: 7ffd2c49c12b51a4abe0ac11bf67bb61, type: 3}
+  - {fileID: 21300000, guid: 7d58421b72666914085b79c6055abb5c, type: 3}
+  - {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
+  - {fileID: 21300000, guid: ef4259bdfab7cef40bdb9bbd543f467a, type: 3}
+  - {fileID: 21300000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
+  - {fileID: 21300000, guid: 98d2c3ff28a56da4eb2fb8d1b6b3b805, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Button (19)
+  - Button (17)
+  - Button (15)
+  - Button (18)
+  - Button (14)
+  - Button (20)
+  - Panel (2)
+  - Button (13)
+  m_RenderDataMap: {}
+  m_Tag: LevelButtons
+  m_IsVariant: 0

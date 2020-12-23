@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using GooglePlayGames;
-using Cubra.Helpers;
 
 namespace Cubra
 {
@@ -71,13 +70,6 @@ namespace Cubra
                 PlayerPrefs.SetString("show-ads", "yes");
             }
 
-            // Обновление категорий по странам
-            if (PlayerPrefs.HasKey("update") == false)
-            {
-                RefreshCategories();
-                PlayerPrefs.SetString("update", "performed");
-            }
-
             // Активируем игровые сервисы Google Play
             PlayGamesPlatform.Activate();
         }
@@ -86,30 +78,6 @@ namespace Cubra
         {
             var transitions = Camera.main.GetComponent<TransitionsManager>();
             _ = StartCoroutine(transitions.GoToSceneWithPause(1.8f, (int)TransitionsManager.Scenes.Menu));
-        }
-
-        /// <summary>
-        /// Обновление категорий (перестановка для версии 1.3.5)
-        /// </summary>
-        private void RefreshCategories()
-        {
-            var sets = JsonUtility.FromJson<SetsHelper>(PlayerPrefs.GetString("sets"));
-
-            // Старый прогресс в категориях
-            int[] progress = new int[3];
-
-            for (int i = 0; i < 3; i++)
-                progress[i] = sets.arraySets[i + 12];
-
-            // Обнуляем новую категорию
-            sets.arraySets[12] = 0;
-
-            for (int i = 0; i < 3; i++)
-                // Переставляем прогресс категорий
-                sets.arraySets[i + 13] = progress[i];
-
-            // Сохраняем обновленное значение
-            PlayerPrefs.SetString("sets", JsonUtility.ToJson(sets));
         }
     }
 }
