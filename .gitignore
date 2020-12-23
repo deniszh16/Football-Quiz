@@ -67,6 +67,7 @@ GeneratedLocalRepo/
 Parse/
 Sprites/
 StreamingAssets/
+.vscode/
 
 # Ignoring files
 *.gitattributes
