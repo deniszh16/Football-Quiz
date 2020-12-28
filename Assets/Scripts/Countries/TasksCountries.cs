@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.UI;
 using Cubra.Helpers;
 using Firebase.Analytics;
+using TMPro;
 
 namespace Cubra.Countries
 {
@@ -103,7 +103,7 @@ namespace Cubra.Countries
         private void ArrangeLettersOfTask()
         {
             for (int i = 0; i < _letters.transform.childCount; i++)
-                _letters.transform.GetChild(i).GetComponentInChildren<Text>().text = _questionsHelpers.TaskItems[Progress - 1].Letters[i];
+                _letters.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>().text = _questionsHelpers.TaskItems[Progress - 1].Letters[i];
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Cubra.Countries
         private void ArrangeOptionsOfTask()
         {
             for (int i = 0; i < _variants.transform.childCount; i++)
-                _variants.transform.GetChild(i).GetComponentInChildren<Text>().text = _questionsHelpers.TaskItems[Progress - 1].Options[i];
+                _variants.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>().text = _questionsHelpers.TaskItems[Progress - 1].Options[i];
         }
 
         /// <summary>

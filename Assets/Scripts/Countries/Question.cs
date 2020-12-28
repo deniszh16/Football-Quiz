@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 namespace Cubra.Countries
 {
     public class Question : MonoBehaviour
     {
-        private Text _question;
+        private TextMeshProUGUI _question;
 
         private void Awake()
         {
-            _question = GetComponent<Text>();
+            _question = GetComponent<TextMeshProUGUI>();
         }
 
         /// <summary>

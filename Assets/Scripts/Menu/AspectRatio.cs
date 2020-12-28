@@ -12,10 +12,7 @@ namespace Cubra
         private void Awake()
         {
             _mainCamera = GetComponent<Camera>();
-        }
 
-        private void Start()
-        {
             Ratio = _mainCamera.aspect;
         }
     }

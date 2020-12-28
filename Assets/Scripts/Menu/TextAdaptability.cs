@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 namespace Cubra
 {
@@ -8,11 +8,11 @@ namespace Cubra
         [Header("Короткий текст")]
         [SerializeField] private string _shortText;
 
-        private Text _textComponent;
+        private TextMeshProUGUI _textComponent;
 
         private void Awake()
         {
-            _textComponent = GetComponent<Text>();
+            _textComponent = GetComponent<TextMeshProUGUI>();
         }
 
         private void Start()

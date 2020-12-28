@@ -5,19 +5,20 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine.SocialPlatforms;
 using Cubra.Helpers;
+using TMPro;
 
 namespace Cubra
 {
     public class Leaderboard : MonoBehaviour
     {
         [Header("Рейтинг игрока")]
-        [SerializeField] private Text _rating;
+        [SerializeField] private TextMeshProUGUI _rating;
 
         [Header("Таблица лидеров")]
-        [SerializeField] private Text _leaders;
+        [SerializeField] private TextMeshProUGUI _leaders;
 
         // Анимация загрузки
-        private Animator _animator;
+        private Animator _loadingAnimation;
 
         [Header("Компонент скроллинга")]
         [SerializeField] private ScrollRect _scrollRect;
@@ -30,7 +31,7 @@ namespace Cubra
 
         private void Awake()
         {
-            _animator = _leaders.gameObject.GetComponent<Animator>();
+            _loadingAnimation = _leaders.gameObject.GetComponent<Animator>();
 
             _leaderboardHelper = new LeaderboardHelper();
             _leaderboardHelper = JsonUtility.FromJson<LeaderboardHelper>(PlayerPrefs.GetString("leaders"));
@@ -43,7 +44,7 @@ namespace Cubra
                 if (GooglePlayServices.Authenticated)
                 {
                     _leaders.text = "Загрузка...";
-                    _animator.Play("Loading");
+                    _loadingAnimation.Play("Loading");
 
                     // Отправляем свой результат в таблицу лидеров
                     GooglePlayServices.PostingScoreLeaderboard(PlayerPrefs.GetInt("score"));
@@ -55,7 +56,6 @@ namespace Cubra
             else
             {
                 _updateButton.SetActive(false);
-                // Выводим сохраненные данные
                 ShowResultsFromFile();
             }
         }
@@ -65,7 +65,7 @@ namespace Cubra
         /// </summary>
         public void LoadScoresLeaderboard()
         {
-            //Загружаем десять лучших результатов из публичной таблицы
+            // Загружаем десять лучших результатов из публичной таблицы
             PlayGamesPlatform.Instance.LoadScores(
                 GPGSIds.leaderboard,
                 LeaderboardStart.TopScores,
@@ -99,7 +99,7 @@ namespace Cubra
             Social.LoadUsers(userIds.ToArray(), (users) =>
             {
                 // Убираем анимацию загрузки
-                _animator.Play("Results");
+                _loadingAnimation.Play("Results");
                 _leaders.text = "";
 
                 for (int i = 0; i < scores.Length; i++)

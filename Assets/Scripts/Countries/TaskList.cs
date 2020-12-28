@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using TMPro;
 
 namespace Cubra.Countries
 {
     public class TaskList : FileProcessing
     {
         [Header("Перечисление вопросов")]
-        [SerializeField] private Text _questions;
+        [SerializeField] private TextMeshProUGUI _questions;
 
         [Header("Компонент скролла")]
         [SerializeField] private ScrollRect _scrollRect;

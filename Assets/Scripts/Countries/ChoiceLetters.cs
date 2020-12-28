@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 namespace Cubra.Countries
 {
@@ -39,7 +39,7 @@ namespace Cubra.Countries
         /// <param name="number">номер кнопки</param>
         private string GetButtonText(int number)
         {
-            return transform.GetChild(number).GetComponentInChildren<Text>().text.ToLower();
+            return transform.GetChild(number).GetComponentInChildren<TextMeshProUGUI>().text.ToLower();
         }
     }
 }

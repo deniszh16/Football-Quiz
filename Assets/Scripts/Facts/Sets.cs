@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using Cubra.Helpers;
 using Firebase.Analytics;
+using TMPro;
 
 namespace Cubra.Facts
 {
@@ -58,7 +59,7 @@ namespace Cubra.Facts
                 else
                 {
                     // Выводим количество заданий в категории
-                    _facts[i].transform.GetChild(0).GetComponent<Text>().text = "0 / " + _task[i];
+                    _facts[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = "0 /" + _task[i];
                 }
             }
         }

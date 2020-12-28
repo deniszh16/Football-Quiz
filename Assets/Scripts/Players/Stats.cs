@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using Cubra.Helpers;
+using TMPro;
 
 namespace Cubra.Players
 {
@@ -8,12 +8,12 @@ namespace Cubra.Players
     {
         [Header("Количество заданий")]
         [SerializeField] private Tasks _task;
-
-        private Text _stats;
+        
+        private TextMeshProUGUI _stats;
 
         private void Awake()
         {
-            _stats = GetComponent<Text>();
+            _stats = GetComponent<TextMeshProUGUI>();
         }
 
         private void Start()

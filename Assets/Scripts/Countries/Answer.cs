@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
 using AppodealAds.Unity.Api;
+using TMPro;
 
 namespace Cubra.Countries
 {
@@ -24,15 +24,13 @@ namespace Cubra.Countries
         private int _quantityLetters;
 
         [Header("Поле ответа")]
-        [SerializeField] private Text _answer;
-
-        private Outline _answerOutline;
+        [SerializeField] private TextMeshProUGUI _answer;
 
         [Header("Кнопка удаления буквы")]
         [SerializeField] private DeletingLetters _deleteButton;
 
         [Header("Подробный ответ")]
-        [SerializeField] private Text _detailedAnswer;
+        [SerializeField] private TextMeshProUGUI _detailedAnswer;
 
         [Header("Победный эффект")]
         [SerializeField] private ParticleSystem _victory;
@@ -42,7 +40,6 @@ namespace Cubra.Countries
 
         private void Awake()
         {
-            _answerOutline = _answer.GetComponent<Outline>();
             _tasksCountries = Camera.main.GetComponent<TasksCountries>();
             _pointsEarned = Camera.main.GetComponent<PointsEarned>();
         }
@@ -101,7 +98,7 @@ namespace Cubra.Countries
                 _quantityLetters--;
 
                 // Убираем красную обводку ответа
-                _answerOutline.enabled = false;
+                _answer.outlineWidth = 0;
             }
         }
 
@@ -117,7 +114,7 @@ namespace Cubra.Countries
             _quantityLetters = 0;
 
             UpdateAnswerField();
-            _answerOutline.enabled = false;
+            _answer.outlineWidth = 0;
         }
 
         /// <summary>
@@ -162,7 +159,7 @@ namespace Cubra.Countries
             // Если последняя буква заполнена
             else if (_playerAnswer.Last() != null)
             {
-                _answerOutline.enabled = true;
+                _answer.outlineWidth = 0.25f;
                 // Увеличиваем количество ошибок в викторине
                 PlayerPrefs.SetInt("countries-error", PlayerPrefs.GetInt("countries-error") + 1);
             }

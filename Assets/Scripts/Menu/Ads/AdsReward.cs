@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using AppodealAds.Unity.Api;
 using AppodealAds.Unity.Common;
-using Firebase.Analytics;
 
 namespace Cubra
 {
@@ -28,9 +27,6 @@ namespace Cubra
         {
             if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))
                 Appodeal.show(Appodeal.REWARDED_VIDEO);
-
-            // Событие (для статистики) по запуску видеорекламы
-            FirebaseAnalytics.LogEvent("launch_video_ads");
         }
 
         /// <summary>
@@ -42,9 +38,6 @@ namespace Cubra
 
             // Добавляем бонусные монеты
             _pointsEarned.ChangeQuantityCoins(350);
-
-            // Событие по завершению видеорекламы
-            FirebaseAnalytics.LogEvent("watched_video_ads");
         }
 
         #region Appodeal (other methods)

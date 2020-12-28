@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using Cubra.Helpers;
 using Firebase.Analytics;
+using TMPro;
 
 namespace Cubra.Players
 {
@@ -14,7 +15,7 @@ namespace Cubra.Players
         [SerializeField] private Tasks _task;
 
         [Header("Текст вопроса")]
-        [SerializeField] private Text _question;
+        [SerializeField] private TextMeshProUGUI _question;
 
         // Кнопка обновления задания
         private Button _updateTask;
@@ -26,7 +27,7 @@ namespace Cubra.Players
         [SerializeField] private Photos _listPhotos;
 
         [Header("Текст описания")]
-        [SerializeField] private Text _description;
+        [SerializeField] private TextMeshProUGUI _description;
 
         // Количество ответов
         private int _target;
@@ -148,7 +149,9 @@ namespace Cubra.Players
             if (victory == true)
             {
                 _question.text = "Уровень пройден!" + IndentsHelpers.LineBreak(1);
+
                 PlayerPrefs.SetInt("photos-successfully", PlayerPrefs.GetInt("photos-successfully") + 1);
+                
                 _pointsEarned.ChangeQuantityCoins(80);
                 _pointsEarned.ChangeTotalScore(7);
             }

@@ -12,7 +12,6 @@ namespace Cubra
                 // Если реклама не отключена
                 if (PlayerPrefs.GetString("show-ads") == "yes")
                 {
-                    // Если реклама загружена
                     if (Appodeal.isLoaded(Appodeal.BANNER))
                         Appodeal.show(Appodeal.BANNER_BOTTOM);
                 }

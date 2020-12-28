@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Analytics;
+using TMPro;
 
 namespace Cubra.Countries
 {
@@ -22,13 +23,13 @@ namespace Cubra.Countries
         private int currentQuestion;
 
         private Sets _sets;
-        private Text _statistics;
+        private TextMeshProUGUI _statistics;
         private Image _imageButton;
 
         private void Awake()
         {
             _sets = Camera.main.GetComponent<Sets>();
-            _statistics = GetComponentInChildren<Text>();
+            _statistics = GetComponentInChildren<TextMeshProUGUI>();
             _imageButton = GetComponent<Image>();
         }
 

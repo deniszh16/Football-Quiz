@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using TMPro;
 
 namespace Cubra.Legends
 {
     public class Biography : FileProcessing
     {
         [Header("Заголовок")]
-        [SerializeField] private Text _heading;
+        [SerializeField] private TextMeshProUGUI _heading;
 
         [Header("Биография легенды")]
-        [SerializeField] private Text _biography;
+        [SerializeField] private TextMeshProUGUI _biography;
 
         [Header("Компонент скролла")]
         [SerializeField] private ScrollRect _scrollRect;

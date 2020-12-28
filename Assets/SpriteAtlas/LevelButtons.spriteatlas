@@ -50,8 +50,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 7d58421b72666914085b79c6055abb5c, type: 3}
     - {fileID: 2800000, guid: 4fa949111e68d4f44ac285e599b95306, type: 3}
     - {fileID: 2800000, guid: ef4259bdfab7cef40bdb9bbd543f467a, type: 3}
-    - {fileID: 2800000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
-    totalSpriteSurfaceArea: 176795
+    totalSpriteSurfaceArea: 160411
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -63,7 +62,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 7d58421b72666914085b79c6055abb5c, type: 3}
   - {fileID: 21300000, guid: 00b6387d00c1cbb42bc021a8ee9f2a80, type: 3}
   - {fileID: 21300000, guid: ef4259bdfab7cef40bdb9bbd543f467a, type: 3}
-  - {fileID: 21300000, guid: 3a58782e4ed01a149a25fc54c5da4e0c, type: 3}
   - {fileID: 21300000, guid: 98d2c3ff28a56da4eb2fb8d1b6b3b805, type: 3}
   m_PackedSpriteNamesToIndex:
   - Button (19)
@@ -72,7 +70,6 @@ SpriteAtlas:
   - Button (18)
   - Button (14)
   - Button (20)
-  - Panel (2)
   - Button (13)
   m_RenderDataMap: {}
   m_Tag: LevelButtons

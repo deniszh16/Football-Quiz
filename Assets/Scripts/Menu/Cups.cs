@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Cubra
 {
@@ -12,7 +13,7 @@ namespace Cubra
         [SerializeField] private int[] _progress;
 
         [Header("Проценты прохождения")]
-        [SerializeField] private Text _percent;
+        [SerializeField] private TextMeshProUGUI _percent;
 
         private void Start()
         {

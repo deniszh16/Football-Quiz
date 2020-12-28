@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using TMPro;
 
 namespace Cubra
 {
@@ -13,7 +14,7 @@ namespace Cubra
         [SerializeField] private ScrollRect _scrollRect;
 
         [Header("Текст результатов")]
-        [SerializeField] private Text _results;
+        [SerializeField] private TextMeshProUGUI _results;
 
         private void Start()
         {

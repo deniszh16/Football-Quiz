@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
+using TMPro;
 
 namespace Cubra.Facts
 {
@@ -13,7 +14,7 @@ namespace Cubra.Facts
         private StatusHelper _statusHelper;
 
         [Header("Текст задания")]
-        [SerializeField] private Text _question;
+        [SerializeField] private TextMeshProUGUI _question;
 
         [Header("Кнопки вариантов")]
         [SerializeField] private GameObject _variants;

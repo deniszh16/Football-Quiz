@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 namespace Cubra
 {
     public class PointsEarned : MonoBehaviour
     {
         [Header("Количество очков")]
-        [SerializeField] private Text _score;
+        [SerializeField] private TextMeshProUGUI _score;
 
         [Header("Количество монет")]
-        [SerializeField] private Text _coins;
+        [SerializeField] private TextMeshProUGUI _coins;
 
         private Animator _coinsAnimator;
 

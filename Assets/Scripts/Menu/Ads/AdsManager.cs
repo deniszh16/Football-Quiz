@@ -11,7 +11,6 @@ namespace Cubra
 
         private void Awake()
         {
-            // Если сохраненная дата не равна текущей
             if (PlayerPrefs.GetInt("date") != DateTime.Now.Day)
             {
                 // Открываем ежедневный бонус
