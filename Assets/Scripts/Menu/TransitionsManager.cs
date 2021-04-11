@@ -15,7 +15,7 @@ namespace Cubra
             CountriesSets = 2, CountriesQuestions = 3, CountriesResult = 4,
 
             // Сцены раздела по фотографиям игроков
-            PlayersSets = 5, PlayersQuestions = 6,
+            PlayersSets = 5, PlayersQuestions = 6, PlayersResult = 15,
 
             // Сцены легендарных карточек
             Legends = 7, Biography = 8,

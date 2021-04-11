@@ -13,7 +13,6 @@ namespace Cubra.Countries
         /// <param name="number">номер буквы</param>
         public void RecoverLetter(int number)
         {
-            // Отображаем скрытую кнопку буквы
             _letters.transform.GetChild(number).gameObject.SetActive(true);
         }
     }

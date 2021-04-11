@@ -83,8 +83,8 @@ namespace Cubra.Facts
             // Если ответ правильный
             if (_factsHelper.Facts[_stage].Answer == state)
             {
-                _pointsEarned.ChangeQuantityCoins(10);
-                _pointsEarned.ChangeTotalScore(3);
+                _pointsEarned.ChangeQuantityCoins(50);
+                _pointsEarned.ChangeTotalScore(5);
 
                 _victory.Play();
 
@@ -102,6 +102,8 @@ namespace Cubra.Facts
 
                 // Увеличиваем общее количество неправильных ответов
                 PlayerPrefs.SetInt("facts-errors", PlayerPrefs.GetInt("facts-errors") + 1);
+
+                _pointsEarned.ChangeQuantityCoins(-20);
 
                 if (_warnings >= 2)
                 {
@@ -129,7 +131,6 @@ namespace Cubra.Facts
         /// </summary>
         private void LevelFailed()
         {
-            // Скрываем варианты
             _variants.SetActive(false);
             CheckAnswer(!_factsHelper.Facts[_stage].Answer);
         }
@@ -155,7 +156,6 @@ namespace Cubra.Facts
         {
             if (_stage < _factsHelper.Facts.Length)
             {
-                // Сбрасываем таймер
                 _timer.ResetTimer();
 
                 CustomizeTask();
@@ -166,8 +166,8 @@ namespace Cubra.Facts
                 // Увеличиваем общее количество победных подборок
                 PlayerPrefs.SetInt("facts-victory", PlayerPrefs.GetInt("facts-victory") + 1);
 
-                _pointsEarned.ChangeQuantityCoins(325);
-                _pointsEarned.ChangeTotalScore(150);
+                _pointsEarned.ChangeQuantityCoins(350);
+                _pointsEarned.ChangeTotalScore(100);
 
                 CloseCategory("victory");
             }

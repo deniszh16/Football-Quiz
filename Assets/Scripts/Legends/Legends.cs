@@ -90,7 +90,7 @@ namespace Cubra.Legends
             if (PlayerPrefs.GetInt("coins") >= 950)
             {
                 _pointsEarned.ChangeQuantityCoins(-950);
-                _pointsEarned.ChangeTotalScore(450);
+                _pointsEarned.ChangeTotalScore(500);
 
                 _statusHelper.status[number] = "yes";
                 SaveListStatuses(_statusHelper, "legends");

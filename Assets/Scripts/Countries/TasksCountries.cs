@@ -147,7 +147,8 @@ namespace Cubra.Countries
                 FirebaseAnalytics.LogEvent("countries_category_end", new Parameter("number", Sets.Category + 1));
 
                 // Начисляем бонус за пройденную категорию
-                Camera.main.GetComponent<PointsEarned>().ChangeQuantityCoins(500);
+                Camera.main.GetComponent<PointsEarned>().ChangeQuantityCoins(350);
+                Camera.main.GetComponent<PointsEarned>().ChangeTotalScore(100);
                 // Переходим в список пройденных вопросов
                 Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.CountriesResult);
             }

@@ -52,16 +52,17 @@ namespace Cubra
             }
             #endregion
 
-            // Прогресс по фотографиям игроков и тренеров
-            if (PlayerPrefs.HasKey("photos-players") == false)
+            #region Additional Saved Data
+            // Прогресс по викторине с фотографиями
+            if (PlayerPrefs.HasKey("photo-quiz") == false)
             {
-                PlayerPrefs.SetInt("photos-players", 0);
+                PlayerPrefs.SetString("photo-quiz", "{\"arraySets\": [0, 0]}");
                 // Количество успешно завершенных заданий
-                PlayerPrefs.SetInt("photos-successfully", 0);
+                PlayerPrefs.SetInt("photo-quiz-successfully", 0);
                 // Количество правильных ответов
-                PlayerPrefs.SetInt("photos-answer", 0);
-                // Количество ошибок
-                PlayerPrefs.SetInt("photos-errors", 0);
+                PlayerPrefs.SetInt("photo-quiz-answer", 0);
+                // Количество ошибок в заданиях
+                PlayerPrefs.SetInt("photo-quiz-errors", 0);
             }
 
             // Отображение рекламных баннеров
@@ -69,6 +70,7 @@ namespace Cubra
             {
                 PlayerPrefs.SetString("show-ads", "yes");
             }
+            #endregion
 
             // Активируем игровые сервисы Google Play
             PlayGamesPlatform.Activate();

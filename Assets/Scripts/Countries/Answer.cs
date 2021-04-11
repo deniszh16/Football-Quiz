@@ -97,7 +97,6 @@ namespace Cubra.Countries
                 // Уменьшаем количество открытых букв
                 _quantityLetters--;
 
-                // Убираем красную обводку ответа
                 _answer.outlineWidth = 0;
             }
         }
@@ -123,7 +122,7 @@ namespace Cubra.Countries
         /// <param name="position">позиция в массиве ответа</param>
         /// <param name="number">номер выбранной кнопки</param>
         /// <param name="letter">буква для записи в ответ</param>
-        /// <returns>Результат записи буквы в ответ</returns>
+        /// <returns>результат записи</returns>
         public bool WriteLetterInAnswer(int position, int number, string letter)
         {
             // Если ячейка в указанной позиции пуста
@@ -177,9 +176,7 @@ namespace Cubra.Countries
             }
             else
             {
-                // Вычитаем штрафные монеты
-                _pointsEarned.ChangeQuantityCoins(-35);
-                // Увеличиваем количество ошибок в викторине
+                _pointsEarned.ChangeQuantityCoins(-20);
                 PlayerPrefs.SetInt("countries-error", PlayerPrefs.GetInt("countries-error") + 1);
             }
         }
@@ -204,7 +201,7 @@ namespace Cubra.Countries
 
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                // Каждый пятый уровень показываем рекламу
+                // Каждый шестой уровень показываем рекламу
                 if (PlayerPrefs.GetString("show-ads") == "yes" && _tasksCountries.Progress % 6 == 0)
                 {
                     if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
@@ -223,7 +220,7 @@ namespace Cubra.Countries
             {
                 // Увеличиваем счет и монеты
                 _pointsEarned.ChangeTotalScore(5);
-                _pointsEarned.ChangeQuantityCoins(80);
+                _pointsEarned.ChangeQuantityCoins(50);
 
                 // Увеличиваем количество правильных ответов
                 PlayerPrefs.SetInt("countries-answer", PlayerPrefs.GetInt("countries-answer") + 1);

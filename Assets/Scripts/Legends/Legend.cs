@@ -31,7 +31,6 @@ namespace Cubra.Legends
             _image.sprite = _openCard;
 
             if (Application.internetReachability != NetworkReachability.NotReachable)
-                // Разблокируем достижение с указанным идентификатором
                 GooglePlayServices.UnlockingAchievement(_achievement);
         }
     }

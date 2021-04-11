@@ -703,7 +703,9 @@ MonoBehaviour:
   - {fileID: 1397254756}
   - {fileID: 230858369}
   - {fileID: 1152858910}
-  _listPhotos: {fileID: 11400000, guid: 6cf861f3e763d844ab78bff42d54fb84, type: 2}
+  _listPhotos:
+  - {fileID: 11400000, guid: 6cf861f3e763d844ab78bff42d54fb84, type: 2}
+  - {fileID: 11400000, guid: ec6b82ea749d0aa4d8873b4697068c39, type: 2}
   _description: {fileID: 1893048664}
 --- !u!1 &293409999
 GameObject:

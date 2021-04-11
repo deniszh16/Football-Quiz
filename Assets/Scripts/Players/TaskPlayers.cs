@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using Cubra.Helpers;
-using Firebase.Analytics;
 using TMPro;
 
 namespace Cubra.Players
@@ -20,11 +19,14 @@ namespace Cubra.Players
         // Кнопка обновления задания
         private Button _updateTask;
 
-        [Header("Фотографии задания")]
+        [Header("Кнопки с фотографиями")]
         [SerializeField] private PhotoButton[] _photoButtons;
 
-        [Header("Список фотографий")]
-        [SerializeField] private Photos _listPhotos;
+        [Header("Наборы фотографий")]
+        [SerializeField] private Photos[] _listPhotos;
+
+        // Активный набор фотографий
+        private Photos _photos;
 
         [Header("Текст описания")]
         [SerializeField] private TextMeshProUGUI _description;
@@ -34,7 +36,9 @@ namespace Cubra.Players
         // Количество попыток
         private int _attempts;
 
-        // Прогресс категории
+        // Объект для json прогресса подборки
+        private SetsHelper _setsHelper;
+        // Текущий прогресс
         private int _progress;
 
         private PointsEarned _pointsEarned;
@@ -44,11 +48,17 @@ namespace Cubra.Players
             _playersHelpers = new PlayersHelpers();
 
             // Текст с вопросами из json файла
-            var jsonString = ReadJsonFile("players");
+            var jsonString = ReadJsonFile("players-" + Sets.Category);
             // Преобразовываем строку в объект
             ConvertToObject(ref _playersHelpers, jsonString);
 
-            _progress = PlayerPrefs.GetInt("photos-players");
+            _setsHelper = new SetsHelper();
+            _setsHelper = JsonUtility.FromJson<SetsHelper>(PlayerPrefs.GetString("photo-quiz"));
+
+            _progress = _setsHelper.arraySets[Sets.Category - 1];
+
+            // Получаем набор фотографий под уровни
+            _photos = _listPhotos[Sets.Category - 1];
 
             _updateTask = _question.gameObject.GetComponent<Button>();
             _pointsEarned = Camera.main.GetComponent<PointsEarned>();
@@ -69,7 +79,7 @@ namespace Cubra.Players
             for (int i = 0; i < _photoButtons.Length; i++)
             {
                 // Устанавливаем фотографии для задания
-                _photoButtons[i].Image.sprite = _listPhotos[_playersHelpers.PhotoTasks[_progress].Options[i]];
+                _photoButtons[i].Image.sprite = _photos[_playersHelpers.PhotoTasks[_progress].Options[i]];
 
                 _photoButtons[i].Image.color = Color.white;
                 _photoButtons[i].Button.interactable = true;
@@ -106,14 +116,12 @@ namespace Cubra.Players
             if (_playersHelpers.PhotoTasks[_progress].Answers[photoButton.Number - 1] == true)
             {
                 _target--;
-                PlayerPrefs.SetInt("photos-answer", PlayerPrefs.GetInt("photos-answer") + 1);
-                _pointsEarned.ChangeQuantityCoins(15);
+                PlayerPrefs.SetInt("photo-quiz-answer", PlayerPrefs.GetInt("photo-quiz-answer") + 1);
             }
             else
             {
                 photoButton.Image.color = new Color(1, 1, 1, 0.7f);
-                PlayerPrefs.SetInt("photos-errors", PlayerPrefs.GetInt("photos-errors") + 1);
-                _pointsEarned.ChangeQuantityCoins(-15);
+                PlayerPrefs.SetInt("photo-quiz-errors", PlayerPrefs.GetInt("photo-quiz-errors") + 1);
             }
 
             // Отображаем рамку с результатом
@@ -149,22 +157,23 @@ namespace Cubra.Players
             if (victory == true)
             {
                 _question.text = "Уровень пройден!" + IndentsHelpers.LineBreak(1);
-
-                PlayerPrefs.SetInt("photos-successfully", PlayerPrefs.GetInt("photos-successfully") + 1);
+                PlayerPrefs.SetInt("photo-quiz-successfully", PlayerPrefs.GetInt("photo-quiz-successfully") + 1);
                 
-                _pointsEarned.ChangeQuantityCoins(80);
-                _pointsEarned.ChangeTotalScore(7);
+                _pointsEarned.ChangeQuantityCoins(50);
+                _pointsEarned.ChangeTotalScore(5);
             }
             else
             {
                 _question.text = "Уровень провален!" + IndentsHelpers.LineBreak(1);
+                _pointsEarned.ChangeQuantityCoins(-20);
             }
 
             _question.text += _playersHelpers.PhotoTasks[_progress].Description;
 
             _progress++;
             // Увеличиваем прогресс викторины
-            PlayerPrefs.SetInt("photos-players", _progress);
+            _setsHelper.arraySets[Sets.Category - 1]++;
+            PlayerPrefs.SetString("photo-quiz", JsonUtility.ToJson(_setsHelper));
 
             _updateTask.interactable = true;
         }
@@ -199,21 +208,14 @@ namespace Cubra.Players
             _updateTask.interactable = false;
 
             // Если прогресс не превышает количество заданий
-            if (_progress < _task[0])
+            if (_progress < _task[Sets.Category - 1])
             {
                 CustomizeTask();
             }
             else
             {
-                for (int i = 0; i < _photoButtons.Length; i++)
-                    _photoButtons[i].Button.interactable = false;
-
-                _description.gameObject.SetActive(false);
-
-                _question.text = "Все задания пройдены. Вскоре мы добавим новую подборку.";
-
-                // Событие (для статистики) по завершению категории
-                FirebaseAnalytics.LogEvent("players_category_end", new Parameter("progress", _progress));
+                // Переходим в список пройденных вопросов
+                Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.PlayersResult);
             }
         }
     }

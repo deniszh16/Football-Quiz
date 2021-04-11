@@ -15,7 +15,7 @@ namespace Cubra.Countries
         /// <summary>
         /// Выбор буквы для ответа
         /// </summary>
-        /// <param name="number">Номер буквы</param>
+        /// <param name="number">номер буквы</param>
         public void ChooseLetter(int number)
         {
             // Получаем выбранную букву

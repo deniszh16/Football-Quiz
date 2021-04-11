@@ -44,10 +44,7 @@ namespace Cubra.Countries
 
                 // Если категория полностью пройдена
                 if (currentQuestion > _sets.Task[_number])
-                {
-                    // Разблокируем достижение
                     GooglePlayServices.UnlockingAchievement(_achievement);
-                }
             }
         }
 

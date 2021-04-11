@@ -21,7 +21,6 @@ namespace Cubra
         /// </summary>
         public static void SignGooglePlay()
         {
-            // Если интернет доступен, подключаемся к Google Play
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
                 Social.localUser.Authenticate((bool success) => {});
