@@ -35,8 +35,6 @@ namespace Cubra
         public void onRewardedVideoFinished(double amount, string name)
         {
             _dailyBonus.UseBonus();
-
-            // Добавляем бонусные монеты
             _pointsEarned.ChangeQuantityCoins(350);
         }
 

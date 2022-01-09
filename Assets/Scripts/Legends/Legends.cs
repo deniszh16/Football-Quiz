@@ -38,7 +38,6 @@ namespace Cubra.Legends
             // Проверяем необходимость увеличения списка карточек
             AddToList(_statusHelper, _cards.Length, "legends");
 
-            // Устанавливаем позицию скролла
             _scrollRect.verticalNormalizedPosition = ScrollPosition;
 
             CheckLegendaryCards();
@@ -51,7 +50,6 @@ namespace Cubra.Legends
         {
             for (int i = 0; i < _cards.Length; i++)
             {
-                // Если карточка открыта, показываем соответствующий вариант
                 if (_statusHelper.status[i] == "yes") _cards[i].ShowImageCard();
             }
         }
@@ -62,7 +60,6 @@ namespace Cubra.Legends
         /// <param name="number">номер карточки</param>
         public void OpenLegendaryCard(int number)
         {
-            // Если карточка закрытая
             if (_statusHelper.status[number] == "no")
             {
                 BuyCard(number);
@@ -71,11 +68,9 @@ namespace Cubra.Legends
             {
                 if (_cards[number].Biography)
                 {
-                    // Записываем последнюю позицию скролла
                     ScrollPosition = _scrollRect.verticalNormalizedPosition;
 
                     Card = number;
-                    // Переходим на сцену описания легенды
                     Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.Biography);
                 }
             }
@@ -95,12 +90,9 @@ namespace Cubra.Legends
                 _statusHelper.status[number] = "yes";
                 SaveListStatuses(_statusHelper, "legends");
 
-                // Увеличиваем общее количество открытых карточек
                 PlayerPrefs.SetInt("legends-open", PlayerPrefs.GetInt("legends-open") + 1);
 
-                // Отображаем открытую карточку
                 _cards[number].ShowImageCard();
-                // Отображаем эффект открытия под карточкой
                 ShowOpeningEffect(_cards[number].transform);
 
                 // Событие (для статистики) по покупке легендарной карточки
@@ -108,7 +100,6 @@ namespace Cubra.Legends
             }
             else
             {
-                // Вызываем мигание монет
                 _pointsEarned.ShowCurrentQuantityCoins(-950);
             }
         }
@@ -119,7 +110,6 @@ namespace Cubra.Legends
         /// <param name="card">карточка</param>
         private void ShowOpeningEffect(Transform card)
         {
-            // Переставляем эффект к карточке
             _victory.transform.position = card.transform.position;
             _victory.transform.SetParent(card.transform.parent);
             _victory.transform.SetSiblingIndex(0);

@@ -9,7 +9,6 @@ namespace Cubra
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                // Если реклама не отключена
                 if (PlayerPrefs.GetString("show-ads") == "yes")
                 {
                     if (Appodeal.isLoaded(Appodeal.BANNER))

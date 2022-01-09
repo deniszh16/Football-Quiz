@@ -17,10 +17,8 @@ namespace Cubra.Countries
         /// <param name="number">номер кнопки</param>
         public void ChooseOption(int number)
         {
-            // Скрываем вариант ответа
             transform.GetChild(number - 1).gameObject.SetActive(false);
 
-            // Проверяем ответ
             _tasksCountries.Answer.CheckPlayerAnswer(number);
         }
     }

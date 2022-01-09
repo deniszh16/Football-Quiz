@@ -171,7 +171,6 @@ namespace Cubra.Players
             _question.text += _playersHelpers.PhotoTasks[_progress].Description;
 
             _progress++;
-            // Увеличиваем прогресс викторины
             _setsHelper.arraySets[Sets.Category - 1]++;
             PlayerPrefs.SetString("photo-quiz", JsonUtility.ToJson(_setsHelper));
 
@@ -214,7 +213,6 @@ namespace Cubra.Players
             }
             else
             {
-                // Переходим в список пройденных вопросов
                 Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.PlayersResult);
             }
         }

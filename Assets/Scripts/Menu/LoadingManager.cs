@@ -72,7 +72,6 @@ namespace Cubra
             }
             #endregion
 
-            // Активируем игровые сервисы Google Play
             PlayGamesPlatform.Activate();
         }
 

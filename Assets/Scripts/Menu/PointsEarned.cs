@@ -48,7 +48,6 @@ namespace Cubra
         /// <param name="value">значение для изменения</param>
         public void ChangeQuantityCoins(int value)
         {
-            // Подсчет текущего количества монет
             var coins = PlayerPrefs.GetInt("coins") + value;
 
             PlayerPrefs.SetInt("coins", (coins > 0) ? coins : 0);
@@ -64,7 +63,6 @@ namespace Cubra
             _coins.text = PlayerPrefs.GetInt("coins").ToString();
 
             if (lastChange < 0)
-                // Проигрываем анимацию вычитания
                 _coinsAnimator.Play("Subtraction");
         }
     }

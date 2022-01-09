@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Reflection;
 using System;
+using System.Collections.Generic;
 using System.Xml;
 using System.Text.RegularExpressions;
 using System.IO;
@@ -11,7 +12,6 @@ using System.Linq;
 
 namespace AppodealAds.Unity.Editor.Utils
 {
-
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     [SuppressMessage("ReSharper", "ShiftExpressionRealShiftCountIsZero")]
     [SuppressMessage("ReSharper", "ConditionIsAlwaysTrueOrFalse")]
@@ -19,6 +19,23 @@ namespace AppodealAds.Unity.Editor.Utils
     {
         private const string UNITY_ANDROID_VERSION_ENUM_PREFIX = "AndroidApiLevel";
         private const BindingFlags PublicStaticFlags = BindingFlags.Public | BindingFlags.Static;
+        public const string KeySkAdNetworkItems = "SKAdNetworkItems";
+        public const string KeySkAdNetworkID = "SKAdNetworkIdentifier";
+        public const string GADApplicationIdentifier = "GADApplicationIdentifier";
+        public const string NSUserTrackingUsageDescriptionKey = "NSUserTrackingUsageDescription";
+        public const string NSUserTrackingUsageDescription = "This identifier will be used to deliver personalized ads to you";
+        
+        public const string GADApplicationIdentifierDefaultKey = "ca-app-pub-3940256099942544~1458002511";
+
+        #region Optional Android Permissions
+
+        public const string CoarseLocation = "android.permission.ACCESS_COARSE_LOCATION";
+        public const string FineLocation = "android.permission.ACCESS_FINE_LOCATION";
+        public const string ExternalStorageWrite = "android.permission.WRITE_EXTERNAL_STORAGE";
+        public const string AccessWifiState = "android.permission.ACCESS_WIFI_STATE";
+        public const string Vibrate = "android.permission.VIBRATE";
+        
+        #endregion
 
         [Flags]
         public enum AndroidArchitecture
@@ -230,7 +247,7 @@ namespace AppodealAds.Unity.Editor.Utils
         {
             return path?.Replace('\\', '/');
         }
-        
+
         public static string getXcodeVersion()
         {
             string profilerOutput = null;

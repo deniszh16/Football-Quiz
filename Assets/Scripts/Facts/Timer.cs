@@ -28,7 +28,6 @@ namespace Cubra.Facts
                 yield return new WaitForSeconds(2f);
                 Seconds -= 2;
 
-                // Убираем черточку таймера
                 _dashes[_number - 1].SetActive(false);
                 _number--;
             }
@@ -41,7 +40,6 @@ namespace Cubra.Facts
         /// </summary>
         public void ResetTimer()
         {
-            // Восстанавливаем черточки таймера
             for (int i = 0; i < _dashes.Length; i++)
                 _dashes[i].SetActive(true);
 

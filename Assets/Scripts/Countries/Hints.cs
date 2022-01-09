@@ -89,7 +89,6 @@ namespace Cubra.Countries
             UseGameHint(ref _hints[0]);
 
             var letter = _tasksCountries.FindFirstLetter();
-            // Если буква найдена, выделяем спрайт кнопки
             if (letter > 0) _letters.transform.GetChild(letter).GetComponent<Image>().sprite = _highlighted;
         }
 
@@ -108,7 +107,6 @@ namespace Cubra.Countries
         public void SkipQuestion()
         {
             UseGameHint(ref _hints[2]);
-            // Получаем правильный ответ
             _tasksCountries.Answer.GetRightAnswer();
         }
 
@@ -118,9 +116,7 @@ namespace Cubra.Countries
         /// <param name="number">подсказка</param>
         private void UseGameHint(ref Hint hint)
         {
-            // Вычитаем стоимость подсказки
             _pointsEarned.ChangeQuantityCoins(-hint.Cost);
-            // Отключаем повторное использование
             hint.Activity = false;
 
             SwitchToolbar();
@@ -133,16 +129,13 @@ namespace Cubra.Countries
                 // Если уже были скрыты лишние буквы, повторяем скрытие
                 if (_hints[1].Activity == false) HideExtraLetters();
 
-                // Увеличиваем количество использованных подсказок
                 PlayerPrefs.SetInt("countries-tips", PlayerPrefs.GetInt("countries-tips") + 1);
             }
             else
             {
-                // Увеличиваем количество пропусков
                 PlayerPrefs.SetInt("countries-pass", PlayerPrefs.GetInt("countries-pass") + 1);
             }
 
-            // Сбрасываем ответ игрока
             _tasksCountries.Answer.ResetPlayerAnswer();
         }
 
@@ -164,7 +157,6 @@ namespace Cubra.Countries
             {
                 // Ищем указанную букву в массиве ответа
                 var letter = _tasksCountries.FindSpecifiedLetter(i);
-                // Если буква не найдена, скрываем кнопку с этой буквой
                 if (letter < 0) _letters.transform.GetChild(i).gameObject.SetActive(false);
             }
         }

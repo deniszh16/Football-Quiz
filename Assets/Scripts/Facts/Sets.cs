@@ -44,16 +44,13 @@ namespace Cubra.Facts
         {
            for (int i = 0; i < _facts.Length; i++)
            {
-                // Если подборка пройдена
                 if (_statusHelper.status[i] != "no")
                 {
                     // Отключаем текст с количеством вопросов
                     _facts[i].transform.GetChild(0).gameObject.SetActive(false);
 
                     var result = _facts[i].transform.GetChild(1).GetComponent<Image>();
-                    // Убираем прозрачность
                     result.color = Color.white;
-                    // Устанавливаем изображение в зависимости от результата
                     result.sprite = _results[(_statusHelper.status[i] == "victory") ? 0 : 1];
                 }
                 else
@@ -72,18 +69,15 @@ namespace Cubra.Facts
         {
             Category = number;
 
-            // Если подборка не пройдена
             if (_statusHelper.status[number] == "no")
             {
                 // Событие (для статистики) по открытию новой подборки
                 FirebaseAnalytics.LogEvent("facts_open_category", new Parameter("number", Category + 1));
 
-                // Переходим к викторине
                 Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.FactsQuestions);
             }
             else
             {
-                // Переходим к результатам
                 Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.FactsResult);
             }
         }

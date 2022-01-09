@@ -1,7 +1,7 @@
-#if UNITY_2018_1_OR_NEWER
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -9,17 +9,20 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using Appodeal.Editor.AppodealManager.Data;
 using UnityEditor;
-using UnityEngine;
+// ReSharper disable All
 
 namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 {
     [SuppressMessage("ReSharper", "InconsistentNaming")]
+    [SuppressMessage("ReSharper", "ReturnValueOfPureMethodIsNotUsed")]
+    [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public static class AppodealDependencyUtils
     {
         #region Constants
 
-        public const string PluginRequest = "https://mw-backend.appodeal.com/v1/unity";
-        public const string AdaptersRequest = "https://mw-backend.appodeal.com/v1/unity/config/ver/";
+        
+        public const string PluginRequest = "https://mw-backend.appodeal.com/v2/unity";
+        public const string AdaptersRequest = "https://mw-backend.appodeal.com/v2/unity/config/";
         public const string Network_configs_path = "Assets/Appodeal/Editor/NetworkConfigs/";
         public const string Replace_dependency_value = "com.appodeal.ads.sdk.networks:";
         public const string Replace_dependency_core = "com.appodeal.ads.sdk:core:";
@@ -63,14 +66,14 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
             EditorUtility.ClearProgressBar();
             Debug.LogError(message);
             var option = EditorUtility.DisplayDialog("Internal error",
-                $"{message}. Please contact to Appodeal support.",
+                $"{message}. Please contact Appodeal support.",
                 "Ok");
             if (option)
             {
                 editorWindow.Close();
             }
         }
-        
+
         public static void ShowInternalErrorDialog(EditorWindow editorWindow, string message)
         {
             EditorUtility.ClearProgressBar();
@@ -83,7 +86,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                 editorWindow.Close();
             }
         }
-        
+
         public static void FormatXml(string inputXml)
         {
             var document = new XmlDocument();
@@ -194,8 +197,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 
         public static string GetMajorVersion(string value)
         {
-            return value.Remove(0, 4).Insert(0, string.Empty)
-                .Remove(1, 2).Insert(0, string.Empty);
+            return value.Substring(0, 6).Remove(0, 5).Insert(0, string.Empty);
         }
 
         public static string GetAndroidDependencyCoreVersion(string value)
@@ -234,7 +236,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                 writer.Close();
             }
         }
-
+#if UNITY_2018_1_OR_NEWER
         public static int CompareVersion(string interal, string latest)
         {
             var xParts = interal.Split('.');
@@ -262,6 +264,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 
             return 0;
         }
+#endif
 
         public static void GuiHeaders(GUIStyle headerInfoStyle, GUILayoutOption btnFieldWidth)
         {
@@ -278,7 +281,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
         }
 
         public static NetworkDependency GetAppodealDependency(
-            Dictionary<string, NetworkDependency> networkDependencies)
+            SortedDictionary<string, NetworkDependency> networkDependencies)
         {
             NetworkDependency networkDependency = null;
             foreach (var dependency
@@ -328,4 +331,3 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
         }
     }
 }
-#endif

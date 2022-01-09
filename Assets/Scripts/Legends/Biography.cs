@@ -31,16 +31,13 @@ namespace Cubra.Legends
 
         private void Start()
         {
-            // Выводим в заголовок имя игрока
             _heading.text = _legendsHelpers.Name;
-            // Выводим клубные достижения
             _biography.text += _legendsHelpers.Progress.Club;
 
             // Если есть международные достижения
             if (_legendsHelpers.Progress.Team != "")
             {
                 _biography.text += IndentsHelpers.LineBreak(2) + IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
-                // Выводим международные достижения
                 _biography.text += _legendsHelpers.Progress.Team;
             }
 
@@ -48,7 +45,6 @@ namespace Cubra.Legends
             if (_legendsHelpers.Progress.Personal != "")
             {
                 _biography.text += IndentsHelpers.LineBreak(2) + IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
-                // Выводим особые достижения
                 _biography.text += _legendsHelpers.Progress.Personal;
                 _biography.text += IndentsHelpers.LineBreak(2);
             }

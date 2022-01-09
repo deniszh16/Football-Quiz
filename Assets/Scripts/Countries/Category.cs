@@ -67,18 +67,15 @@ namespace Cubra.Countries
             if (currentQuestion > 0 && currentQuestion <= _sets.Task[_number])
             {
                 Sets.Category = _number;
-                // Переходим к викторине
                 Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.CountriesQuestions);
             }
             else if (currentQuestion > _sets.Task[_number])
             {
                 Sets.Category = _number;
-                // Переходим к результатам
                 Camera.main.GetComponent<TransitionsManager>().GoToScene((int)TransitionsManager.Scenes.CountriesResult);
             }
             else
             {
-                // Если достаточно монет
                 if (PlayerPrefs.GetInt("coins") >= _price)
                 {
                     PaymentCategory();
@@ -109,7 +106,6 @@ namespace Cubra.Countries
 
             UpdateCategory();
 
-            // Перемещаем эффект к кнопке категории и воспроизводим
             _sets.Effect.transform.position = transform.position;
             _sets.Effect.Rebind();
         }

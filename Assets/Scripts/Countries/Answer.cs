@@ -94,7 +94,6 @@ namespace Cubra.Countries
 
                 // Восстанавливаем скрытую букву
                 _deleteButton.RecoverLetter(_letterNumbers[_quantityLetters - 1]);
-                // Уменьшаем количество открытых букв
                 _quantityLetters--;
 
                 _answer.outlineWidth = 0;
@@ -159,7 +158,6 @@ namespace Cubra.Countries
             else if (_playerAnswer.Last() != null)
             {
                 _answer.outlineWidth = 0.25f;
-                // Увеличиваем количество ошибок в викторине
                 PlayerPrefs.SetInt("countries-error", PlayerPrefs.GetInt("countries-error") + 1);
             }
         }
@@ -196,13 +194,12 @@ namespace Cubra.Countries
             _answer.text = _tasksCountries.QuestionsHelpers.TaskItems[_tasksCountries.Progress - 1].FullAnswer;
             _detailedAnswer.text = _tasksCountries.QuestionsHelpers.TaskItems[_tasksCountries.Progress - 1].Description;
 
-            // Увеличиваем прогресс викторины
             IncreaseProgress(skipQuestion);
 
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
-                // Каждый шестой уровень показываем рекламу
-                if (PlayerPrefs.GetString("show-ads") == "yes" && _tasksCountries.Progress % 6 == 0)
+                // Каждый пятый уровень показываем рекламу
+                if (PlayerPrefs.GetString("show-ads") == "yes" && _tasksCountries.Progress % 5 == 0)
                 {
                     if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
                         Appodeal.show(Appodeal.INTERSTITIAL);
@@ -218,11 +215,9 @@ namespace Cubra.Countries
         {
             if (skipQuestion == false)
             {
-                // Увеличиваем счет и монеты
                 _pointsEarned.ChangeTotalScore(5);
                 _pointsEarned.ChangeQuantityCoins(50);
 
-                // Увеличиваем количество правильных ответов
                 PlayerPrefs.SetInt("countries-answer", PlayerPrefs.GetInt("countries-answer") + 1);
             }
 

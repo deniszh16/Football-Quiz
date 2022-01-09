@@ -98,7 +98,6 @@ namespace Cubra
             // Загружаем информацию по пользователям
             Social.LoadUsers(userIds.ToArray(), (users) =>
             {
-                // Убираем анимацию загрузки
                 _loadingAnimation.Play("Results");
                 _leaders.text = "";
 
@@ -119,7 +118,6 @@ namespace Cubra
                 PlayerPrefs.SetString("leaders", JsonUtility.ToJson(_leaderboardHelper));
             });
             
-            // Перемещаем скролл вверх списка
             _scrollRect.verticalNormalizedPosition = 1;
         }
 
@@ -160,7 +158,6 @@ namespace Cubra
                 }
             }
 
-            // Перемещаем скролл вверх
             _scrollRect.verticalNormalizedPosition = 1;
         }
     }

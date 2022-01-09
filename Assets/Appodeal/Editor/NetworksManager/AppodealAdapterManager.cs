@@ -36,11 +36,11 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
     {
         #region Dictionaries
 
-        private Dictionary<string, NetworkDependency> internalDependencies =
-            new Dictionary<string, NetworkDependency>();
+        private SortedDictionary<string, NetworkDependency> internalDependencies =
+            new SortedDictionary<string, NetworkDependency>();
 
-        private Dictionary<string, NetworkDependency> latestDependencies =
-            new Dictionary<string, NetworkDependency>();
+        private SortedDictionary<string, NetworkDependency> latestDependencies =
+            new SortedDictionary<string, NetworkDependency>();
 
         #endregion
 
@@ -95,9 +95,9 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
         public void Reset()
         {
             internalDependencies =
-                new Dictionary<string, NetworkDependency>();
+                new SortedDictionary<string, NetworkDependency>();
             latestDependencies =
-                new Dictionary<string, NetworkDependency>();
+                new SortedDictionary<string, NetworkDependency>();
 
             if (downloader != null)
             {
@@ -127,6 +127,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 
         private void OnGUI()
         {
+            this.minSize = new Vector2(700, 900);
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition,
                 false,
                 false);
@@ -395,7 +396,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                                 {
                                     GUI.enabled = false;
                                     GUILayout.Button(
-                                        new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                                        new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                                         btnFieldWidth);
                                     GUI.enabled = true;
                                 }
@@ -404,7 +405,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                                 {
                                     GUI.enabled = false;
                                     GUILayout.Button(
-                                        new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                                        new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                                         btnFieldWidth);
                                     GUI.enabled = true;
                                 }
@@ -442,7 +443,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                                 {
                                     GUI.enabled = false;
                                     GUILayout.Button(
-                                        new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                                        new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                                         btnFieldWidth);
                                     GUI.enabled = true;
                                 }
@@ -452,7 +453,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                                 {
                                     GUI.enabled = false;
                                     GUILayout.Button(
-                                        new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                                        new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                                         btnFieldWidth);
                                     GUI.enabled = true;
                                 }
@@ -478,7 +479,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
             string latestDependencyUnityContent, PlatformSdk platformSdk)
         {
             if (GUILayout.Button(
-                new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                 btnFieldWidth))
             {
                 var option = EditorUtility.DisplayDialog("Update dependencies",
@@ -557,12 +558,15 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                         AppodealDependencyUtils.ReplaceBetaVersion(latestVersion),
                         packageInfoStyle);
                     GUILayout.Space(15);
+                    Color defaultColor = GUI.backgroundColor;
+                    GUI.backgroundColor = Color.green;
                     if (GUILayout.Button(
-                        new GUIContent {text = AppodealDependencyUtils.ActionImport},
+                        new GUIContent { text = AppodealDependencyUtils.ActionImport },
                         btnFieldWidth))
                     {
                         ImportConfig(nameDep, content);
                     }
+                    GUI.backgroundColor = defaultColor;
 
                     GUILayout.Space(5);
                     GUILayout.Space(5);
@@ -617,7 +621,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                     GUILayout.Space(15);
 
                     if (GUILayout.Button(
-                        new GUIContent {text = AppodealDependencyUtils.ActionRemove},
+                        new GUIContent { text = AppodealDependencyUtils.ActionRemove },
                         btnFieldWidth))
                     {
                         var path = $"{AppodealDependencyUtils.Network_configs_path}{nameDep}Dependencies.xml";
@@ -635,7 +639,6 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                         AppodealDependencyUtils.ReplaceBetaVersion(currentVersion));
                     var last = AppodealDependencyUtils.GetMajorVersion(
                         AppodealDependencyUtils.ReplaceBetaVersion(latestVersion));
-
 
                     if (AppodealDependencyUtils.CompareVersion(current, last) == -1)
                     {
@@ -665,19 +668,22 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
         {
             if (action == -1)
             {
+                Color defaultColor = GUI.backgroundColor;
+                GUI.backgroundColor = Color.red;
                 if (GUILayout.Button(
-                    new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                    new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                     btnFieldWidth))
                 {
                     UpdateDependency(nameDependency, previous, latest);
                     UpdateWindow();
                 }
+                GUI.backgroundColor = defaultColor;
             }
             else
             {
                 GUI.enabled = false;
                 GUILayout.Button(
-                    new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                    new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                     btnFieldWidth);
                 GUI.enabled = true;
             }
@@ -734,7 +740,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                     plugin.version) == 0)
                 {
                     GUI.enabled = false;
-                    GUILayout.Button(new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                    GUILayout.Button(new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                         btnFieldWidth);
                     GUI.enabled = true;
                 }
@@ -743,17 +749,20 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                     plugin.version) > 0)
                 {
                     GUI.enabled = false;
-                    GUILayout.Button(new GUIContent {text = AppodealDependencyUtils.ActionUpdate},
+                    GUILayout.Button(new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                         btnFieldWidth);
                     GUI.enabled = true;
                 }
                 else
                 {
-                    if (GUILayout.Button(new GUIContent {text = AppodealDependencyUtils.ActionImport},
+                    Color defaultColor = GUI.backgroundColor;
+                    GUI.backgroundColor = Color.red;
+                    if (GUILayout.Button(new GUIContent { text = AppodealDependencyUtils.ActionUpdate },
                         btnFieldWidth))
                     {
                         this.StartCoroutine(DownloadUnityPlugin(plugin.source, plugin.version));
                     }
+                    GUI.backgroundColor = defaultColor;
                 }
 
                 GUILayout.Space(15);
@@ -799,29 +808,34 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 
             #region Plugin
 
-            var requestPlugin = UnityWebRequest.Get(AppodealDependencyUtils.PluginRequest);
-            yield return requestPlugin.Send();
-
-            if (requestPlugin.isError)
+            using (var webRequest = UnityWebRequest.Get(AppodealDependencyUtils.PluginRequest))
             {
-                Debug.LogError(requestPlugin.error);
-                AppodealDependencyUtils.ShowInternalErrorDialog(this, requestPlugin.error, string.Empty);
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(requestPlugin.downloadHandler.text)) yield break;
-
-                if (AppodealAds.Unity.Api.Appodeal.APPODEAL_PLUGIN_VERSION.Contains("-Beta"))
+                yield return webRequest.SendWebRequest();
+                var pages = AppodealDependencyUtils.PluginRequest.Split('/');
+                var page = pages.Length - 1;
+                if (webRequest.isNetworkError)
                 {
-                    appodealUnityPlugin = JsonHelper
-                        .FromJson<AppodealUnityPlugin>(JsonHelper.fixJson(requestPlugin.downloadHandler.text))
-                        .ToList().FirstOrDefault(x => x.build_type.Equals("beta"));
+                    Debug.Log(pages[page] + ": Error: " + webRequest.error);
+                    AppodealDependencyUtils.ShowInternalErrorDialog(this, webRequest.error, string.Empty);
                 }
                 else
                 {
-                    appodealUnityPlugin = JsonHelper
-                        .FromJson<AppodealUnityPlugin>(JsonHelper.fixJson(requestPlugin.downloadHandler.text))
-                        .ToList().FirstOrDefault(x => x.build_type.Equals("stable"));
+                    if (string.IsNullOrEmpty(webRequest.downloadHandler.text))
+                    {
+                        AppodealDependencyUtils.ShowInternalErrorDialog(this, "Can't find appodeal plugin information",
+                            string.Empty);
+                        yield break;
+                    }
+
+                    var root = JsonUtility.FromJson<Root>(webRequest.downloadHandler.text);
+                    appodealUnityPlugin = root.items.ToList().FirstOrDefault(x => x.build_type.Equals("stable"));
+
+                    if (appodealUnityPlugin == null)
+                    {
+                        AppodealDependencyUtils.ShowInternalErrorDialog(this, "Can't find appodeal plugin information",
+                            string.Empty);
+                        yield break;
+                    }
                 }
             }
 
@@ -829,44 +843,51 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
 
             #region Adapters
 
-            var requestAdapters = UnityWebRequest.Get(AppodealDependencyUtils.AdaptersRequest +
-                                                      AppodealDependencyUtils.ReplaceBetaVersion(AppodealAds.Unity.Api
-                                                          .Appodeal.APPODEAL_PLUGIN_VERSION));
-
-            yield return requestAdapters.Send();
-
-            if (requestAdapters.isError)
+            const string adaptersUri = AppodealDependencyUtils.AdaptersRequest +
+                                       AppodealAds.Unity.Api.Appodeal.APPODEAL_PLUGIN_VERSION;
+            using (var webRequest = UnityWebRequest.Get(adaptersUri))
             {
-                Debug.LogError(requestAdapters.error);
-                AppodealDependencyUtils.ShowInternalErrorDialog(this, requestAdapters.error, string.Empty);
-            }
-            else
-            {
-                if (string.IsNullOrEmpty(requestAdapters.downloadHandler.text)) yield break;
-                if (requestAdapters.downloadHandler.text.Contains("error"))
+                yield return webRequest.SendWebRequest();
+                var pages = adaptersUri.Split('/');
+                var page = pages.Length - 1;
+                if (webRequest.isNetworkError)
                 {
-                    AppodealDependencyUtils.ShowInternalErrorDialog(this,
-                        $"Can't find network configs by {AppodealAds.Unity.Api.Appodeal.APPODEAL_PLUGIN_VERSION} version",
-                        string.Empty);
-                    yield break;
+                    Debug.Log(pages[page] + ": Error: " + webRequest.error);
+                    AppodealDependencyUtils.ShowInternalErrorDialog(this, webRequest.error, string.Empty);
                 }
-
-                var networkDependencies = JsonHelper.FromJson<NetworkDependency>(
-                    JsonHelper.fixJson(requestAdapters.downloadHandler.text));
-
-                if (networkDependencies.Length > 0)
+                else
                 {
-                    foreach (var networkDependency in networkDependencies)
+                    if (string.IsNullOrEmpty(webRequest.downloadHandler.text))
                     {
-                        if (!string.IsNullOrEmpty(networkDependency.name)
-                            && !networkDependency.name.Equals(AppodealDependencyUtils.TwitterMoPub))
+                        AppodealDependencyUtils.ShowInternalErrorDialog(this,
+                            "Can't find appodeal adapters information",
+                            string.Empty);
+                        yield break;
+                    }
+
+                    var networkDependencies = JsonHelper.FromJson<NetworkDependency>(
+                        JsonHelper.fixJson(webRequest.downloadHandler.text));
+                    if (networkDependencies.Length > 0)
+                    {
+                        foreach (var networkDependency in networkDependencies)
                         {
-                            latestDependencies.Add(networkDependency.name, networkDependency);
+                            if (!string.IsNullOrEmpty(networkDependency.name)
+                                && !networkDependency.name.Equals(AppodealDependencyUtils.TwitterMoPub))
+                            {
+                                latestDependencies.Add(networkDependency.name, networkDependency);
+                            }
+                        }
+                        
+                        var missingAdapters = internalDependencies.Keys.Where(key => !latestDependencies.ContainsKey(key)).ToList();
+                        if (missingAdapters.Count > 0) {
+                            AppodealDependencyUtils.ShowInternalErrorDialog(this,
+                                $"Out-of-use appodeal adapters were found: {string.Join(", ", missingAdapters)}",
+                            string.Empty);
                         }
                     }
                 }
             }
-
+            
             #endregion
 
             coroutine = null;
@@ -990,7 +1011,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
                                 return false;
                             }
 
-                            foreach (var s in new List<string> {"vast", "nast", "mraid", "appodealx", "appodeal"})
+                            foreach (var s in new List<string> { "vast", "nast", "mraid", "appodealx", "appodeal" })
                             {
                                 if (!specName.Contains(s))
                                 {
@@ -1066,7 +1087,7 @@ namespace Appodeal.Editor.AppodealManager.AppodealDependencies
             int oldPercentage = 0, newPercentage = 0;
             var path = Path.Combine("Assets/Appodeal", AppodealDependencyUtils.AppodealUnityPlugin + pluginVersion);
             progress = 0.01f;
-            downloader = new WebClient {Encoding = Encoding.UTF8};
+            downloader = new WebClient { Encoding = Encoding.UTF8 };
             downloader.DownloadProgressChanged += (sender, args) => { newPercentage = args.ProgressPercentage; };
             downloader.DownloadFileCompleted += (sender, args) =>
             {

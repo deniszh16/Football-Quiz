@@ -34,7 +34,6 @@ namespace Cubra
                 }
             }
 
-            // Выводим процент прохождения викторины
             _percent.text = "Выигранные кубки (" + (percentages > 100 ? "100" : percentages.ToString()) + "%)";
         }
     }

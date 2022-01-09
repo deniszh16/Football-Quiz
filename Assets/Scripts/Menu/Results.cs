@@ -18,7 +18,6 @@ namespace Cubra
 
         private void Start()
         {
-            // Статистика по викторине стран и турниров
             _results.text += "Викторина по странам" + IndentsHelpers.LineBreak(2);
             _results.text += "Всего вопросов: " + GetStatistics(_tasks[0]) + IndentsHelpers.LineBreak(1);
             _results.text += "Правильные ответы: " + PlayerPrefs.GetInt("countries-answer") + IndentsHelpers.LineBreak(1);
@@ -27,10 +26,8 @@ namespace Cubra
             _results.text += "Пропуски вопросов: " + PlayerPrefs.GetInt("countries-pass") + IndentsHelpers.LineBreak(1);
             _results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("countries-answer") * 5) + IndentsHelpers.LineBreak(2);
 
-            // Отделяющая строка
             _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
 
-            // Статистика по футбольным фактам
             _results.text += "Викторина по фактам" + IndentsHelpers.LineBreak(2);
             _results.text += "Количество подборок: " + _tasks[1].QuantityCategories + IndentsHelpers.LineBreak(1);
             _results.text += "Всего вопросов: " + GetStatistics(_tasks[1]) + IndentsHelpers.LineBreak(1);
@@ -40,7 +37,6 @@ namespace Cubra
             _results.text += "Количество ошибок: " + PlayerPrefs.GetInt("facts-errors") + IndentsHelpers.LineBreak(1);
             _results.text += "Заработанные очки: " + (PlayerPrefs.GetInt("facts-answer") * 3) + IndentsHelpers.LineBreak(2);
 
-            // Отделяющая строка
             _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
 
             _results.text += "Викторина по фотографиям" + IndentsHelpers.LineBreak(2);
@@ -49,10 +45,8 @@ namespace Cubra
             _results.text += "Правильные ответы: " + PlayerPrefs.GetInt("photo-quiz-answer") + IndentsHelpers.LineBreak(1);
             _results.text += "Количество ошибок: " + PlayerPrefs.GetInt("photo-quiz-errors") + IndentsHelpers.LineBreak(2);
 
-            // Отделяющая строка
             _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
 
-            // Статистика по легендам
             _results.text += "Футбольные легенды" + IndentsHelpers.LineBreak(2);
             _results.text += "Всего карточек: 44" + IndentsHelpers.LineBreak(1);
             _results.text += "Открытые карточки: " + PlayerPrefs.GetInt("legends-open") + IndentsHelpers.LineBreak(1);

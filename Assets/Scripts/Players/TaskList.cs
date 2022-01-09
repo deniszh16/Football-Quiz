@@ -32,8 +32,6 @@ namespace Cubra.Players
             {
                 _questions.text += IndentsHelpers.LineBreak(1) + _playersHelpers.PhotoTasks[i].Question + IndentsHelpers.LineBreak(2);
                 _questions.text += "ќтвет: " + _playersHelpers.PhotoTasks[i].Description + IndentsHelpers.LineBreak(1);
-
-                // —оздаем отдел€ющую черту
                 _questions.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(1);
             }
 

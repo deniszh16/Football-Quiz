@@ -53,7 +53,6 @@ namespace Cubra.Facts
 
         private void Start()
         {
-            // Подписываем проигрыш в событие завершения времени
             _timer.TimeIsOver.AddListener(LevelFailed);
 
             CustomizeTask();
@@ -80,7 +79,6 @@ namespace Cubra.Facts
             // Останавливаем отсчет
             StopCoroutine(_coroutine);
 
-            // Если ответ правильный
             if (_factsHelper.Facts[_stage].Answer == state)
             {
                 _pointsEarned.ChangeQuantityCoins(50);
@@ -88,10 +86,8 @@ namespace Cubra.Facts
 
                 _victory.Play();
 
-                // Выводим полное описание ответа
                 _question.text = _factsHelper.Facts[_stage].Description;
 
-                // Увеличиваем общее количество правильных ответов
                 PlayerPrefs.SetInt("facts-answer", PlayerPrefs.GetInt("facts-answer") + 1);
             }
             else
@@ -100,7 +96,6 @@ namespace Cubra.Facts
                 // Отображаем карточку предупреждения
                 _cards[_warnings - 1].SetActive(true);
 
-                // Увеличиваем общее количество неправильных ответов
                 PlayerPrefs.SetInt("facts-errors", PlayerPrefs.GetInt("facts-errors") + 1);
 
                 _pointsEarned.ChangeQuantityCoins(-20);
@@ -141,11 +136,9 @@ namespace Cubra.Facts
         /// <param name="result">результат подборки</param>
         private void CloseCategory(string result)
         {
-            // Записываем результат
             _statusHelper.status[Sets.Category] = result;
             // Сохраняем обновленное значение
             PlayerPrefs.SetString("facts", JsonUtility.ToJson(_statusHelper));
-            // Увеличиваем общее количество завершенных подборок
             PlayerPrefs.SetInt("facts-quantity", PlayerPrefs.GetInt("facts-quantity") + 1);
         }
 
@@ -163,7 +156,6 @@ namespace Cubra.Facts
             else
             {
                 _question.text = "Великолепно!" + IndentsHelpers.LineBreak(1) + "Данная подборка фактов успешно пройдена.";
-                // Увеличиваем общее количество победных подборок
                 PlayerPrefs.SetInt("facts-victory", PlayerPrefs.GetInt("facts-victory") + 1);
 
                 _pointsEarned.ChangeQuantityCoins(350);
