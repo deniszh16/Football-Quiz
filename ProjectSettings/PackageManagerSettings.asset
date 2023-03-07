@@ -24,25 +24,28 @@ MonoBehaviour:
     m_Scopes: []
     m_IsDefault: 1
     m_Capabilities: 7
-  - m_Id: scoped:Game Package Registry by Google
+    m_ConfigSource: 0
+  - m_Id: scoped:project:Game Package Registry by Google
     m_Name: Game Package Registry by Google
     m_Url: https://unityregistry-pa.googleapis.com
     m_Scopes:
     - com.google
     m_IsDefault: 0
     m_Capabilities: 0
+    m_ConfigSource: 4
   m_UserSelectedRegistryName: 
   m_UserAddingNewScopedRegistry: 0
   m_RegistryInfoDraft:
     m_ErrorMessage: 
     m_Original:
-      m_Id: scoped:Game Package Registry by Google
+      m_Id: scoped:project:Game Package Registry by Google
       m_Name: Game Package Registry by Google
       m_Url: https://unityregistry-pa.googleapis.com
       m_Scopes:
       - com.google
       m_IsDefault: 0
       m_Capabilities: 0
+      m_ConfigSource: 4
     m_Modified: 0
     m_Name: Game Package Registry by Google
     m_Url: https://unityregistry-pa.googleapis.com

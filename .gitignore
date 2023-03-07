@@ -74,3 +74,4 @@ StreamingAssets/
 *.keystore
 *.log
 *.meta
+*.idea
