@@ -13,10 +13,4 @@ MonoBehaviour:
   m_Name: Category01_StaticData
   m_EditorClassIdentifier: 
   CategoryNumber: 1
-  Questions:
-  - Question: 21321
-    Answer: 1
-    Description: 214325435
-  - Question: 76987676
-    Answer: 0
-    Description: 355568768u
+  Questions: []
