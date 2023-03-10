@@ -18,12 +18,15 @@ namespace Code.Data
         public PlayersData PlayersData;
         public LegendsData LegendsData;
 
+        public AdsData AdsData;
+
         public UserProgress()
         {
             CountriesData = new CountriesData();
             FactsData = new FactsData();
             PlayersData = new PlayersData();
             LegendsData = new LegendsData();
+            AdsData = new AdsData();
         }
 
         public void AddScore(int value)
