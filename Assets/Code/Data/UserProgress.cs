@@ -17,7 +17,7 @@ namespace Code.Data
         public FactsData FactsData;
         public PlayersData PlayersData;
         public LegendsData LegendsData;
-
+        
         public AdsData AdsData;
 
         public UserProgress()

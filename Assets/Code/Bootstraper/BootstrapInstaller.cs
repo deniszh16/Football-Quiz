@@ -1,3 +1,4 @@
+using Code.Services.Ads;
 using Code.Services.PersistentProgress;
 using Code.Services.SaveLoad;
 using Code.Services.SceneLoader;
@@ -11,7 +12,8 @@ namespace Code.Bootstraper
     {
         [SerializeField] private SceneLoaderService _sceneLoader;
         
-        private IPersistentProgressService _persistentProgressService;
+        private IPersistentProgressService _progressService;
+        private ISaveLoadService _saveLoadService;
         
         public override void InstallBindings()
         {
@@ -19,6 +21,7 @@ namespace Code.Bootstraper
             BindPersistentProgress();
             BindSceneLoader();
             BindSaveLoadService();
+            BindAdService();
         }
 
         private void BindStaticData()
@@ -33,8 +36,8 @@ namespace Code.Bootstraper
 
         private void BindPersistentProgress()
         {
-            _persistentProgressService = new PersistentProgressService();
-            Container.BindInstance(_persistentProgressService).AsSingle();
+            _progressService = new PersistentProgressService();
+            Container.BindInstance(_progressService).AsSingle();
         }
 
         private void BindSceneLoader()
@@ -45,9 +48,16 @@ namespace Code.Bootstraper
 
         private void BindSaveLoadService()
         {
-            SaveLoadService saveLoadService = new SaveLoadService();
-            saveLoadService.Construct(_persistentProgressService);
-            Container.Bind<ISaveLoadService>().To<SaveLoadService>().FromInstance(saveLoadService);
+            _saveLoadService = new SaveLoadService();
+            _saveLoadService.Construct(_progressService);
+            Container.BindInstance(_saveLoadService);
+        }
+
+        private void BindAdService()
+        {
+            IAdService adService = new AdService();
+            adService.Construct(_progressService, _saveLoadService);
+            Container.BindInstance(adService).AsSingle();
         }
     }
 }

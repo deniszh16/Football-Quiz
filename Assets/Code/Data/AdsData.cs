@@ -6,6 +6,8 @@ namespace Code.Data
     public class AdsData
     {
         public bool Activity;
+        public int NumberOfBonuses;
+        public int DateDay;
 
         public event Action AvailabilityChanged;
 
@@ -16,6 +18,12 @@ namespace Code.Data
         {
             Activity = false;
             AvailabilityChanged?.Invoke();
+        }
+
+        public void UpdateDailyBonuses(int day)
+        {
+            DateDay = day;
+            NumberOfBonuses = 3;
         }
     }
 }
