@@ -1,4 +1,5 @@
 using Code.Services.Ads;
+using Code.Services.Analytics;
 using Code.Services.GooglePlay;
 using Code.Services.PersistentProgress;
 using Code.Services.SaveLoad;
@@ -24,6 +25,7 @@ namespace Code.Bootstraper
             BindSaveLoadService();
             BindAdService();
             BindGooglePlayService();
+            BindFirebaseService();
         }
 
         private void BindStaticData()
@@ -67,6 +69,13 @@ namespace Code.Bootstraper
             IGooglePlayService googlePlayService = new GooglePlayService();
             googlePlayService.ActivateService();
             Container.BindInstance(googlePlayService).AsSingle();
+        }
+
+        private void BindFirebaseService()
+        {
+            IFirebaseService firebaseService = new FirebaseService();
+            firebaseService.Initialization();
+            Container.BindInstance(firebaseService).AsSingle();
         }
     }
 }

@@ -21,6 +21,7 @@ namespace Code.Logic.Legends
         [SerializeField] private Animator _effect;
 
         private const int Price = 950;
+        private const string AnalyticsKey = "buying_card";
 
         private void Start()
         {
@@ -44,6 +45,8 @@ namespace Code.Logic.Legends
                 ShowEffect();
                 ReplaceSprite();
                 _button.onClick.RemoveListener(BuyCard);
+                
+                _legends.FirebaseService.SubmitAnEvent(id: AnalyticsKey);
             }
         }
         

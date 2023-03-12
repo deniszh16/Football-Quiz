@@ -11,5 +11,6 @@ namespace Code.Services.Ads
         public void ShowAdBanner();
         public void HideAdBanner();
         public void ShowRewardedAd();
+        public void ShowInterstitialAd();
     }
 }

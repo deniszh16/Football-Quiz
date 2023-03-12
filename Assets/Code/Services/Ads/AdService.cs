@@ -52,6 +52,18 @@ namespace Code.Services.Ads
         public void HideAdBanner() =>
             Appodeal.hide(Appodeal.BANNER);
 
+        public void ShowInterstitialAd()
+        {
+            if (Application.internetReachability != NetworkReachability.NotReachable)
+            {
+                if (_progressService.UserProgress.AdsData.Activity)
+                {
+                    if (Appodeal.isLoaded(Appodeal.INTERSTITIAL))
+                        Appodeal.show(Appodeal.INTERSTITIAL);
+                }
+            }
+        }
+
         public void ShowRewardedAd()
         {
             if (Appodeal.isLoaded(Appodeal.REWARDED_VIDEO))

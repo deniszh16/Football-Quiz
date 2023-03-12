@@ -1,6 +1,8 @@
 ﻿using Code.Logic.Helpers;
+using Code.Services.Analytics;
 using Code.Services.SceneLoader;
 using Code.StaticData.Questions.Facts;
+using Firebase.Analytics;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -15,11 +17,17 @@ namespace Code.Logic.Facts
         [Header("Кнопка категории")]
         [SerializeField] private Button _button;
 
+        private const string AnalyticsKey = "facts_open_category";
+
         private ISceneLoaderService _sceneLoaderService;
+        private IFirebaseService _firebaseService;
 
         [Inject]
-        private void Construct(ISceneLoaderService sceneLoaderService) =>
+        private void Construct(ISceneLoaderService sceneLoaderService, IFirebaseService firebaseService)
+        {
             _sceneLoaderService = sceneLoaderService;
+            _firebaseService = firebaseService;
+        }
 
         private void Start() =>
             _button.onClick.AddListener(OpenCategory);
@@ -30,9 +38,14 @@ namespace Code.Logic.Facts
             ActivePartition.CategoryNumber = _category.Number;
 
             if (CheckCategoryCompletion() && CheckCategoryAvailability())
+            {
+                _firebaseService.SubmitAnEvent(AnalyticsKey, new Parameter("number", _category.Number));
                 _sceneLoaderService.Load(Scenes.FactsQuestions.ToString(), 0f);
+            }
             else
+            {
                 _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
+            }
         }
 
         private bool CheckCategoryCompletion() =>

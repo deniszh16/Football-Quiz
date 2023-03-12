@@ -1,9 +1,12 @@
 ﻿using System;
 using Code.Logic.Helpers;
+using Code.Services.Analytics;
 using Code.Services.PersistentProgress;
+using Code.Services.SaveLoad;
 using Code.Services.SceneLoader;
 using Code.Services.StaticData;
 using Code.StaticData.Questions.Countries;
+using Firebase.Analytics;
 using UnityEngine;
 using Zenject;
 using TMPro;
@@ -33,17 +36,23 @@ namespace Code.Logic.Countries
         private int _currentCategory;
         private int _currentQuestion;
 
+        private const string AnalyticsKey = "countries_category_end";
+
         private IPersistentProgressService _progressService;
         private IStaticDataService _staticDataService;
         private ISceneLoaderService _sceneLoaderService;
+        private ISaveLoadService _saveLoadService;
+        private IFirebaseService _firebaseService;
 
         [Inject]
         private void Construct(IPersistentProgressService progressService, IStaticDataService staticDataService,
-            ISceneLoaderService sceneLoader)
+            ISceneLoaderService sceneLoader, ISaveLoadService saveLoadService, IFirebaseService firebaseService)
         {
             _progressService = progressService;
             _staticDataService = staticDataService;
             _sceneLoaderService = sceneLoader;
+            _saveLoadService = saveLoadService;
+            _firebaseService = firebaseService;
         }
 
         private void Awake()
@@ -73,6 +82,12 @@ namespace Code.Logic.Countries
             }
             else
             {
+                _firebaseService.SubmitAnEvent(AnalyticsKey, new Parameter("number", CurrentCategory));
+                
+                _progressService.UserProgress.AddCoins(350);
+                _progressService.UserProgress.AddScore(100);
+                _saveLoadService.SaveProgress();
+                
                 _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
             }
         }

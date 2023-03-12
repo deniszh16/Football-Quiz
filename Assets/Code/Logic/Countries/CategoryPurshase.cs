@@ -1,4 +1,5 @@
 ﻿using Code.Logic.Helpers;
+using Code.Services.Analytics;
 using Code.Services.SaveLoad;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,12 +24,18 @@ namespace Code.Logic.Countries
         
         [Header("Эффект открытия")]
         [SerializeField] private Animator _effect;
+
+        private const string AnalyticsKey = "countries_open_category";
         
         private ISaveLoadService _saveLoadService;
+        private IFirebaseService _firebaseService;
 
         [Inject]
-        private void Construct(ISaveLoadService saveLoadService) =>
+        private void Construct(ISaveLoadService saveLoadService, IFirebaseService firebaseService)
+        {
             _saveLoadService = saveLoadService;
+            _firebaseService = firebaseService;
+        }
 
         private void Start()
         {
@@ -59,6 +66,8 @@ namespace Code.Logic.Countries
 
                 _button.onClick.RemoveListener(BuyCategory);
                 _currentСategory.ReportCategoryPurchase();
+                
+                _firebaseService.SubmitAnEvent(id: AnalyticsKey);
             }
         }
 

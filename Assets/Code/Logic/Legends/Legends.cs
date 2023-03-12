@@ -1,4 +1,5 @@
 ﻿using Code.Data;
+using Code.Services.Analytics;
 using Code.Services.PersistentProgress;
 using Code.Services.SaveLoad;
 using UnityEngine;
@@ -16,12 +17,15 @@ namespace Code.Logic.Legends
         
         public IPersistentProgressService ProgressService { get; private set; }
         public ISaveLoadService SaveLoadService { get; private set; }
+        public IFirebaseService FirebaseService { get; private set; }
 
         [Inject]
-        private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService)
+        private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService,
+            IFirebaseService firebaseService)
         {
             ProgressService = progressService;
             SaveLoadService = saveLoadService;
+            FirebaseService = firebaseService;
         }
 
         private void Awake()

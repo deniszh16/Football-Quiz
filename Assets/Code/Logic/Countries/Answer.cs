@@ -1,5 +1,6 @@
 ﻿using System;
 using Code.Logic.Helpers;
+using Code.Services.Ads;
 using Code.Services.PersistentProgress;
 using Code.Services.SaveLoad;
 using UnityEngine;
@@ -31,12 +32,14 @@ namespace Code.Logic.Countries
 
         protected IPersistentProgressService _progressService;
         protected ISaveLoadService _saveLoadService;
+        protected IAdService _adService;
 
         [Inject]
-        private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService)
+        private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService, IAdService adService)
         {
             _progressService = progressService;
             _saveLoadService = saveLoadService;
+            _adService = adService;
         }
 
         protected void ReportCorrectAnswer() =>
