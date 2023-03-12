@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Categories
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 3
+      m_BuildTarget: Android
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 47
+      m_TextureCompression: 1
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 323bbbbcc7d299547b92adc0f73e8f60, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 4e2fe8305e14d504e94afceb1c582504, type: 3}
+  - {fileID: 21300000, guid: b751dd8052fba6943a10cb46d42dac46, type: 3}
+  - {fileID: 21300000, guid: c40fe631232c17f42a338c4eacfea523, type: 3}
+  - {fileID: 21300000, guid: 596d99330cc149c43b843375ed6c7004, type: 3}
+  - {fileID: 21300000, guid: 333c1c83bc535b54ca82801d1ab8d3f2, type: 3}
+  - {fileID: 21300000, guid: 46bfbec3613b1d54aa403b0023fe1c3c, type: 3}
+  - {fileID: 21300000, guid: 5e35e1d30f9048a41b8982406b580f2f, type: 3}
+  - {fileID: 21300000, guid: 037bd7f3d3cdec0479b2e01d77c3eb6e, type: 3}
+  - {fileID: 21300000, guid: 169d62346af5dc04f84c5685fcb883da, type: 3}
+  - {fileID: 21300000, guid: acd0de54c93ee1248b38e7fe56c8e9cc, type: 3}
+  - {fileID: 21300000, guid: da1cf0942649eac43a86433eaacc437b, type: 3}
+  - {fileID: 21300000, guid: 429b86b41f420284880ad85ea8775088, type: 3}
+  - {fileID: 21300000, guid: 37cc02058eeaac04d9531b2ea545ba33, type: 3}
+  - {fileID: 21300000, guid: 13285625f6f887143a6dbb60c307a60d, type: 3}
+  - {fileID: 21300000, guid: 4c1467253c0ea1a45837383283edd88e, type: 3}
+  - {fileID: 21300000, guid: 0f21a9559c9868445b9121a0f8b6610b, type: 3}
+  - {fileID: 21300000, guid: 763abda5173d8d640870b844418f836c, type: 3}
+  - {fileID: 21300000, guid: c6283c5642514754f8f2f72caa4a8c14, type: 3}
+  - {fileID: 21300000, guid: 137d3066b5e6412468a7ca82cc8d9833, type: 3}
+  - {fileID: 21300000, guid: aa978317345a6e44b84f2084b26b717c, type: 3}
+  - {fileID: 21300000, guid: df79f548c8f047043b017c90fb1e9644, type: 3}
+  - {fileID: 21300000, guid: 078309d995101b34a9a347c32fcc17e6, type: 3}
+  - {fileID: 21300000, guid: 5fb538ea86e7e9648a701bce1c7c0a4b, type: 3}
+  - {fileID: 21300000, guid: 0cbf4c4bd2933714cba2a2209aaeec80, type: 3}
+  - {fileID: 21300000, guid: 36ecd96b962f1374594b4672144240f1, type: 3}
+  - {fileID: 21300000, guid: aa684d5ce4bf5534080c52ef8ab19ad2, type: 3}
+  - {fileID: 21300000, guid: a529559ce85f1474fb5b97a95aa7f59f, type: 3}
+  - {fileID: 21300000, guid: d1e434fc4fd8c6d4fbafd62013523775, type: 3}
+  - {fileID: 21300000, guid: 660d487eb88c4ce43af7d32303841f05, type: 3}
+  - {fileID: 21300000, guid: c8ccb08e442e57f439c1d52dbd5cf118, type: 3}
+  - {fileID: 21300000, guid: e60480ce5197d93448da0490d6d0d1ed, type: 3}
+  - {fileID: 21300000, guid: a1a469ef4d0c4aa4fa4ef1a093465668, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Russia_2
+  - Other_2
+  - Argentina_2
+  - Italy_1
+  - EuropeanCup_2
+  - Belarus_2
+  - Spain_1
+  - Russia_1
+  - ChampionsLeague_2
+  - France_1
+  - EuropeanCup_1
+  - Netherlands_2
+  - Brazil_1
+  - England_1
+  - Brazil_2
+  - Spain_2
+  - Portugal_2
+  - England_2
+  - Belgium_1
+  - Portugal_1
+  - Netherlands_1
+  - Other_1
+  - Ukraine_2
+  - Belgium_2
+  - Ukraine_1
+  - Italy_2
+  - ChampionsLeague_1
+  - Germany_2
+  - Argentina_1
+  - Belarus_1
+  - France_2
+  - Germany_1
+  m_RenderDataMap: {}
+  m_Tag: Categories
+  m_IsVariant: 0
