@@ -13,4 +13,417 @@ MonoBehaviour:
   m_Name: EmblemsStaticData
   m_EditorClassIdentifier: 
   CategoryNumber: 2
-  Questions: []
+  Questions:
+  - Task: "\u0421\u0440\u0435\u0434\u0438 \u0432\u0441\u0435\u0445 \u044D\u043C\u0431\u043B\u0435\u043C
+      \u043D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u0443
+      \u0438\u0442\u0430\u043B\u044C\u044F\u043D\u0441\u043A\u043E\u0433\u043E \u043A\u043B\u0443\u0431\u0430."
+    Variants:
+    - Variant: {fileID: 21300000, guid: cf48c506cabdec3469cc613d32aac11c, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 2b78434f4abd2d54397085b4eb0686ad, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 98a4c39918f73b34690b6f9e565cae4f, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 75b032669d5caf04db3c42e7b2f98407, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 12bca4945a4a52e4a808bc3afc459efc, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 7bc9990a9df802f43a49e0beaca464d1, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 2d60e61c11b142b46b525838c11c582c, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: a34c23f0426fe0346835f64977b01ca5, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 5103a7dd023990847b2748239a500867, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 1
+    Attempts: 1
+    Description: "\u0418\u0442\u0430\u043B\u044C\u044F\u043D\u0441\u043A\u0438\u0439
+      \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0439 \u043A\u043B\u0443\u0431
+      \u0420\u043E\u043C\u0430."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u044B
+      \u0440\u043E\u0441\u0441\u0438\u0439\u0441\u043A\u0438\u0445 \u043A\u043B\u0443\u0431\u043E\u0432."
+    Variants:
+    - Variant: {fileID: 21300000, guid: ab5a6a2b8bd87e74c9280002b053de24, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: a76caafb06e22cf4abbfdda27fc6db99, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 4e48ca143b4f0604c8e130b7ad6b180f, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 8e18db9a81734db479a7555e991396bf, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 61bb074c5bed99c45aeb30f671f15244, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 349b10a28fdd0d64cad6f9b18eded3e8, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 22af246cf4ac91442af14cac2e27bbcf, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 065b976ccebfd5d478fa41dad53bc1e7, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: abcde103ff0c12a4187980c76e21da22, type: 3}
+      CorrectAnswer: 1
+    NumberOfAnswers: 3
+    Attempts: 3
+    Description: "\u041A\u0430\u0437\u0430\u043D\u0441\u043A\u0438\u0439 \u0420\u0443\u0431\u0438\u043D,
+      \u043C\u043E\u0441\u043A\u043E\u0432\u0441\u043A\u0438\u0439 \u0421\u043F\u0430\u0440\u0442\u0430\u043A
+      \u0438 \u043F\u0435\u0442\u0435\u0440\u0431\u0443\u0440\u0433\u0441\u043A\u0438\u0439
+      \u0417\u0435\u043D\u0438\u0442."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u044B
+      \u043A\u043B\u0443\u0431\u043E\u0432, \u0432 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0438
+      \u043A\u043E\u0442\u043E\u0440\u044B\u0445 \u043F\u0440\u0438\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442
+      \u0441\u043B\u043E\u0432\u043E \u0420\u0435\u0430\u043B."
+    Variants:
+    - Variant: {fileID: 21300000, guid: 96e4654c90e343a4cb5fb288e55ec571, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 0d9a1f4cb7b708b43b39a41410233d26, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 970cc71ab8470f945b084b39dd7bfb42, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 8bc2728caeeaeb247bf23dc0bf1dd9a0, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: cf48c506cabdec3469cc613d32aac11c, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 5f5e10f5d7775f2488502ab70bc5556a, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 021ae50e69a5bc347aee29adf9366b88, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: e0e12fd6cbffa0e42bcc28ca55ee3019, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 653b4495528323b46a31104b4beda445, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 3
+    Attempts: 4
+    Description: "\u041C\u0430\u0434\u0440\u0438\u0434\u0441\u043A\u0438\u0439 \u0420\u0435\u0430\u043B,
+      \u0420\u0435\u0430\u043B \u0411\u0435\u0442\u0438\u0441 \u0438 \u0420\u0435\u0430\u043B
+      \u0421\u043E\u0441\u044C\u0435\u0434\u0430\u0434."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u044B
+      \u0444\u0438\u043D\u0430\u043B\u0438\u0441\u0442\u043E\u0432 (\u043D\u0435
+      \u043F\u043E\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u0435\u0439) \u0434\u0432\u0443\u0445
+      \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0445 \u041B\u0438\u0433 \u0427\u0435\u043C\u043F\u0438\u043E\u043D\u043E\u0432."
+    Variants:
+    - Variant: {fileID: 21300000, guid: 2c1c664bef67bc747ac4cd2441a0701b, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: ff7b5809a5b07a0439072a2ae54c4c36, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 98a4c39918f73b34690b6f9e565cae4f, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 8bc2728caeeaeb247bf23dc0bf1dd9a0, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: ae31becc3f2184647b319338873b50fa, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: a81342d9af9c6994097edf3464c39560, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 5103a7dd023990847b2748239a500867, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 658f3d4453696984eb2591e721ed1dd0, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: fe18158f8fde41c47afb3805c188819f, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 2
+    Attempts: 3
+    Description: "\u0412 \u043F\u0440\u043E\u0448\u043B\u043E\u043C \u0442\u0443\u0440\u043D\u0438\u0440\u0435
+      \u041B\u0438\u0432\u0435\u0440\u043F\u0443\u043B\u044C \u0434\u043E\u0448\u0435\u043B
+      \u0434\u043E \u0444\u0438\u043D\u0430\u043B\u0430, \u0430 \u0432 2021 \u0433\u043E\u0434\u0443
+      \u041C\u0430\u043D\u0447\u0435\u0441\u0442\u0435\u0440 \u0421\u0438\u0442\u0438."
+  - Task: "\u0421\u0440\u0435\u0434\u0438 \u0432\u0441\u0435\u0445 \u044D\u043C\u0431\u043B\u0435\u043C
+      \u043D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u0443
+      \u043A\u0430\u0442\u0430\u043B\u043E\u043D\u0441\u043A\u043E\u0439 \u0411\u0430\u0440\u0441\u0435\u043B\u043E\u043D\u044B."
+    Variants:
+    - Variant: {fileID: 21300000, guid: 37820aea045b52b4c8a8f0a23a51ecb6, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: d022bceb12d337a4487d552aaf235e35, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 75e13b9e5827b7c4bb0d98cbd1943782, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 3171bbfa333e892409206052ba9745f4, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 544fd08c2fa17e148837297c1146ced2, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: cd6ea7f4870751b41bb50d384feada98, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 349b10a28fdd0d64cad6f9b18eded3e8, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: a9c86369fad527a4a8d728ffb9c775d2, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: eb62c4543669fc64b8be3d56ac147458, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 1
+    Attempts: 1
+    Description: "\u0418\u0441\u043F\u0430\u043D\u0441\u043A\u0438\u0439 \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0439
+      \u043A\u043B\u0443\u0431 \u0411\u0430\u0440\u0441\u0435\u043B\u043E\u043D\u0430."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u0444\u043E\u0440\u043C\u0443
+      \u044D\u043C\u0431\u043B\u0435\u043C\u044B \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u043E\u0433\u043E
+      \u043A\u043B\u0443\u0431\u0430 \u0411\u043E\u0440\u0443\u0441\u0441\u0438\u044F
+      \u041C\u0451\u043D\u0445\u0435\u043D\u0433\u043B\u0430\u0434\u0431\u0430\u0445."
+    Variants:
+    - Variant: {fileID: 21300000, guid: b7da0ae6493f597459365eb70d216aec, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 2af3c3fd321dc8c4fb9574e93a16615d, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: f7a7268f283261442a11a6110f21cfd5, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 0e37fb344b853b04f9014c78afd24930, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 605c387fcac55e740bfcd30cb7bf0655, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 1bfaf779e0491f0418d13ad3b5cf1d98, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 605c387fcac55e740bfcd30cb7bf0655, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 5eead1906eac0984f91656bc2a4f46d6, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 5f9909ef4c4a95c42a6736b452b6d4f9, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 1
+    Attempts: 2
+    Description: "\u042D\u043C\u0431\u043B\u0435\u043C\u0430 \u0411\u043E\u0440\u0443\u0441\u0441\u0438\u0438
+      \u041C\u0451\u043D\u0445\u0435\u043D\u0433\u043B\u0430\u0434\u0431\u0430\u0445
+      \u0438\u043C\u0435\u0435\u0442 \u0444\u043E\u0440\u043C\u0443 \u0432\u044B\u0442\u044F\u043D\u0443\u0442\u043E\u0433\u043E
+      \u0440\u043E\u043C\u0431\u0430."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u044B
+      \u043F\u043E\u0440\u0442\u0443\u0433\u0430\u043B\u044C\u0441\u043A\u0438\u0445
+      \u043A\u043B\u0443\u0431\u043E\u0432."
+    Variants:
+    - Variant: {fileID: 21300000, guid: a34c23f0426fe0346835f64977b01ca5, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 5fa0b68097b7f024f9c994521c7fb07f, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 4e62e33d5fcbbe14a9003e11c21d8fb5, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 1375737aaea88ec4ca844f0d5a251d06, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: e0e12fd6cbffa0e42bcc28ca55ee3019, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 12bca4945a4a52e4a808bc3afc459efc, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: f649d3b577e89874485e8869a5a29343, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 8e18db9a81734db479a7555e991396bf, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 065b976ccebfd5d478fa41dad53bc1e7, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 2
+    Attempts: 2
+    Description: "\u0424\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0435 \u043A\u043B\u0443\u0431\u044B
+      \u0411\u0440\u0430\u0433\u0430 \u0438 \u0421\u043F\u043E\u0440\u0442\u0438\u043D\u0433."
+  - Task: "\u0421\u0440\u0435\u0434\u0438 \u0432\u0441\u0435\u0445 \u044D\u043C\u0431\u043B\u0435\u043C
+      \u043D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u0443
+      \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u043E\u0433\u043E \u043A\u043B\u0443\u0431\u0430
+      \u041B\u0438\u043B\u043B\u044C."
+    Variants:
+    - Variant: {fileID: 21300000, guid: cd6ea7f4870751b41bb50d384feada98, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: ae31becc3f2184647b319338873b50fa, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: abcde103ff0c12a4187980c76e21da22, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: db9c3fd7902c7f24ebcbb3f14be571b9, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 0d9a1f4cb7b708b43b39a41410233d26, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 970cc71ab8470f945b084b39dd7bfb42, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 3de7fed7855f04541b0f4a29e7e3b814, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 9d9faee87facc9d4db12540c92e83d82, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: a76caafb06e22cf4abbfdda27fc6db99, type: 3}
+      CorrectAnswer: 1
+    NumberOfAnswers: 1
+    Attempts: 1
+    Description: "\u0424\u0440\u0430\u043D\u0446\u0443\u0437\u0441\u043A\u0438\u0439
+      \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0439 \u043A\u043B\u0443\u0431
+      \u041B\u0438\u043B\u043B\u044C."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u0432\u0441\u0435 \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0435
+      \u043A\u043B\u0443\u0431\u044B \u0438\u0437 \u041B\u043E\u043D\u0434\u043E\u043D\u0430."
+    Variants:
+    - Variant: {fileID: 21300000, guid: ff7b5809a5b07a0439072a2ae54c4c36, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 1375737aaea88ec4ca844f0d5a251d06, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 75e13b9e5827b7c4bb0d98cbd1943782, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: ae31becc3f2184647b319338873b50fa, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 5f5e10f5d7775f2488502ab70bc5556a, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 8e18db9a81734db479a7555e991396bf, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: d3835af0f9fb53546b10a88d07541705, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: f6e0cf5fde4ff224e98bd14cbb6057bf, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 3de7fed7855f04541b0f4a29e7e3b814, type: 3}
+      CorrectAnswer: 1
+    NumberOfAnswers: 5
+    Attempts: 5
+    Description: "\u0424\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0435 \u043A\u043B\u0443\u0431\u044B
+      \u0424\u0443\u043B\u0445\u0435\u043C, \u0410\u0440\u0441\u0435\u043D\u0430\u043B,
+      \u0427\u0435\u043B\u0441\u0438, \u0422\u043E\u0442\u0442\u0435\u043D\u0445\u044D\u043C
+      \u0438 \u0412\u0435\u0441\u0442 \u0425\u044D\u043C."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u0444\u043E\u0440\u043C\u0443
+      \u044D\u043C\u0431\u043B\u0435\u043C\u044B \u0438\u0442\u0430\u043B\u044C\u044F\u043D\u0441\u043A\u043E\u0433\u043E
+      \u041D\u0430\u043F\u043E\u043B\u0438."
+    Variants:
+    - Variant: {fileID: 21300000, guid: 5f9909ef4c4a95c42a6736b452b6d4f9, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 5eead1906eac0984f91656bc2a4f46d6, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: f7a7268f283261442a11a6110f21cfd5, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 605c387fcac55e740bfcd30cb7bf0655, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 1bfaf779e0491f0418d13ad3b5cf1d98, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 6bdfa4fea06c07e42bde9fed96e43c33, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 2af3c3fd321dc8c4fb9574e93a16615d, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: b7da0ae6493f597459365eb70d216aec, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 0e37fb344b853b04f9014c78afd24930, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 1
+    Attempts: 1
+    Description: "\u042D\u043C\u0431\u043B\u0435\u043C\u0430 \u041D\u0430\u043F\u043E\u043B\u0438
+      \u0438\u043C\u0435\u0435\u0442 \u0444\u043E\u0440\u043C\u0443 \u0440\u043E\u0432\u043D\u043E\u0433\u043E
+      \u043A\u0440\u0443\u0433\u0430."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u0443
+      \u0437\u043D\u0430\u043C\u0435\u043D\u0438\u0442\u043E\u0433\u043E \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u043E\u0433\u043E
+      \u043A\u043B\u0443\u0431\u0430 \u0438\u0437 \u0433\u043E\u0440\u043E\u0434\u0430
+      \u0413\u043B\u0430\u0437\u043A\u043E."
+    Variants:
+    - Variant: {fileID: 21300000, guid: f649d3b577e89874485e8869a5a29343, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 658f3d4453696984eb2591e721ed1dd0, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 3c949e55ed3f75645a46b34f3d491eef, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: a34c23f0426fe0346835f64977b01ca5, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 916799d4bfe67ee409b4470e3c17ae12, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 349b10a28fdd0d64cad6f9b18eded3e8, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: eb62c4543669fc64b8be3d56ac147458, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 75b032669d5caf04db3c42e7b2f98407, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 653b4495528323b46a31104b4beda445, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 1
+    Attempts: 1
+    Description: "\u0428\u043E\u0442\u043B\u0430\u043D\u0434\u0441\u043A\u0438\u0439
+      \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0439 \u043A\u043B\u0443\u0431
+      \u0421\u0435\u043B\u0442\u0438\u043A."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u044B
+      \u043F\u043E\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u0435\u0439 \u0442\u043E\u043F-5
+      \u0435\u0432\u0440\u043E\u043F\u0435\u0439\u0441\u043A\u0438\u0445 \u0447\u0435\u043C\u043F\u0438\u043E\u043D\u0430\u0442\u043E\u0432
+      \u0432 2022 \u0433\u043E\u0434\u0443."
+    Variants:
+    - Variant: {fileID: 21300000, guid: 349b10a28fdd0d64cad6f9b18eded3e8, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 8bc2728caeeaeb247bf23dc0bf1dd9a0, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 5103a7dd023990847b2748239a500867, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 98a4c39918f73b34690b6f9e565cae4f, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: a81342d9af9c6994097edf3464c39560, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: fa07b9d47cb2e8448915891098b48d93, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 658f3d4453696984eb2591e721ed1dd0, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: ff7b5809a5b07a0439072a2ae54c4c36, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 544fd08c2fa17e148837297c1146ced2, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 5
+    Attempts: 5
+    Description: "\u0424\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0435 \u043A\u043B\u0443\u0431\u044B
+      \u0440\u0435\u0430\u043B \u041C\u0430\u0434\u0440\u0438\u0434, \u041F\u0421\u0416,
+      \u0411\u0430\u0432\u0430\u0440\u0438\u044F, \u041C\u0430\u043D\u0447\u0435\u0441\u0442\u0435\u0440
+      \u0421\u0438\u0442\u0438 \u0438 \u041C\u0438\u043B\u0430\u043D."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u0443
+      \u0431\u0435\u043B\u043E\u0440\u0443\u0441\u0441\u043A\u043E\u0433\u043E \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u043E\u0433\u043E
+      \u043A\u043B\u0443\u0431\u0430."
+    Variants:
+    - Variant: {fileID: 21300000, guid: 4e48ca143b4f0604c8e130b7ad6b180f, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 065b976ccebfd5d478fa41dad53bc1e7, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 96e4654c90e343a4cb5fb288e55ec571, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 22af246cf4ac91442af14cac2e27bbcf, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: cf48c506cabdec3469cc613d32aac11c, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 2b78434f4abd2d54397085b4eb0686ad, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 9d9faee87facc9d4db12540c92e83d82, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: d022bceb12d337a4487d552aaf235e35, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 61bb074c5bed99c45aeb30f671f15244, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 1
+    Attempts: 2
+    Description: "\u0411\u0435\u043B\u043E\u0440\u0443\u0441\u0441\u043A\u0438\u0439
+      \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0439 \u043A\u043B\u0443\u0431
+      \u0411\u0410\u0422\u042D."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u044B
+      \u043F\u043E\u0431\u0435\u0434\u0438\u0442\u0435\u043B\u0435\u0439 \u0434\u0432\u0443\u0445
+      \u043F\u043E\u0441\u043B\u0435\u0434\u043D\u0438\u0445 \u041B\u0438\u0433 \u0415\u0432\u0440\u043E\u043F\u044B."
+    Variants:
+    - Variant: {fileID: 21300000, guid: 7bc9990a9df802f43a49e0beaca464d1, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: fe18158f8fde41c47afb3805c188819f, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 9bd75409e36b07c4a973c482f6559fa3, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: d3835af0f9fb53546b10a88d07541705, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 2d60e61c11b142b46b525838c11c582c, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: cd6ea7f4870751b41bb50d384feada98, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 96e4654c90e343a4cb5fb288e55ec571, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 75e13b9e5827b7c4bb0d98cbd1943782, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 89d25dfd1c866a4499776f702974a77f, type: 3}
+      CorrectAnswer: 1
+    NumberOfAnswers: 2
+    Attempts: 2
+    Description: "\u0412 \u043F\u0440\u043E\u0448\u043B\u043E\u043C \u0442\u0443\u0440\u043D\u0438\u0440\u0435
+      \u0410\u0439\u043D\u0442\u0440\u0430\u0445\u0442 \u0432\u044B\u0438\u0433\u0440\u0430\u043B
+      \u043A\u0443\u0431\u043E\u043A \u0423\u0435\u0444\u0430, \u0430 \u0432 2021
+      \u0433\u043E\u0434\u0443 \u0412\u0438\u043B\u044C\u044F\u0440\u0440\u0435\u0430\u043B."
+  - Task: "\u041D\u0430\u0439\u0434\u0438\u0442\u0435 \u044D\u043C\u0431\u043B\u0435\u043C\u0443
+      \u0437\u043D\u0430\u043C\u0435\u043D\u0438\u0442\u043E\u0433\u043E \u0431\u0435\u043B\u044C\u0433\u0438\u0439\u0441\u043A\u043E\u0433\u043E
+      \u043A\u043B\u0443\u0431\u0430."
+    Variants:
+    - Variant: {fileID: 21300000, guid: a34c23f0426fe0346835f64977b01ca5, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: f6e0cf5fde4ff224e98bd14cbb6057bf, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 1375737aaea88ec4ca844f0d5a251d06, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 9d9faee87facc9d4db12540c92e83d82, type: 3}
+      CorrectAnswer: 1
+    - Variant: {fileID: 21300000, guid: 3c949e55ed3f75645a46b34f3d491eef, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 021ae50e69a5bc347aee29adf9366b88, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: e0e12fd6cbffa0e42bcc28ca55ee3019, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: a9c86369fad527a4a8d728ffb9c775d2, type: 3}
+      CorrectAnswer: 0
+    - Variant: {fileID: 21300000, guid: 2d60e61c11b142b46b525838c11c582c, type: 3}
+      CorrectAnswer: 0
+    NumberOfAnswers: 1
+    Attempts: 2
+    Description: "\u0411\u0435\u043B\u044C\u0433\u0438\u0439\u0441\u043A\u0438\u0439
+      \u0444\u0443\u0442\u0431\u043E\u043B\u044C\u043D\u044B\u0439 \u043A\u043B\u0443\u0431
+      \u0411\u0440\u044E\u0433\u0433\u0435."

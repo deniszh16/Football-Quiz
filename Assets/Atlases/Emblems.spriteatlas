@@ -115,6 +115,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4e62e33d5fcbbe14a9003e11c21d8fb5, type: 3}
   - {fileID: 21300000, guid: 5103a7dd023990847b2748239a500867, type: 3}
   - {fileID: 21300000, guid: 2af3c3fd321dc8c4fb9574e93a16615d, type: 3}
+  - {fileID: 21300000, guid: 89d25dfd1c866a4499776f702974a77f, type: 3}
   - {fileID: 21300000, guid: 021ae50e69a5bc347aee29adf9366b88, type: 3}
   - {fileID: 21300000, guid: 75e13b9e5827b7c4bb0d98cbd1943782, type: 3}
   - {fileID: 21300000, guid: 6bdfa4fea06c07e42bde9fed96e43c33, type: 3}
@@ -178,6 +179,7 @@ SpriteAtlas:
   - Emblems_6
   - Emblems_32
   - Emblems_46
+  - Emblems_63
   - Emblems_11
   - Emblems_5
   - Emblems_51
