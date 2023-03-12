@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 131810224}
   - component: {fileID: 131810226}
   - component: {fileID: 131810225}
+  - component: {fileID: 131810227}
   m_Layer: 5
   m_Name: Text_Heading
   m_TagString: Untagged
@@ -265,6 +266,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131810223}
   m_CullTransparentMesh: 1
+--- !u!95 &131810227
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131810223}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 57c4c43bedcc8364fba2f9336b5a9b34, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &166461463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,6 +1478,7 @@ GameObject:
   - component: {fileID: 970886926}
   - component: {fileID: 970886925}
   - component: {fileID: 970886924}
+  - component: {fileID: 970886928}
   - component: {fileID: 970886927}
   m_Layer: 5
   m_Name: Button_Achievements
@@ -1587,6 +1609,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &970886928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970886922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97e47fb5acad420581ab1adc53eaa751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _button: {fileID: 970886924}
 --- !u!850595691 &988452903
 LightingSettings:
   m_ObjectHideFlags: 0

@@ -31,7 +31,7 @@ namespace Code.Logic.Legends
 
         private void Start()
         {
-            if (_legends.ProgressService.UserProgress.LegendsData.Legends[Number] == LegendStatus.Opened)
+            if (_legends.ProgressService.UserProgress.LegendsData.Legends[Number - ForArrays.MinusOne] == LegendStatus.Opened)
                 _achievement?.UnlockAchievement();
         }
 
