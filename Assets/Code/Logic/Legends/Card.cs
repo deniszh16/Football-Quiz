@@ -1,4 +1,5 @@
 ﻿using System;
+using Code.Logic.GooglePlay;
 using Code.Logic.Helpers;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ namespace Code.Logic.Legends
         [Header("Параметры карточки")]
         [SerializeField] private int _number;
         [SerializeField] private bool _biography;
+
+        [Header("Достижение")]
+        [SerializeField] private Achievement _achievement;
         
         public int Number => _number;
         public bool Biography => _biography;
@@ -23,6 +27,12 @@ namespace Code.Logic.Legends
         {
             if (CheckCardList() && CheckCardStatus())
                 IsAvailable = true;
+        }
+
+        private void Start()
+        {
+            if (_legends.ProgressService.UserProgress.LegendsData.Legends[Number] == LegendStatus.Opened)
+                _achievement?.UnlockAchievement();
         }
 
         private bool CheckCardList() =>

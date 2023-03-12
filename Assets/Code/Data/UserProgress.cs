@@ -6,7 +6,7 @@ namespace Code.Data
     public class UserProgress
     {
         public int Score;
-        public int Coins = 1000;
+        public int Coins;
 
         public event Action ScoreChanged;
         public event Action CoinsChanged;
@@ -19,14 +19,17 @@ namespace Code.Data
         public LegendsData LegendsData;
         
         public AdsData AdsData;
+        public LeaderboardData LeaderboardData;
 
         public UserProgress()
         {
+            Coins = 1000;
             CountriesData = new CountriesData();
             FactsData = new FactsData();
             PlayersData = new PlayersData();
             LegendsData = new LegendsData();
             AdsData = new AdsData();
+            LeaderboardData = new LeaderboardData();
         }
 
         public void AddScore(int value)

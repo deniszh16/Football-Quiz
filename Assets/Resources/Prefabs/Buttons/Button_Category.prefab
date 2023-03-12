@@ -367,6 +367,7 @@ GameObject:
   - component: {fileID: 3912120090064401190}
   - component: {fileID: 3005474676348715135}
   - component: {fileID: 6359324863653046335}
+  - component: {fileID: 6868889582114397936}
   m_Layer: 5
   m_Name: Button_Category
   m_TagString: Untagged
@@ -410,6 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _number: 0
+  _achievement: {fileID: 6868889582114397936}
 --- !u!114 &3912120090064401190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,3 +458,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "_current\u0421ategory": {fileID: 8975300842761035331}
   _text: {fileID: 9137961510744772503}
+--- !u!114 &6868889582114397936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137961510997379121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c1efc93592442f5ac2e3ae86f8d937e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 

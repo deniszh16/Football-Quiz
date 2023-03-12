@@ -509,7 +509,51 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &294684552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 294684554}
+  - component: {fileID: 294684553}
+  m_Layer: 0
+  m_Name: AdsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &294684553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294684552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bef0962438458686951dfb60204781, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &294684554
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 294684552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &305769116
 PrefabInstance:
@@ -2732,7 +2776,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1282580100
 PrefabInstance:
@@ -3121,13 +3165,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _answerFromLetters: {fileID: 1904248590}
-  _button: {fileID: 1293109139}
-  _buttonImage: {fileID: 1293109141}
-  _popupAnimation: {fileID: 1510120806}
   _hintsButtons:
   - {fileID: 1502912680}
   - {fileID: 1502912679}
   - {fileID: 1502912678}
+  _button: {fileID: 1293109139}
+  _buttonImage: {fileID: 1293109141}
+  _popupAnimation: {fileID: 1510120806}
 --- !u!1 &1312548655
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,6 +3351,7 @@ MonoBehaviour:
   _answerFromLetters: {fileID: 1904248590}
   _arrangementOfLetters: {fileID: 440519337}
   _price: 100
+  _availability: 1
   _button: {fileID: 911572728}
   _buttonText: {fileID: 911572726}
 --- !u!114 &1502912679
@@ -3325,6 +3370,7 @@ MonoBehaviour:
   _answerFromLetters: {fileID: 1904248590}
   _arrangementOfLetters: {fileID: 440519337}
   _price: 50
+  _availability: 1
   _button: {fileID: 680033387}
   _buttonText: {fileID: 680033385}
 --- !u!114 &1502912680
@@ -3343,6 +3389,7 @@ MonoBehaviour:
   _answerFromLetters: {fileID: 1904248590}
   _arrangementOfLetters: {fileID: 440519337}
   _price: 20
+  _availability: 1
   _button: {fileID: 7058946795392170474}
   _buttonText: {fileID: 7058946795392170472}
   _removingExtraLetters: {fileID: 1502912679}
@@ -4106,9 +4153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tasks: {fileID: 1283998465}
   _updateTask: {fileID: 1283998466}
+  _textQuestion: {fileID: 1989260285}
   _textAnswer: {fileID: 899762296}
   _textAnswerAnimator: {fileID: 899762298}
-  _textQuestion: {fileID: 1989260285}
   _winningEffect: {fileID: 1301326255750558874}
 --- !u!114 &1904248591
 MonoBehaviour:
@@ -4124,9 +4171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tasks: {fileID: 1283998465}
   _updateTask: {fileID: 1283998466}
+  _textQuestion: {fileID: 1989260285}
   _textAnswer: {fileID: 899762296}
   _textAnswerAnimator: {fileID: 899762298}
-  _textQuestion: {fileID: 1989260285}
   _winningEffect: {fileID: 1301326255750558874}
 --- !u!224 &1958028201 stripped
 RectTransform:

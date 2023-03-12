@@ -43,14 +43,14 @@ namespace Code.Logic.Countries
 
         private void BuyCategory()
         {
-            if (_currentСategory.PersistentProgress.UserProgress.CheckAmountCoins(_price))
+            if (_currentСategory.ProgressService.UserProgress.CheckAmountCoins(_price))
             {
-                _currentСategory.PersistentProgress.UserProgress.SubtractionCoins(_price);
+                _currentСategory.ProgressService.UserProgress.SubtractionCoins(_price);
 
                 _currentСategory.CurrentQuestion = 1;
                 _currentСategory.IsAvailable = CategoryAccessibility.Available;
-                _currentСategory.PersistentProgress.UserProgress.CountriesData.Sets[_currentСategory.Number - ForArrays.MinusOne]= _currentСategory.CurrentQuestion;
-                _currentСategory.PersistentProgress.UserProgress.CountriesData.Accessibility[
+                _currentСategory.ProgressService.UserProgress.CountriesData.Sets[_currentСategory.Number - ForArrays.MinusOne]= _currentСategory.CurrentQuestion;
+                _currentСategory.ProgressService.UserProgress.CountriesData.Accessibility[
                     _currentСategory.Number - ForArrays.MinusOne] = CategoryAccessibility.Available; 
                 _saveLoadService.SaveProgress();
                 

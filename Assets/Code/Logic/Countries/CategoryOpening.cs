@@ -1,6 +1,5 @@
 ﻿using Code.Logic.Helpers;
 using Code.Services.SceneLoader;
-using Code.Services.StaticData;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -16,14 +15,10 @@ namespace Code.Logic.Countries
         [SerializeField] private Button _button;
         
         private ISceneLoaderService _sceneLoader;
-        private IStaticDataService _staticDataService;
 
         [Inject]
-        private void Construct(ISceneLoaderService sceneLoader, IStaticDataService staticData)
-        {
+        private void Construct(ISceneLoaderService sceneLoader) =>
             _sceneLoader = sceneLoader;
-            _staticDataService = staticData;
-        }
 
         private void Awake() =>
             _currentСategory.CategoryPurchased += CheckAvailability;
@@ -49,7 +44,8 @@ namespace Code.Logic.Countries
         }
 
         private bool CheckCategoryCompletion() =>
-            _currentСategory.CurrentQuestion <= _staticDataService.GetCountriesCategory(_currentСategory.Number).Questions.Count;
+            _currentСategory.CurrentQuestion <= _currentСategory.StaticDataService
+                .GetCountriesCategory(_currentСategory.Number).Questions.Count;
 
         private void OnDestroy()
         {

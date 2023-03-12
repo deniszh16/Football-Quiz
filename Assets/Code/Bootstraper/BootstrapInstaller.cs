@@ -1,4 +1,5 @@
 using Code.Services.Ads;
+using Code.Services.GooglePlay;
 using Code.Services.PersistentProgress;
 using Code.Services.SaveLoad;
 using Code.Services.SceneLoader;
@@ -22,6 +23,7 @@ namespace Code.Bootstraper
             BindSceneLoader();
             BindSaveLoadService();
             BindAdService();
+            BindGooglePlayService();
         }
 
         private void BindStaticData()
@@ -58,6 +60,13 @@ namespace Code.Bootstraper
             IAdService adService = new AdService();
             adService.Construct(_progressService, _saveLoadService);
             Container.BindInstance(adService).AsSingle();
+        }
+
+        private void BindGooglePlayService()
+        {
+            IGooglePlayService googlePlayService = new GooglePlayService();
+            googlePlayService.ActivateService();
+            Container.BindInstance(googlePlayService).AsSingle();
         }
     }
 }

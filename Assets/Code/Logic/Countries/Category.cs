@@ -1,6 +1,8 @@
 ﻿using System;
+using Code.Logic.GooglePlay;
 using Code.Logic.Helpers;
 using Code.Services.PersistentProgress;
+using Code.Services.StaticData;
 using UnityEngine;
 using Zenject;
 
@@ -11,22 +13,35 @@ namespace Code.Logic.Countries
         [Header("Номер категории")]
         [SerializeField] private int _number;
 
+        [Header("Достижение")]
+        [SerializeField] private Achievement _achievement;
+
         public int Number => _number;
         public CategoryAccessibility IsAvailable { get; set; }
         public int CurrentQuestion { get; set; }
 
         public event Action CategoryPurchased;
         
-        public IPersistentProgressService PersistentProgress { get; private set; }
+        public IPersistentProgressService ProgressService { get; private set; }
+        public IStaticDataService StaticDataService { get; private set; }
 
         [Inject]
-        private void Construct(IPersistentProgressService persistentProgress) =>
-            PersistentProgress = persistentProgress;
+        private void Construct(IPersistentProgressService persistentProgress, IStaticDataService staticDataService)
+        {
+            ProgressService = persistentProgress;
+            StaticDataService = staticDataService;
+        }
 
         private void Awake()
         {
-            IsAvailable = PersistentProgress.UserProgress.CountriesData.Accessibility[Number - ForArrays.MinusOne];
-            CurrentQuestion = PersistentProgress.UserProgress.CountriesData.Sets[Number - ForArrays.MinusOne];
+            IsAvailable = ProgressService.UserProgress.CountriesData.Accessibility[Number - ForArrays.MinusOne];
+            CurrentQuestion = ProgressService.UserProgress.CountriesData.Sets[Number - ForArrays.MinusOne];
+        }
+
+        private void Start()
+        {
+            if (CurrentQuestion > StaticDataService.GetCountriesCategory(Number).Questions.Count)
+                _achievement?.UnlockAchievement();
         }
 
         public void ReportCategoryPurchase() =>

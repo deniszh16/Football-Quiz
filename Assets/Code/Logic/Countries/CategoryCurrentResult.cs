@@ -36,7 +36,7 @@ namespace Code.Logic.Countries
         }
 
         private string GetCurrentResult() =>
-            (_currentСategory.PersistentProgress.UserProgress.CountriesData
+            (_currentСategory.ProgressService.UserProgress.CountriesData
                 .Sets[_currentСategory.Number - ForArrays.MinusOne] - 1).ToString();
 
         private string GetNumberOfQuestions() =>
