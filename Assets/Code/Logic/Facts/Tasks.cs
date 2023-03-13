@@ -71,8 +71,9 @@ namespace Code.Logic.Facts
             }
             else if (CurrentQuestion >= FactsStaticData.Questions.Count)
             {
-                ProgressService.UserProgress.FactsData.Availability[CurrentCategory - ForArrays.MinusOne] =
-                    FactsAccessibility.Won;
+                ProgressService.UserProgress.FactsData.Availability[CurrentCategory - ForArrays.MinusOne] = FactsAccessibility.Won;
+                ProgressService.UserProgress.AddCoins(350);
+                ProgressService.UserProgress.AddScore(100);
                 ProgressService.UserProgress.FactsData.Completed += 1;
                 ProgressService.UserProgress.FactsData.Victory += 1;
                 _saveLoadService.SaveProgress();
