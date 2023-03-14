@@ -1,5 +1,6 @@
 ﻿using Code.Logic.Helpers;
 using Code.Services.PersistentProgress;
+using Code.Services.SaveLoad;
 using Code.Services.SceneLoader;
 using Code.Services.StaticData;
 using Code.StaticData.Questions.Players;
@@ -30,14 +31,16 @@ namespace Code.Logic.Players
         public IPersistentProgressService ProgressService { get; private set; }
         private IStaticDataService _staticDataService;
         private ISceneLoaderService _sceneLoaderService;
+        private ISaveLoadService _saveLoadService;
         
         [Inject]
         private void Construct(IPersistentProgressService progressService, IStaticDataService staticDataService,
-            ISceneLoaderService sceneLoader)
+            ISceneLoaderService sceneLoader, ISaveLoadService saveLoadService)
         {
             ProgressService = progressService;
             _staticDataService = staticDataService;
             _sceneLoaderService = sceneLoader;
+            _saveLoadService = saveLoadService;
         }
 
         private void Awake()
@@ -67,6 +70,9 @@ namespace Code.Logic.Players
             }
             else
             {
+                ProgressService.UserProgress.AddCoins(350);
+                ProgressService.UserProgress.AddScore(100);
+                _saveLoadService.SaveProgress();
                 _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
             }
         }
