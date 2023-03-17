@@ -50,7 +50,7 @@ namespace Code.Logic.Countries
 
         protected abstract void UseHint();
 
-        public void ResetHintAvailability() =>
+        public virtual void ResetHintAvailability() =>
             _availability = true;
 
         protected virtual void OnDestroy() =>

@@ -1,19 +1,11 @@
 ﻿using Code.Logic.Legends;
-using Code.Services.SaveLoad;
 using Code.StaticData.Questions.Facts;
 using UnityEngine;
-using Zenject;
 
 namespace Code.Data.OldProgress
 {
     public class MigrationOldProgress
     {
-        private ISaveLoadService _saveLoadService;
-
-        [Inject]
-        private void Construct(ISaveLoadService saveLoadService) =>
-            _saveLoadService = saveLoadService;
-
         public void CheckOldProgress(UserProgress userProgress)
         {
             if (PlayerPrefs.HasKey("score"))
@@ -106,33 +98,6 @@ namespace Code.Data.OldProgress
             
             if (PlayerPrefs.HasKey("photo-quiz-errors"))
                 userProgress.PlayersData.WrongAnswers = PlayerPrefs.GetInt("photo-quiz-errors");
-
-            SaveChanges();
-            RemovingOldKeys();
-        }
-
-        private void SaveChanges() =>
-            _saveLoadService.SaveProgress();
-
-        private void RemovingOldKeys()
-        {
-            PlayerPrefs.DeleteKey("score");
-            PlayerPrefs.DeleteKey("coins");
-            PlayerPrefs.DeleteKey("sets");
-            PlayerPrefs.DeleteKey("countries-answer");
-            PlayerPrefs.DeleteKey("countries-error");
-            PlayerPrefs.DeleteKey("countries-tips");
-            PlayerPrefs.DeleteKey("countries-pass");
-            PlayerPrefs.DeleteKey("facts-quantity");
-            PlayerPrefs.DeleteKey("facts-victory");
-            PlayerPrefs.DeleteKey("facts-answer");
-            PlayerPrefs.DeleteKey("facts-errors");
-            PlayerPrefs.DeleteKey("legends");
-            PlayerPrefs.DeleteKey("legends-open");
-            PlayerPrefs.DeleteKey("photo-quiz");
-            PlayerPrefs.DeleteKey("photo-quiz-successfully");
-            PlayerPrefs.DeleteKey("photo-quiz-answer");
-            PlayerPrefs.DeleteKey("photo-quiz-errors");
         }
     }
 }

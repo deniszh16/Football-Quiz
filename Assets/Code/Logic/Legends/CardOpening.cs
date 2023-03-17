@@ -23,9 +23,6 @@ namespace Code.Logic.Legends
         private void Awake() =>
             _card.CardPurchased += CheckAvailability;
 
-        private void Start() =>
-            CheckAvailability();
-
         private void CheckAvailability()
         {
             if (_card.IsAvailable && _card.Biography)

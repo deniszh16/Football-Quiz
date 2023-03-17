@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Code.StaticData.Questions.Countries
 {
-    [CreateAssetMenu(fileName ="QuestionStaticData", menuName = "StaticData/Question Static Data")]
+    [CreateAssetMenu(fileName ="CountriesStaticData", menuName = "StaticData/Countries Static Data")]
     public class CountriesStaticData : ScriptableObject
     {
         [Header("Номер категории")]

@@ -23,12 +23,16 @@ namespace Code.Logic.Legends
         private const int Price = 950;
         private const string AnalyticsKey = "buying_card";
 
-        private void Start()
+        private void Awake()
         {
-            if (_card.IsAvailable)
-                ReplaceSprite();
-            else
-                _button.onClick.AddListener(BuyCard);
+            _button.onClick.AddListener(BuyCard);
+            _card.CardPurchased += CheckAvailability;
+        }
+
+        private void CheckAvailability()
+        {
+            ReplaceSprite();
+            _button.onClick.RemoveListener(BuyCard);
         }
 
         private void BuyCard()

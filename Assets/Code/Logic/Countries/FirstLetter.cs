@@ -34,10 +34,7 @@ namespace Code.Logic.Countries
         private void CheckHidingButtons()
         {
             if (_removingExtraLetters.ButtonsWereHidden)
-            {
                 _removingExtraLetters.FindAndDisableButtons();
-                _removingExtraLetters.ResetHintUsage();
-            }
         }
 
         protected override void OnDestroy()

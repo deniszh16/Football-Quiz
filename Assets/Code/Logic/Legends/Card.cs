@@ -23,14 +23,11 @@ namespace Code.Logic.Legends
 
         public event Action CardPurchased;
 
-        private void Awake()
-        {
-            if (CheckCardList() && CheckCardStatus())
-                IsAvailable = true;
-        }
-
         private void Start()
         {
+            if (CheckCardList() && CheckCardStatus())
+                UpdateAvailability();
+            
             if (_legends.ProgressService.UserProgress.LegendsData.Legends[Number - ForArrays.MinusOne] == LegendStatus.Opened)
                 _achievement?.UnlockAchievement();
         }

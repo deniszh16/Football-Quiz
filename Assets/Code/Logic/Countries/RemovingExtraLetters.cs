@@ -34,8 +34,11 @@
             }
         }
 
-        public void ResetHintUsage() =>
+        public override void ResetHintAvailability()
+        {
+            _availability = true;
             ButtonsWereHidden = false;
+        }
 
         protected override void OnDestroy()
         {

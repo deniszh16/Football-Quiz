@@ -88,7 +88,7 @@ namespace Code.Logic.Countries
 
                 _updateTask.ToggleButton(state: true);
                 
-                if (_tasks.CurrentQuestion % 5 == 0)
+                if (_tasks.CurrentQuestion % 6 == 0)
                     _adService.ShowInterstitialAd();
             }
             else
