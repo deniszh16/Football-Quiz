@@ -135,9 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f5c254a09aa4703b0ba5bc8cc4b3354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _button: {fileID: 4908127778443605051}
-  _buttonText: {fileID: 4908127778838645472}
+  _hints: {fileID: 0}
   _answerFromLetters: {fileID: 0}
+  _button: {fileID: 4908127778443605051}
+  _buttonNumber: 0
+  _buttonText: {fileID: 4908127778838645472}
 --- !u!1 &4908127778838645502
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,8 +208,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u0410"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 42a7183bd43099d49b30e7f37a318a56, type: 2}
-  m_sharedMaterial: {fileID: 6800986271874800869, guid: 42a7183bd43099d49b30e7f37a318a56,
+  m_fontAsset: {fileID: 11400000, guid: 0db0f39bd091d8d4c9b0451706975c62, type: 2}
+  m_sharedMaterial: {fileID: -5048374985507620246, guid: 0db0f39bd091d8d4c9b0451706975c62,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
