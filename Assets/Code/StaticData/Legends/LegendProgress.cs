@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Code.StaticData.Legends
@@ -7,12 +8,12 @@ namespace Code.StaticData.Legends
     public class LegendProgress
     {
         [Header("Клубные достижения")]
-        public string Club;
+        public List<string> Club;
         
         [Header("Достижения в сборной")]
-        public string NationalTeam;
+        public List<string> NationalTeam;
         
         [Header("Личные достижения")]
-        public string PersonalAchievements;
+        public List<string> PersonalAchievements;
     }
 }

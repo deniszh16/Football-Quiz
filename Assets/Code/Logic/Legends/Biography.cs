@@ -1,5 +1,4 @@
-﻿using System;
-using Code.Logic.Helpers;
+﻿using Code.Logic.Helpers;
 using Code.Services.StaticData;
 using Code.StaticData.Legends;
 using UnityEngine;
@@ -29,18 +28,25 @@ namespace Code.Logic.Legends
         private void Start()
         {
             _heading.text = _legendsStaticData.Legend.Name;
-            _biography.text += _legendsStaticData.Legend.LegendProgress.Club;
+            _biography.text = "";
 
-            if (String.IsNullOrEmpty(_legendsStaticData.Legend.LegendProgress.NationalTeam) == false)
+            foreach (string item in _legendsStaticData.Legend.LegendProgress.Club)
             {
-                _biography.text += IndentsHelpers.LineBreak(2) + IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
-                _biography.text += _legendsStaticData.Legend.LegendProgress.NationalTeam;
+                _biography.text += item;
+                _biography.text += IndentsHelpers.LineBreak(2);
             }
 
-            if (String.IsNullOrEmpty(_legendsStaticData.Legend.LegendProgress.PersonalAchievements) == false)
+            foreach (string item in _legendsStaticData.Legend.LegendProgress.NationalTeam)
             {
-                _biography.text += IndentsHelpers.LineBreak(2) + IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
-                _biography.text += _legendsStaticData.Legend.LegendProgress.PersonalAchievements;
+                _biography.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
+                _biography.text += item;
+                _biography.text += IndentsHelpers.LineBreak(2);
+            }
+
+            foreach (string item in _legendsStaticData.Legend.LegendProgress.PersonalAchievements)
+            {
+                _biography.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
+                _biography.text += item;
                 _biography.text += IndentsHelpers.LineBreak(2);
             }
             
