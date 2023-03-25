@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Code.Data.OldProgress
+namespace Code.Services.MigrationOldProgress
 {
     [Serializable]
     public class StatusesList

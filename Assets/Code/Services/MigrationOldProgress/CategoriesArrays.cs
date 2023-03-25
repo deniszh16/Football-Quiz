@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Code.Data.OldProgress
+namespace Code.Services.MigrationOldProgress
 {
     [Serializable]
     public class CategoriesArrays

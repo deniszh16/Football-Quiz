@@ -1,6 +1,7 @@
 using Code.Services.Ads;
 using Code.Services.Analytics;
 using Code.Services.GooglePlay;
+using Code.Services.MigrationOldProgress;
 using Code.Services.PersistentProgress;
 using Code.Services.SaveLoad;
 using Code.Services.SceneLoader;
@@ -23,6 +24,7 @@ namespace Code.Bootstraper
             BindPersistentProgress();
             BindSceneLoader();
             BindSaveLoadService();
+            BindMigrationOldProgressService();
             BindAdService();
             BindGooglePlayService();
             BindFirebaseService();
@@ -52,15 +54,20 @@ namespace Code.Bootstraper
 
         private void BindSaveLoadService()
         {
-            _saveLoadService = new SaveLoadService();
-            _saveLoadService.Construct(_progressService);
+            _saveLoadService = new SaveLoadService(_progressService);
             Container.BindInstance(_saveLoadService);
+        }
+
+        private void BindMigrationOldProgressService()
+        {
+            IMigrationOldProgressService migrationService =
+                new MigrationOldProgressService(_progressService, _saveLoadService);
+            Container.BindInstance(migrationService).AsSingle();
         }
 
         private void BindAdService()
         {
-            IAdService adService = new AdService();
-            adService.Construct(_progressService, _saveLoadService);
+            IAdService adService = new AdService(_progressService);
             Container.BindInstance(adService).AsSingle();
         }
 

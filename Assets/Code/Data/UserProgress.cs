@@ -1,5 +1,4 @@
 ﻿using System;
-using Code.Data.OldProgress;
 
 namespace Code.Data
 {
@@ -22,6 +21,8 @@ namespace Code.Data
         public AdsData AdsData;
         public LeaderboardData LeaderboardData;
 
+        public bool OldProgress;
+
         public UserProgress()
         {
             Coins = 1000;
@@ -31,9 +32,7 @@ namespace Code.Data
             LegendsData = new LegendsData();
             AdsData = new AdsData();
             LeaderboardData = new LeaderboardData();
-
-            var migrationOldProgress = new MigrationOldProgress();
-            migrationOldProgress.CheckOldProgress(this);
+            OldProgress = true;
         }
 
         public void AddScore(int value)
