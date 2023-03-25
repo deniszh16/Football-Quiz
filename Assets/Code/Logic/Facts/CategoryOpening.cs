@@ -40,11 +40,11 @@ namespace Code.Logic.Facts
             if (CheckCategoryCompletion() && CheckCategoryAvailability())
             {
                 _firebaseService.SubmitAnEvent(AnalyticsKey, new Parameter("number", _category.Number));
-                _sceneLoaderService.Load(Scenes.FactsQuestions.ToString(), 0f);
+                _sceneLoaderService.Load(Scenes.FactsQuestions.ToString());
             }
             else
             {
-                _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
+                _sceneLoaderService.Load(Scenes.Results.ToString());
             }
         }
 

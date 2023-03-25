@@ -8,10 +8,10 @@ namespace Code.Services.SaveLoad
     {
         private const string ProgressKey = "MyProgress";
 
-        private IPersistentProgressService _persistentProgress;
+        private readonly IPersistentProgressService _persistentProgress;
 
-        public void Construct(IPersistentProgressService persistentProgressService) =>
-            _persistentProgress = persistentProgressService;
+        public SaveLoadService(IPersistentProgressService progressService) =>
+            _persistentProgress = progressService;
 
         public void SaveProgress() =>
             PlayerPrefs.SetString(ProgressKey, _persistentProgress.UserProgress.ToJson());

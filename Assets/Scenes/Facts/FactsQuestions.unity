@@ -2491,6 +2491,7 @@ GameObject:
   - component: {fileID: 5344405183856044389}
   - component: {fileID: 5344405183856044388}
   - component: {fileID: 5344405183856044391}
+  - component: {fileID: 5344405183856044392}
   m_Layer: 5
   m_Name: Button_Option_1
   m_TagString: Untagged
@@ -2616,6 +2617,25 @@ MonoBehaviour:
   _answer: {fileID: 296699673}
   _button: {fileID: 5344405183856044388}
   _value: 1
+--- !u!114 &5344405183856044392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344405183856044385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 5344405183856044386}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 0, y: -335}
+    Size: {x: 595, y: 0}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 0, y: -335}
+    Size: {x: 555, y: 110}
 --- !u!1 &5344405184222532870
 GameObject:
   m_ObjectHideFlags: 0
@@ -2847,6 +2867,7 @@ GameObject:
   - component: {fileID: 5344405184240789040}
   - component: {fileID: 5344405184240789041}
   - component: {fileID: 5344405184240789048}
+  - component: {fileID: 5344405184240789049}
   m_Layer: 5
   m_Name: Button_Option_2
   m_TagString: Untagged
@@ -2890,6 +2911,25 @@ MonoBehaviour:
   _answer: {fileID: 296699673}
   _button: {fileID: 5344405184240789041}
   _value: 0
+--- !u!114 &5344405184240789049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5344405184240789044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 5344405184240789047}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 0, y: -480}
+    Size: {x: 595, y: 110}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 0, y: -480}
+    Size: {x: 555, y: 110}
 --- !u!1001 &8676751305505509123
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -32,7 +32,7 @@ namespace Code.Logic.Legends
         private void OpenCard()
         {
             ActivePartition.CategoryNumber = _card.Number;
-            _sceneLoaderService.Load(Scenes.Biography.ToString(), 0f);
+            _sceneLoaderService.Load(Scenes.Biography.ToString());
         }
 
         private void OnDestroy()

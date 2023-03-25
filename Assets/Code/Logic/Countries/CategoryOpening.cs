@@ -37,10 +37,10 @@ namespace Code.Logic.Countries
             ActivePartition.SectionsGame = SectionsGame.Countries;
             ActivePartition.CategoryNumber = _currentСategory.Number;
 
-            if (_currentСategory.CurrentQuestion > 0 && CheckCategoryCompletion())
-                _sceneLoader.Load(Scenes.CountriesQuestions.ToString(), 0f);
-            else
-                _sceneLoader.Load(Scenes.Results.ToString(), 0f);
+            _sceneLoader.Load(
+                _currentСategory.CurrentQuestion > 0 && CheckCategoryCompletion()
+                    ? Scenes.CountriesQuestions.ToString()
+                    : Scenes.Results.ToString());
         }
 
         private bool CheckCategoryCompletion() =>

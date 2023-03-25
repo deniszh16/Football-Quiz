@@ -1416,6 +1416,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1074980345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2077,6 +2078,7 @@ GameObject:
   - component: {fileID: 1923231070}
   - component: {fileID: 1923231069}
   - component: {fileID: 1923231071}
+  - component: {fileID: 1923231072}
   m_Layer: 5
   m_Name: Text_Heading
   m_TagString: Untagged
@@ -2223,6 +2225,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1923231072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923231065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d728fc8b98c46268dc61665a9a6164f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textComponent: {fileID: 1923231069}
+  _shortText: "\u0424\u0430\u043A\u0442\u044B \u043E \u0444   \u0443\u0442\u0431\u043E\u043B\u0435"
 --- !u!1001 &1958878375
 PrefabInstance:
   m_ObjectHideFlags: 0

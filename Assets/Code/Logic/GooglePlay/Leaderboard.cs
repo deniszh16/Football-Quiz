@@ -24,9 +24,6 @@ namespace Code.Logic.GooglePlay
         
         [Header("Кнопка обновления")]
         [SerializeField] private GameObject _updateButton;
-        
-        [Header("Анимация загрузки")]
-        [SerializeField] private GameObject _loading;
 
         private IGooglePlayService _googlePlayService;
         private IPersistentProgressService _progressService;
@@ -44,13 +41,13 @@ namespace Code.Logic.GooglePlay
         private void Start() =>
             PrepareLeaderboard();
 
-        private void PrepareLeaderboard()
+        public void PrepareLeaderboard()
         {
             if (Application.internetReachability != NetworkReachability.NotReachable)
             {
                 if (_googlePlayService.Authenticated)
                 {
-                    _loading.SetActive(true);
+                    _leaders.text = "Загрузка...";
                     
                     SubmitYourResult();
                     LoadScoresLeaderboard();
@@ -77,7 +74,9 @@ namespace Code.Logic.GooglePlay
                 (data) =>
                 {
                     _progressService.UserProgress.LeaderboardData.MyRating = data.PlayerScore.rank;
-                    _rating.text = "Моя позиция - " + data.PlayerScore.rank + " место";
+
+                    string rank = data.PlayerScore.rank > 99 ? ">100" : data.PlayerScore.rank.ToString();
+                    _rating.text = "Моя позиция - " + rank + " место";
                     LoadUsersLeaderboard(data.Scores); 
                 });
         }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6977507657355703336}
   - component: {fileID: 5699157300306220215}
   - component: {fileID: 5476102360057023286}
+  - component: {fileID: 7600693186875352597}
   m_Layer: 5
   m_Name: Frame
   m_TagString: Untagged
@@ -76,6 +77,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7600693186875352597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4940356443836503271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 6977507657355703336}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 0, y: 0}
+    Size: {x: 178, y: 170}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 0, y: 0}
+    Size: {x: 167, y: 162}
 --- !u!1 &5206685392984427136
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +109,7 @@ GameObject:
   - component: {fileID: 5023157115349640770}
   - component: {fileID: 705794587887090864}
   - component: {fileID: 414597546067544009}
+  - component: {fileID: 1148044902633296675}
   m_Layer: 5
   m_Name: Button_Photo
   m_TagString: Untagged
@@ -217,3 +238,22 @@ MonoBehaviour:
   _frame: {fileID: 5476102360057023286}
   _victoryFrame: {fileID: 21300000, guid: 988be60791e8eb94fb4820001f8644ee, type: 3}
   _losingFrame: {fileID: 21300000, guid: e2887a77a8fc95642b3e4b26057ef2a4, type: 3}
+--- !u!114 &1148044902633296675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5206685392984427136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 8678487015636534023}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 0, y: 0}
+    Size: {x: 0, y: 0}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 0, y: 0}
+    Size: {x: 0, y: 0}

@@ -88,7 +88,7 @@ namespace Code.Logic.Countries
                 _progressService.UserProgress.AddScore(100);
                 _saveLoadService.SaveProgress();
                 
-                _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
+                _sceneLoaderService.Load(Scenes.Results.ToString());
             }
         }
 

@@ -301,6 +301,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &293409999
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,6 +383,7 @@ GameObject:
   - component: {fileID: 349405667}
   - component: {fileID: 349405666}
   - component: {fileID: 349405669}
+  - component: {fileID: 349405670}
   m_Layer: 5
   m_Name: Button_Coins5K
   m_TagString: Untagged
@@ -407,7 +409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 160, y: -435}
+  m_AnchoredPosition: {x: 155, y: -435}
   m_SizeDelta: {x: 280, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349405666
@@ -519,6 +521,25 @@ MonoBehaviour:
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 0}
+--- !u!114 &349405670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 349405664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 349405665}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 155, y: -435}
+    Size: {x: 280, y: 125}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 145, y: -435}
+    Size: {x: 280, y: 125}
 --- !u!1 &427980836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1509,6 +1530,7 @@ GameObject:
   - component: {fileID: 1507362864}
   - component: {fileID: 1507362863}
   - component: {fileID: 1507362866}
+  - component: {fileID: 1507362867}
   m_Layer: 5
   m_Name: Button_RestorePurchase
   m_TagString: Untagged
@@ -1534,7 +1556,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 120, y: -45}
+  m_AnchoredPosition: {x: 115, y: -45}
   m_SizeDelta: {x: 340, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1507362863
@@ -1646,6 +1668,25 @@ MonoBehaviour:
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 0}
+--- !u!114 &1507362867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507362861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 1507362862}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 115, y: -45}
+    Size: {x: 340, y: 125}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 105, y: -45}
+    Size: {x: 340, y: 125}
 --- !u!1 &1696121543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,6 +2180,7 @@ GameObject:
   - component: {fileID: 1914778887}
   - component: {fileID: 1914778886}
   - component: {fileID: 1914778889}
+  - component: {fileID: 1914778890}
   m_Layer: 5
   m_Name: Button_Coins1K
   m_TagString: Untagged
@@ -2164,7 +2206,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160, y: -435}
+  m_AnchoredPosition: {x: -155, y: -435}
   m_SizeDelta: {x: 280, y: 125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914778886
@@ -2261,7 +2303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productId: coins_1000
+  productId: coins_5000
   buttonType: 0
   consumePurchase: 1
   onTransactionsRestored:
@@ -2276,6 +2318,25 @@ MonoBehaviour:
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 0}
+--- !u!114 &1914778890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914778884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 1914778885}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: -155, y: -435}
+    Size: {x: 280, y: 125}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: -145, y: -435}
+    Size: {x: 280, y: 125}
 --- !u!1 &1933125571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2289,6 +2350,7 @@ GameObject:
   - component: {fileID: 1933125574}
   - component: {fileID: 1933125573}
   - component: {fileID: 1933125576}
+  - component: {fileID: 1933125577}
   m_Layer: 5
   m_Name: Button_RemoveAds
   m_TagString: Untagged
@@ -2426,6 +2488,25 @@ MonoBehaviour:
   titleText: {fileID: 0}
   descriptionText: {fileID: 0}
   priceText: {fileID: 0}
+--- !u!114 &1933125577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933125571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 1933125572}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: -180, y: -45}
+    Size: {x: 235, y: 125}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: -170, y: -45}
+    Size: {x: 205, y: 125}
 --- !u!1 &1971959268
 GameObject:
   m_ObjectHideFlags: 0

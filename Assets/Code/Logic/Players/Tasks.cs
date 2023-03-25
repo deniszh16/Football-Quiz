@@ -73,7 +73,7 @@ namespace Code.Logic.Players
                 ProgressService.UserProgress.AddCoins(350);
                 ProgressService.UserProgress.AddScore(100);
                 _saveLoadService.SaveProgress();
-                _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
+                _sceneLoaderService.Load(Scenes.Results.ToString());
             }
         }
 

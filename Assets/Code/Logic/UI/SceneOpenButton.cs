@@ -21,7 +21,7 @@ namespace Code.Logic.UI
             _button.onClick.AddListener(GoToScene);
 
         private void GoToScene() =>
-            _sceneLoaderService.Load(sceneName: _scene.ToString(), delay: 0f);
+            _sceneLoaderService.Load(sceneName: _scene.ToString());
 
         public void ReplaceScene(Scenes scene) =>
             _scene = scene;

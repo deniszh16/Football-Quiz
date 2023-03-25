@@ -77,13 +77,13 @@ namespace Code.Logic.Facts
                 ProgressService.UserProgress.FactsData.Completed += 1;
                 ProgressService.UserProgress.FactsData.Victory += 1;
                 _saveLoadService.SaveProgress();
-                _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
+                _sceneLoaderService.Load(Scenes.Results.ToString());
             }
             else
             {
                 ProgressService.UserProgress.FactsData.Completed += 1;
                 _saveLoadService.SaveProgress();
-                _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
+                _sceneLoaderService.Load(Scenes.Results.ToString());
             }
         }
 

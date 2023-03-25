@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Code.Logic.UI;
 
 namespace Code.Logic.Countries
 {
@@ -9,6 +10,9 @@ namespace Code.Logic.Countries
         private string[] _selectedLetters;
         private int[] _numbersOfSelectedLetters;
         private int _amountOpenedLetters;
+
+        private const string FullPlaceholder = "   ";
+        private const string ShortPlaceholder = "  ";
 
         public void CustomizeAnswer()
         {
@@ -37,9 +41,12 @@ namespace Code.Logic.Countries
                 _textAnswer.text += _selectedLetters[i] ?? "*";
 
                 if (i < _selectedLetters.Length - 1)
-                    _textAnswer.text += "   ";
+                    _textAnswer.text += CheckAspectRatio();
             }
         }
+
+        private string CheckAspectRatio() =>
+            AspectRatio.Ratio <= 0.46 ? ShortPlaceholder : FullPlaceholder;
 
         public bool GetPressedButton(string letter, int buttonNumber)
         {
@@ -88,7 +95,7 @@ namespace Code.Logic.Countries
 
                 _updateTask.ToggleButton(state: true);
                 
-                if (_tasks.CurrentQuestion % 6 == 0)
+                if (_tasks.CurrentQuestion > 6 && _tasks.CurrentQuestion % 7 == 0)
                     _adService.ShowInterstitialAd();
             }
             else

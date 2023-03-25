@@ -42,10 +42,10 @@ namespace Code.Logic.Players
             ActivePartition.SectionsGame = SectionsGame.Players;
             ActivePartition.CategoryNumber = _currentСategory.Number;
 
-            if (_progressService.UserProgress.PlayersData.Sets[_currentСategory.Number - 1] < _numberOfTasks)
-                _sceneLoaderService.Load(Scenes.PlayersQuestions.ToString(), 0f);
-            else
-                _sceneLoaderService.Load(Scenes.Results.ToString(), 0f);
+            _sceneLoaderService.Load(
+                _progressService.UserProgress.PlayersData.Sets[_currentСategory.Number - 1] < _numberOfTasks
+                    ? Scenes.PlayersQuestions.ToString()
+                    : Scenes.Results.ToString());
         }
 
         private void OnDestroy() =>

@@ -9,6 +9,9 @@
             url "https://artifactory.appodeal.com/appodeal" // Assets/Appodeal/Editor/NetworkConfigs/AdColonyDependencies.xml:18, Assets/Appodeal/Editor/NetworkConfigs/AdjustDependencies.xml:23, Assets/Appodeal/Editor/NetworkConfigs/AppLovinDependencies.xml:16, Assets/Appodeal/Editor/NetworkConfigs/AppodealDependencies.xml:23, Assets/Appodeal/Editor/NetworkConfigs/AppsFlyerDependencies.xml:18, Assets/Appodeal/Editor/NetworkConfigs/BidMachineDependencies.xml:24, Assets/Appodeal/Editor/NetworkConfigs/FirebaseDependencies.xml:17, Assets/Appodeal/Editor/NetworkConfigs/GoogleAdMobDependencies.xml:17, Assets/Appodeal/Editor/NetworkConfigs/IronSourceDependencies.xml:17, Assets/Appodeal/Editor/NetworkConfigs/MetaAudienceNetworkDependencies.xml:18, Assets/Appodeal/Editor/NetworkConfigs/MetaDependencies.xml:16, Assets/Appodeal/Editor/NetworkConfigs/MyTargetDependencies.xml:19, Assets/Appodeal/Editor/NetworkConfigs/SentryAnalyticsDependencies.xml:14, Assets/Appodeal/Editor/NetworkConfigs/StackAnalyticsDependencies.xml:16, Assets/Appodeal/Editor/NetworkConfigs/UnityDependencies.xml:15, Assets/Appodeal/Editor/NetworkConfigs/VungleDependencies.xml:20, Assets/Appodeal/Editor/NetworkConfigs/YandexDependencies.xml:16
         }
         maven {
+            url (unityProjectPath + "/Assets/GeneratedLocalRepo/Firebase/m2repository") // Assets/Firebase/Editor/AnalyticsDependencies.xml:18, Assets/Firebase/Editor/AppDependencies.xml:22
+        }
+        maven {
             url (unityProjectPath + "/Assets/GeneratedLocalRepo/GooglePlayGames/com.google.play.games/Editor/m2repository") // Assets/GooglePlayGames/com.google.play.games/Editor/GooglePlayGamesPluginDependencies.xml:11
         }
         mavenLocal()
@@ -64,9 +67,14 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer:2.17.1' // Assets/Appodeal/Editor/NetworkConfigs/MyTargetDependencies.xml:12
     implementation 'com.google.android.gms:play-services-ads:21.4.0' // Assets/Appodeal/Editor/NetworkConfigs/GoogleAdMobDependencies.xml:11
     implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1' // Assets/Appodeal/Editor/NetworkConfigs/VungleDependencies.xml:13
-    implementation 'com.google.android.gms:play-services-base:18.0.1' // Assets/Appodeal/Editor/NetworkConfigs/MetaAudienceNetworkDependencies.xml:12
+    // implementation 'com.google.android.gms:play-services-base:18.0.1' // Assets/Appodeal/Editor/NetworkConfigs/MetaAudienceNetworkDependencies.xml:12
+    implementation 'com.google.android.gms:play-services-base:18.2.0' // Assets/Firebase/Editor/AppDependencies.xml:17
     implementation 'com.google.android.gms:play-services-basement:18.1.0' // Assets/Appodeal/Editor/NetworkConfigs/VungleDependencies.xml:12
+    implementation 'com.google.firebase:firebase-analytics:21.2.0' // Assets/Firebase/Editor/AppDependencies.xml:15
     implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0' // Assets/Appodeal/Editor/NetworkConfigs/FirebaseDependencies.xml:10
+    implementation 'com.google.firebase:firebase-analytics-unity:10.6.0' // Assets/Firebase/Editor/AnalyticsDependencies.xml:18
+    implementation 'com.google.firebase:firebase-app-unity:10.6.0' // Assets/Firebase/Editor/AppDependencies.xml:22
+    implementation 'com.google.firebase:firebase-common:20.3.1' // Assets/Firebase/Editor/AppDependencies.xml:13
     implementation 'com.google.firebase:firebase-config-ktx:21.2.0' // Assets/Appodeal/Editor/NetworkConfigs/FirebaseDependencies.xml:11
     implementation 'com.google.games:gpgs-plugin-support:0.11.01' // Assets/GooglePlayGames/com.google.play.games/Editor/GooglePlayGamesPluginDependencies.xml:11
     implementation 'com.ironsource.sdk:mediationsdk:7.2.6' // Assets/Appodeal/Editor/NetworkConfigs/IronSourceDependencies.xml:9

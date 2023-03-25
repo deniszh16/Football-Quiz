@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using AppodealAds.Unity.Api;
 using AppodealAds.Unity.Common;
 using Code.Services.PersistentProgress;
-using Code.Services.SaveLoad;
 using UnityEngine;
 
 namespace Code.Services.Ads
@@ -14,14 +13,11 @@ namespace Code.Services.Ads
 
         public event Action RewardedVideoFinished;
 
-        private IPersistentProgressService _progressService;
-        private ISaveLoadService _saveLoadService;
+        private readonly IPersistentProgressService _progressService;
 
-        public void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService)
+        public AdService(IPersistentProgressService progressService)
         {
             _progressService = progressService;
-            _saveLoadService = saveLoadService;
-            
             Initialization();
         }
 

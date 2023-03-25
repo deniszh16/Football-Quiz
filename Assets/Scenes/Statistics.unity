@@ -286,6 +286,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &166461463
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,6 +361,7 @@ GameObject:
   - component: {fileID: 170666728}
   - component: {fileID: 170666731}
   - component: {fileID: 170666730}
+  - component: {fileID: 170666732}
   m_Layer: 5
   m_Name: Cup_5
   m_TagString: Untagged
@@ -425,6 +427,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170666727}
   m_CullTransparentMesh: 0
+--- !u!114 &170666732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170666727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 170666728}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 90, y: -461}
+    Size: {x: 55, y: 114}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 85, y: -461}
+    Size: {x: 52, y: 110}
 --- !u!1 &293409999
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +525,7 @@ GameObject:
   - component: {fileID: 405044334}
   - component: {fileID: 405044337}
   - component: {fileID: 405044336}
+  - component: {fileID: 405044338}
   m_Layer: 5
   m_Name: Cup_3
   m_TagString: Untagged
@@ -569,6 +591,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405044333}
   m_CullTransparentMesh: 0
+--- !u!114 &405044338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405044333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 405044334}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: -90, y: -461}
+    Size: {x: 65, y: 114}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: -85, y: -461}
+    Size: {x: 62, y: 110}
 --- !u!1 &418058888
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +697,7 @@ GameObject:
   - component: {fileID: 488935924}
   - component: {fileID: 488935927}
   - component: {fileID: 488935926}
+  - component: {fileID: 488935928}
   m_Layer: 5
   m_Name: Cup_2
   m_TagString: Untagged
@@ -721,6 +763,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 488935923}
   m_CullTransparentMesh: 0
+--- !u!114 &488935928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488935923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 488935924}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: -180, y: -461}
+    Size: {x: 49, y: 114}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: -170, y: -461}
+    Size: {x: 46, y: 110}
 --- !u!1 &521627502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1286,7 @@ GameObject:
   - component: {fileID: 686810088}
   - component: {fileID: 686810091}
   - component: {fileID: 686810090}
+  - component: {fileID: 686810092}
   m_Layer: 5
   m_Name: Cup_7
   m_TagString: Untagged
@@ -1290,6 +1352,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 686810087}
   m_CullTransparentMesh: 0
+--- !u!114 &686810092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686810087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 686810088}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 270, y: -461}
+    Size: {x: 48, y: 114}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 255, y: -461}
+    Size: {x: 45, y: 110}
 --- !u!1 &769191353
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1690,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &970886928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,6 +1846,7 @@ GameObject:
   - component: {fileID: 1334009506}
   - component: {fileID: 1334009509}
   - component: {fileID: 1334009508}
+  - component: {fileID: 1334009510}
   m_Layer: 5
   m_Name: Cup_4
   m_TagString: Untagged
@@ -1829,6 +1912,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334009505}
   m_CullTransparentMesh: 0
+--- !u!114 &1334009510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334009505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 1334009506}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 0, y: -461}
+    Size: {x: 57, y: 114}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 0, y: -461}
+    Size: {x: 55, y: 110}
 --- !u!1 &1379969620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +1986,7 @@ GameObject:
   - component: {fileID: 1385882610}
   - component: {fileID: 1385882613}
   - component: {fileID: 1385882612}
+  - component: {fileID: 1385882614}
   m_Layer: 5
   m_Name: Cup_6
   m_TagString: Untagged
@@ -1949,6 +2052,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385882609}
   m_CullTransparentMesh: 0
+--- !u!114 &1385882614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385882609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 1385882610}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: 180, y: -461}
+    Size: {x: 75, y: 114}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: 170, y: -461}
+    Size: {x: 72, y: 110}
 --- !u!224 &1755519580 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3289438153039338404, guid: dd5f4f2ea921a8f45aa549e1d5a142d8,
@@ -2312,8 +2434,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 418058890}
   m_HandleRect: {fileID: 418058889}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 1
+  m_Value: 0
+  m_Size: 0.5
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2367,6 +2489,7 @@ GameObject:
   - component: {fileID: 1983179683}
   - component: {fileID: 1983179686}
   - component: {fileID: 1983179685}
+  - component: {fileID: 1983179687}
   m_Layer: 5
   m_Name: Cup_1
   m_TagString: Untagged
@@ -2432,6 +2555,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983179682}
   m_CullTransparentMesh: 0
+--- !u!114 &1983179687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983179682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c17286d0e3344ae81ba71a395f470f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rectTransform: {fileID: 1983179683}
+  _positionAndSizeOnNarrowScreen:
+    Position: {x: -270, y: -461}
+    Size: {x: 55, y: 114}
+  _positionAndSizeOnUltraNarrowScreen:
+    Position: {x: -255, y: -461}
+    Size: {x: 52, y: 110}
 --- !u!1 &2049240257
 GameObject:
   m_ObjectHideFlags: 0

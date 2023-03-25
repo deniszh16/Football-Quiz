@@ -6,17 +6,23 @@ namespace Code.Logic.UI
     {
         [Header("Ссылки на компоненты")]
         [SerializeField] private RectTransform _rectTransform;
-        
+
         [Header("Позиция и размер")]
-        [SerializeField] private Vector2 _position;
-        [SerializeField] private Vector2 _size;
+        [SerializeField] private PositionAndSize _positionAndSizeOnNarrowScreen;
+        [SerializeField] private PositionAndSize _positionAndSizeOnUltraNarrowScreen;
 
         private void Start()
         {
-            if (AspectRatio.Ratio <= 0.5f)
+            if (AspectRatio.Ratio is > 0.46f and <= 0.5f)
             {
-                _rectTransform.anchoredPosition = _position;
-                _rectTransform.sizeDelta = _size;
+                _rectTransform.anchoredPosition = _positionAndSizeOnNarrowScreen.Position;
+                _rectTransform.sizeDelta = _positionAndSizeOnNarrowScreen.Size;
+            }
+
+            if (AspectRatio.Ratio <= 0.46f)
+            {
+                _rectTransform.anchoredPosition = _positionAndSizeOnUltraNarrowScreen.Position;
+                _rectTransform.sizeDelta = _positionAndSizeOnUltraNarrowScreen.Size;
             }
         }
     }
