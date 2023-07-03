@@ -461,23 +461,6 @@ namespace AppodealAds.Unity.iOS
                 Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
         }
 
-        public void initialize(string appKey, int adTypes)
-        {
-            initialize(appKey, adTypes, true);
-        }
-
-        public void initialize(string appKey, int adTypes, bool hasConsent)
-        {
-            AppodealObjCBridge.AppodealInitializeOld(appKey, nativeAdTypesForType(adTypes), hasConsent,
-                Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
-        }
-
-        public void initialize(string appKey, int adTypes, Consent consent)
-        {
-            AppodealObjCBridge.AppodealInitializeWithConsent(appKey, nativeAdTypesForType(adTypes),
-                Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
-        }
-
         public bool isInitialized(int adType)
         {
             return AppodealObjCBridge.AppodealIsInitialized(nativeAdTypesForType(adType));
@@ -598,11 +581,6 @@ namespace AppodealAds.Unity.iOS
         public void setChildDirectedTreatment(bool value)
         {
             AppodealObjCBridge.AppodealSetChildDirectedTreatment(value);
-        }
-
-        public void updateConsent(bool value)
-        {
-            AppodealObjCBridge.AppodealUpdateConsent(value);
         }
 
         public void updateConsent(Consent consent)
@@ -726,6 +704,12 @@ namespace AppodealAds.Unity.iOS
             return AppodealObjCBridge.AppodealGetPredictedEcpm(nativeAdTypesForType(adType));
         }
 
+		public double getPredictedEcpmForPlacement(int adType, string placement)
+		{
+			if (String.IsNullOrEmpty(placement)) placement = "default";
+			return AppodealObjCBridge.AppodealGetPredictedEcpmForPlacement(nativeAdTypesForType(adType), placement);
+		}
+
         public void setCustomFilter(string name, bool value)
         {
             AppodealObjCBridge.AppodealSetCustomFilterBool(name, value);
@@ -794,35 +778,6 @@ namespace AppodealAds.Unity.iOS
         public string getUserId()
         {
             return AppodealObjCBridge.AppodealGetUserId();
-        }
-
-        public void setUserAge(int age)
-        {
-            AppodealObjCBridge.AppodealSetUserAge(age);
-        }
-
-        public void setUserGender(UserSettings.Gender gender)
-        {
-            switch (gender)
-            {
-                case UserSettings.Gender.OTHER:
-                {
-                    AppodealObjCBridge.AppodealSetUserGender(0);
-                    break;
-                }
-                case UserSettings.Gender.MALE:
-                {
-                    AppodealObjCBridge.AppodealSetUserGender(1);
-                    break;
-                }
-                case UserSettings.Gender.FEMALE:
-                {
-                    AppodealObjCBridge.AppodealSetUserGender(2);
-                    break;
-                }
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(gender), gender, null);
-            }
         }
 
         public void trackInAppPurchase(double amount, string currency)

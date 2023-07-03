@@ -58,6 +58,7 @@ namespace AppodealAds.Unity.Common
         string getRewardCurrency();
         double getRewardAmount();
         double getPredictedEcpm(int adTypes);
+        double getPredictedEcpmForPlacement(int adType, string placement);
         void setTriggerOnLoadedOnPrecache(int adTypes, bool onLoadedTriggerBoth);
         void setUserId(string id);
         string getUserId();
@@ -77,13 +78,7 @@ namespace AppodealAds.Unity.Common
 
         #region Deprecated signatures
 
-        void initialize(string appKey, int type);
-        void initialize(string appKey, int type, bool hasConsent);
-        void initialize(string appKey, int adTypes, Consent consent);
-        void updateConsent(bool value);
         void setSharedAdsInstanceAcrossActivities(bool value);
-        void setUserAge(int age);
-        void setUserGender(UserSettings.Gender gender);
 
         #endregion
 

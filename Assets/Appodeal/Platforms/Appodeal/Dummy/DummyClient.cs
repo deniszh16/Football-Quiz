@@ -16,21 +16,6 @@ namespace AppodealAds.Unity.Dummy
             Debug.Log("Call to Appodeal.initialize on not supported platform. To test advertising, install your application on the Android/iOS device.");
         }
 
-        public void initialize(string appKey, int adTypes)
-        {
-            Debug.Log("Call to Appodeal.initialize on not supported platform. To test advertising, install your application on the Android/iOS device.");
-        }
-
-        public void initialize(string appKey, int adTypes, bool hasConsent)
-        {
-            Debug.Log("Call to Appodeal.initialize on not supported platform. To test advertising, install your application on the Android/iOS device.");
-        }
-
-        public void initialize(string appKey, int adTypes, Consent consent)
-        {
-            Debug.Log("Call to Appodeal.initialize on not supported platform. To test advertising, install your application on the Android/iOS device.");
-        }
-
         public bool isInitialized(int adType)
         {
             Debug.Log("Call Appodeal.isInitialized on not supported platform. To test advertising, install your application on the Android/iOS device.");
@@ -137,11 +122,6 @@ namespace AppodealAds.Unity.Dummy
         public void setChildDirectedTreatment(bool value)
         {
             Debug.Log("Call to Appodeal.setChildDirectedTreatment on not supported platform. To test advertising, install your application on the Android/iOS device.");
-        }
-
-        public void updateConsent(bool value)
-        {
-            Debug.Log("Call to Appodeal.updateConsent on not supported platform. To test advertising, install your application on the Android/iOS device.");
         }
 
         public void updateConsent(Consent consent)
@@ -277,6 +257,12 @@ namespace AppodealAds.Unity.Dummy
             Debug.Log("Call to Appodeal.getPredictedEcpm on not supported platform. To test advertising, install your application on the Android/iOS device.");
             return 0;
         }
+        
+        public double getPredictedEcpmForPlacement(int adType, string placement)
+        {
+            Debug.Log("Call to Appodeal.getPredictedEcpmForPlacement on not supported platform. To test advertising, install your application on the Android/iOS device.");
+            return 0;
+        }
 
         public void setExtraData(string key, bool value)
         {
@@ -358,16 +344,6 @@ namespace AppodealAds.Unity.Dummy
         {
             Debug.Log("Call to Appodeal.getUserId on not supported platform. To test advertising, install your application on the Android/iOS device.");
             return string.Empty;
-        }
-
-        public void setUserAge(int age)
-        {
-            Debug.Log("Call to Appodeal.setUserAge on not supported platform. To test advertising, install your application on the Android/iOS device.");
-        }
-
-        public void setUserGender(UserSettings.Gender gender)
-        {
-            Debug.Log("Call to Appodeal.setGender on not supported platform. To test advertising, install your application on the Android/iOS device.");
         }
 
         public void logEvent(string eventName, Dictionary<string, object> eventParams)

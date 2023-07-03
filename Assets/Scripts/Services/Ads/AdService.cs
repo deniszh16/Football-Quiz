@@ -18,6 +18,7 @@ namespace Services.Ads
         public AdService(IPersistentProgressService progressService)
         {
             _progressService = progressService;
+            Appodeal.setRewardedVideoCallbacks(this);
             Initialization();
         }
 

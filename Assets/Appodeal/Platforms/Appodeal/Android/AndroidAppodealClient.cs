@@ -87,11 +87,6 @@ namespace AppodealAds.Unity.Android
             return appodealClass ?? (appodealClass = new AndroidJavaClass("com.appodeal.ads.Appodeal"));
         }
 
-        public AndroidJavaClass getAppodealUnityClass()
-        {
-            return appodealUnityClass ?? (appodealUnityClass = new AndroidJavaClass("com.appodeal.unity.AppodealUnity"));
-        }
-
         private AndroidJavaObject getAppodealBannerInstance()
         {
             return appodealBannerInstance ?? (appodealBannerInstance = new AndroidJavaClass("com.appodeal.ads.AppodealUnityBannerView").CallStatic<AndroidJavaObject>("getInstance"));
@@ -106,24 +101,6 @@ namespace AppodealAds.Unity.Android
         {
             getAppodealClass().CallStatic("setFramework", "unity", Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
             getAppodealClass().CallStatic("initialize", getActivity(), appKey, nativeAdTypesForType(adTypes), new AppodealInitializationCallback(listener));
-        }
-
-        public void initialize(string appKey, int adTypes)
-        {
-            initialize(appKey, adTypes, true);
-        }
-
-        public void initialize(string appKey, int adTypes, bool hasConsent)
-        {
-            getAppodealClass().CallStatic("setFramework", "unity", Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
-            getAppodealClass().CallStatic("initialize", getActivity(), appKey, nativeAdTypesForType(adTypes), hasConsent);
-        }
-
-        public void initialize(string appKey, int adTypes, Consent consent)
-        {
-            getAppodealClass().CallStatic("setFramework", "unity", Appodeal.getPluginVersion(), Appodeal.getUnityVersion());
-            var androidConsent = (AndroidConsent) consent.getConsent();
-            getAppodealClass().CallStatic("initialize", getActivity(), appKey, nativeAdTypesForType(adTypes), androidConsent.getConsent());
         }
 
         public bool isInitialized(int adType)
@@ -244,11 +221,6 @@ namespace AppodealAds.Unity.Android
         public void setChildDirectedTreatment(bool value)
         {
             getAppodealClass().CallStatic("setChildDirectedTreatment", Helper.getJavaObject(value));
-        }
-
-        public void updateConsent(bool value)
-        {
-            getAppodealClass().CallStatic("updateConsent", Helper.getJavaObject(value));
         }
 
         public void updateConsent(Consent consent)
@@ -415,7 +387,7 @@ namespace AppodealAds.Unity.Android
 
         public List<string> getNetworks(int adTypes)
         {
-            var networks = getAppodealClass().CallStatic<AndroidJavaObject>("getNetworks", getActivity(), nativeAdTypesForType(adTypes));
+            var networks = getAppodealClass().CallStatic<AndroidJavaObject>("getNetworks", nativeAdTypesForType(adTypes));
             int countOfNetworks = networks.Call<int>("size");
             var networksList = new List<string>();
             for(int i = 0; i < countOfNetworks; i++)
@@ -454,6 +426,13 @@ namespace AppodealAds.Unity.Android
             return getAppodealClass().CallStatic<double>("getPredictedEcpm", adType);
         }
 
+        public double getPredictedEcpmForPlacement(int adType, string placement)
+        {
+            return String.IsNullOrEmpty(placement)
+                ? getAppodealClass().CallStatic<double>("getPredictedEcpmByPlacement", nativeAdTypesForType(adType))
+                : getAppodealClass().CallStatic<double>("getPredictedEcpmByPlacement", nativeAdTypesForType(adType), placement);
+        }
+
         public void destroy(int adTypes)
         {
             getAppodealClass().CallStatic("destroy", nativeAdTypesForType(adTypes));
@@ -467,41 +446,6 @@ namespace AppodealAds.Unity.Android
         public string getUserId()
         {
             return getAppodealClass().CallStatic<string>("getUserId");
-        }
-
-        public void setUserAge(int age)
-        {
-            getAppodealClass().CallStatic("setUserAge", age);
-        }
-
-        public void setUserGender(UserSettings.Gender gender)
-        {
-            switch (gender)
-            {
-                case UserSettings.Gender.OTHER:
-                {
-                    getAppodealClass().CallStatic("setUserGender",
-                        new AndroidJavaClass("com.appodeal.ads.UserSettings$Gender").GetStatic<AndroidJavaObject>(
-                            "OTHER"));
-                    break;
-                }
-                case UserSettings.Gender.MALE:
-                {
-                    getAppodealClass().CallStatic("setUserGender",
-                        new AndroidJavaClass("com.appodeal.ads.UserSettings$Gender").GetStatic<AndroidJavaObject>(
-                            "MALE"));
-                    break;
-                }
-                case UserSettings.Gender.FEMALE:
-                {
-                    getAppodealClass().CallStatic("setUserGender",
-                        new AndroidJavaClass("com.appodeal.ads.UserSettings$Gender").GetStatic<AndroidJavaObject>(
-                            "FEMALE"));
-                    break;
-                }
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(gender), gender, null);
-            }
         }
 
         public void setInterstitialCallbacks(IInterstitialAdListener listener)

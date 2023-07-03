@@ -75,18 +75,6 @@ void AppodealInitialize(const char *apiKey, int types, const char *pluginVer, co
     [Appodeal initializeWithApiKey:[NSString stringWithUTF8String:apiKey] types:types];
 }
 
-void AppodealInitializeOld(const char *apiKey, int types, BOOL consent, const char *pluginVer, const char *engineVer) {
-    [Appodeal setFramework:APDFrameworkUnity version: [NSString stringWithUTF8String:engineVer]];
-    [Appodeal setPluginVersion:[NSString stringWithUTF8String:pluginVer]];
-    [Appodeal initializeWithApiKey:[NSString stringWithUTF8String:apiKey] types:types hasConsent:consent];
-}
-
-void AppodealInitializeWithConsent(const char *apiKey, int types, const char *pluginVer, const char *engineVer) {
-    [Appodeal setFramework:APDFrameworkUnity version: [NSString stringWithUTF8String:engineVer]];
-    [Appodeal setPluginVersion:[NSString stringWithUTF8String:pluginVer]];
-    [Appodeal initializeWithApiKey:[NSString stringWithUTF8String:apiKey] types:types consentReport:STKConsentManager.sharedManager.consent];
-}
-
 BOOL AppodealIsInitialized(int types) {
     return [Appodeal isInitializedForAdType:types];
 }
@@ -197,10 +185,6 @@ void AppodealSetChildDirectedTreatment(BOOL value) {
     [Appodeal setChildDirectedTreatment:value];
 }
 
-void AppodealUpdateConsent(BOOL value) {
-    [Appodeal updateConsent:value];
-}
-
 void AppodealUpdateConsentReport() {
     [Appodeal updateConsentReport:STKConsentManager.sharedManager.consent];
 }
@@ -292,6 +276,10 @@ double AppodealGetPredictedEcpm(int types) {
     return [Appodeal predictedEcpmForAdType:types];
 }
 
+double AppodealGetPredictedEcpmForPlacement(int adType, const char* placement) {
+    return [Appodeal predictedEcpmForAdType:adType placement:[NSString stringWithUTF8String:placement]];
+}
+
 BOOL AppodealCanShow(int style) {
     return [Appodeal canShow:style forPlacement:@"default"];
 }
@@ -352,10 +340,6 @@ void AppodealTrackInAppPurchase(int amount, const char *currency) {
     [[APDSdk sharedSdk] trackInAppPurchase:[NSNumber numberWithInt:amount] currency:[NSString stringWithUTF8String:currency]];
 }
 
-void AppodealSetUserAge(int age) {
-    [Appodeal setUserAge:age];
-}
-
 void AppodealSetUserId(const char *userid) {
     [Appodeal setUserId:[NSString stringWithUTF8String:userid]];
 }
@@ -364,22 +348,6 @@ char *AppodealGetUserId() {
     const char *cString = [[Appodeal userId] UTF8String];
     char *cStringCopy = calloc([[Appodeal userId] length]+1, 1);
     return strncpy(cStringCopy, cString, [[Appodeal userId] length]);
-}
-
-void AppodealSetUserGender(int gender) {
-    switch (gender) {
-        case 0:
-            [Appodeal setUserGender:AppodealUserGenderOther];
-            break;
-        case 1:
-            [Appodeal setUserGender:AppodealUserGenderMale];
-            break;
-        case 2:
-            [Appodeal setUserGender:AppodealUserGenderFemale];
-            break;
-        default:
-            break;
-    }
 }
 
 void AppodealLogEvent(const char *eventName, const char *eventParams) {

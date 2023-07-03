@@ -1,10 +1,10 @@
+using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Reflection;
-using System;
+using UnityEngine;
 using AppodealAds.Unity.Common;
 using ConsentManager;
-using UnityEngine;
 
 namespace AppodealAds.Unity.Api
 {
@@ -13,32 +13,22 @@ namespace AppodealAds.Unity.Api
     [SuppressMessage("ReSharper", "UnusedType.Global")]
     public class AppodealNetworks
     {
-        public const string VUNGLE = "vungle";
-        public const string SMAATO = "smaato";
-        public const string INMOBI = "inmobi";
-        public const string FYBER = "fyber";
-        public const string STARTAPP = "startapp";
-        public const string TAPJOY = "tapjoy";
-        public const string APPLOVIN = "applovin";
-        public const string ADCOLONY = "adcolony";
-        public const string MY_TARGET = "my_target";
-        public const string BIDMACHINE = "bidmachine";
-        public const string FLURRY = "flurry";
-        public const string AMAZON_ADS = "amazon_ads";
-        public const string ADMOB = "admob";
-        public const string UNITY_ADS = "unity_ads";
-        public const string FACEBOOK = "facebook";
-        public const string YANDEX = "yandex";
-        public const string APPODEAL = "appodeal";
-        public const string IRONSOURCE = "ironsource";
         public const string A4G = "a4g";
-        public const string MOPUB = "mopub";
-        public const string CHARTBOOST = "chartboost";
+        public const string ADCOLONY = "adcolony";
+        public const string ADMOB = "admob";
+        public const string APPLOVIN = "applovin";
+        public const string APPODEAL = "appodeal";
+        public const string BIDMACHINE = "bidmachine";
+        public const string META = "facebook";
+        public const string IRONSOURCE = "ironsource";
         public const string MRAID = "mraid";
-        public const string MINTEGRAL = "mintegral";
+        public const string MY_TARGET = "my_target";
         public const string NAST = "nast";
-        public const string OGURY = "ogury";
+        public const string NOTSY = "notsy";
+        public const string UNITY_ADS = "unity_ads";
         public const string VAST = "vast";
+        public const string VUNGLE = "vungle";
+        public const string YANDEX = "yandex";
     }
 
     [SuppressMessage("ReSharper", "InconsistentNaming")]
@@ -70,8 +60,8 @@ namespace AppodealAds.Unity.Api
         /// <summary>
         /// The version for the Appodeal Unity SDK, which includes specific versions of the Appodeal Android and iOS SDKs.
         /// </summary>
-        public const string APPODEAL_PLUGIN_VERSION = "3.0.2";
-        
+        public const string APPODEAL_PLUGIN_VERSION = "3.1.3-beta.2";
+
         public enum LogLevel
         {
             None,
@@ -738,7 +728,17 @@ namespace AppodealAds.Unity.Api
         {
             return getInstance().getPredictedEcpm(adType);
         }
-        
+
+        /// <summary>
+        /// Gets predicted eCPM for certain ad type and placement.
+        /// </summary>
+        /// <param name="adType">type of advertisement.</param>
+        /// <param name="placement">name of Appodeal placement from dashboard.</param>
+        public static double getPredictedEcpmForPlacement(int adType, string placement)
+        {
+            return getInstance().getPredictedEcpmForPlacement(adType, placement);
+        }
+
         /// <summary>
         /// Get Unity version
         /// See <see cref="Appodeal.getUnityVersion"/> for resulting triggered event.
@@ -808,51 +808,12 @@ namespace AppodealAds.Unity.Api
 
         #region Deprecated methods
 
-        [Obsolete("It will be removed in the next release. Instead use setCustomFilter(string, int) method with UserSettings.USER_AGE as key.", false)]
-        public static void setUserAge(int age)
-        {
-            getInstance().setUserAge(age);
-        }
-
-        [Obsolete("It will be removed in the next release. Instead use setCustomFilter(string, int) method with UserSettings.USER_GENDER as key.", false)]
-        public static void setUserGender(UserSettings.Gender gender)
-        {
-            getInstance().setUserGender(gender);
-        }
-
-        [Obsolete("It will be removed in the next release.", false)]
+        [Obsolete("Will be changed in a future release.", false)]
         public static void setSharedAdsInstanceAcrossActivities(bool sharedAdsInstanceAcrossActivities)
         {
             getInstance().setSharedAdsInstanceAcrossActivities(sharedAdsInstanceAcrossActivities);
         }
 
-        [Obsolete("It will be removed in the next release. Use UpdateGdprConsent and UpdateCcpaConsent methods instead.", false)]
-        public static void updateConsent(bool hasConsent)
-        {
-            getInstance().updateConsent(hasConsent);
-        }
-
-        [Obsolete("It will be removed in the next release. Check documentation for the new signature.", false)]
-        public static void initialize(string appKey, int adTypes)
-        {
-            getInstance().initialize(appKey, adTypes);
-        }
-
-        [Obsolete("It will be removed in the next release. Check documentation for the new signature.", false)]
-        public static void initialize(string appKey, int adTypes, bool hasConsent)
-        {
-            getInstance().initialize(appKey, adTypes, hasConsent);
-        }
-
-        [Obsolete("It will be removed in the next release. Check documentation for the new signature.", false)]
-        public static void initialize(string appKey, int adTypes, Consent consent)
-        {
-            getInstance().initialize(appKey, adTypes, consent);
-        }
-
-        [Obsolete("It was removed from iOS SDK, thus cannot be used anymore. It will be removed in the next release of Appodeal Unity Plugin.", true)]
-        public static void setBannerBackground(bool enabled) { }
-        
         #endregion
     }
 
