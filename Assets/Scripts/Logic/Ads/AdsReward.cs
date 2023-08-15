@@ -1,4 +1,5 @@
 ﻿using System;
+using AppodealStack.Monetization.Common;
 using Services.Ads;
 using Services.PersistentProgress;
 using Services.SaveLoad;
@@ -29,23 +30,13 @@ namespace Logic.Ads
         private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService,
             IAdService adService)
         {
-            _adService = adService;
             _progressService = progressService;
             _saveLoadService = saveLoadService;
+            _adService = adService;
         }
 
         private void Awake() =>
             CheckDate();
-
-        private void Start()
-        {
-            CheckNumberOfBonuses();
-
-            _adService.RewardedVideoFinished += CheckNumberOfBonuses;
-            _button.onClick.AddListener(OpenBonusPanel);
-            _viewAds.onClick.AddListener(_adService.ShowRewardedAd);
-            _сancel.onClick.AddListener(HideBonusPanel);
-        }
 
         private void CheckDate()
         {
@@ -56,10 +47,27 @@ namespace Logic.Ads
             }
         }
 
+        private void Start()
+        {
+            CheckNumberOfBonuses();
+            
+            AppodealCallbacks.RewardedVideo.OnFinished += OnRewardedVideoFinished;
+            _button.onClick.AddListener(OpenBonusPanel);
+            _viewAds.onClick.AddListener(_adService.ShowRewardedAd);
+            _viewAds.onClick.AddListener(HideBonusPanel);
+            _сancel.onClick.AddListener(HideBonusPanel);
+        }
+
         private void CheckNumberOfBonuses()
         {
             bool state = _progressService.UserProgress.AdsData.NumberOfBonuses > 0;
             _button.gameObject.transform.parent.gameObject.SetActive(state);
+        }
+        
+        private void OnRewardedVideoFinished(object sender, RewardedVideoFinishedEventArgs e)
+        {
+            AddBonus();
+            CheckNumberOfBonuses();
         }
 
         private void OpenBonusPanel()
@@ -74,11 +82,19 @@ namespace Logic.Ads
             _buttons.SetActive(true);
         }
 
+        private void AddBonus()
+        {
+            _progressService.UserProgress.AddCoins(350);
+            _progressService.UserProgress.AdsData.NumberOfBonuses -= 1;
+            _saveLoadService.SaveProgress();
+        }
+
         private void OnDestroy()
         {
-            _adService.RewardedVideoFinished -= CheckNumberOfBonuses;
+            AppodealCallbacks.RewardedVideo.OnFinished -= OnRewardedVideoFinished;
             _button.onClick.RemoveListener(OpenBonusPanel);
             _viewAds.onClick.RemoveListener(_adService.ShowRewardedAd);
+            _viewAds.onClick.RemoveListener(HideBonusPanel);
             _сancel.onClick.RemoveListener(HideBonusPanel);
         }
     }

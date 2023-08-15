@@ -14,6 +14,7 @@ namespace Bootstraper
     public class BootstrapInstaller : MonoInstaller
     {
         [SerializeField] private SceneLoaderService _sceneLoader;
+        [SerializeField] private AdService _adService;
         
         private IPersistentProgressService _progressService;
         private ISaveLoadService _saveLoadService;
@@ -67,8 +68,8 @@ namespace Bootstraper
 
         private void BindAdService()
         {
-            IAdService adService = new AdService(_progressService);
-            Container.BindInstance(adService).AsSingle();
+            AdService adService = Container.InstantiatePrefabForComponent<AdService>(_adService);
+            Container.Bind<IAdService>().To<AdService>().FromInstance(adService).AsSingle();
         }
 
         private void BindGooglePlayService()

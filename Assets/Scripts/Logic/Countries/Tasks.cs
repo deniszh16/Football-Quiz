@@ -1,5 +1,4 @@
 ﻿using System;
-using Firebase.Analytics;
 using Logic.Helpers;
 using Services.Analytics;
 using Services.PersistentProgress;
@@ -7,9 +6,9 @@ using Services.SaveLoad;
 using Services.SceneLoader;
 using Services.StaticData;
 using StaticData.Questions.Countries;
-using TMPro;
 using UnityEngine;
 using Zenject;
+using TMPro;
 
 namespace Logic.Countries
 {
@@ -82,8 +81,7 @@ namespace Logic.Countries
             }
             else
             {
-                _firebaseService.SubmitAnEvent(AnalyticsKey, new Parameter("number", CurrentCategory));
-                
+                _firebaseService.SubmitAnEvent(AnalyticsKey, ("number", CurrentCategory));
                 _progressService.UserProgress.AddCoins(350);
                 _progressService.UserProgress.AddScore(100);
                 _saveLoadService.SaveProgress();

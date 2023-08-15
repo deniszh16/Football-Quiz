@@ -1,5 +1,4 @@
-﻿using Firebase.Analytics;
-using Logic.Helpers;
+﻿using Logic.Helpers;
 using Services.Analytics;
 using Services.SceneLoader;
 using StaticData.Questions.Facts;
@@ -39,7 +38,7 @@ namespace Logic.Facts
 
             if (CheckCategoryCompletion() && CheckCategoryAvailability())
             {
-                _firebaseService.SubmitAnEvent(AnalyticsKey, new Parameter("number", _category.Number));
+                _firebaseService.SubmitAnEvent(AnalyticsKey, ("number", _category.Number));
                 _sceneLoaderService.Load(Scenes.FactsQuestions.ToString());
             }
             else

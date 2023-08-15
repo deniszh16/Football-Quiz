@@ -140,6 +140,7 @@ SpriteAtlas:
     - 0b478f992af701a4ab46d06565148e86: 21300000
     - 511400a976650af4abd6f507e5ffd66b: 21300000
     - 17740af9a01964848baca2c9c892f8ab: 21300000
+    - fab31f2a18199f34b826e5c7a854dca5: 21300000
     - 42c6bc4a487a96e4fb599755726e17f4: 21300000
     - 82eed18a2e6161548b60346fb590cbc8: 21300000
     - e8a33f8ad953eff48813e5978172b9be: 21300000
@@ -150,6 +151,7 @@ SpriteAtlas:
     - 6aae395bbe162064ea3bf890459fd9a2: 21300000
     - 0f45c66b956af65408bae4f6cdc59731: 21300000
     - 8ea63d6ba01e9854caa4d93307b361ca: 21300000
+    - 680d598bc6fca2545a92b7ba38714045: 21300000
     - 5893a9cb699f2eb419f09b7c2e6f3be6: 21300000
     - c7a1241ced3a31b44ade81e1b41f9c5e: 21300000
     - e957892c249dd2d4e800ed67c7cf1b76: 21300000
@@ -255,6 +257,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 0b478f992af701a4ab46d06565148e86, type: 3}
   - {fileID: 21300000, guid: 511400a976650af4abd6f507e5ffd66b, type: 3}
   - {fileID: 21300000, guid: 17740af9a01964848baca2c9c892f8ab, type: 3}
+  - {fileID: 21300000, guid: fab31f2a18199f34b826e5c7a854dca5, type: 3}
   - {fileID: 21300000, guid: 42c6bc4a487a96e4fb599755726e17f4, type: 3}
   - {fileID: 21300000, guid: 82eed18a2e6161548b60346fb590cbc8, type: 3}
   - {fileID: 21300000, guid: e8a33f8ad953eff48813e5978172b9be, type: 3}
@@ -265,6 +268,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 6aae395bbe162064ea3bf890459fd9a2, type: 3}
   - {fileID: 21300000, guid: 0f45c66b956af65408bae4f6cdc59731, type: 3}
   - {fileID: 21300000, guid: 8ea63d6ba01e9854caa4d93307b361ca, type: 3}
+  - {fileID: 21300000, guid: 680d598bc6fca2545a92b7ba38714045, type: 3}
   - {fileID: 21300000, guid: 5893a9cb699f2eb419f09b7c2e6f3be6, type: 3}
   - {fileID: 21300000, guid: c7a1241ced3a31b44ade81e1b41f9c5e, type: 3}
   - {fileID: 21300000, guid: e957892c249dd2d4e800ed67c7cf1b76, type: 3}
@@ -369,6 +373,7 @@ SpriteAtlas:
   - Players_14
   - Players_69
   - Players_6
+  - Players_89
   - Players_5
   - Players_68
   - Players_29
@@ -379,6 +384,7 @@ SpriteAtlas:
   - Players_27
   - Players_81
   - Players_18
+  - Players_88
   - Players_38
   - Players_11
   - Trainers_20
