@@ -24,6 +24,9 @@ namespace Bootstraper
             _saveLoadService = saveLoadService;
             _migrationService = migrationService;
         }
+        
+        private void Awake() =>
+            Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
         private void Start()
         {

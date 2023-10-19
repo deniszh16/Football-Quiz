@@ -1,5 +1,6 @@
 ﻿using System;
 using AppodealStack.Monetization.Common;
+using PimDeWitte.UnityMainThreadDispatcher;
 using Services.Ads;
 using Services.PersistentProgress;
 using Services.SaveLoad;
@@ -51,7 +52,7 @@ namespace Logic.Ads
         {
             CheckNumberOfBonuses();
             
-            AppodealCallbacks.RewardedVideo.OnFinished += OnRewardedVideoFinished;
+            AppodealCallbacks.RewardedVideo.OnClosed += OnRewardedVideoClosed;
             _button.onClick.AddListener(OpenBonusPanel);
             _viewAds.onClick.AddListener(_adService.ShowRewardedAd);
             _viewAds.onClick.AddListener(HideBonusPanel);
@@ -64,10 +65,12 @@ namespace Logic.Ads
             _button.gameObject.transform.parent.gameObject.SetActive(state);
         }
         
-        private void OnRewardedVideoFinished(object sender, RewardedVideoFinishedEventArgs e)
+        private void OnRewardedVideoClosed(object sender, RewardedVideoClosedEventArgs e)
         {
-            AddBonus();
-            CheckNumberOfBonuses();
+            UnityMainThreadDispatcher.Instance().Enqueue(()=> {
+                AddBonus();
+                CheckNumberOfBonuses();
+            });
         }
 
         private void OpenBonusPanel()
@@ -91,7 +94,7 @@ namespace Logic.Ads
 
         private void OnDestroy()
         {
-            AppodealCallbacks.RewardedVideo.OnFinished -= OnRewardedVideoFinished;
+            AppodealCallbacks.RewardedVideo.OnClosed -= OnRewardedVideoClosed;
             _button.onClick.RemoveListener(OpenBonusPanel);
             _viewAds.onClick.RemoveListener(_adService.ShowRewardedAd);
             _viewAds.onClick.RemoveListener(HideBonusPanel);

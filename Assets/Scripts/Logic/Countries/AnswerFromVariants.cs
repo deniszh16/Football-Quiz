@@ -19,9 +19,12 @@
                 
                 ShowWinningEffect();
                 _updateTask.ToggleButton(state: true);
-                
+
                 if (_tasks.CurrentQuestion > 6 && _tasks.CurrentQuestion % 7 == 0)
-                    _adService.ShowInterstitialAd();
+                {
+                    if (_progressService.UserProgress.AdsData.Activity)
+                        _adService.ShowInterstitialAd();
+                }
             }
             else
             {

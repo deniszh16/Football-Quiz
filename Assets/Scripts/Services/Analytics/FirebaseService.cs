@@ -13,8 +13,7 @@ namespace Services.Analytics
                 if (dependencyStatus == Firebase.DependencyStatus.Available) {
                     _app = Firebase.FirebaseApp.DefaultInstance;
                 } else {
-                    UnityEngine.Debug.LogError(System.String.Format(
-                        "Could not resolve all Firebase dependencies: {0}", dependencyStatus));
+                    UnityEngine.Debug.LogError($"Could not resolve all Firebase dependencies: {dependencyStatus}");
                 }
             });
         }

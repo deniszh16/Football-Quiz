@@ -19,10 +19,8 @@ namespace Services.GooglePlay
 
         public void ShowAchievements()
         {
-            if (Authenticated)
-                Social.ShowAchievementsUI();
-            else
-                SignGooglePlay();
+            if (Authenticated) Social.ShowAchievementsUI();
+            else SignGooglePlay();
         }
 
         public void UnlockAchievement(string id)
@@ -33,10 +31,8 @@ namespace Services.GooglePlay
 
         public void ShowLeaderboard()
         {
-            if (Authenticated)
-                PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard);
-            else
-                SignGooglePlay();
+            if (Authenticated) PlayGamesPlatform.Instance.ShowLeaderboardUI(GPGSIds.leaderboard);
+            else SignGooglePlay();
         }
 
         public void SubmitScoreToLeaderboard(int score)

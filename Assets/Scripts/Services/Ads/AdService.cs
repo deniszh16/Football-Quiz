@@ -1,57 +1,37 @@
 ﻿using AppodealStack.Monetization.Api;
 using AppodealStack.Monetization.Common;
-using Services.PersistentProgress;
-using UnityEngine;
-using Zenject;
 
 namespace Services.Ads
 {
-    public class AdService : MonoBehaviour, IAdService
+    public class AdService : IAdService
     {
-        [Header("Ключ приложения")]
-        [SerializeField] private string _appKey;
+        private const string AppKey = "48b0f2391352a558132a69891b2399a44eb4440a1ec83ebd";
 
-        private IPersistentProgressService _progressService;
-
-        [Inject]
-        private void Construct(IPersistentProgressService progressService) =>
-            _progressService = progressService;
-
-        private void Start()
+        public void Initialization()
         {
-            Initialization();
-        }
-
-        private void Initialization()
-        {
+            Appodeal.MuteVideosIfCallsMuted(true);
             int adTypes = AppodealAdType.Interstitial | AppodealAdType.Banner | AppodealAdType.RewardedVideo;
             AppodealCallbacks.Sdk.OnInitialized += OnInitializationFinished;
-            Appodeal.Initialize(_appKey, adTypes);
+            Appodeal.Initialize(AppKey, adTypes);
         }
         
         private void OnInitializationFinished(object sender, SdkInitializedEventArgs e)
         {
         }
 
-        public void ShowAdBanner()
-        {
-            if (_progressService.UserProgress.AdsData.Activity)
-            {
-                if (Appodeal.IsLoaded(AppodealAdType.Banner))
-                    Appodeal.Show(AppodealShowStyle.BannerBottom);
-            }
-        }
+        public void ShowAdBanner() =>
+            Appodeal.Show(AppodealShowStyle.BannerBottom);
 
-        public void HideAdBanner() =>
+        public void HideAdBanner()
+        {
             Appodeal.Hide(AppodealAdType.Banner);
+            Appodeal.Destroy(AppodealAdType.Banner);
+        }
 
         public void ShowInterstitialAd()
         {
-            if (_progressService.UserProgress.AdsData.Activity)
-            {
-                if (Appodeal.IsLoaded(AppodealAdType.Interstitial))
-                    Appodeal.Show(AppodealShowStyle.Interstitial);
-            }
+            if (Appodeal.IsLoaded(AppodealAdType.Interstitial))
+                Appodeal.Show(AppodealShowStyle.Interstitial);
         }
 
         public void ShowRewardedAd()

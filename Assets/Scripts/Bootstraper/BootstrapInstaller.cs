@@ -1,3 +1,4 @@
+using PimDeWitte.UnityMainThreadDispatcher;
 using Services.Ads;
 using Services.Analytics;
 using Services.GooglePlay;
@@ -14,7 +15,7 @@ namespace Bootstraper
     public class BootstrapInstaller : MonoInstaller
     {
         [SerializeField] private SceneLoaderService _sceneLoader;
-        [SerializeField] private AdService _adService;
+        [SerializeField] private UnityMainThreadDispatcher _mainThreadDispatcher;
         
         private IPersistentProgressService _progressService;
         private ISaveLoadService _saveLoadService;
@@ -29,6 +30,7 @@ namespace Bootstraper
             BindAdService();
             BindGooglePlayService();
             BindFirebaseService();
+            BindMainThreadDispatcher();
         }
 
         private void BindStaticData()
@@ -68,8 +70,9 @@ namespace Bootstraper
 
         private void BindAdService()
         {
-            AdService adService = Container.InstantiatePrefabForComponent<AdService>(_adService);
-            Container.Bind<IAdService>().To<AdService>().FromInstance(adService).AsSingle();
+            IAdService adService = new AdService();
+            Container.BindInstance(adService).AsSingle();
+            adService.Initialization();
         }
 
         private void BindGooglePlayService()
@@ -84,6 +87,13 @@ namespace Bootstraper
             IFirebaseService firebaseService = new FirebaseService();
             firebaseService.Initialization();
             Container.BindInstance(firebaseService).AsSingle();
+        }
+
+        private void BindMainThreadDispatcher()
+        {
+            UnityMainThreadDispatcher unityMainThreadDispatcher =
+                Container.InstantiatePrefabForComponent<UnityMainThreadDispatcher>(_mainThreadDispatcher); 
+            Container.BindInstance(unityMainThreadDispatcher).AsSingle();
         }
     }
 }

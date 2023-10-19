@@ -20,8 +20,11 @@ namespace Logic.Ads
         private void Awake() =>
             _progressService.UserProgress.AdsData.AvailabilityChanged += _adService.HideAdBanner;
 
-        private void Start() =>
-            _adService.ShowAdBanner();
+        private void Start()
+        {
+            if (_progressService.UserProgress.AdsData.Activity)
+                _adService.ShowAdBanner();
+        }
 
         private void OnDestroy() =>
             _progressService.UserProgress.AdsData.AvailabilityChanged -= _adService.HideAdBanner;
