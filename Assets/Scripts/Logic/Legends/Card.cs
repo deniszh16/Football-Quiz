@@ -28,15 +28,15 @@ namespace Logic.Legends
             if (CheckCardList() && CheckCardStatus())
                 UpdateAvailability();
             
-            if (_legends.ProgressService.UserProgress.LegendsData.Legends[Number - ForArrays.MinusOne] == LegendStatus.Opened)
+            if (_legends.ProgressService.GetUserProgress.LegendsData.Legends[Number - ForArrays.MinusOne] == LegendStatus.Opened)
                 _achievement?.UnlockAchievement();
         }
 
         private bool CheckCardList() =>
-            _legends.ProgressService.UserProgress.LegendsData.Legends != null;
+            _legends.ProgressService.GetUserProgress.LegendsData.Legends != null;
 
         private bool CheckCardStatus() =>
-            _legends.ProgressService.UserProgress.LegendsData.Legends[Number - ForArrays.MinusOne] ==
+            _legends.ProgressService.GetUserProgress.LegendsData.Legends[Number - ForArrays.MinusOne] ==
             LegendStatus.Opened;
 
         public void UpdateAvailability()

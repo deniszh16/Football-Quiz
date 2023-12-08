@@ -41,9 +41,9 @@ namespace Logic.Ads
 
         private void CheckDate()
         {
-            if (_progressService.UserProgress.AdsData.DateDay != DateTime.Now.Day)
+            if (_progressService.GetUserProgress.AdsData.DateDay != DateTime.Now.Day)
             {
-                _progressService.UserProgress.AdsData.UpdateDailyBonuses(DateTime.Now.Day);
+                _progressService.GetUserProgress.AdsData.UpdateDailyBonuses(DateTime.Now.Day);
                 _saveLoadService.SaveProgress();
             }
         }
@@ -61,7 +61,7 @@ namespace Logic.Ads
 
         private void CheckNumberOfBonuses()
         {
-            bool state = _progressService.UserProgress.AdsData.NumberOfBonuses > 0;
+            bool state = _progressService.GetUserProgress.AdsData.NumberOfBonuses > 0;
             _button.gameObject.transform.parent.gameObject.SetActive(state);
         }
         
@@ -87,8 +87,8 @@ namespace Logic.Ads
 
         private void AddBonus()
         {
-            _progressService.UserProgress.AddCoins(350);
-            _progressService.UserProgress.AdsData.NumberOfBonuses -= 1;
+            _progressService.GetUserProgress.AddCoins(350);
+            _progressService.GetUserProgress.AdsData.NumberOfBonuses -= 1;
             _saveLoadService.SaveProgress();
         }
 

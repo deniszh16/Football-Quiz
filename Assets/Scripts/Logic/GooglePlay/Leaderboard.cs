@@ -61,7 +61,7 @@ namespace Logic.GooglePlay
         }
 
         private void SubmitYourResult() =>
-            _googlePlayService.SubmitScoreToLeaderboard(_progressService.UserProgress.Score);
+            _googlePlayService.SubmitScoreToLeaderboard(_progressService.GetUserProgress.Score);
 
         private void LoadScoresLeaderboard()
         {
@@ -73,7 +73,7 @@ namespace Logic.GooglePlay
                 LeaderboardTimeSpan.AllTime,
                 (data) =>
                 {
-                    _progressService.UserProgress.LeaderboardData.MyRating = data.PlayerScore.rank;
+                    _progressService.GetUserProgress.LeaderboardData.MyRating = data.PlayerScore.rank;
 
                     string rank = data.PlayerScore.rank > 99 ? ">100" : data.PlayerScore.rank.ToString();
                     _rating.text = "Моя позиция - " + rank + " место";
@@ -99,9 +99,9 @@ namespace Logic.GooglePlay
                     _leaders.text += " (" + scores[i].value + ")";
                     _leaders.text += i < 9 ? IndentsHelpers.LineBreak(2) : "";
 
-                    _progressService.UserProgress.LeaderboardData.PlayersNames[i] =
+                    _progressService.GetUserProgress.LeaderboardData.PlayersNames[i] =
                         user != null ? user.userName : "Unknown";
-                    _progressService.UserProgress.LeaderboardData.Results[i] = scores[i].value;
+                    _progressService.GetUserProgress.LeaderboardData.Results[i] = scores[i].value;
                 }
 
                 _saveLoadService.SaveProgress();
@@ -120,19 +120,19 @@ namespace Logic.GooglePlay
 
         private void ShowSavedResults()
         {
-            if (_progressService.UserProgress.LeaderboardData.MyRating > 0)
-                _rating.text = "Моя позиция - " + _progressService.UserProgress.LeaderboardData.MyRating + " место";
+            if (_progressService.GetUserProgress.LeaderboardData.MyRating > 0)
+                _rating.text = "Моя позиция - " + _progressService.GetUserProgress.LeaderboardData.MyRating + " место";
 
-            for (int i = 0; i < _progressService.UserProgress.LeaderboardData.Results.Length; i++)
+            for (int i = 0; i < _progressService.GetUserProgress.LeaderboardData.Results.Length; i++)
             {
-                if (_progressService.UserProgress.LeaderboardData.Results[i] > 0)
+                if (_progressService.GetUserProgress.LeaderboardData.Results[i] > 0)
                 {
                     if (i == 0)
                         _leaders.text = "";
 
                     _leaders.text += i + 1;
-                    _leaders.text += " - " + _progressService.UserProgress.LeaderboardData.PlayersNames[i];
-                    _leaders.text += " (" + _progressService.UserProgress.LeaderboardData.Results[i] + ")";
+                    _leaders.text += " - " + _progressService.GetUserProgress.LeaderboardData.PlayersNames[i];
+                    _leaders.text += " (" + _progressService.GetUserProgress.LeaderboardData.Results[i] + ")";
                     _leaders.text += i < 9 ? IndentsHelpers.LineBreak(2) : "";
                 }
             }

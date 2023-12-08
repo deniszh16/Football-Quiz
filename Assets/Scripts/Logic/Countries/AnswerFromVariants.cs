@@ -22,14 +22,14 @@
 
                 if (_tasks.CurrentQuestion > 6 && _tasks.CurrentQuestion % 7 == 0)
                 {
-                    if (_progressService.UserProgress.AdsData.Activity)
+                    if (_progressService.GetUserProgress.AdsData.Activity)
                         _adService.ShowInterstitialAd();
                 }
             }
             else
             {
-                _progressService.UserProgress.CountriesData.WrongAnswers += 1;
-                _progressService.UserProgress.SubtractionCoins(20);
+                _progressService.GetUserProgress.CountriesData.WrongAnswers += 1;
+                _progressService.GetUserProgress.SubtractionCoins(20);
                 _saveLoadService.SaveProgress();
             }
         }

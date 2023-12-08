@@ -33,8 +33,8 @@ namespace Logic.Facts
 
         private void GetСategoryInfo()
         {
-            Availability = _facts.ProgressService.UserProgress.FactsData.Availability[Number - ForArrays.MinusOne];
-            CurrentQuestion = _facts.ProgressService.UserProgress.FactsData.Sets[Number - ForArrays.MinusOne];
+            Availability = _facts.ProgressService.GetUserProgress.FactsData.Availability[Number - ForArrays.MinusOne];
+            CurrentQuestion = _facts.ProgressService.GetUserProgress.FactsData.Sets[Number - ForArrays.MinusOne];
             TotalQuestions = _facts.StaticDataService.GetFactsCategory(Number).Questions.Count;
         }
 

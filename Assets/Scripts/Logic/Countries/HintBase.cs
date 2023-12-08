@@ -38,7 +38,7 @@ namespace Logic.Countries
 
         private void CheckHint()
         {
-            bool check = _price > _progressService.UserProgress.Coins || _availability == false;
+            bool check = _price > _progressService.GetUserProgress.Coins || _availability == false;
             CustomizeHintButton(state: !check);
         }
 

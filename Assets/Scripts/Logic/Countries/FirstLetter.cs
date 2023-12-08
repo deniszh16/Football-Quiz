@@ -15,8 +15,8 @@ namespace Logic.Countries
 
         protected override void UseHint()
         {
-            _progressService.UserProgress.SubtractionCoins(_price);
-            _progressService.UserProgress.CountriesData.Hints += 1;
+            _progressService.GetUserProgress.SubtractionCoins(_price);
+            _progressService.GetUserProgress.CountriesData.Hints += 1;
             _saveLoadService.SaveProgress();
             _availability = false;
             _hints.SwitchPopup();

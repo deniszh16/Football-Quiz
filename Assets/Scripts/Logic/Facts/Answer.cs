@@ -75,7 +75,7 @@ namespace Logic.Facts
             else if (_warningCards.ReceivedCards >= 2)
             {
                 _textAnswer.text = DetermineSecondError();
-                _tasks.ProgressService.UserProgress.FactsData.Availability[
+                _tasks.ProgressService.GetUserProgress.FactsData.Availability[
                     _tasks.CurrentCategory - ForArrays.MinusOne] = FactsAccessibility.Lost;
             }
         }
@@ -100,18 +100,18 @@ namespace Logic.Facts
         {
             if (isAnswerTrue)
             {
-                _tasks.ProgressService.UserProgress.AddCoins(50);
-                _tasks.ProgressService.UserProgress.AddScore(3);
-                _tasks.ProgressService.UserProgress.FactsData.RightAnswers += 1;
+                _tasks.ProgressService.GetUserProgress.AddCoins(50);
+                _tasks.ProgressService.GetUserProgress.AddScore(3);
+                _tasks.ProgressService.GetUserProgress.FactsData.RightAnswers += 1;
             }
             else
             {
-                _tasks.ProgressService.UserProgress.SubtractionCoins(20);
-                _tasks.ProgressService.UserProgress.FactsData.WrongAnswers += 1;
+                _tasks.ProgressService.GetUserProgress.SubtractionCoins(20);
+                _tasks.ProgressService.GetUserProgress.FactsData.WrongAnswers += 1;
             }
 
-            _tasks.ProgressService.UserProgress.FactsData.Sets[_tasks.CurrentCategory - ForArrays.MinusOne] += 1;
-            _tasks.ProgressService.UserProgress.FactsData.ReceivedCards
+            _tasks.ProgressService.GetUserProgress.FactsData.Sets[_tasks.CurrentCategory - ForArrays.MinusOne] += 1;
+            _tasks.ProgressService.GetUserProgress.FactsData.ReceivedCards
                 [_tasks.CurrentCategory - ForArrays.MinusOne] = _warningCards.ReceivedCards;
             
             _saveLoadService.SaveProgress();

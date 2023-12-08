@@ -46,7 +46,7 @@ namespace Logic.Results
         private void GetFullStatistics()
         {
             int numberOfTasksInCountries = _staticDataService.GetNumberOfTasksInCountries();
-            CountriesData countriesData = _progressService.UserProgress.CountriesData;
+            CountriesData countriesData = _progressService.GetUserProgress.CountriesData;
             
             _results.text = "Викторина по странам" + IndentsHelpers.LineBreak(2);
             _results.text += "Всего вопросов: " + numberOfTasksInCountries + IndentsHelpers.LineBreak(1);
@@ -60,7 +60,7 @@ namespace Logic.Results
 
             int numberOfTasksInFacts = _staticDataService.GetNumberOfTasksInFacts();
             int numberOfCategories = _staticDataService.GetNumberOfFactsCategories();
-            FactsData factsData = _progressService.UserProgress.FactsData;
+            FactsData factsData = _progressService.GetUserProgress.FactsData;
             
             _results.text += "Викторина по фактам" + IndentsHelpers.LineBreak(2);
             _results.text += "Количество подборок: " + numberOfCategories + IndentsHelpers.LineBreak(1);
@@ -74,7 +74,7 @@ namespace Logic.Results
             _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
 
             int numberOfTasksInPlayers = _staticDataService.GetNumberOfTasksInPlayers();
-            PlayersData playersData = _progressService.UserProgress.PlayersData;
+            PlayersData playersData = _progressService.GetUserProgress.PlayersData;
             
             _results.text += "Викторина по фотографиям" + IndentsHelpers.LineBreak(2);
             _results.text += "Количество заданий: " + numberOfTasksInPlayers + IndentsHelpers.LineBreak(1);
@@ -84,7 +84,7 @@ namespace Logic.Results
             
             _results.text += IndentsHelpers.Underscore(26) + IndentsHelpers.LineBreak(2);
             
-            LegendsData legendsData = _progressService.UserProgress.LegendsData;
+            LegendsData legendsData = _progressService.GetUserProgress.LegendsData;
             
             _results.text += "Футбольные легенды" + IndentsHelpers.LineBreak(2);
             _results.text += "Всего карточек: 47" + IndentsHelpers.LineBreak(1);
@@ -96,9 +96,9 @@ namespace Logic.Results
 
         private void GetOverallProgress()
         {
-            int countries = _progressService.UserProgress.CountriesData.RightAnswers;
-            int facts = _progressService.UserProgress.FactsData.RightAnswers;
-            int players = _progressService.UserProgress.PlayersData.RightAnswers;
+            int countries = _progressService.GetUserProgress.CountriesData.RightAnswers;
+            int facts = _progressService.GetUserProgress.FactsData.RightAnswers;
+            int players = _progressService.GetUserProgress.PlayersData.RightAnswers;
             _overallProgress = countries + facts + players;
         }
 

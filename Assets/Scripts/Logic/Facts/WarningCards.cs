@@ -17,7 +17,7 @@ namespace Logic.Facts
 
         public void GetCurrentCards()
         {
-            _receivedCards = _tasks.ProgressService.UserProgress.FactsData
+            _receivedCards = _tasks.ProgressService.GetUserProgress.FactsData
                 .ReceivedCards[_tasks.CurrentCategory - ForArrays.MinusOne];
             ShowCard();
         }

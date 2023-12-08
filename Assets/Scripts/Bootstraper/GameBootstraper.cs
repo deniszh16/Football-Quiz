@@ -37,7 +37,7 @@ namespace Bootstraper
 
         private void LoadProgressOrInitNew()
         {
-            _progressService.UserProgress =
+            _progressService.GetUserProgress =
                 _saveLoadService.LoadProgress() ?? new UserProgress();
         }
     }

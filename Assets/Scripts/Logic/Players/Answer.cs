@@ -51,12 +51,12 @@ namespace Logic.Players
             {
                 _target -= 1;
                 variant.ShowFrame();
-                _tasks.ProgressService.UserProgress.PlayersData.RightAnswers += 1;
+                _tasks.ProgressService.GetUserProgress.PlayersData.RightAnswers += 1;
             }
             else
             {
                 variant.ShowFrame();
-                _tasks.ProgressService.UserProgress.PlayersData.WrongAnswers += 1;
+                _tasks.ProgressService.GetUserProgress.PlayersData.WrongAnswers += 1;
             }
 
             _saveLoadService.SaveProgress();
@@ -94,16 +94,16 @@ namespace Logic.Players
         {
             if (taskComplete)
             {
-                _tasks.ProgressService.UserProgress.AddCoins(50);
-                _tasks.ProgressService.UserProgress.AddScore(5);
-                _tasks.ProgressService.UserProgress.PlayersData.Completed += 1;
+                _tasks.ProgressService.GetUserProgress.AddCoins(50);
+                _tasks.ProgressService.GetUserProgress.AddScore(5);
+                _tasks.ProgressService.GetUserProgress.PlayersData.Completed += 1;
             }
             else
             {
-                _tasks.ProgressService.UserProgress.SubtractionCoins(20);
+                _tasks.ProgressService.GetUserProgress.SubtractionCoins(20);
             }
 
-            _tasks.ProgressService.UserProgress.PlayersData.Sets[_tasks.CurrentCategory - ForArrays.MinusOne] += 1;
+            _tasks.ProgressService.GetUserProgress.PlayersData.Sets[_tasks.CurrentCategory - ForArrays.MinusOne] += 1;
             _saveLoadService.SaveProgress();
         }
     }

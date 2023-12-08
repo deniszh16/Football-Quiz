@@ -58,12 +58,12 @@ namespace Logic.Countries
         {
             if (isSkipped == false)
             {
-                _progressService.UserProgress.AddCoins(50);
-                _progressService.UserProgress.AddScore(5);
-                _progressService.UserProgress.CountriesData.RightAnswers += 1;
+                _progressService.GetUserProgress.AddCoins(50);
+                _progressService.GetUserProgress.AddScore(5);
+                _progressService.GetUserProgress.CountriesData.RightAnswers += 1;
             }
 
-            _progressService.UserProgress.CountriesData.Sets[_tasks.CurrentCategory - ForArrays.MinusOne] += 1;
+            _progressService.GetUserProgress.CountriesData.Sets[_tasks.CurrentCategory - ForArrays.MinusOne] += 1;
             _saveLoadService.SaveProgress();
         }
     }

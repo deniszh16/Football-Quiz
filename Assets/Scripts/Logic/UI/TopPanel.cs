@@ -24,10 +24,10 @@ namespace Logic.UI
 
         private void Awake()
         {
-            _progressService.UserProgress.ScoreChanged += UpdateScoreCounter;
-            _progressService.UserProgress.CoinsChanged += UpdateCoinsCounter;
-            _progressService.UserProgress.CoinsSubstracted += FlashingCoins;
-            _progressService.UserProgress.CoinsLacked += FlashingCoins;
+            _progressService.GetUserProgress.ScoreChanged += UpdateScoreCounter;
+            _progressService.GetUserProgress.CoinsChanged += UpdateCoinsCounter;
+            _progressService.GetUserProgress.CoinsSubstracted += FlashingCoins;
+            _progressService.GetUserProgress.CoinsLacked += FlashingCoins;
         }
 
         private void Start()
@@ -37,20 +37,20 @@ namespace Logic.UI
         }
 
         private void UpdateScoreCounter() =>
-            _textScore.text = _progressService.UserProgress.Score.ToString();
+            _textScore.text = _progressService.GetUserProgress.Score.ToString();
 
         private void UpdateCoinsCounter() =>
-            _textCoins.text = _progressService.UserProgress.Coins.ToString();
+            _textCoins.text = _progressService.GetUserProgress.Coins.ToString();
 
         private void FlashingCoins() =>
             _animationTextCoins.Play(_flashingText);
 
         private void OnDestroy()
         {
-            _progressService.UserProgress.ScoreChanged -= UpdateScoreCounter;
-            _progressService.UserProgress.CoinsChanged -= UpdateCoinsCounter;
-            _progressService.UserProgress.CoinsSubstracted -= FlashingCoins;
-            _progressService.UserProgress.CoinsLacked -= FlashingCoins;
+            _progressService.GetUserProgress.ScoreChanged -= UpdateScoreCounter;
+            _progressService.GetUserProgress.CoinsChanged -= UpdateCoinsCounter;
+            _progressService.GetUserProgress.CoinsSubstracted -= FlashingCoins;
+            _progressService.GetUserProgress.CoinsLacked -= FlashingCoins;
         }
     }
 }

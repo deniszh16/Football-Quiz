@@ -37,13 +37,13 @@ namespace Logic.Legends
 
         private void BuyCard()
         {
-            if (_legends.ProgressService.UserProgress.CheckAmountCoins(Price))
+            if (_legends.ProgressService.GetUserProgress.CheckAmountCoins(Price))
             {
-                _legends.ProgressService.UserProgress.SubtractionCoins(Price);
+                _legends.ProgressService.GetUserProgress.SubtractionCoins(Price);
                 _card.UpdateAvailability();
-                _legends.ProgressService.UserProgress.LegendsData.Legends[_card.Number - ForArrays.MinusOne] =
+                _legends.ProgressService.GetUserProgress.LegendsData.Legends[_card.Number - ForArrays.MinusOne] =
                     LegendStatus.Opened;
-                _legends.ProgressService.UserProgress.LegendsData.ReceivedCards += 1;
+                _legends.ProgressService.GetUserProgress.LegendsData.ReceivedCards += 1;
                 _legends.SaveLoadService.SaveProgress();
 
                 ShowEffect();

@@ -34,8 +34,8 @@ namespace Logic.Countries
 
         private void Awake()
         {
-            IsAvailable = ProgressService.UserProgress.CountriesData.Accessibility[Number - ForArrays.MinusOne];
-            CurrentQuestion = ProgressService.UserProgress.CountriesData.Sets[Number - ForArrays.MinusOne];
+            IsAvailable = ProgressService.GetUserProgress.CountriesData.Accessibility[Number - ForArrays.MinusOne];
+            CurrentQuestion = ProgressService.GetUserProgress.CountriesData.Sets[Number - ForArrays.MinusOne];
         }
 
         private void Start()

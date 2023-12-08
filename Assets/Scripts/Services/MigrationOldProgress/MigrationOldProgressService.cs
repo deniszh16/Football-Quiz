@@ -22,7 +22,7 @@ namespace Services.MigrationOldProgress
 
         public void CheckOldProgress()
         {
-            if (_progressService.UserProgress.OldProgress)
+            if (_progressService.GetUserProgress.OldProgress)
             {
                 UpdateScore("score");
                 UpdateCoins("coins");
@@ -43,7 +43,7 @@ namespace Services.MigrationOldProgress
                 UpdatePhotoQuizAnswers("photo-quiz-answer");
                 UpdatePhotoQuizErrors("photo-quiz-errors");
                 
-                _progressService.UserProgress.OldProgress = false;
+                _progressService.GetUserProgress.OldProgress = false;
                 _saveLoadService.SaveProgress();
             }
         }
@@ -51,13 +51,13 @@ namespace Services.MigrationOldProgress
         private void UpdateScore(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.Score = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.Score = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateCoins(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.Coins = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.Coins = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateCountriesSets(string key)
@@ -67,10 +67,10 @@ namespace Services.MigrationOldProgress
                 var sets = PlayerPrefs.GetString(key)?.ToDeserialized<CategoriesArrays>();
                 for (int i = 0; i < 16; i++)
                 {
-                    _progressService.UserProgress.CountriesData.Sets[i] = sets.arraySets[i];
+                    _progressService.GetUserProgress.CountriesData.Sets[i] = sets.arraySets[i];
 
-                    if (_progressService.UserProgress.CountriesData.Sets[i] > 0)
-                        _progressService.UserProgress.CountriesData.Accessibility[i] = CategoryAccessibility.Available;
+                    if (_progressService.GetUserProgress.CountriesData.Sets[i] > 0)
+                        _progressService.GetUserProgress.CountriesData.Accessibility[i] = CategoryAccessibility.Available;
                 }
             }
         }
@@ -78,25 +78,25 @@ namespace Services.MigrationOldProgress
         private void UpdateCountriesAnswers(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.CountriesData.RightAnswers = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.CountriesData.RightAnswers = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateCountriesErrors(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.CountriesData.WrongAnswers = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.CountriesData.WrongAnswers = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateCountriesTips(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.CountriesData.Hints = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.CountriesData.Hints = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateCountriesPass(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.CountriesData.Pass = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.CountriesData.Pass = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateFactsSets(string key)
@@ -104,12 +104,12 @@ namespace Services.MigrationOldProgress
             if (PlayerPrefs.HasKey(key))
             {
                 var sets = PlayerPrefs.GetString(key)?.ToDeserialized<StatusesList>();
-                _progressService.UserProgress.FactsData.InitializeList(sets.status.Count);
+                _progressService.GetUserProgress.FactsData.InitializeList(sets.status.Count);
                 
                 for (int i = 0; i < sets.status.Count; i++)
                 {
                     string value = sets.status[i];
-                    _progressService.UserProgress.FactsData.Availability[i] = value switch
+                    _progressService.GetUserProgress.FactsData.Availability[i] = value switch
                     {
                         "loss" => FactsAccessibility.Lost,
                         "victory" => FactsAccessibility.Won,
@@ -122,25 +122,25 @@ namespace Services.MigrationOldProgress
         private void UpdateFactsQuantity(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.FactsData.Completed = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.FactsData.Completed = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateFactsVictory(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.FactsData.Victory = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.FactsData.Victory = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateFactsAnswers(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.FactsData.RightAnswers = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.FactsData.RightAnswers = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateFactsErrors(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.FactsData.WrongAnswers = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.FactsData.WrongAnswers = PlayerPrefs.GetInt(key);
         }
 
         private void UpdateLegends(string key)
@@ -148,12 +148,12 @@ namespace Services.MigrationOldProgress
             if (PlayerPrefs.HasKey(key))
             {
                 var legends = PlayerPrefs.GetString(key)?.ToDeserialized<StatusesList>();
-                _progressService.UserProgress.LegendsData.InitializeList(legends.status.Count);
+                _progressService.GetUserProgress.LegendsData.InitializeList(legends.status.Count);
                 
                 for (int i = 0; i < legends.status.Count; i++)
                 {
                     string value = legends.status[i];
-                    if (value == "yes") _progressService.UserProgress.LegendsData.Legends[i] = LegendStatus.Opened;
+                    if (value == "yes") _progressService.GetUserProgress.LegendsData.Legends[i] = LegendStatus.Opened;
                 }
             }
         }
@@ -161,7 +161,7 @@ namespace Services.MigrationOldProgress
         private void UpdateLegendsOpen(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.LegendsData.ReceivedCards = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.LegendsData.ReceivedCards = PlayerPrefs.GetInt(key);
         }
 
         private void UpdatePhotoQuiz(string key)
@@ -170,26 +170,26 @@ namespace Services.MigrationOldProgress
             {
                 var sets = PlayerPrefs.GetString(key)?.ToDeserialized<CategoriesArrays>();
                 for (int i = 0; i < sets.arraySets.Length; i++)
-                    _progressService.UserProgress.PlayersData.Sets[i] = sets.arraySets[i];
+                    _progressService.GetUserProgress.PlayersData.Sets[i] = sets.arraySets[i];
             }
         }
 
         private void UpdatePhotoQuizSuccessfully(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.PlayersData.Completed = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.PlayersData.Completed = PlayerPrefs.GetInt(key);
         }
 
         private void UpdatePhotoQuizAnswers(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.PlayersData.RightAnswers = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.PlayersData.RightAnswers = PlayerPrefs.GetInt(key);
         }
 
         private void UpdatePhotoQuizErrors(string key)
         {
             if (PlayerPrefs.HasKey(key))
-                _progressService.UserProgress.PlayersData.WrongAnswers = PlayerPrefs.GetInt(key);
+                _progressService.GetUserProgress.PlayersData.WrongAnswers = PlayerPrefs.GetInt(key);
         }
     }
 }

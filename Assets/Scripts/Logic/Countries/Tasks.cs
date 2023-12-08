@@ -66,7 +66,7 @@ namespace Logic.Countries
         public void GetCurrentTask()
         {
             _currentCategory = ActivePartition.CategoryNumber;
-            _currentQuestion = _progressService.UserProgress.CountriesData.Sets[_currentCategory - ForArrays.MinusOne] - 1;
+            _currentQuestion = _progressService.GetUserProgress.CountriesData.Sets[_currentCategory - ForArrays.MinusOne] - 1;
         }
 
         private void GetCurrentStaticData() =>
@@ -82,8 +82,8 @@ namespace Logic.Countries
             else
             {
                 _firebaseService.SubmitAnEvent(AnalyticsKey, ("number", CurrentCategory));
-                _progressService.UserProgress.AddCoins(350);
-                _progressService.UserProgress.AddScore(100);
+                _progressService.GetUserProgress.AddCoins(350);
+                _progressService.GetUserProgress.AddScore(100);
                 _saveLoadService.SaveProgress();
                 
                 _sceneLoaderService.Load(Scenes.Results.ToString());

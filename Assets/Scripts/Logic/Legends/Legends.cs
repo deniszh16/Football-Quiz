@@ -31,7 +31,7 @@ namespace Logic.Legends
         private void Awake()
         {
             _numberOfCards = _cards.transform.childCount;
-            _legendsData = ProgressService.UserProgress.LegendsData;
+            _legendsData = ProgressService.GetUserProgress.LegendsData;
             LegendsInitialization();
         }
 

@@ -20,7 +20,7 @@ namespace Logic.Countries
             _progressService = persistentProgress;
 
         private void Awake() =>
-            _progressService.UserProgress.CoinsLacked += FlashingText;
+            _progressService.GetUserProgress.CoinsLacked += FlashingText;
 
         private void FlashingText() =>
             _animator.Play(_flashingText);
@@ -29,6 +29,6 @@ namespace Logic.Countries
             _descriptionText.text = text;
 
         private void OnDestroy() =>
-            _progressService.UserProgress.CoinsLacked -= FlashingText;
+            _progressService.GetUserProgress.CoinsLacked -= FlashingText;
     }
 }

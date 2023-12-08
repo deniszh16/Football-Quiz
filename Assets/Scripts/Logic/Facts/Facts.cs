@@ -25,7 +25,7 @@ namespace Logic.Facts
 
         private void Awake()
         {
-            _factsData = ProgressService.UserProgress.FactsData;
+            _factsData = ProgressService.GetUserProgress.FactsData;
             FactsInitialization();
         }
 

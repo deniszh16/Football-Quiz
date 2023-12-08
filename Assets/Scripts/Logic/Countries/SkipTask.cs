@@ -10,8 +10,8 @@
 
         protected override void UseHint()
         {
-            _progressService.UserProgress.SubtractionCoins(_price);
-            _progressService.UserProgress.CountriesData.Pass += 1;
+            _progressService.GetUserProgress.SubtractionCoins(_price);
+            _progressService.GetUserProgress.CountriesData.Pass += 1;
             _saveLoadService.SaveProgress();
             _availability = false;
             

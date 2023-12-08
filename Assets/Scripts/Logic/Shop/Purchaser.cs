@@ -41,13 +41,13 @@ namespace Logic.Shop
 
         private void RemoveAds()
         {
-            _progressService.UserProgress.AdsData.ChangeAvailability();
+            _progressService.GetUserProgress.AdsData.ChangeAvailability();
             _saveLoadService.SaveProgress();
         }
 
         private void BuyingCoins(int value)
         {
-            _progressService.UserProgress.AddCoins(value);
+            _progressService.GetUserProgress.AddCoins(value);
             _saveLoadService.SaveProgress();
         }
 

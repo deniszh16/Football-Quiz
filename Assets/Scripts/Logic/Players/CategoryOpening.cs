@@ -43,7 +43,7 @@ namespace Logic.Players
             ActivePartition.CategoryNumber = _currentСategory.Number;
 
             _sceneLoaderService.Load(
-                _progressService.UserProgress.PlayersData.Sets[_currentСategory.Number - 1] < _numberOfTasks
+                _progressService.GetUserProgress.PlayersData.Sets[_currentСategory.Number - 1] < _numberOfTasks
                     ? Scenes.PlayersQuestions.ToString()
                     : Scenes.Results.ToString());
         }

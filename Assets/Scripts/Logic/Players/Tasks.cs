@@ -55,7 +55,7 @@ namespace Logic.Players
         public void GetCurrentTask()
         {
             _currentCategory = ActivePartition.CategoryNumber;
-            _currentQuestion = ProgressService.UserProgress.PlayersData.Sets[_currentCategory - ForArrays.MinusOne];
+            _currentQuestion = ProgressService.GetUserProgress.PlayersData.Sets[_currentCategory - ForArrays.MinusOne];
         }
 
         private void GetCurrentStaticData() =>
@@ -70,8 +70,8 @@ namespace Logic.Players
             }
             else
             {
-                ProgressService.UserProgress.AddCoins(350);
-                ProgressService.UserProgress.AddScore(100);
+                ProgressService.GetUserProgress.AddCoins(350);
+                ProgressService.GetUserProgress.AddScore(100);
                 _saveLoadService.SaveProgress();
                 _sceneLoaderService.Load(Scenes.Results.ToString());
             }

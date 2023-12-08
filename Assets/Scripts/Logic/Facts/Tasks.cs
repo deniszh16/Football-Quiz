@@ -56,7 +56,7 @@ namespace Logic.Facts
         public void GetCurrentTask()
         {
             _currentCategory = ActivePartition.CategoryNumber;
-            _currentQuestion = ProgressService.UserProgress.FactsData.Sets[CurrentCategory - ForArrays.MinusOne];
+            _currentQuestion = ProgressService.GetUserProgress.FactsData.Sets[CurrentCategory - ForArrays.MinusOne];
         }
 
         private void GetCurrentStaticData() =>
@@ -71,24 +71,24 @@ namespace Logic.Facts
             }
             else if (CurrentQuestion >= FactsStaticData.Questions.Count)
             {
-                ProgressService.UserProgress.FactsData.Availability[CurrentCategory - ForArrays.MinusOne] = FactsAccessibility.Won;
-                ProgressService.UserProgress.AddCoins(350);
-                ProgressService.UserProgress.AddScore(100);
-                ProgressService.UserProgress.FactsData.Completed += 1;
-                ProgressService.UserProgress.FactsData.Victory += 1;
+                ProgressService.GetUserProgress.FactsData.Availability[CurrentCategory - ForArrays.MinusOne] = FactsAccessibility.Won;
+                ProgressService.GetUserProgress.AddCoins(350);
+                ProgressService.GetUserProgress.AddScore(100);
+                ProgressService.GetUserProgress.FactsData.Completed += 1;
+                ProgressService.GetUserProgress.FactsData.Victory += 1;
                 _saveLoadService.SaveProgress();
                 _sceneLoaderService.Load(Scenes.Results.ToString());
             }
             else
             {
-                ProgressService.UserProgress.FactsData.Completed += 1;
+                ProgressService.GetUserProgress.FactsData.Completed += 1;
                 _saveLoadService.SaveProgress();
                 _sceneLoaderService.Load(Scenes.Results.ToString());
             }
         }
 
         private bool CheckCategoryAvailability() =>
-            ProgressService.UserProgress.FactsData.Availability[CurrentCategory - ForArrays.MinusOne] ==
+            ProgressService.GetUserProgress.FactsData.Availability[CurrentCategory - ForArrays.MinusOne] ==
             FactsAccessibility.Available;
 
         private void GetQuestion() =>
