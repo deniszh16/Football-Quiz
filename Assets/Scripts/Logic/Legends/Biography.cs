@@ -1,10 +1,10 @@
-﻿using Logic.Helpers;
-using Services.StaticData;
+﻿using Services.StaticData;
 using StaticData.Legends;
-using TMPro;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using TMPro;
 
 namespace Logic.Legends
 {

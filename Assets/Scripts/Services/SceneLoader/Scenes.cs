@@ -14,6 +14,6 @@
         FactsQuestions = 10,
         Legends = 11,
         Biography = 12,
-        Results = 13,
+        Results = 13
     }
 }

@@ -1,10 +1,9 @@
-using Data;
-using Services.MigrationOldProgress;
 using Services.PersistentProgress;
-using Services.SaveLoad;
 using Services.SceneLoader;
+using Services.SaveLoad;
 using UnityEngine;
 using Zenject;
+using Data;
 
 namespace Bootstraper
 {
@@ -13,25 +12,26 @@ namespace Bootstraper
         private ISceneLoaderService _sceneLoaderService;
         private IPersistentProgressService _progressService;
         private ISaveLoadService _saveLoadService;
-        private IMigrationOldProgressService _migrationService;
+
 
         [Inject]
         private void Construct(ISceneLoaderService sceneLoaderService, IPersistentProgressService progressService,
-            ISaveLoadService saveLoadService, IMigrationOldProgressService migrationService)
+            ISaveLoadService saveLoadService)
         {
             _sceneLoaderService = sceneLoaderService;
             _progressService = progressService;
             _saveLoadService = saveLoadService;
-            _migrationService = migrationService;
         }
         
-        private void Awake() =>
+        private void Awake()
+        {
+            Application.targetFrameRate = 60;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        }
 
         private void Start()
         {
             LoadProgressOrInitNew();
-            _migrationService.CheckOldProgress();
             _sceneLoaderService.Load(sceneName: Scenes.MainMenu.ToString(), delay: 1.5f);
         }
 

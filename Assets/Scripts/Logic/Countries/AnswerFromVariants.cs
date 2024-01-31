@@ -20,7 +20,7 @@
                 ShowWinningEffect();
                 _updateTask.ToggleButton(state: true);
 
-                if (_tasks.CurrentQuestion > 6 && _tasks.CurrentQuestion % 7 == 0)
+                if (_tasks.CurrentQuestion > 8 && _tasks.CurrentQuestion % 9 == 0)
                 {
                     if (_progressService.GetUserProgress.AdsData.Activity)
                         _adService.ShowInterstitialAd();

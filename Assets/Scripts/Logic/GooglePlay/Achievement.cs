@@ -6,7 +6,7 @@ namespace Logic.GooglePlay
 {
     public class Achievement : MonoBehaviour
     {
-        [Header("Id достижения")]
+        [Header("Идентификатор достижения")]
         [SerializeField] private string id;
         
         private IGooglePlayService _googlePlayService;

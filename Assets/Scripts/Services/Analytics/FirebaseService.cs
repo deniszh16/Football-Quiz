@@ -17,16 +17,16 @@ namespace Services.Analytics
                 }
             });
         }
-
+        
         public void SubmitAnEvent(string id) =>
             FirebaseAnalytics.LogEvent(id);
-
+        
         public void SubmitAnEvent(string id, (string, int) parameter)
         {
             var firebaseParameter = new Parameter(parameter.Item1, parameter.Item2);
             SubmitAnEventWithParameter(id, firebaseParameter);
         }
-
+        
         private void SubmitAnEventWithParameter(string id, Parameter parameter) =>
             FirebaseAnalytics.LogEvent(id, parameter);
     }

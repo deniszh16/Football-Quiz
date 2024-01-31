@@ -1,4 +1,5 @@
 ﻿using Logic.Helpers;
+using Services.Analytics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,6 @@ namespace Logic.Legends
         [SerializeField] private Animator _effect;
 
         private const int Price = 950;
-        private const string AnalyticsKey = "buying_card";
 
         private void Awake()
         {
@@ -50,7 +50,7 @@ namespace Logic.Legends
                 ReplaceSprite();
                 _button.onClick.RemoveListener(BuyCard);
                 
-                _legends.FirebaseService.SubmitAnEvent(id: AnalyticsKey);
+                _legends.FirebaseService.SubmitAnEvent(id: AnalyticsKeys.BuyingCard);
             }
         }
         

@@ -1,5 +1,5 @@
-﻿using Logic.Helpers;
-using Services.SceneLoader;
+﻿using Services.SceneLoader;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

@@ -1,7 +1,7 @@
 using Services.PersistentProgress;
-using TMPro;
 using UnityEngine;
 using Zenject;
+using TMPro;
 
 namespace Logic.Countries
 {

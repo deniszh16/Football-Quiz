@@ -1,7 +1,7 @@
-﻿using Logic.Helpers;
-using Services.Analytics;
+﻿using StaticData.Questions.Facts;
 using Services.SceneLoader;
-using StaticData.Questions.Facts;
+using Services.Analytics;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -15,8 +15,6 @@ namespace Logic.Facts
         
         [Header("Кнопка категории")]
         [SerializeField] private Button _button;
-
-        private const string AnalyticsKey = "facts_open_category";
 
         private ISceneLoaderService _sceneLoaderService;
         private IFirebaseService _firebaseService;
@@ -38,8 +36,8 @@ namespace Logic.Facts
 
             if (CheckCategoryCompletion() && CheckCategoryAvailability())
             {
-                _firebaseService.SubmitAnEvent(AnalyticsKey, ("number", _category.Number));
                 _sceneLoaderService.Load(Scenes.FactsQuestions.ToString());
+                _firebaseService.SubmitAnEvent(AnalyticsKeys.FactsOpenCategory, ("number", _category.Number));
             }
             else
             {

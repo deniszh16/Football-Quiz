@@ -6,7 +6,7 @@ namespace Logic.UI
     {
         [Header("Ссылки на компоненты")]
         [SerializeField] private RectTransform _rectTransform;
-
+        
         [Header("Позиция и размер")]
         [SerializeField] private PositionAndSize _positionAndSizeOnNarrowScreen;
         [SerializeField] private PositionAndSize _positionAndSizeOnUltraNarrowScreen;

@@ -1,10 +1,10 @@
-﻿using System;
-using Logic.Helpers;
+﻿using StaticData.Questions.Facts;
 using Services.SaveLoad;
-using StaticData.Questions.Facts;
-using TMPro;
+using Logic.Helpers;
 using UnityEngine;
 using Zenject;
+using System;
+using TMPro;
 
 namespace Logic.Facts
 {

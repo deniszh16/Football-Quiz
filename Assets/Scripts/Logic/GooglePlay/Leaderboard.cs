@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
-using GooglePlayGames;
+﻿using Services.PersistentProgress;
+using System.Collections.Generic;
 using GooglePlayGames.BasicApi;
-using Logic.Helpers;
 using Services.GooglePlay;
-using Services.PersistentProgress;
 using Services.SaveLoad;
-using TMPro;
+using GooglePlayGames;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 using Zenject;
+using TMPro;
 
 namespace Logic.GooglePlay
 {
@@ -21,8 +21,12 @@ namespace Logic.GooglePlay
         [Header("Таблица лидеров")]
         [SerializeField] private TextMeshProUGUI _leaders;
         [SerializeField] private ScrollRect _scrollRect;
-        
-        [Header("Кнопка обновления")]
+
+        private const string LoadingText = "Загрузка...";
+        private const string MyPosition = "Моя позиция - ";
+        private const string PlaceInTop = " место";
+
+            [Header("Кнопка обновления")]
         [SerializeField] private GameObject _updateButton;
 
         private IGooglePlayService _googlePlayService;
@@ -47,7 +51,7 @@ namespace Logic.GooglePlay
             {
                 if (_googlePlayService.Authenticated)
                 {
-                    _leaders.text = "Загрузка...";
+                    _leaders.text = LoadingText;
                     
                     SubmitYourResult();
                     LoadScoresLeaderboard();
@@ -76,7 +80,7 @@ namespace Logic.GooglePlay
                     _progressService.GetUserProgress.LeaderboardData.MyRating = data.PlayerScore.rank;
 
                     string rank = data.PlayerScore.rank > 99 ? ">100" : data.PlayerScore.rank.ToString();
-                    _rating.text = "Моя позиция - " + rank + " место";
+                    _rating.text = MyPosition + rank + PlaceInTop;
                     LoadUsersLeaderboard(data.Scores); 
                 });
         }
@@ -121,7 +125,7 @@ namespace Logic.GooglePlay
         private void ShowSavedResults()
         {
             if (_progressService.GetUserProgress.LeaderboardData.MyRating > 0)
-                _rating.text = "Моя позиция - " + _progressService.GetUserProgress.LeaderboardData.MyRating + " место";
+                _rating.text = MyPosition + _progressService.GetUserProgress.LeaderboardData.MyRating + PlaceInTop;
 
             for (int i = 0; i < _progressService.GetUserProgress.LeaderboardData.Results.Length; i++)
             {

@@ -11,7 +11,7 @@ namespace Logic.Results
 {
     public class Statistics : MonoBehaviour
     {
-        [Header("СТекст статистики")]
+        [Header("Текст статистики")]
         [SerializeField] private ScrollRect _scrollRect;
         [SerializeField] private TextMeshProUGUI _results;
         

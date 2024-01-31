@@ -1,5 +1,6 @@
-﻿using GooglePlayGames;
-using UnityEngine;
+﻿using UnityEngine;
+using GooglePlayGames;
+using Logic.GooglePlay;
 
 namespace Services.GooglePlay
 {

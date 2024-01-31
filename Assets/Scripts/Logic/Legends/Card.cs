@@ -29,7 +29,7 @@ namespace Logic.Legends
                 UpdateAvailability();
             
             if (_legends.ProgressService.GetUserProgress.LegendsData.Legends[Number - ForArrays.MinusOne] == LegendStatus.Opened)
-                _achievement?.UnlockAchievement();
+                _achievement.UnlockAchievement();
         }
 
         private bool CheckCardList() =>

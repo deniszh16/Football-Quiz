@@ -3,9 +3,9 @@
     public static class IndentsHelpers
     {
         public static string LineBreak(int repeat) =>
-            new string('\n', repeat);
+            new('\n', repeat);
         
         public static string Underscore(int repeat) =>
-            new string('-', repeat);
+            new('-', repeat);
     }
 }

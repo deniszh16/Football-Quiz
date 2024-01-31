@@ -6,7 +6,7 @@ namespace Services.Ads
     public class AdService : IAdService
     {
         private const string AppKey = "48b0f2391352a558132a69891b2399a44eb4440a1ec83ebd";
-
+        
         public void Initialization()
         {
             Appodeal.MuteVideosIfCallsMuted(true);
@@ -18,22 +18,22 @@ namespace Services.Ads
         private void OnInitializationFinished(object sender, SdkInitializedEventArgs e)
         {
         }
-
+        
         public void ShowAdBanner() =>
             Appodeal.Show(AppodealShowStyle.BannerBottom);
-
+        
         public void HideAdBanner()
         {
             Appodeal.Hide(AppodealAdType.Banner);
             Appodeal.Destroy(AppodealAdType.Banner);
         }
-
+        
         public void ShowInterstitialAd()
         {
             if (Appodeal.IsLoaded(AppodealAdType.Interstitial))
                 Appodeal.Show(AppodealShowStyle.Interstitial);
         }
-
+        
         public void ShowRewardedAd()
         {
             if (Appodeal.IsLoaded(AppodealAdType.RewardedVideo))

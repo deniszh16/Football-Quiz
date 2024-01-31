@@ -1,8 +1,8 @@
-﻿using Logic.Helpers;
-using StaticData.Questions.Facts;
-using TMPro;
+﻿using StaticData.Questions.Facts;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Logic.Facts
 {

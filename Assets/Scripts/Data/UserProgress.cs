@@ -21,8 +21,6 @@ namespace Data
         public AdsData AdsData;
         public LeaderboardData LeaderboardData;
 
-        public bool OldProgress;
-
         public UserProgress()
         {
             Coins = 1000;
@@ -32,7 +30,6 @@ namespace Data
             LegendsData = new LegendsData();
             AdsData = new AdsData();
             LeaderboardData = new LeaderboardData();
-            OldProgress = true;
         }
 
         public void AddScore(int value)
@@ -50,7 +47,7 @@ namespace Data
         public void SubtractionCoins(int value)
         {
             Coins -= value;
-            if (Coins < 0)Coins = 0;
+            if (Coins < 0) Coins = 0;
             
             CoinsChanged?.Invoke();
             CoinsSubstracted?.Invoke();

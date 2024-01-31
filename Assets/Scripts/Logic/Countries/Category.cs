@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Services.PersistentProgress;
+using Services.StaticData;
 using Logic.GooglePlay;
 using Logic.Helpers;
-using Services.PersistentProgress;
-using Services.StaticData;
 using UnityEngine;
 using Zenject;
+using System;
 
 namespace Logic.Countries
 {
@@ -41,7 +41,7 @@ namespace Logic.Countries
         private void Start()
         {
             if (CurrentQuestion > StaticDataService.GetCountriesCategory(Number).Questions.Count)
-                _achievement?.UnlockAchievement();
+                _achievement.UnlockAchievement();
         }
 
         public void ReportCategoryPurchase() =>

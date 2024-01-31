@@ -1,13 +1,13 @@
-﻿using System;
-using Logic.Helpers;
-using Services.Analytics;
+﻿using StaticData.Questions.Countries;
 using Services.PersistentProgress;
-using Services.SaveLoad;
 using Services.SceneLoader;
 using Services.StaticData;
-using StaticData.Questions.Countries;
+using Services.Analytics;
+using Services.SaveLoad;
+using Logic.Helpers;
 using UnityEngine;
 using Zenject;
+using System;
 using TMPro;
 
 namespace Logic.Countries
@@ -34,8 +34,6 @@ namespace Logic.Countries
         
         private int _currentCategory;
         private int _currentQuestion;
-
-        private const string AnalyticsKey = "countries_category_end";
 
         private IPersistentProgressService _progressService;
         private IStaticDataService _staticDataService;
@@ -81,7 +79,7 @@ namespace Logic.Countries
             }
             else
             {
-                _firebaseService.SubmitAnEvent(AnalyticsKey, ("number", CurrentCategory));
+                _firebaseService.SubmitAnEvent(AnalyticsKeys.CountriesCategoryEnd, ("number", CurrentCategory));
                 _progressService.GetUserProgress.AddCoins(350);
                 _progressService.GetUserProgress.AddScore(100);
                 _saveLoadService.SaveProgress();

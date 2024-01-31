@@ -1,11 +1,11 @@
 ﻿using System;
-using AppodealStack.Monetization.Common;
 using PimDeWitte.UnityMainThreadDispatcher;
-using Services.Ads;
+using AppodealStack.Monetization.Common;
 using Services.PersistentProgress;
 using Services.SaveLoad;
-using UnityEngine;
+using Services.Ads;
 using UnityEngine.UI;
+using UnityEngine;
 using Zenject;
 
 namespace Logic.Ads
@@ -31,9 +31,9 @@ namespace Logic.Ads
         private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService,
             IAdService adService)
         {
+            _adService = adService;
             _progressService = progressService;
             _saveLoadService = saveLoadService;
-            _adService = adService;
         }
 
         private void Awake() =>
@@ -41,18 +41,16 @@ namespace Logic.Ads
 
         private void CheckDate()
         {
-            if (_progressService.GetUserProgress.AdsData.DateDay != DateTime.Now.Day)
-            {
-                _progressService.GetUserProgress.AdsData.UpdateDailyBonuses(DateTime.Now.Day);
-                _saveLoadService.SaveProgress();
-            }
+            if (_progressService.GetUserProgress.AdsData.DateDay == DateTime.Now.Day) return;
+            _progressService.GetUserProgress.AdsData.UpdateDailyBonuses(DateTime.Now.Day);
+            _saveLoadService.SaveProgress();
         }
 
         private void Start()
         {
             CheckNumberOfBonuses();
             
-            AppodealCallbacks.RewardedVideo.OnClosed += OnRewardedVideoClosed;
+            AppodealCallbacks.RewardedVideo.OnFinished += OnRewardedVideoFinished;
             _button.onClick.AddListener(OpenBonusPanel);
             _viewAds.onClick.AddListener(_adService.ShowRewardedAd);
             _viewAds.onClick.AddListener(HideBonusPanel);
@@ -65,7 +63,7 @@ namespace Logic.Ads
             _button.gameObject.transform.parent.gameObject.SetActive(state);
         }
         
-        private void OnRewardedVideoClosed(object sender, RewardedVideoClosedEventArgs e)
+        private void OnRewardedVideoFinished(object sender, RewardedVideoFinishedEventArgs e)
         {
             UnityMainThreadDispatcher.Instance().Enqueue(()=> {
                 AddBonus();
@@ -84,7 +82,7 @@ namespace Logic.Ads
             _bonusPanel.SetActive(false);
             _buttons.SetActive(true);
         }
-
+        
         private void AddBonus()
         {
             _progressService.GetUserProgress.AddCoins(350);
@@ -94,7 +92,7 @@ namespace Logic.Ads
 
         private void OnDestroy()
         {
-            AppodealCallbacks.RewardedVideo.OnClosed -= OnRewardedVideoClosed;
+            AppodealCallbacks.RewardedVideo.OnFinished -= OnRewardedVideoFinished;
             _button.onClick.RemoveListener(OpenBonusPanel);
             _viewAds.onClick.RemoveListener(_adService.ShowRewardedAd);
             _viewAds.onClick.RemoveListener(HideBonusPanel);

@@ -1,34 +1,34 @@
 <dependencies>
   <packages>
-    <package>com.appodeal.ads.sdk.networks:adcolony:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:admob:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:applovin:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:bidmachine:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:bidon:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:bigo_ads:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:dt_exchange:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:iab:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:inmobi:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:ironsource:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:meta:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:mintegral:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:my_target:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:unity_ads:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:vungle:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk.networks:yandex:3.2.0.0-beta.1</package>
-    <package>com.appodeal.ads.sdk:core:3.2.0-beta.1</package>
+    <package>com.appodeal.ads.sdk.networks:adcolony:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:admob:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:applovin:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:bidmachine:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:bidon:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:bigo_ads:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:dt_exchange:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:iab:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:inmobi:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:ironsource:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:meta:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:mintegral:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:my_target:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:unity_ads:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:vungle:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk.networks:yandex:3.2.1.0</package>
+    <package>com.appodeal.ads.sdk:core:3.2.1</package>
     <package>com.google.android.gms:play-services-base:18.2.0</package>
     <package>com.google.firebase:firebase-analytics:21.3.0</package>
-    <package>com.google.firebase:firebase-analytics-unity:11.5.0</package>
-    <package>com.google.firebase:firebase-app-unity:11.5.0</package>
+    <package>com.google.firebase:firebase-analytics-unity:11.6.0</package>
+    <package>com.google.firebase:firebase-app-unity:11.6.0</package>
     <package>com.google.firebase:firebase-common:20.3.3</package>
     <package>com.google.games:gpgs-plugin-support:0.11.01</package>
   </packages>
   <files>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.5.0/firebase-analytics-unity-11.5.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.5.0/firebase-analytics-unity-11.5.0.pom</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.5.0/firebase-app-unity-11.5.0.aar</file>
-    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.5.0/firebase-app-unity-11.5.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.6.0/firebase-analytics-unity-11.6.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-analytics-unity/11.6.0/firebase-analytics-unity-11.6.0.pom</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.6.0/firebase-app-unity-11.6.0.aar</file>
+    <file>Assets/GeneratedLocalRepo/Firebase/m2repository/com/google/firebase/firebase-app-unity/11.6.0/firebase-app-unity-11.6.0.pom</file>
     <file>Assets/GeneratedLocalRepo/GooglePlayGames/com.google.play.games/Editor/m2repository/com/google/games/gpgs-plugin-support/0.11.01/gpgs-plugin-support-0.11.01.aar</file>
     <file>Assets/GeneratedLocalRepo/GooglePlayGames/com.google.play.games/Editor/m2repository/com/google/games/gpgs-plugin-support/0.11.01/gpgs-plugin-support-0.11.01.pom</file>
   </files>

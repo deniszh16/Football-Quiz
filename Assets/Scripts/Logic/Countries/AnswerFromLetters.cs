@@ -10,7 +10,7 @@ namespace Logic.Countries
         private string[] _selectedLetters;
         private int[] _numbersOfSelectedLetters;
         private int _amountOpenedLetters;
-
+        
         private const string FullPlaceholder = "   ";
         private const string ShortPlaceholder = "  ";
 
@@ -44,7 +44,7 @@ namespace Logic.Countries
                     _textAnswer.text += CheckAspectRatio();
             }
         }
-
+        
         private string CheckAspectRatio() =>
             AspectRatio.Ratio <= 0.46 ? ShortPlaceholder : FullPlaceholder;
 
@@ -95,7 +95,7 @@ namespace Logic.Countries
 
                 _updateTask.ToggleButton(state: true);
 
-                if (_tasks.CurrentQuestion > 6 && _tasks.CurrentQuestion % 7 == 0)
+                if (_tasks.CurrentQuestion > 8 && _tasks.CurrentQuestion % 9 == 0)
                 {
                     if (_progressService.GetUserProgress.AdsData.Activity)
                         _adService.ShowInterstitialAd();

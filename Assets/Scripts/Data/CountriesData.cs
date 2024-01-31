@@ -1,5 +1,5 @@
-﻿using System;
-using Logic.Countries;
+﻿using Logic.Countries;
+using System;
 
 namespace Data
 {

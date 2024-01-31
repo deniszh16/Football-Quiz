@@ -1,8 +1,8 @@
-﻿using Logic.Helpers;
-using Services.SaveLoad;
-using TMPro;
+﻿using Services.SaveLoad;
+using Logic.Helpers;
 using UnityEngine;
 using Zenject;
+using TMPro;
 
 namespace Logic.Players
 {

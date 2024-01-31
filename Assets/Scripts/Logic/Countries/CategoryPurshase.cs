@@ -1,6 +1,6 @@
-﻿using Logic.Helpers;
-using Services.Analytics;
+﻿using Services.Analytics;
 using Services.SaveLoad;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -24,8 +24,6 @@ namespace Logic.Countries
         
         [Header("Эффект открытия")]
         [SerializeField] private Animator _effect;
-
-        private const string AnalyticsKey = "countries_open_category";
         
         private ISaveLoadService _saveLoadService;
         private IFirebaseService _firebaseService;
@@ -67,7 +65,7 @@ namespace Logic.Countries
                 _button.onClick.RemoveListener(BuyCategory);
                 _currentСategory.ReportCategoryPurchase();
                 
-                _firebaseService.SubmitAnEvent(id: AnalyticsKey);
+                _firebaseService.SubmitAnEvent(id: AnalyticsKeys.CountriesOpenCategory);
             }
         }
 

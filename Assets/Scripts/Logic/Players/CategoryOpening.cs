@@ -1,7 +1,7 @@
-﻿using Logic.Helpers;
-using Services.PersistentProgress;
+﻿using Services.PersistentProgress;
 using Services.SceneLoader;
 using Services.StaticData;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

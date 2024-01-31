@@ -1,12 +1,11 @@
 using PimDeWitte.UnityMainThreadDispatcher;
-using Services.Ads;
-using Services.Analytics;
-using Services.GooglePlay;
-using Services.MigrationOldProgress;
 using Services.PersistentProgress;
-using Services.SaveLoad;
 using Services.SceneLoader;
 using Services.StaticData;
+using Services.GooglePlay;
+using Services.Analytics;
+using Services.SaveLoad;
+using Services.Ads;
 using UnityEngine;
 using Zenject;
 
@@ -26,7 +25,6 @@ namespace Bootstraper
             BindPersistentProgress();
             BindSceneLoader();
             BindSaveLoadService();
-            BindMigrationOldProgressService();
             BindAdService();
             BindGooglePlayService();
             BindFirebaseService();
@@ -61,18 +59,11 @@ namespace Bootstraper
             Container.BindInstance(_saveLoadService);
         }
 
-        private void BindMigrationOldProgressService()
-        {
-            IMigrationOldProgressService migrationService =
-                new MigrationOldProgressService(_progressService, _saveLoadService);
-            Container.BindInstance(migrationService).AsSingle();
-        }
-
         private void BindAdService()
         {
             IAdService adService = new AdService();
-            Container.BindInstance(adService).AsSingle();
             adService.Initialization();
+            Container.BindInstance(adService).AsSingle();
         }
 
         private void BindGooglePlayService()

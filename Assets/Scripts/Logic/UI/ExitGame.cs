@@ -13,5 +13,8 @@ namespace Logic.UI
 
         private void QuitGame() =>
             Application.Quit();
+
+        private void OnDestroy() =>
+            _exitButton.onClick.RemoveListener(QuitGame);
     }
 }

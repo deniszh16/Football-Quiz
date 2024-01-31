@@ -6,9 +6,9 @@ namespace Logic.GooglePlay
     public class UpdateButton : MonoBehaviour
     {
         [Header("Ссылки на компоненты")]
-        [SerializeField] private Leaderboard _leaderboard;
         [SerializeField] private Button _button;
-
+        [SerializeField] private Leaderboard _leaderboard;
+        
         private void Awake() =>
             _button.onClick.AddListener(UpdateData);
 

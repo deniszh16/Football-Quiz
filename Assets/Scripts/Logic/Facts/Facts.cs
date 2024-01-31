@@ -1,9 +1,9 @@
-﻿using Data;
-using Services.PersistentProgress;
-using Services.SaveLoad;
+﻿using Services.PersistentProgress;
 using Services.StaticData;
+using Services.SaveLoad;
 using UnityEngine;
 using Zenject;
+using Data;
 
 namespace Logic.Facts
 {
