@@ -22,12 +22,12 @@ namespace Services.Ads
         public void ShowAdBanner() =>
             Appodeal.Show(AppodealShowStyle.BannerBottom);
         
-        public void HideAdBanner()
-        {
+        public void HideAdBanner() =>
             Appodeal.Hide(AppodealAdType.Banner);
+
+        public void DestroyAdBanner() =>
             Appodeal.Destroy(AppodealAdType.Banner);
-        }
-        
+
         public void ShowInterstitialAd()
         {
             if (Appodeal.IsLoaded(AppodealAdType.Interstitial))

@@ -5,14 +5,11 @@ namespace Data
     [Serializable]
     public class AdsData
     {
-        public bool Activity;
+        public bool Activity = true;
         public int NumberOfBonuses;
         public int DateDay;
 
         public event Action AvailabilityChanged;
-
-        public AdsData() =>
-            Activity = true;
 
         public void ChangeAvailability()
         {

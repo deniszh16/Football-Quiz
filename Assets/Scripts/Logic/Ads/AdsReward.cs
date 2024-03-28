@@ -1,12 +1,12 @@
-﻿using System;
-using PimDeWitte.UnityMainThreadDispatcher;
+﻿using PimDeWitte.UnityMainThreadDispatcher;
 using AppodealStack.Monetization.Common;
 using Services.PersistentProgress;
 using Services.SaveLoad;
-using Services.Ads;
 using UnityEngine.UI;
+using Services.Ads;
 using UnityEngine;
 using Zenject;
+using System;
 
 namespace Logic.Ads
 {
@@ -28,8 +28,8 @@ namespace Logic.Ads
         private ISaveLoadService _saveLoadService;
 
         [Inject]
-        private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService,
-            IAdService adService)
+        private void Construct(IPersistentProgressService progressService,
+            ISaveLoadService saveLoadService, IAdService adService)
         {
             _adService = adService;
             _progressService = progressService;
@@ -51,10 +51,10 @@ namespace Logic.Ads
             CheckNumberOfBonuses();
             
             AppodealCallbacks.RewardedVideo.OnFinished += OnRewardedVideoFinished;
-            _button.onClick.AddListener(OpenBonusPanel);
+            _button.onClick.AddListener(() => ChangeVisibilityOfBonusPanel(state: true));
             _viewAds.onClick.AddListener(_adService.ShowRewardedAd);
-            _viewAds.onClick.AddListener(HideBonusPanel);
-            _сancel.onClick.AddListener(HideBonusPanel);
+            _viewAds.onClick.AddListener(() => ChangeVisibilityOfBonusPanel(state: false));
+            _сancel.onClick.AddListener(() => ChangeVisibilityOfBonusPanel(state: false));
         }
 
         private void CheckNumberOfBonuses()
@@ -71,16 +71,10 @@ namespace Logic.Ads
             });
         }
 
-        private void OpenBonusPanel()
+        private void ChangeVisibilityOfBonusPanel(bool state)
         {
-            _bonusPanel.SetActive(true);
-            _buttons.SetActive(false);
-        }
-
-        private void HideBonusPanel()
-        {
-            _bonusPanel.SetActive(false);
-            _buttons.SetActive(true);
+            _bonusPanel.SetActive(state);
+            _buttons.SetActive(!state);
         }
         
         private void AddBonus()
@@ -93,10 +87,9 @@ namespace Logic.Ads
         private void OnDestroy()
         {
             AppodealCallbacks.RewardedVideo.OnFinished -= OnRewardedVideoFinished;
-            _button.onClick.RemoveListener(OpenBonusPanel);
-            _viewAds.onClick.RemoveListener(_adService.ShowRewardedAd);
-            _viewAds.onClick.RemoveListener(HideBonusPanel);
-            _сancel.onClick.RemoveListener(HideBonusPanel);
+            _button.onClick.RemoveAllListeners();
+            _viewAds.onClick.RemoveAllListeners();
+            _сancel.onClick.RemoveAllListeners();
         }
     }
 }

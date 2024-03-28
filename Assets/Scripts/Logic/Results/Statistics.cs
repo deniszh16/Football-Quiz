@@ -1,11 +1,11 @@
-﻿using Data;
-using Logic.Helpers;
-using Services.PersistentProgress;
+﻿using Services.PersistentProgress;
 using Services.StaticData;
-using TMPro;
+using Logic.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using TMPro;
+using Data;
 
 namespace Logic.Results
 {

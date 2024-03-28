@@ -32,7 +32,7 @@ namespace Bootstraper
         private void Start()
         {
             LoadProgressOrInitNew();
-            _sceneLoaderService.Load(sceneName: Scenes.MainMenu.ToString(), delay: 1.5f);
+            _sceneLoaderService.Load(sceneName: Scenes.MainMenu.ToString(), delay: 1f);
         }
 
         private void LoadProgressOrInitNew()

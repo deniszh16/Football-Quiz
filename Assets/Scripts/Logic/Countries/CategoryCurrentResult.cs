@@ -1,8 +1,8 @@
-﻿using Logic.Helpers;
-using Services.StaticData;
-using TMPro;
+﻿using Services.StaticData;
+using Logic.Helpers;
 using UnityEngine;
 using Zenject;
+using TMPro;
 
 namespace Logic.Countries
 {

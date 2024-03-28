@@ -6,31 +6,20 @@ namespace Data
     public class UserProgress
     {
         public int Score;
-        public int Coins;
+        public int Coins = 1000;
 
         public event Action ScoreChanged;
         public event Action CoinsChanged;
         public event Action CoinsSubstracted;
         public event Action CoinsLacked;
 
-        public CountriesData CountriesData;
-        public FactsData FactsData;
-        public PlayersData PlayersData;
-        public LegendsData LegendsData;
+        public CountriesData CountriesData = new();
+        public FactsData FactsData = new();
+        public PlayersData PlayersData = new();
+        public LegendsData LegendsData = new();
         
-        public AdsData AdsData;
-        public LeaderboardData LeaderboardData;
-
-        public UserProgress()
-        {
-            Coins = 1000;
-            CountriesData = new CountriesData();
-            FactsData = new FactsData();
-            PlayersData = new PlayersData();
-            LegendsData = new LegendsData();
-            AdsData = new AdsData();
-            LeaderboardData = new LeaderboardData();
-        }
+        public AdsData AdsData = new();
+        public LeaderboardData LeaderboardData = new();
 
         public void AddScore(int value)
         {
