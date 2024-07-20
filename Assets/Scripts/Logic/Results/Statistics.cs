@@ -1,13 +1,12 @@
-﻿using Services.PersistentProgress;
-using Services.StaticData;
-using Logic.Helpers;
+﻿using DZGames.Football.Data;
+using DZGames.Football.Helpers;
+using DZGames.Football.Services;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 using TMPro;
-using Data;
 
-namespace Logic.Results
+namespace DZGames.Football.Results
 {
     public class Statistics : MonoBehaviour
     {

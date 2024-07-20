@@ -1,10 +1,10 @@
-﻿using Services.SceneLoader;
-using Logic.Helpers;
+﻿using DZGames.Football.Helpers;
+using DZGames.Football.Services;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.Legends
+namespace DZGames.Football.Legends
 {
     public class CardOpening : MonoBehaviour
     {
@@ -23,6 +23,12 @@ namespace Logic.Legends
         private void Awake() =>
             _card.CardPurchased += CheckAvailability;
 
+        private void OnDestroy()
+        {
+            _card.CardPurchased -= CheckAvailability;
+            _button.onClick.RemoveListener(OpenCard);
+        }
+
         private void CheckAvailability()
         {
             if (_card.IsAvailable && _card.Biography)
@@ -33,12 +39,6 @@ namespace Logic.Legends
         {
             ActivePartition.CategoryNumber = _card.Number;
             _sceneLoaderService.Load(Scenes.Biography.ToString());
-        }
-
-        private void OnDestroy()
-        {
-            _card.CardPurchased -= CheckAvailability;
-            _button.onClick.RemoveListener(OpenCard);
         }
     }
 }

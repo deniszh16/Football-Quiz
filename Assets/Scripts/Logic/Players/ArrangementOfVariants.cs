@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Logic.Players
+namespace DZGames.Football.Players
 {
     public class ArrangementOfVariants : MonoBehaviour
     {

@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace Data
+namespace DZGames.Football.Data
 {
     [Serializable]
     public class AdsData
     {
+        public event Action AvailabilityChanged;
+        
         public bool Activity = true;
         public int NumberOfBonuses;
         public int DateDay;
-
-        public event Action AvailabilityChanged;
 
         public void ChangeAvailability()
         {

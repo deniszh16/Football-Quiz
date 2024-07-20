@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using StaticData.Legends;
-using StaticData.Questions.Countries;
-using StaticData.Questions.Facts;
-using StaticData.Questions.Players;
+using DZGames.Football.StaticData.Countries;
+using DZGames.Football.StaticData.Facts;
+using DZGames.Football.StaticData.Legends;
+using DZGames.Football.StaticData.Players;
 
-namespace Services.StaticData
+namespace DZGames.Football.Services
 {
     public class StaticDataService : IStaticDataService
     {

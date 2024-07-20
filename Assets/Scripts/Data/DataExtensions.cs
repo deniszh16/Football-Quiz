@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Data
+namespace DZGames.Football.Data
 {
     public static class DataExtensions
     {

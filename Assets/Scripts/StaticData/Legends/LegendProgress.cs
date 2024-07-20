@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace StaticData.Legends
+namespace DZGames.Football.StaticData.Legends
 {
     [Serializable]
     public class LegendProgress

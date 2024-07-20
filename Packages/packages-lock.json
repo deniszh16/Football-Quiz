@@ -1,24 +1,24 @@
 {
   "dependencies": {
     "com.appodeal.mediation": {
-      "version": "https://github.com/appodeal/appodeal-unity-plugin-upm.git#v3.2.1",
+      "version": "https://github.com/appodeal/appodeal-unity-plugin-upm.git#v3.3.1",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.google.external-dependency-manager": "1.2.175"
       },
-      "hash": "b86d86381f4d3ec418e51e140187eb1e70b0d24d"
+      "hash": "6118e45f36ece1d42b84570698d65b196245ae8f"
     },
     "com.google.external-dependency-manager": {
-      "version": "file:C:/Users/zhurs/Desktop/Разработка/Плагины/com.google.external-dependency-manager-1.2.176.tgz",
+      "version": "file:com.google.external-dependency-manager-1.2.181.tgz",
       "depth": 0,
       "source": "local-tarball",
       "dependencies": {}
     },
     "com.pimdewitte.unitymainthreaddispatcher": {
-      "version": "file:C:/Users/zhurs/Desktop/Разработка/Плагины/UnityMainThreadDispatcher",
+      "version": "file:UnityMainThreadDispatcher",
       "depth": 0,
-      "source": "local",
+      "source": "embedded",
       "dependencies": {}
     },
     "com.unity.2d.sprite": {
@@ -44,7 +44,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.28",
+      "version": "3.0.31",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -60,20 +60,19 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.purchasing": {
-      "version": "4.11.0",
+      "version": "file:com.unity.purchasing@4.11.0",
       "depth": 0,
-      "source": "registry",
+      "source": "embedded",
       "dependencies": {
         "com.unity.ugui": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.modules.jsonserialize": "1.0.0",
         "com.unity.modules.androidjni": "1.0.0",
         "com.unity.services.core": "1.8.2"
-      },
-      "url": "https://packages.unity.com"
+      }
     },
     "com.unity.services.core": {
-      "version": "1.12.2",
+      "version": "1.12.5",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -102,6 +101,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "jp.hadashikick.vcontainer": {
+      "version": "https://github.com/hadashiA/VContainer.git?path=VContainer/Assets/VContainer#1.16.2",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "fbc5b06545695cc964142f33aa2443e337b38d5c"
     },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",

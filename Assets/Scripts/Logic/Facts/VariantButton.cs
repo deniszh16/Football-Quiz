@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class VariantButton : MonoBehaviour
     {
@@ -15,13 +15,13 @@ namespace Logic.Facts
         private void Awake() =>
             _button.onClick.AddListener(PushButton);
 
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(PushButton);
+
         private void PushButton()
         {
             _answer.CheckAnswer(_value);
             gameObject.SetActive(false);
         }
-
-        private void OnDestroy() =>
-            _button.onClick.RemoveListener(PushButton);
     }
 }

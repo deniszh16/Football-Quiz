@@ -1,9 +1,9 @@
-using Services.SceneLoader;
+using DZGames.Football.Services;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.UI
+namespace DZGames.Football.UI
 {
     public class SceneOpenButton : MonoBehaviour
     {
@@ -20,13 +20,13 @@ namespace Logic.UI
         private void Awake() =>
             _button.onClick.AddListener(GoToScene);
 
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(GoToScene);
+
         private void GoToScene() =>
             _sceneLoaderService.Load(sceneName: _scene.ToString());
 
         public void ReplaceScene(Scenes scene) =>
             _scene = scene;
-
-        private void OnDestroy() =>
-            _button.onClick.RemoveListener(GoToScene);
     }
 }

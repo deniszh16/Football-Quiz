@@ -1,7 +1,7 @@
-﻿using Logic.Countries;
-using System;
+﻿using System;
+using DZGames.Football.Countries;
 
-namespace Data
+namespace DZGames.Football.Data
 {
     [Serializable]
     public class CountriesData

@@ -1,8 +1,7 @@
-﻿using Services.PersistentProgress;
+﻿using DZGames.Football.Data;
 using UnityEngine;
-using Data;
 
-namespace Services.SaveLoad
+namespace DZGames.Football.Services
 {
     public class SaveLoadService : ISaveLoadService
     {

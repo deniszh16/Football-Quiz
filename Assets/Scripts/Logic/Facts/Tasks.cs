@@ -1,17 +1,19 @@
-﻿using Services.PersistentProgress;
-using StaticData.Questions.Facts;
-using Services.SceneLoader;
-using Services.StaticData;
-using Services.SaveLoad;
-using Logic.Helpers;
+﻿using DZGames.Football.StaticData.Facts;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
-using Zenject;
+using VContainer;
 using TMPro;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class Tasks : MonoBehaviour
     {
+        public int CurrentQuestion => _currentQuestion;
+        public int CurrentCategory => _currentCategory;
+        
+        public FactsStaticData FactsStaticData { get; private set; }
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private Answer _answer;
         [SerializeField] private WarningCards _warningCards;
@@ -21,13 +23,8 @@ namespace Logic.Facts
         [Header("Поле вопроса")]
         [SerializeField] private TextMeshProUGUI _textQuestion;
         
-        public int CurrentQuestion => _currentQuestion;
-        public int CurrentCategory => _currentCategory;
-        
         private int _currentCategory;
         private int _currentQuestion;
-
-        public FactsStaticData FactsStaticData { get; private set; }
         
         public IPersistentProgressService ProgressService { get; private set; }
         private ISaveLoadService _saveLoadService;

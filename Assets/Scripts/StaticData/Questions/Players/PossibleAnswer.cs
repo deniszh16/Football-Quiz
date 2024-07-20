@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace StaticData.Questions.Players
+namespace DZGames.Football.StaticData.Players
 {
     [Serializable]
     public class PossibleAnswer

@@ -1,16 +1,15 @@
-﻿using Logic.Helpers;
-using Logic.UI;
-using Services.SceneLoader;
-using Services.StaticData;
-using StaticData.Questions.Countries;
-using StaticData.Questions.Facts;
-using StaticData.Questions.Players;
+﻿using DZGames.Football.StaticData.Countries;
+using DZGames.Football.StaticData.Players;
+using DZGames.Football.StaticData.Facts;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
+using DZGames.Football.UI;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 using TMPro;
 
-namespace Logic.Results
+namespace DZGames.Football.Results
 {
     public class QuizResults : MonoBehaviour
     {

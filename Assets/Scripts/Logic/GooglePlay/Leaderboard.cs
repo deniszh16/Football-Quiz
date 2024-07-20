@@ -1,17 +1,15 @@
-﻿using Services.PersistentProgress;
-using System.Collections.Generic;
-using GooglePlayGames.BasicApi;
-using Services.GooglePlay;
-using Services.SaveLoad;
+﻿using System.Collections.Generic;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using GooglePlayGames;
-using Logic.Helpers;
+using GooglePlayGames.BasicApi;
 using UnityEngine;
-using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
-using Zenject;
+using UnityEngine.SocialPlatforms;
+using VContainer;
 using TMPro;
 
-namespace Logic.GooglePlay
+namespace DZGames.Football.GooglePlay
 {
     public class Leaderboard : MonoBehaviour
     {
@@ -26,7 +24,7 @@ namespace Logic.GooglePlay
         private const string MyPosition = "Моя позиция - ";
         private const string PlaceInTop = " место";
 
-            [Header("Кнопка обновления")]
+        [Header("Кнопка обновления")]
         [SerializeField] private GameObject _updateButton;
 
         private IGooglePlayService _googlePlayService;

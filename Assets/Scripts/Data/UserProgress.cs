@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Data
+namespace DZGames.Football.Data
 {
     [Serializable]
     public class UserProgress

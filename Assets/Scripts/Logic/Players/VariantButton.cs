@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.Players
+namespace DZGames.Football.Players
 {
     public class VariantButton : MonoBehaviour
     {
+        public bool CorrectVariant => _correctVariant;
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private Answer _answer;
         
@@ -17,11 +19,13 @@ namespace Logic.Players
         [SerializeField] private Sprite _victoryFrame;
         [SerializeField] private Sprite _losingFrame;
         
-        public bool CorrectVariant => _correctVariant;
         private bool _correctVariant;
 
         private void Awake() =>
             _button.onClick.AddListener(PushButton);
+
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(PushButton);
 
         public void CustomizeButton(Sprite sprite, bool correctVariant)
         {
@@ -48,8 +52,5 @@ namespace Logic.Players
             if (CorrectVariant == false)
                 _imageButton.color = new Color(255,255,255,0.7f);
         }
-
-        private void OnDestroy() =>
-            _button.onClick.RemoveListener(PushButton);
     }
 }

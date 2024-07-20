@@ -1,4 +1,4 @@
-﻿namespace Logic.Helpers
+﻿namespace DZGames.Football.Helpers
 {
     public enum SectionsGame
     {

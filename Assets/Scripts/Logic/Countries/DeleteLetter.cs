@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class DeleteLetter : MonoBehaviour
     {
@@ -17,6 +17,12 @@ namespace Logic.Countries
             _button.onClick.AddListener(DeleteLastLetter);
             _answerFromLetters.TaskCompleted += HideDeleteButton;
         }
+        
+        private void OnDestroy()
+        {
+            _button.onClick.RemoveListener(DeleteLastLetter);
+            _answerFromLetters.TaskCompleted -= HideDeleteButton;
+        }
 
         private void DeleteLastLetter()
         {
@@ -31,11 +37,5 @@ namespace Logic.Countries
 
         public void HideDeleteButton() =>
             gameObject.SetActive(false);
-
-        private void OnDestroy()
-        {
-            _button.onClick.RemoveListener(DeleteLastLetter);
-            _answerFromLetters.TaskCompleted -= HideDeleteButton;
-        }
     }
 }

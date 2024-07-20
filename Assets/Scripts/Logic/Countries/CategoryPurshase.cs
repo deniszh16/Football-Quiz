@@ -1,11 +1,10 @@
-﻿using Services.Analytics;
-using Services.SaveLoad;
-using Logic.Helpers;
+﻿using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class CategoryPurshase : MonoBehaviour
     {
@@ -42,6 +41,9 @@ namespace Logic.Countries
             else
                 _button.onClick.AddListener(BuyCategory);
         }
+        
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(BuyCategory);
 
         private void ReplaceSprite() =>
             _imageButton.sprite = _sprite;
@@ -74,8 +76,5 @@ namespace Logic.Countries
             _effect.gameObject.SetActive(true);
             _effect.Rebind();
         }
-
-        private void OnDestroy() =>
-            _button.onClick.RemoveListener(BuyCategory);
     }
 }

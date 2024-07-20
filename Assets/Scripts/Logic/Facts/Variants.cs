@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class Variants : MonoBehaviour
     {
@@ -14,6 +14,9 @@ namespace Logic.Facts
         private void Start() =>
             _answer.TaskCompleted += HideButtons;
 
+        private void OnDestroy() =>
+            _answer.TaskCompleted -= HideButtons;
+
         public void ShowButtons()
         {
             _trueAnswer.SetActive(true);
@@ -25,8 +28,5 @@ namespace Logic.Facts
             _trueAnswer.SetActive(false);
             _falseAnswer.SetActive(false);
         }
-
-        private void OnDestroy() =>
-            _answer.TaskCompleted -= HideButtons;
     }
 }

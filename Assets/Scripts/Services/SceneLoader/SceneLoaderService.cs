@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-namespace Services.SceneLoader
+namespace DZGames.Football.Services
 {
     public class SceneLoaderService : MonoBehaviour, ISceneLoaderService
     {

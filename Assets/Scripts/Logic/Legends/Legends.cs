@@ -1,11 +1,9 @@
-﻿using Services.PersistentProgress;
-using Services.Analytics;
-using Services.SaveLoad;
+﻿using DZGames.Football.Data;
+using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
-using Data;
+using VContainer;
 
-namespace Logic.Legends
+namespace DZGames.Football.Legends
 {
     public class Legends : MonoBehaviour
     {

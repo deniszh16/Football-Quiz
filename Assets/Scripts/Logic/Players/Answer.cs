@@ -1,10 +1,10 @@
-﻿using Services.SaveLoad;
-using Logic.Helpers;
+﻿using DZGames.Football.Helpers;
+using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
+using VContainer;
 using TMPro;
 
-namespace Logic.Players
+namespace DZGames.Football.Players
 {
     public class Answer : MonoBehaviour
     {

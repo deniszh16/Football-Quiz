@@ -1,26 +1,25 @@
-﻿using Services.PersistentProgress;
-using Services.StaticData;
-using Logic.GooglePlay;
-using Logic.Helpers;
+﻿using System;
+using DZGames.Football.GooglePlay;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
-using Zenject;
-using System;
+using VContainer;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class Category : MonoBehaviour
     {
+        public event Action CategoryPurchased;
+        
+        public int Number => _number;
+        public CategoryAccessibility IsAvailable { get; set; }
+        public int CurrentQuestion { get; set; }
+        
         [Header("Номер категории")]
         [SerializeField] private int _number;
 
         [Header("Достижение")]
         [SerializeField] private Achievement _achievement;
-
-        public int Number => _number;
-        public CategoryAccessibility IsAvailable { get; set; }
-        public int CurrentQuestion { get; set; }
-
-        public event Action CategoryPurchased;
         
         public IPersistentProgressService ProgressService { get; private set; }
         public IStaticDataService StaticDataService { get; private set; }

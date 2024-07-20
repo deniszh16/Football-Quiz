@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "520654099365",
+    "firebase_url": "https://api-project-90534532.firebaseio.com",
+    "project_id": "api-project-90534532",
+    "storage_bucket": "api-project-90534532.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:520654099365:android:cff9c22614c928389f0e4c",
+        "android_client_info": {
+          "package_name": "ru.cubra.football"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "520654099365-076fne0mf7umc2gtlvipu947esk6r8c6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ru.cubra.football",
+            "certificate_hash": "1852986fc15993a860fb06d0fbff109fc78c143b"
+          }
+        },
+        {
+          "client_id": "520654099365-k8o9hgai2o464if3k9mk9ipleqd8a6r5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAO0lxNuW8tB3Gr9UyW9XtnSBzN4KUn0i8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "520654099365-k8o9hgai2o464if3k9mk9ipleqd8a6r5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-2103794113265151~8219046467"
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace StaticData.Questions.Countries
+namespace DZGames.Football.StaticData.Countries
 {
     [Serializable]
     public enum TypeQuestions

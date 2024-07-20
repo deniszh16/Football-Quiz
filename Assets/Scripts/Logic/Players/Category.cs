@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-namespace Logic.Players
+namespace DZGames.Football.Players
 {
     public class Category : MonoBehaviour
     {
+        public int Number => _number;
+        
         [Header("Номер категории")]
         [SerializeField] private int _number;
-        
-        public int Number => _number;
     }
 }

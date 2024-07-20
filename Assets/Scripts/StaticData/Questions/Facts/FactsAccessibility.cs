@@ -1,4 +1,4 @@
-﻿namespace StaticData.Questions.Facts
+﻿namespace DZGames.Football.StaticData.Facts
 {
     public enum FactsAccessibility
     {

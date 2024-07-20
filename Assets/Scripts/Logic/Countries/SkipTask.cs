@@ -1,4 +1,4 @@
-﻿namespace Logic.Countries
+﻿namespace DZGames.Football.Countries
 {
     public class SkipTask : HintBase
     {
@@ -6,6 +6,12 @@
         {
             base.Start();
             _button.onClick.AddListener(UseHint);
+        }
+        
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            _button.onClick.RemoveListener(UseHint);
         }
 
         protected override void UseHint()
@@ -17,12 +23,6 @@
             
             _hints.SwitchPopup();
             _answerFromLetters.SkipTask();
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            _button.onClick.RemoveListener(UseHint);
         }
     }
 }

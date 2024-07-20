@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using StaticData.Questions.Facts;
+using DZGames.Football.StaticData.Facts;
 
-namespace Data
+namespace DZGames.Football.Data
 {
     [Serializable]
     public class FactsData

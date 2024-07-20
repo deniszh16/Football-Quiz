@@ -1,4 +1,4 @@
-﻿namespace Logic.Legends
+﻿namespace DZGames.Football.Legends
 {
     public enum LegendStatus
     {

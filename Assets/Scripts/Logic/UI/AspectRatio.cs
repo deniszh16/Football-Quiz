@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Logic.UI
+namespace DZGames.Football.UI
 {
     public class AspectRatio : MonoBehaviour
     {

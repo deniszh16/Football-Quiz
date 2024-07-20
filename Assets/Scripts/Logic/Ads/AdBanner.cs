@@ -1,9 +1,8 @@
-﻿using Services.PersistentProgress;
-using Services.Ads;
+﻿using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
+using VContainer;
 
-namespace Logic.Ads
+namespace DZGames.Football.Ads
 {
     public class AdBanner : MonoBehaviour
     {

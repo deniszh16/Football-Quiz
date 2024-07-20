@@ -1,4 +1,4 @@
-﻿namespace Logic.Shop
+﻿namespace DZGames.Football.Shop
 {
     public static class Products
     {

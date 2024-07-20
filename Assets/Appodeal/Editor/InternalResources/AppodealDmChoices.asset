@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 938f2ffed8844cf38882cc14e7d1605d, type: 3}
+  m_Name: AppodealDmChoices
+  m_EditorClassIdentifier: 
+  checkPeriodicallyForAdapterUpdates: 1
+  updateAdaptersAutomatically: 1
+  checkPeriodicallyForPluginUpdates: 1
+  includePluginBetaVersions: 0
+  enableVerboseLogging: 0
+  lastSyncSdkStates:
+  - sdkId: adjust
+    isSelected: 0
+  - sdkId: admob
+    isSelected: 1
+  - sdkId: amazon
+    isSelected: 1
+  - sdkId: applovin
+    isSelected: 1
+  - sdkId: appodeal
+    isSelected: 1
+  - sdkId: appsflyer
+    isSelected: 0
+  - sdkId: bidmachine
+    isSelected: 1
+  - sdkId: bidon
+    isSelected: 1
+  - sdkId: bigo_ads
+    isSelected: 1
+  - sdkId: chartboost
+    isSelected: 0
+  - sdkId: csj
+    isSelected: 0
+  - sdkId: dt_exchange
+    isSelected: 1
+  - sdkId: facebook_analytics
+    isSelected: 0
+  - sdkId: firebase
+    isSelected: 0
+  - sdkId: gam
+    isSelected: 1
+  - sdkId: hyprmx
+    isSelected: 0
+  - sdkId: iab
+    isSelected: 1
+  - sdkId: inmobi
+    isSelected: 1
+  - sdkId: ironsource
+    isSelected: 1
+  - sdkId: line
+    isSelected: 0
+  - sdkId: maio
+    isSelected: 0
+  - sdkId: max
+    isSelected: 1
+  - sdkId: meta_audience_network
+    isSelected: 1
+  - sdkId: mintegral
+    isSelected: 1
+  - sdkId: mobilefuse
+    isSelected: 0
+  - sdkId: my_target
+    isSelected: 1
+  - sdkId: ogury
+    isSelected: 0
+  - sdkId: pangle
+    isSelected: 1
+  - sdkId: sentry
+    isSelected: 1
+  - sdkId: smaato
+    isSelected: 0
+  - sdkId: tencent
+    isSelected: 0
+  - sdkId: unity_ads
+    isSelected: 1
+  - sdkId: verve
+    isSelected: 0
+  - sdkId: vungle
+    isSelected: 1
+  - sdkId: yandex_ads
+    isSelected: 1

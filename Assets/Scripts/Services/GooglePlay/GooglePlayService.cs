@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using DZGames.Football.GooglePlay;
 using GooglePlayGames;
-using Logic.GooglePlay;
+using UnityEngine;
 
-namespace Services.GooglePlay
+namespace DZGames.Football.Services
 {
     public class GooglePlayService : IGooglePlayService
     {

@@ -59,15 +59,10 @@ sysinfo.txt
 crashlytics-build.properties
 
 # Ignoring folders
-ConsentManager/
-Editor Default Resources/
-ExternalDependencyManager/
-Firebase/
-GeneratedLocalRepo/
-Parse/
-Sprites/
-StreamingAssets/
+.idea/
 .vscode/
+.utmp/
+Firebase/
 
 # Ignoring files
 *.gitattributes

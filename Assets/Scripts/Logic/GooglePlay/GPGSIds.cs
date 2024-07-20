@@ -1,4 +1,4 @@
-namespace Logic.GooglePlay
+namespace DZGames.Football.GooglePlay
 {
         public static class GPGSIds
         {

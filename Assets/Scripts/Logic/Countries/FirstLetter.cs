@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class FirstLetter : HintBase
     {
@@ -11,6 +11,12 @@ namespace Logic.Countries
         {
             base.Start();
             _button.onClick.AddListener(UseHint);
+        }
+        
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            _button.onClick.RemoveListener(UseHint);
         }
 
         protected override void UseHint()
@@ -35,12 +41,6 @@ namespace Logic.Countries
         {
             if (_removingExtraLetters.ButtonsWereHidden)
                 _removingExtraLetters.FindAndDisableButtons();
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            _button.onClick.RemoveListener(UseHint);
         }
     }
 }

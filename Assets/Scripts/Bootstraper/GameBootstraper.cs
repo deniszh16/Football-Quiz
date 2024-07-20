@@ -1,18 +1,15 @@
-using Services.PersistentProgress;
-using Services.SceneLoader;
-using Services.SaveLoad;
+using DZGames.Football.Data;
+using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
-using Data;
+using VContainer;
 
-namespace Bootstraper
+namespace DZGames.Football.Bootstraper
 {
     public class GameBootstraper : MonoBehaviour
     {
         private ISceneLoaderService _sceneLoaderService;
         private IPersistentProgressService _progressService;
         private ISaveLoadService _saveLoadService;
-
 
         [Inject]
         private void Construct(ISceneLoaderService sceneLoaderService, IPersistentProgressService progressService,
@@ -35,10 +32,7 @@ namespace Bootstraper
             _sceneLoaderService.Load(sceneName: Scenes.MainMenu.ToString(), delay: 1f);
         }
 
-        private void LoadProgressOrInitNew()
-        {
-            _progressService.GetUserProgress =
-                _saveLoadService.LoadProgress() ?? new UserProgress();
-        }
+        private void LoadProgressOrInitNew() =>
+            _progressService.SetUserProgress(_saveLoadService.LoadProgress() ?? new UserProgress());
     }
 }

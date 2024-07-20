@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-namespace Logic.UI
+namespace DZGames.Football.UI
 {
     public class TextAdaptability : MonoBehaviour
     {

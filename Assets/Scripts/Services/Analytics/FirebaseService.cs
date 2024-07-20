@@ -1,6 +1,6 @@
 ﻿using Firebase.Analytics;
 
-namespace Services.Analytics
+namespace DZGames.Football.Services
 {
     public class FirebaseService : IFirebaseService
     {

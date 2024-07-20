@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Logic.UI
+namespace DZGames.Football.UI
 {
     [Serializable]
     public struct PositionAndSize

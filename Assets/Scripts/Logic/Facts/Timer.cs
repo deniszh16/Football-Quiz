@@ -1,17 +1,17 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class Timer : MonoBehaviour
     {
+        public bool TimeIsOver =>_timeIsOver;
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private Answer _answer;
         
         [Header("Черточки таймера")]
         [SerializeField] private GameObject[] _dashes;
-
-        public bool TimeIsOver =>_timeIsOver;
 
         private float _seconds = 10.5f;
         private int _amountOfElements = 7;
@@ -19,6 +19,9 @@ namespace Logic.Facts
 
         private void Start() =>
             _answer.TaskCompleted += StopCountdown;
+        
+        private void OnDestroy() =>
+            _answer.TaskCompleted -= StopCountdown;
 
         public void StartCountdown() =>
             StartCoroutine(TimerOperation());
@@ -49,8 +52,5 @@ namespace Logic.Facts
             _amountOfElements = 7;
             _timeIsOver = false;
         }
-
-        private void OnDestroy() =>
-            _answer.TaskCompleted -= StopCountdown;
     }
 }

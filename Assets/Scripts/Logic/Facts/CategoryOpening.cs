@@ -1,12 +1,11 @@
-﻿using StaticData.Questions.Facts;
-using Services.SceneLoader;
-using Services.Analytics;
-using Logic.Helpers;
+﻿using DZGames.Football.StaticData.Facts;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class CategoryOpening : MonoBehaviour
     {
@@ -28,6 +27,9 @@ namespace Logic.Facts
 
         private void Start() =>
             _button.onClick.AddListener(OpenCategory);
+        
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(OpenCategory);
 
         private void OpenCategory()
         {
@@ -50,8 +52,5 @@ namespace Logic.Facts
 
         private bool CheckCategoryAvailability() =>
             _category.Availability == FactsAccessibility.Available;
-
-        private void OnDestroy() =>
-            _button.onClick.AddListener(OpenCategory);
     }
 }

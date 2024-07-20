@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace StaticData.Questions.Facts
+namespace DZGames.Football.StaticData.Facts
 {
     [Serializable]
     public class Fact

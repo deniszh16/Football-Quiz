@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class LetterButton : MonoBehaviour
     {
@@ -17,6 +17,9 @@ namespace Logic.Countries
 
         private void OnEnable() =>
             _button.onClick.AddListener(PushButton);
+        
+        private void OnDisable() =>
+            _button.onClick.RemoveListener(PushButton);
 
         private void PushButton()
         {
@@ -29,8 +32,5 @@ namespace Logic.Countries
             
             _answerFromLetters.CheckAnswer(isSkipped: false);
         }
-
-        private void OnDisable() =>
-            _button.onClick.RemoveListener(PushButton);
     }
 }

@@ -1,12 +1,18 @@
 ﻿using System;
-using Logic.GooglePlay;
-using Logic.Helpers;
+using DZGames.Football.GooglePlay;
+using DZGames.Football.Helpers;
 using UnityEngine;
 
-namespace Logic.Legends
+namespace DZGames.Football.Legends
 {
     public class Card : MonoBehaviour
     {
+        public event Action CardPurchased;
+        
+        public int Number => _number;
+        public bool Biography => _biography;
+        public bool IsAvailable { get; private set; }
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private Legends _legends;
         
@@ -16,12 +22,6 @@ namespace Logic.Legends
 
         [Header("Достижение")]
         [SerializeField] private Achievement _achievement;
-        
-        public int Number => _number;
-        public bool Biography => _biography;
-        public bool IsAvailable { get; private set; }
-
-        public event Action CardPurchased;
 
         private void Start()
         {

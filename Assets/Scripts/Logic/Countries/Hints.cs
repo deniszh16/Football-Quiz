@@ -3,10 +3,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class Hints : MonoBehaviour
     {
+        public event Action PopupOpened;
+        
+        public bool IsPopupClosed => _isPopupClosed;
+        private bool _isPopupClosed = true;
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private AnswerFromLetters _answerFromLetters;
         [SerializeField] private HintBase[] _hintsButtons;
@@ -17,14 +22,15 @@ namespace Logic.Countries
         
         [Header("Анимация попапа")]
         [SerializeField] private Animator _popupAnimation;
-
-        public event Action PopupOpened;
         
         private static readonly int Open = Animator.StringToHash("Open");
         private readonly Color _buttonColor = new(255, 255, 255, 0.45f);
         
-        public bool IsPopupClosed => _isPopupClosed;
-        private bool _isPopupClosed = true;
+        private void OnDisable()
+        {
+            _button.onClick.RemoveListener(SwitchPopup);
+            _answerFromLetters.TaskCompleted -= HideHintsButtons;
+        }
         
         public void CustomizeButton()
         {
@@ -73,12 +79,6 @@ namespace Logic.Countries
         {
             foreach (HintBase button in _hintsButtons)
                 button.ResetHintAvailability();
-        }
-        
-        private void OnDisable()
-        {
-            _button.onClick.RemoveListener(SwitchPopup);
-            _answerFromLetters.TaskCompleted -= HideHintsButtons;
         }
     }
 }

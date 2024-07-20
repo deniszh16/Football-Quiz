@@ -1,19 +1,20 @@
-﻿using StaticData.Questions.Countries;
-using Services.PersistentProgress;
-using Services.SceneLoader;
-using Services.StaticData;
-using Services.Analytics;
-using Services.SaveLoad;
-using Logic.Helpers;
+﻿using System;
 using UnityEngine;
-using Zenject;
-using System;
+using DZGames.Football.StaticData.Countries;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
+using VContainer;
 using TMPro;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class Tasks : MonoBehaviour
     {
+        public CountriesStaticData CountriesStaticData { get; private set; }
+        
+        public int CurrentCategory => _currentCategory;
+        public int CurrentQuestion => _currentQuestion;
+        
         [Header("Задание с буквами")]
         [SerializeField] private ArrangementOfLetters _letters;
         [SerializeField] private AnswerFromLetters _answerFromLetters;
@@ -26,11 +27,6 @@ namespace Logic.Countries
 
         [Header("Поле вопроса")]
         [SerializeField] private TextMeshProUGUI _textQuestion;
-
-        public CountriesStaticData CountriesStaticData { get; private set; }
-        
-        public int CurrentCategory => _currentCategory;
-        public int CurrentQuestion => _currentQuestion;
         
         private int _currentCategory;
         private int _currentQuestion;

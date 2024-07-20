@@ -1,15 +1,20 @@
-﻿using StaticData.Questions.Facts;
-using Services.SaveLoad;
-using Logic.Helpers;
+﻿using System;
+using DZGames.Football.StaticData.Facts;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
-using Zenject;
-using System;
+using VContainer;
 using TMPro;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class Answer : MonoBehaviour
     {
+        public event Action TaskCompleted;
+
+        public bool CurrentAnswer => _currentAnswer;
+        private bool _currentAnswer;
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private Tasks _tasks;
         [SerializeField] private WarningCards _warningCards;
@@ -21,11 +26,6 @@ namespace Logic.Facts
         
         [Header("Победный эффект")]
         [SerializeField] private ParticleSystem _winningEffect;
-        
-        public event Action TaskCompleted;
-
-        public bool CurrentAnswer => _currentAnswer;
-        private bool _currentAnswer;
 
         private const string FirstMistake = "Неправильно!\n" + "Получена первая желтая карточка.";
         private const string SecondMistake = "Неправильно!\n" + "Получена красная карточка, подборка провалена.";

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class VariantButton : MonoBehaviour
     {
@@ -14,14 +14,14 @@ namespace Logic.Countries
 
         private void OnEnable() =>
             _button.onClick.AddListener(PushButton);
+        
+        private void OnDisable() =>
+            _button.onClick.RemoveListener(PushButton);
 
         private void PushButton()
         {
             _answerFromVariants.CheckAnswer(_buttonNumber);
             gameObject.SetActive(false);
         }
-
-        private void OnDisable() =>
-            _button.onClick.RemoveListener(PushButton);
     }
 }

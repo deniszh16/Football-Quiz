@@ -1,4 +1,4 @@
-﻿namespace Services.SceneLoader
+﻿namespace DZGames.Football.Services
 {
     public enum Scenes
     {

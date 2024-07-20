@@ -1,10 +1,10 @@
-﻿using Services.SceneLoader;
-using Logic.Helpers;
+﻿using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class CategoryOpening : MonoBehaviour
     {
@@ -25,6 +25,12 @@ namespace Logic.Countries
 
         private void Start() =>
             CheckAvailability();
+        
+        private void OnDestroy()
+        {
+            _button.onClick.RemoveListener(OpenCategory);
+            _currentСategory.CategoryPurchased -= CheckAvailability;
+        }
 
         private void CheckAvailability()
         {
@@ -46,11 +52,5 @@ namespace Logic.Countries
         private bool CheckCategoryCompletion() =>
             _currentСategory.CurrentQuestion <= _currentСategory.StaticDataService
                 .GetCountriesCategory(_currentСategory.Number).Questions.Count;
-
-        private void OnDestroy()
-        {
-            _button.onClick.RemoveListener(OpenCategory);
-            _currentСategory.CategoryPurchased -= CheckAvailability;
-        }
     }
 }

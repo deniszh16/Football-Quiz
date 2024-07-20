@@ -1,7 +1,7 @@
 ﻿using AppodealStack.Monetization.Api;
 using AppodealStack.Monetization.Common;
 
-namespace Services.Ads
+namespace DZGames.Football.Services
 {
     public class AdService : IAdService
     {
@@ -15,9 +15,7 @@ namespace Services.Ads
             Appodeal.Initialize(AppKey, adTypes);
         }
         
-        private void OnInitializationFinished(object sender, SdkInitializedEventArgs e)
-        {
-        }
+        private void OnInitializationFinished(object sender, SdkInitializedEventArgs e) {}
         
         public void ShowAdBanner() =>
             Appodeal.Show(AppodealShowStyle.BannerBottom);

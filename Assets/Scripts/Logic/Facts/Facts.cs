@@ -1,16 +1,15 @@
-﻿using Services.PersistentProgress;
-using Services.StaticData;
-using Services.SaveLoad;
+﻿using DZGames.Football.Services;
+using DZGames.Football.Data;
 using UnityEngine;
-using Zenject;
-using Data;
+using VContainer;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class Facts : MonoBehaviour
     {
         public IPersistentProgressService ProgressService { get; private set; }
         public IStaticDataService StaticDataService { get; private set; }
+        
         private ISaveLoadService _saveLoadService;
         private FactsData _factsData;
 

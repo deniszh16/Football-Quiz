@@ -1,9 +1,9 @@
-﻿using Services.GooglePlay;
+﻿using DZGames.Football.Services;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.GooglePlay
+namespace DZGames.Football.GooglePlay
 {
     public class OpeningLeaderboard : MonoBehaviour
     {
@@ -19,10 +19,10 @@ namespace Logic.GooglePlay
         private void Awake() =>
             _button.onClick.AddListener(OpenLeaderboard);
 
-        private void OpenLeaderboard() =>
-            _googlePlayService.ShowLeaderboard();
-
         private void OnDestroy() =>
             _button.onClick.RemoveListener(OpenLeaderboard);
+
+        private void OpenLeaderboard() =>
+            _googlePlayService.ShowLeaderboard();
     }
 }

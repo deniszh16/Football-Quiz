@@ -1,9 +1,9 @@
-﻿using Logic.Helpers;
-using Services.Analytics;
+﻿using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.Legends
+namespace DZGames.Football.Legends
 {
     public class CardPurshase : MonoBehaviour
     {
@@ -29,6 +29,9 @@ namespace Logic.Legends
             _card.CardPurchased += CheckAvailability;
         }
 
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(BuyCard);
+
         private void CheckAvailability()
         {
             ReplaceSprite();
@@ -53,17 +56,14 @@ namespace Logic.Legends
                 _legends.FirebaseService.SubmitAnEvent(id: AnalyticsKeys.BuyingCard);
             }
         }
-        
+
         private void ReplaceSprite() =>
             _imageButton.sprite = _openCard;
-        
+
         private void ShowEffect()
         {
             _effect.gameObject.SetActive(true);
             _effect.Rebind();
         }
-
-        private void OnDestroy() =>
-            _button.onClick.RemoveListener(BuyCard);
     }
 }

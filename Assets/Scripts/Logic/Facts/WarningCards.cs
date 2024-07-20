@@ -1,10 +1,12 @@
-﻿using Logic.Helpers;
+﻿using DZGames.Football.Helpers;
 using UnityEngine;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class WarningCards : MonoBehaviour
     {
+        public int ReceivedCards => _receivedCards;
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private Tasks _tasks;
         
@@ -12,7 +14,6 @@ namespace Logic.Facts
         [SerializeField] private GameObject _yellowCard;
         [SerializeField] private GameObject _redCard;
         
-        public int ReceivedCards => _receivedCards;
         private int _receivedCards;
 
         public void GetCurrentCards()

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace StaticData.Questions.Countries
+namespace DZGames.Football.StaticData.Countries
 {
     [Serializable]
     public class Question

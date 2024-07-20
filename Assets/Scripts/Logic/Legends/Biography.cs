@@ -1,12 +1,12 @@
-﻿using Services.StaticData;
-using StaticData.Legends;
-using Logic.Helpers;
+﻿using DZGames.Football.StaticData.Legends;
+using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 using TMPro;
 
-namespace Logic.Legends
+namespace DZGames.Football.Legends
 {
     public class Biography : MonoBehaviour
     {

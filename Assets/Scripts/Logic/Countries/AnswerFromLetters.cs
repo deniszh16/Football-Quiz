@@ -1,18 +1,18 @@
 using System;
 using System.Linq;
-using Logic.UI;
+using DZGames.Football.UI;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class AnswerFromLetters : Answer
     {
+        private const string FullPlaceholder = "   ";
+        private const string ShortPlaceholder = "  ";
+        
         private string[] _answer;
         private string[] _selectedLetters;
         private int[] _numbersOfSelectedLetters;
         private int _amountOpenedLetters;
-        
-        private const string FullPlaceholder = "   ";
-        private const string ShortPlaceholder = "  ";
 
         public void CustomizeAnswer()
         {

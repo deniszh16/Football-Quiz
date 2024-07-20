@@ -1,14 +1,12 @@
-﻿using PimDeWitte.UnityMainThreadDispatcher;
+﻿using System;
 using AppodealStack.Monetization.Common;
-using Services.PersistentProgress;
-using Services.SaveLoad;
+using DZGames.Football.Services;
+using PimDeWitte.UnityMainThreadDispatcher;
 using UnityEngine.UI;
-using Services.Ads;
 using UnityEngine;
-using Zenject;
-using System;
+using VContainer;
 
-namespace Logic.Ads
+namespace DZGames.Football.Ads
 {
     public class AdsReward : MonoBehaviour
     {
@@ -38,14 +36,7 @@ namespace Logic.Ads
 
         private void Awake() =>
             CheckDate();
-
-        private void CheckDate()
-        {
-            if (_progressService.GetUserProgress.AdsData.DateDay == DateTime.Now.Day) return;
-            _progressService.GetUserProgress.AdsData.UpdateDailyBonuses(DateTime.Now.Day);
-            _saveLoadService.SaveProgress();
-        }
-
+        
         private void Start()
         {
             CheckNumberOfBonuses();
@@ -55,6 +46,21 @@ namespace Logic.Ads
             _viewAds.onClick.AddListener(_adService.ShowRewardedAd);
             _viewAds.onClick.AddListener(() => ChangeVisibilityOfBonusPanel(state: false));
             _сancel.onClick.AddListener(() => ChangeVisibilityOfBonusPanel(state: false));
+        }
+        
+        private void OnDestroy()
+        {
+            AppodealCallbacks.RewardedVideo.OnFinished -= OnRewardedVideoFinished;
+            _button.onClick.RemoveAllListeners();
+            _viewAds.onClick.RemoveAllListeners();
+            _сancel.onClick.RemoveAllListeners();
+        }
+
+        private void CheckDate()
+        {
+            if (_progressService.GetUserProgress.AdsData.DateDay == DateTime.Now.Day) return;
+            _progressService.GetUserProgress.AdsData.UpdateDailyBonuses(DateTime.Now.Day);
+            _saveLoadService.SaveProgress();
         }
 
         private void CheckNumberOfBonuses()
@@ -82,14 +88,6 @@ namespace Logic.Ads
             _progressService.GetUserProgress.AddCoins(350);
             _progressService.GetUserProgress.AdsData.NumberOfBonuses -= 1;
             _saveLoadService.SaveProgress();
-        }
-
-        private void OnDestroy()
-        {
-            AppodealCallbacks.RewardedVideo.OnFinished -= OnRewardedVideoFinished;
-            _button.onClick.RemoveAllListeners();
-            _viewAds.onClick.RemoveAllListeners();
-            _сancel.onClick.RemoveAllListeners();
         }
     }
 }

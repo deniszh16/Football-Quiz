@@ -1,16 +1,19 @@
-﻿using Services.PersistentProgress;
-using Services.SaveLoad;
-using Logic.Helpers;
-using Services.Ads;
+﻿using System;
+using DZGames.Football.Helpers;
+using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
-using System;
+using VContainer;
 using TMPro;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public abstract class Answer : MonoBehaviour
     {
+        public event Action TaskCompleted;
+        
+        private static readonly int InitialAnimation = Animator.StringToHash("Initial");
+        protected static readonly int FlashingAnimation = Animator.StringToHash("Flashing");
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] protected Tasks _tasks;
         [SerializeField] protected UpdateTask _updateTask;
@@ -24,11 +27,6 @@ namespace Logic.Countries
 
         [Header("Победный эффект")]
         [SerializeField] private ParticleSystem _winningEffect;
-        
-        public event Action TaskCompleted;
-
-        private static readonly int InitialAnimation = Animator.StringToHash("Initial");
-        protected static readonly int FlashingAnimation = Animator.StringToHash("Flashing");
 
         protected IPersistentProgressService _progressService;
         protected ISaveLoadService _saveLoadService;

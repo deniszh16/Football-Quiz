@@ -1,6 +1,6 @@
-﻿using Data;
+﻿using DZGames.Football.Data;
 
-namespace Services.SaveLoad
+namespace DZGames.Football.Services
 {
     public interface ISaveLoadService
     {

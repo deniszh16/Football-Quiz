@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using TMPro;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class ArrangementOfLetters : MonoBehaviour
     {
@@ -19,6 +19,9 @@ namespace Logic.Countries
 
         private void Awake() =>
             _answerFromLetters.TaskCompleted += HideAllLetters;
+        
+        private void OnDestroy() =>
+            _answerFromLetters.TaskCompleted -= HideAllLetters;
 
         public void ArrangeLetters()
         {
@@ -48,8 +51,5 @@ namespace Logic.Countries
 
         public void RecolorFirstLetter(int number) =>
             _letters[number].transform.parent.gameObject.GetComponent<Image>().sprite = _firstLetter;
-
-        private void OnDestroy() =>
-            _answerFromLetters.TaskCompleted -= HideAllLetters;
     }
 }

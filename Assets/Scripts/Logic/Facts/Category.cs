@@ -1,13 +1,18 @@
-﻿using StaticData.Questions.Facts;
-using Logic.Helpers;
+﻿using DZGames.Football.Helpers;
+using DZGames.Football.StaticData.Facts;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace Logic.Facts
+namespace DZGames.Football.Facts
 {
     public class Category : MonoBehaviour
     {
+        public int Number => _number;
+        public FactsAccessibility Availability { get; private set; }
+        public int CurrentQuestion { get; private set; }
+        public int TotalQuestions { get; private set; }
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] private Facts _facts;
         
@@ -19,11 +24,6 @@ namespace Logic.Facts
         [Header("Спрайты результата")]
         [SerializeField] private Sprite _victorySprite;
         [SerializeField] private Sprite _losingSprite;
-
-        public int Number => _number;
-        public FactsAccessibility Availability { get; private set; }
-        public int CurrentQuestion { get; private set; }
-        public int TotalQuestions { get; private set; }
 
         private void Start()
         {

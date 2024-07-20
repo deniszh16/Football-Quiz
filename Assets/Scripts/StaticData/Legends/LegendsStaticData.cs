@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace StaticData.Legends
+namespace DZGames.Football.StaticData.Legends
 {
     [CreateAssetMenu(fileName = "LegendStaticData", menuName = "StaticData/Legend Static Data")]
     public class LegendsStaticData : ScriptableObject

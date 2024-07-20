@@ -1,8 +1,8 @@
-﻿using Services.GooglePlay;
+﻿using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
+using VContainer;
 
-namespace Logic.GooglePlay
+namespace DZGames.Football.GooglePlay
 {
     public class ConnectionToGooglePlay : MonoBehaviour
     {

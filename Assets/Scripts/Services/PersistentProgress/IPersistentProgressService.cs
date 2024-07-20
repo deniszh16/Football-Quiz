@@ -1,9 +1,10 @@
-﻿using Data;
+﻿using DZGames.Football.Data;
 
-namespace Services.PersistentProgress
+namespace DZGames.Football.Services
 {
     public interface IPersistentProgressService
     {
-        public UserProgress GetUserProgress { get; set; }
+        public UserProgress GetUserProgress { get; }
+        public void SetUserProgress(UserProgress progress);
     }
 }

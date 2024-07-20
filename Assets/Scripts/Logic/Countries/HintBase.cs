@@ -1,13 +1,14 @@
-﻿using Services.PersistentProgress;
-using Services.SaveLoad;
+﻿using DZGames.Football.Services;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public abstract class HintBase : MonoBehaviour
     {
+        public GameObject ButtonGameObject  => _button.gameObject;
+        
         [Header("Ссылки на компоненты")]
         [SerializeField] protected Hints _hints;
         [SerializeField] protected AnswerFromLetters _answerFromLetters;
@@ -20,8 +21,6 @@ namespace Logic.Countries
         [Header("Кнопка подсказки")]
         [SerializeField] protected Button _button;
         [SerializeField] protected GameObject _buttonText;
-        
-        public GameObject ButtonGameObject  => _button.gameObject;
 
         protected IPersistentProgressService _progressService;
         protected ISaveLoadService _saveLoadService;
@@ -35,6 +34,9 @@ namespace Logic.Countries
 
         protected virtual void Start() =>
             _hints.PopupOpened += CheckHint;
+        
+        protected virtual void OnDestroy() =>
+            _hints.PopupOpened -= CheckHint;
 
         private void CheckHint()
         {
@@ -52,8 +54,5 @@ namespace Logic.Countries
 
         public virtual void ResetHintAvailability() =>
             _availability = true;
-
-        protected virtual void OnDestroy() =>
-            _hints.PopupOpened -= CheckHint;
     }
 }

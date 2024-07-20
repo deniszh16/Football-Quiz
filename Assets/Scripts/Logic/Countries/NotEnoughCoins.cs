@@ -1,9 +1,9 @@
-using Services.PersistentProgress;
+using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
+using VContainer;
 using TMPro;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class NotEnoughCoins : MonoBehaviour
     {
@@ -21,14 +21,14 @@ namespace Logic.Countries
 
         private void Awake() =>
             _progressService.GetUserProgress.CoinsLacked += FlashingText;
+        
+        private void OnDestroy() =>
+            _progressService.GetUserProgress.CoinsLacked -= FlashingText;
 
         private void FlashingText() =>
             _animator.Play(_flashingText);
 
         private void ChangeText(string text) =>
             _descriptionText.text = text;
-
-        private void OnDestroy() =>
-            _progressService.GetUserProgress.CoinsLacked -= FlashingText;
     }
 }

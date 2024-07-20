@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.GooglePlay
+namespace DZGames.Football.GooglePlay
 {
     public class UpdateButton : MonoBehaviour
     {
@@ -12,10 +12,10 @@ namespace Logic.GooglePlay
         private void Awake() =>
             _button.onClick.AddListener(UpdateData);
 
-        private void UpdateData() =>
-            _leaderboard.PrepareLeaderboard();
-
         private void OnDestroy() =>
             _button.onClick.RemoveListener(UpdateData);
+
+        private void UpdateData() =>
+            _leaderboard.PrepareLeaderboard();
     }
 }

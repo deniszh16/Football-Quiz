@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class UpdateTask : MonoBehaviour
     {
@@ -13,6 +13,9 @@ namespace Logic.Countries
 
         private void Awake() =>
             _button.onClick.AddListener(GoToNextTask);
+        
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(GoToNextTask);
 
         public void ToggleButton(bool state) =>
             _button.interactable = state;
@@ -23,8 +26,5 @@ namespace Logic.Countries
             _tasks.CheckTaskExists();
             ToggleButton(state: false);
         }
-
-        private void OnDestroy() =>
-            _button.onClick.RemoveListener(GoToNextTask);
     }
 }

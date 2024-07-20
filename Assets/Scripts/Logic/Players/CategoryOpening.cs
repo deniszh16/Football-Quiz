@@ -1,12 +1,10 @@
-﻿using Services.PersistentProgress;
-using Services.SceneLoader;
-using Services.StaticData;
-using Logic.Helpers;
+﻿using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
+using VContainer;
 
-namespace Logic.Players
+namespace DZGames.Football.Players
 {
     public class CategoryOpening : MonoBehaviour
     {
@@ -37,6 +35,9 @@ namespace Logic.Players
         private void Start() =>
             _numberOfTasks = _staticDataService.GetPlayersCategory(_currentСategory.Number).Questions.Count;
 
+        private void OnDestroy() =>
+            _button.onClick.RemoveListener(OpenCategory);
+
         private void OpenCategory()
         {
             ActivePartition.SectionsGame = SectionsGame.Players;
@@ -47,8 +48,5 @@ namespace Logic.Players
                     ? Scenes.PlayersQuestions.ToString()
                     : Scenes.Results.ToString());
         }
-
-        private void OnDestroy() =>
-            _button.onClick.RemoveListener(OpenCategory);
     }
 }

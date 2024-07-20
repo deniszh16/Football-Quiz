@@ -1,4 +1,4 @@
-﻿namespace Services.GooglePlay
+﻿namespace DZGames.Football.Services
 {
     public interface IGooglePlayService
     {

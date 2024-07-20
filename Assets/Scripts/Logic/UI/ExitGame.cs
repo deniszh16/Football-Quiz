@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Logic.UI
+namespace DZGames.Football.UI
 {
     public class ExitGame : MonoBehaviour
     {
@@ -11,10 +11,10 @@ namespace Logic.UI
         private void Awake() =>
             _exitButton.onClick.AddListener(QuitGame);
 
-        private void QuitGame() =>
-            Application.Quit();
-
         private void OnDestroy() =>
             _exitButton.onClick.RemoveListener(QuitGame);
+
+        private void QuitGame() =>
+            Application.Quit();
     }
 }

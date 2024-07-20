@@ -10,6 +10,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+            <meta-data android:name="com.google.android.play.billingclient.version" android:value="6.2.1" />
         </activity>
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" tools:node="remove" />

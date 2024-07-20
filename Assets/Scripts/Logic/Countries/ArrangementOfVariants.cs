@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class ArrangementOfVariants : MonoBehaviour
     {
@@ -14,6 +14,9 @@ namespace Logic.Countries
 
         private void Awake() =>
             _answerFromVariants.TaskCompleted += HideAllVariants;
+        
+        private void OnDestroy() =>
+            _answerFromVariants.TaskCompleted -= HideAllVariants;
 
         public void ArrangeVariants()
         {
@@ -26,8 +29,5 @@ namespace Logic.Countries
 
         private void HideAllVariants() =>
             gameObject.SetActive(false);
-
-        private void OnDestroy() =>
-            _answerFromVariants.TaskCompleted -= HideAllVariants;
     }
 }

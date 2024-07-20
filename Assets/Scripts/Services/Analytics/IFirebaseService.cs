@@ -1,4 +1,4 @@
-﻿namespace Services.Analytics
+﻿namespace DZGames.Football.Services
 {
     public interface IFirebaseService
     {

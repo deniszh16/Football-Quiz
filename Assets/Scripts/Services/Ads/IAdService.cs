@@ -1,4 +1,4 @@
-﻿namespace Services.Ads
+﻿namespace DZGames.Football.Services
 {
     public interface IAdService
     {

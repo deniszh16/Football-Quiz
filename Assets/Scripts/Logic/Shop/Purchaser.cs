@@ -1,10 +1,9 @@
-﻿using Services.PersistentProgress;
-using Services.SaveLoad;
+﻿using DZGames.Football.Services;
 using UnityEngine;
 using UnityEngine.Purchasing;
-using Zenject;
+using VContainer;
 
-namespace Logic.Shop
+namespace DZGames.Football.Shop
 {
     public class Purchaser : MonoBehaviour
     {
@@ -21,9 +20,12 @@ namespace Logic.Shop
         }
 
         private void Awake() =>
-            _iapListener.onPurchaseComplete.AddListener(OnPurshaseCompleted);
+            _iapListener.onPurchaseComplete.AddListener(OnPurchaseCompleted);
 
-        private void OnPurshaseCompleted(Product product)
+        private void OnDestroy() =>
+            _iapListener.onPurchaseComplete.RemoveListener(OnPurchaseCompleted);
+
+        private void OnPurchaseCompleted(Product product)
         {
             switch (product.definition.id)
             {
@@ -50,8 +52,5 @@ namespace Logic.Shop
             _progressService.GetUserProgress.AddCoins(value);
             _saveLoadService.SaveProgress();
         }
-
-        private void OnDestroy() =>
-            _iapListener.onPurchaseComplete.RemoveListener(OnPurshaseCompleted);
     }
 }

@@ -1,10 +1,10 @@
-﻿using Services.StaticData;
-using Logic.Helpers;
+﻿using DZGames.Football.Services;
+using DZGames.Football.Helpers;
 using UnityEngine;
-using Zenject;
+using VContainer;
 using TMPro;
 
-namespace Logic.Countries
+namespace DZGames.Football.Countries
 {
     public class CategoryCurrentResult : MonoBehaviour
     {
@@ -25,6 +25,9 @@ namespace Logic.Countries
 
         private void Start() =>
             SetValues();
+        
+        private void OnDestroy() =>
+            _currentСategory.CategoryPurchased -= SetValues;
 
         private void SetValues()
         {
@@ -41,8 +44,5 @@ namespace Logic.Countries
 
         private string GetNumberOfQuestions() =>
             _staticDataService.GetCountriesCategory(_currentСategory.Number).Questions.Count.ToString();
-
-        private void OnDestroy() =>
-            _currentСategory.CategoryPurchased -= SetValues;
     }
 }

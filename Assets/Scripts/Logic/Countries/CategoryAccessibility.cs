@@ -1,4 +1,4 @@
-﻿namespace Logic.Countries
+﻿namespace DZGames.Football.Countries
 {
     public enum CategoryAccessibility
     {

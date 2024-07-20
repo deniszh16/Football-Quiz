@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace StaticData.Legends
+namespace DZGames.Football.StaticData.Legends
 {
     [Serializable]
     public class Legend

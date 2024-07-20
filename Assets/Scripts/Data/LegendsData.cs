@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Logic.Legends;
+using DZGames.Football.Legends;
 
-namespace Data
+namespace DZGames.Football.Data
 {
     [Serializable]
     public class LegendsData

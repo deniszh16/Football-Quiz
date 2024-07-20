@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace StaticData.Questions.Countries
+namespace DZGames.Football.StaticData.Countries
 {
     [CreateAssetMenu(fileName ="CountriesStaticData", menuName = "StaticData/Countries Static Data")]
     public class CountriesStaticData : ScriptableObject

@@ -1,4 +1,4 @@
-﻿namespace Logic.Countries
+﻿namespace DZGames.Football.Countries
 {
     public class RemovingExtraLetters : HintBase
     {
@@ -8,6 +8,12 @@
         {
             base.Start();
             _button.onClick.AddListener(UseHint);
+        }
+        
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            _button.onClick.RemoveListener(UseHint);
         }
 
         protected override void UseHint()
@@ -38,12 +44,6 @@
         {
             _availability = true;
             ButtonsWereHidden = false;
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            _button.onClick.RemoveListener(UseHint);
         }
     }
 }

@@ -1,9 +1,9 @@
-using Services.PersistentProgress;
+using DZGames.Football.Services;
 using UnityEngine;
-using Zenject;
+using VContainer;
 using TMPro;
 
-namespace Logic.UI
+namespace DZGames.Football.UI
 {
     public class TopPanel : MonoBehaviour
     {
@@ -36,6 +36,14 @@ namespace Logic.UI
             UpdateCoinsCounter();
         }
 
+        private void OnDestroy()
+        {
+            _progressService.GetUserProgress.ScoreChanged -= UpdateScoreCounter;
+            _progressService.GetUserProgress.CoinsChanged -= UpdateCoinsCounter;
+            _progressService.GetUserProgress.CoinsSubstracted -= FlashingCoins;
+            _progressService.GetUserProgress.CoinsLacked -= FlashingCoins;
+        }
+
         private void UpdateScoreCounter() =>
             _textScore.text = _progressService.GetUserProgress.Score.ToString();
 
@@ -44,13 +52,5 @@ namespace Logic.UI
 
         private void FlashingCoins() =>
             _animationTextCoins.Play(_flashingText);
-
-        private void OnDestroy()
-        {
-            _progressService.GetUserProgress.ScoreChanged -= UpdateScoreCounter;
-            _progressService.GetUserProgress.CoinsChanged -= UpdateCoinsCounter;
-            _progressService.GetUserProgress.CoinsSubstracted -= FlashingCoins;
-            _progressService.GetUserProgress.CoinsLacked -= FlashingCoins;
-        }
     }
 }
