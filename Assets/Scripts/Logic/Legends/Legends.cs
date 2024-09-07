@@ -15,15 +15,12 @@ namespace DZGames.Football.Legends
         
         public IPersistentProgressService ProgressService { get; private set; }
         public ISaveLoadService SaveLoadService { get; private set; }
-        public IFirebaseService FirebaseService { get; private set; }
 
         [Inject]
-        private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService,
-            IFirebaseService firebaseService)
+        private void Construct(IPersistentProgressService progressService, ISaveLoadService saveLoadService)
         {
             ProgressService = progressService;
             SaveLoadService = saveLoadService;
-            FirebaseService = firebaseService;
         }
 
         private void Awake()

@@ -25,14 +25,10 @@ namespace DZGames.Football.Countries
         [SerializeField] private Animator _effect;
         
         private ISaveLoadService _saveLoadService;
-        private IFirebaseService _firebaseService;
 
         [Inject]
-        private void Construct(ISaveLoadService saveLoadService, IFirebaseService firebaseService)
-        {
+        private void Construct(ISaveLoadService saveLoadService) =>
             _saveLoadService = saveLoadService;
-            _firebaseService = firebaseService;
-        }
 
         private void Start()
         {
@@ -66,8 +62,6 @@ namespace DZGames.Football.Countries
 
                 _button.onClick.RemoveListener(BuyCategory);
                 _currentСategory.ReportCategoryPurchase();
-                
-                _firebaseService.SubmitAnEvent(id: AnalyticsKeys.CountriesOpenCategory);
             }
         }
 

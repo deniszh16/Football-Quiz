@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f2f4f4e77ed4938bb6c0d97e15adda2, type: 3}
+  m_Script: {fileID: 11500000, guid: c673542c3358d59448d29f278ee26490, type: 3}
   m_Name: PlayersStaticData
   m_EditorClassIdentifier: 
   CategoryNumber: 1
@@ -19,23 +19,23 @@ MonoBehaviour:
       \u043D\u0435 \u0438\u0433\u0440\u0430\u043B\u0438 \u0437\u0430 \u0438\u0441\u043F\u0430\u043D\u0441\u043A\u0443\u044E
       \u0411\u0430\u0440\u0441\u0435\u043B\u043E\u043D\u0443."
     Variants:
-    - Variant: {fileID: 21300000, guid: 915cea36ef31a204a86f1aeee0b59bcd, type: 3}
+    - Variant: {fileID: 21300000, guid: e031fa08b27b91746b738524383f806e, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 6b85f0f1e2fdbc744b5675625315a103, type: 3}
+    - Variant: {fileID: 21300000, guid: 82f04968891f44d44a3e673f36dfb901, type: 3}
       CorrectAnswer: 1
-    - Variant: {fileID: 21300000, guid: 614d84e1a4579394e9115b73de85756d, type: 3}
+    - Variant: {fileID: 21300000, guid: 07e04e405706e284ab0cd0348bf825c3, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 8674017fd6cf13f4192d5279433e4f1f, type: 3}
+    - Variant: {fileID: 21300000, guid: b62f3c4c9c534d2468631f3e3eeb240d, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 42c6bc4a487a96e4fb599755726e17f4, type: 3}
+    - Variant: {fileID: 21300000, guid: 9490a22d8197d7349a9cc79c34e958a2, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 9096b582c3c07a54bbfe28f9ee343ba8, type: 3}
+    - Variant: {fileID: 21300000, guid: 85a92e06343d370468d52a3ce4b95dce, type: 3}
       CorrectAnswer: 1
-    - Variant: {fileID: 21300000, guid: 17740af9a01964848baca2c9c892f8ab, type: 3}
+    - Variant: {fileID: 21300000, guid: 2cdda3877c387f24cbdea71ffabb79af, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 7fad3c6ede0b6ea4cb9b32be0433b5af, type: 3}
+    - Variant: {fileID: 21300000, guid: 70e81f76f9f14c44c9c071050391cf6d, type: 3}
       CorrectAnswer: 1
-    - Variant: {fileID: 21300000, guid: 2eb83908be6ac3746988ceb84910453f, type: 3}
+    - Variant: {fileID: 21300000, guid: 3098a4287dd8cab45a9e5af48ef6d366, type: 3}
       CorrectAnswer: 0
     NumberOfAnswers: 3
     Attempts: 4
@@ -47,23 +47,23 @@ MonoBehaviour:
       \u043D\u0430\u0439\u0434\u0438\u0442\u0435 \u0420\u043E\u0431\u0435\u0440\u0442\u0430
       \u041B\u0435\u0432\u0430\u043D\u0434\u043E\u0432\u0441\u043A\u0438."
     Variants:
-    - Variant: {fileID: 21300000, guid: 0b478f992af701a4ab46d06565148e86, type: 3}
+    - Variant: {fileID: 21300000, guid: 609ba2d85232a5e40b71a9dac02d56a4, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 00dd78b7a40405742ad9c1997f357797, type: 3}
+    - Variant: {fileID: 21300000, guid: b4b9239bf66d3ab46a2a78e5208a8d42, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: b05fc6ed249ae9e4fb0b370c76b2f79a, type: 3}
+    - Variant: {fileID: 21300000, guid: 6bdf002cedaf1a840afec0af66059ea2, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 933063d6fb7c90944a8c2b7dc716d25d, type: 3}
+    - Variant: {fileID: 21300000, guid: 7bb037839226e864581e61355df189f6, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: b5508f034765b6f4aae58b58bf44f61d, type: 3}
+    - Variant: {fileID: 21300000, guid: 4931e635e0cd4ef469ba9eff864f0869, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: ae9671fdaa519a54cad5e9c9b90336a4, type: 3}
+    - Variant: {fileID: 21300000, guid: 5efa0fec899b58241b71dbee9aef5a90, type: 3}
       CorrectAnswer: 1
-    - Variant: {fileID: 21300000, guid: 6669fdff2bdd4a74da90d2432fe6fc23, type: 3}
+    - Variant: {fileID: 21300000, guid: 8624d1c94776a8044a30365f6c5f6461, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 15e6615245fe03543b7032f6125a70a5, type: 3}
+    - Variant: {fileID: 21300000, guid: ccb5917601fa83b478e4c7234fb9c546, type: 3}
       CorrectAnswer: 0
-    - Variant: {fileID: 21300000, guid: 3ecc616f0a6b5d94296aa9c5cfc78a24, type: 3}
+    - Variant: {fileID: 0}
       CorrectAnswer: 0
     NumberOfAnswers: 1
     Attempts: 2

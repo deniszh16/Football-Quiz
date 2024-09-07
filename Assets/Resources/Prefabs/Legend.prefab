@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6285376926140447449}
   - component: {fileID: 6385433555664376211}
   - component: {fileID: 7532804911408561223}
-  - component: {fileID: 240529796851238311}
+  - component: {fileID: 2583965261148222344}
   m_Layer: 5
   m_Name: Legend
   m_TagString: Untagged
@@ -35,7 +35,6 @@ RectTransform:
   - {fileID: 1525800852596600205}
   - {fileID: 7821398333754181323}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -51,13 +50,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2425730254254739212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9070d0813825443aa39c2c7f3d3377f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 9075b50d566e8d94383490314b2b1605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _legends: {fileID: 0}
   _number: 0
   _biography: 0
-  _achievement: {fileID: 240529796851238311}
+  _achievement: {fileID: 2583965261148222344}
 --- !u!114 &6385433555664376211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +66,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2425730254254739212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6b60a885c1b431c935abb54328378b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e1e1d5c5f6a08b46a71c8b0efc486ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _legends: {fileID: 0}
@@ -85,12 +84,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 2425730254254739212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e233ab2a85294a788db72763f72d2d1b, type: 3}
+  m_Script: {fileID: 11500000, guid: 19ae0194a5030964ea70bb5f5fabdfa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _card: {fileID: 6285376926140447449}
   _button: {fileID: 2766962438367489704}
---- !u!114 &240529796851238311
+--- !u!114 &2583965261148222344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -99,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2425730254254739212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c1efc93592442f5ac2e3ae86f8d937e, type: 3}
+  m_Script: {fileID: 11500000, guid: 11213cd3e71944343862dc6a63ff9279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 
@@ -135,7 +134,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9080319879550316236}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -170,7 +168,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1bd4344fc767a7248a6dbb83b37a3e7c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9ed45c7218b1a8c4b8359873317ed3fe, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -256,7 +254,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9080319879550316236}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -291,7 +288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -46958151, guid: 7c01121061e5f474c846f26c546b47d2, type: 3}
+  m_Sprite: {fileID: 257141198600766726, guid: 23d56700dcedd25429bfc4112fbea151, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -303,7 +300,7 @@ MonoBehaviour:
   m_PixelsPerUnitMultiplier: 1
 --- !u!95 &7162835173086925409
 Animator:
-  serializedVersion: 5
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -311,13 +308,15 @@ Animator:
   m_GameObject: {fileID: 8190329311217473408}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 589f83c926098be40a05fd200d616984, type: 2}
+  m_Controller: {fileID: 9100000, guid: ed23f05bc09ed6d4e89eadbbf4c55605, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

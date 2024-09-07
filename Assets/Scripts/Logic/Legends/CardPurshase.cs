@@ -1,5 +1,4 @@
-﻿using DZGames.Football.Services;
-using DZGames.Football.Helpers;
+﻿using DZGames.Football.Helpers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,8 +51,6 @@ namespace DZGames.Football.Legends
                 ShowEffect();
                 ReplaceSprite();
                 _button.onClick.RemoveListener(BuyCard);
-                
-                _legends.FirebaseService.SubmitAnEvent(id: AnalyticsKeys.BuyingCard);
             }
         }
 

@@ -69,8 +69,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e2036b5a09f2ffd4b9cfc22122f4b2c9, type: 2}
-  m_sharedMaterial: {fileID: -2322061393244406434, guid: e2036b5a09f2ffd4b9cfc22122f4b2c9,
+  m_fontAsset: {fileID: 11400000, guid: 4865ebb7b548cf74880c8212c77c7d10, type: 2}
+  m_sharedMaterial: {fileID: -2322061393244406434, guid: 4865ebb7b548cf74880c8212c77c7d10,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -224,7 +224,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7f014558105cf64f88d34c0b0739a02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 22e5a7345146c6346b83f76a9a843d55, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f0773c571d06074da43211c1726f201, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c212aa002fdd4d643825ea5a140c89b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -379,8 +379,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e2036b5a09f2ffd4b9cfc22122f4b2c9, type: 2}
-  m_sharedMaterial: {fileID: -2322061393244406434, guid: e2036b5a09f2ffd4b9cfc22122f4b2c9,
+  m_fontAsset: {fileID: 11400000, guid: 4865ebb7b548cf74880c8212c77c7d10, type: 2}
+  m_sharedMaterial: {fileID: -2322061393244406434, guid: 4865ebb7b548cf74880c8212c77c7d10,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -479,7 +479,7 @@ Animator:
   m_GameObject: {fileID: 3289438152520919986}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 44628427bf9d2434581cc7fdcc1df826, type: 2}
+  m_Controller: {fileID: 9100000, guid: 0c765ecac6616dc4bb2898b7c6bb1b46, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -537,7 +537,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3289438153039338403}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e649a3291fa69b47906f65b8f2cc527, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e1d4dc48fcdfc043a591259d8f97efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _textScore: {fileID: 3289438151857197771}

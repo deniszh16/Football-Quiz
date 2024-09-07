@@ -16,14 +16,10 @@ namespace DZGames.Football.Facts
         [SerializeField] private Button _button;
 
         private ISceneLoaderService _sceneLoaderService;
-        private IFirebaseService _firebaseService;
 
         [Inject]
-        private void Construct(ISceneLoaderService sceneLoaderService, IFirebaseService firebaseService)
-        {
+        private void Construct(ISceneLoaderService sceneLoaderService) =>
             _sceneLoaderService = sceneLoaderService;
-            _firebaseService = firebaseService;
-        }
 
         private void Start() =>
             _button.onClick.AddListener(OpenCategory);
@@ -39,7 +35,6 @@ namespace DZGames.Football.Facts
             if (CheckCategoryCompletion() && CheckCategoryAvailability())
             {
                 _sceneLoaderService.Load(Scenes.FactsQuestions.ToString());
-                _firebaseService.SubmitAnEvent(AnalyticsKeys.FactsOpenCategory, ("number", _category.Number));
             }
             else
             {

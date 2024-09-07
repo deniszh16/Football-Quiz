@@ -19,7 +19,6 @@ namespace DZGames.Football.LifetimeScopes
             BindSaveLoadService(builder);
             BindAdService(builder);
             BindGooglePlayService(builder);
-            BindFirebaseService(builder);
             BindMainThreadDispatcher(builder);
             DontDestroyOnLoad(this);
         }
@@ -55,13 +54,6 @@ namespace DZGames.Football.LifetimeScopes
             IGooglePlayService googlePlayService = new GooglePlayService();
             googlePlayService.ActivateService();
             builder.RegisterInstance(googlePlayService);
-        }
-
-        private void BindFirebaseService(IContainerBuilder builder)
-        {
-            IFirebaseService firebaseService = new FirebaseService();
-            firebaseService.Initialization();
-            builder.RegisterInstance(firebaseService);
         }
 
         private void BindMainThreadDispatcher(IContainerBuilder builder) =>

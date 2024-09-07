@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8678487015636534023}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -66,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e2887a77a8fc95642b3e4b26057ef2a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 820164473791e884b93bc28313396209, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -110,7 +109,6 @@ RectTransform:
   m_Children:
   - {fileID: 6977507657355703336}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -145,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1df768073e71dae40abcd3509f4a3a6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e31e017d782ab4c4c9b8a06334ff0c9c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -208,12 +206,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5206685392984427136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75b8cdef556042319ed31bfd0e9446f2, type: 3}
+  m_Script: {fileID: 11500000, guid: f7921172ba014834c927514bdbf8fb84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _answer: {fileID: 0}
   _button: {fileID: 705794587887090864}
   _imageButton: {fileID: 5023157115349640770}
   _frame: {fileID: 5476102360057023286}
-  _victoryFrame: {fileID: 21300000, guid: 988be60791e8eb94fb4820001f8644ee, type: 3}
-  _losingFrame: {fileID: 21300000, guid: e2887a77a8fc95642b3e4b26057ef2a4, type: 3}
+  _victoryFrame: {fileID: 21300000, guid: a1471553cefc0e14d878bc95f160d0df, type: 3}
+  _losingFrame: {fileID: 21300000, guid: 820164473791e884b93bc28313396209, type: 3}

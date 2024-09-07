@@ -35,17 +35,14 @@ namespace DZGames.Football.Countries
         private IStaticDataService _staticDataService;
         private ISceneLoaderService _sceneLoaderService;
         private ISaveLoadService _saveLoadService;
-        private IFirebaseService _firebaseService;
-
         [Inject]
         private void Construct(IPersistentProgressService progressService, IStaticDataService staticDataService,
-            ISceneLoaderService sceneLoader, ISaveLoadService saveLoadService, IFirebaseService firebaseService)
+            ISceneLoaderService sceneLoader, ISaveLoadService saveLoadService)
         {
             _progressService = progressService;
             _staticDataService = staticDataService;
             _sceneLoaderService = sceneLoader;
             _saveLoadService = saveLoadService;
-            _firebaseService = firebaseService;
         }
 
         private void Awake()
@@ -75,7 +72,6 @@ namespace DZGames.Football.Countries
             }
             else
             {
-                _firebaseService.SubmitAnEvent(AnalyticsKeys.CountriesCategoryEnd, ("number", CurrentCategory));
                 _progressService.GetUserProgress.AddCoins(350);
                 _progressService.GetUserProgress.AddScore(100);
                 _saveLoadService.SaveProgress();
