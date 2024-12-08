@@ -19,6 +19,7 @@
 
 - [Google Play](https://play.google.com/store/apps/details?id=ru.cubra.football)
 - [Яндекс Игры](https://yandex.ru/games/app/231815)
+- [Rustore](https://www.rustore.ru/catalog/app/ru.cubra.football)
 
 ## Технические подробности
 
